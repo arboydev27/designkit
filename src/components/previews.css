@@ -1,0 +1,719 @@
+.sp-preview {
+  width: 100%;
+  height: 100%;
+  container-type: inline-size;
+  overflow: hidden;
+  isolation: isolate;
+  text-align: left;
+}
+.sp-mode-desktop {
+  height: auto;
+  min-height: 520px;
+  aspect-ratio: 1.6;
+}
+.sp-mode-mobile {
+  height: 640px;
+}
+.sp-canvas {
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-dm-sans), "Arial", sans-serif;
+  font-size: 2.35cqw;
+  line-height: 1.45;
+}
+.sp-canvas * {
+  box-sizing: border-box;
+}
+.sp-canvas h2,
+.sp-canvas h3,
+.sp-canvas p {
+  margin: 0;
+}
+.sp-canvas h2 {
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+}
+.sp-canvas p {
+  font-size: 2.6cqw;
+  line-height: 1.6;
+}
+.sp-canvas em {
+  font-weight: inherit;
+}
+.sp-canvas i {
+  font-style: normal;
+}
+.sp-canvas > div {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+.sp-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2cqw;
+  position: relative;
+  z-index: 2;
+  font-size: 1.7cqw;
+  padding: 4cqw 5cqw;
+}
+.sp-nav > b {
+  font-size: 3.1cqw;
+  letter-spacing: -0.05em;
+  white-space: nowrap;
+}
+.sp-nav > span {
+  font-size: 1.6cqw;
+}
+.sp-nav > i {
+  font-size: 1.55cqw;
+  white-space: nowrap;
+}
+.sp-kicker {
+  font-size: 1.45cqw !important;
+  letter-spacing: 0.13em;
+  margin-bottom: 3.2cqw !important;
+}
+.sp-line-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3cqw;
+  max-width: 29cqw;
+  padding: 1.5cqw 0;
+  border-bottom: 1px solid currentColor;
+  font-size: 2cqw;
+  margin-top: 4cqw;
+}
+.sp-flower {
+  width: 30cqw;
+  height: 30cqw;
+}
+.sp-wabi {
+  background: #eae6db;
+  color: #494336;
+}
+.sp-wabi .sp-nav {
+  padding-bottom: 2cqw;
+}
+.sp-wabi .sp-nav b {
+  font-family: Georgia, serif;
+  letter-spacing: -0.07em;
+  font-weight: 400;
+  font-size: 4cqw;
+}
+.sp-wabi .sp-nav b span {
+  font-size: 2.3cqw;
+  margin-left: 1cqw;
+}
+.sp-wabi-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 1cqw 5cqw 0;
+  min-height: 45cqw;
+}
+.sp-wabi-copy {
+  position: relative;
+  z-index: 2;
+  padding-top: 3cqw;
+}
+.sp-wabi-copy h2 {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 8.6cqw;
+  letter-spacing: -0.05em;
+  line-height: 1.06;
+  margin-bottom: 3.2cqw;
+}
+.sp-wabi-copy h2 em {
+  color: #82745c;
+}
+.sp-wabi-copy > p:not(.sp-kicker) {
+  font-size: 2.15cqw;
+}
+.sp-wabi-art {
+  align-self: stretch;
+  position: relative;
+  margin-left: -1cqw;
+}
+.sp-pottery {
+  height: 100%;
+  width: 100%;
+  max-height: 46cqw;
+}
+.sp-wabi-art > span {
+  position: absolute;
+  bottom: 1.3cqw;
+  left: 9cqw;
+  font-size: 1.2cqw;
+  letter-spacing: 0.13em;
+}
+.sp-wabi-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #cfc8ba;
+  margin: 3cqw 5cqw 0;
+  padding-top: 2cqw;
+  font-size: 1.35cqw;
+  color: #847965;
+}
+.sp-brutal {
+  background: #bea6e1;
+  color: #161315;
+}
+.sp-brutal .sp-nav {
+  padding: 3cqw 4cqw;
+  border-bottom: 1.5px solid #171418;
+}
+.sp-brutal .sp-nav b {
+  font-weight: 1000;
+  font-size: 4.7cqw;
+  letter-spacing: -0.09em;
+}
+.sp-brutal .sp-nav > span {
+  font-weight: 700;
+}
+.sp-brutal-body {
+  padding: 4cqw;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+}
+.sp-brutal-label {
+  font-size: 1.35cqw;
+  font-weight: 800;
+  background: #f1eddf;
+  border: 1px solid #171418;
+  padding: 0.6cqw 1cqw;
+}
+.sp-brutal h2 {
+  font-family: "Space Grotesk", Arial, sans-serif;
+  font-size: 11.1cqw;
+  line-height: 0.86;
+  font-weight: 1000;
+  letter-spacing: -0.065em;
+  margin-top: 2.8cqw;
+}
+.sp-brutal h2 span {
+  color: #f2fa70;
+  text-shadow:
+    1px 1px #161315,
+    -1px -1px #161315,
+    -1px 1px #161315,
+    1px -1px #161315;
+}
+.sp-brutal p {
+  font-size: 1.7cqw;
+  font-weight: 600;
+  margin-top: 2.4cqw;
+}
+.sp-brutal-cta {
+  display: inline-block;
+  background: #edfa63;
+  border: 1.5px solid #171418;
+  box-shadow: 1cqw 1cqw #171418;
+  font-size: 1.8cqw;
+  font-weight: 800;
+  padding: 1.5cqw 2cqw;
+  margin-top: 2.6cqw;
+  transform: rotate(-1.8deg);
+}
+.sp-brutal-art {
+  position: relative;
+}
+.sp-brutal-star {
+  position: absolute;
+  right: 0;
+  top: -3cqw;
+  font-size: 31cqw;
+  line-height: 1;
+  color: #effa64;
+  text-shadow:
+    1.5px 1.5px #171418,
+    -1.5px -1.5px #171418,
+    -1.5px 1.5px #171418,
+    1.5px -1.5px #171418;
+  transform: rotate(12deg);
+}
+.sp-brutal-note {
+  position: absolute;
+  right: 3cqw;
+  top: 20cqw;
+  font-size: 5cqw;
+  font-weight: 900;
+  line-height: 0.93;
+  background: #f4efe3;
+  border: 2px solid #171418;
+  box-shadow: 1.2cqw 1.2cqw #171418;
+  padding: 3cqw;
+  transform: rotate(10deg);
+}
+.sp-brutal-arrow {
+  position: absolute;
+  top: 21cqw;
+  left: 0;
+  font-size: 13cqw;
+  font-weight: 900;
+  transform: rotate(-10deg);
+}
+.sp-brutal-small {
+  position: absolute;
+  right: -2cqw;
+  top: 5cqw;
+  font-size: 1.6cqw;
+  font-weight: 900;
+  line-height: 1.1;
+  transform: rotate(14deg);
+}
+.sp-brutal-ticker {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  white-space: nowrap;
+  border-top: 1.5px solid #171418;
+  background: #edfa63;
+  padding: 1cqw 3cqw;
+  font-size: 2.2cqw;
+  font-weight: 800;
+  letter-spacing: 0.055em;
+}
+.sp-glass {
+  background: linear-gradient(125deg, #1d306a, #4468c8 54%, #bd92cf);
+  color: white;
+}
+.sp-glass .sp-nav b {
+  font-size: 3.9cqw;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+.sp-glass .sp-nav i {
+  padding: 0.7cqw 1.6cqw;
+  border: 1px solid #ffffff55;
+  border-radius: 10cqw;
+  background: #ffffff10;
+}
+.sp-glass-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(1cqw);
+}
+.sp-glass-orb-a {
+  width: 54cqw;
+  height: 54cqw;
+  right: -5cqw;
+  top: 11cqw;
+  background: radial-gradient(circle at 25% 30%, #99d9ff, #907ad8 60%, #4154a5);
+}
+.sp-glass-orb-b {
+  width: 33cqw;
+  height: 33cqw;
+  left: 8cqw;
+  bottom: -23cqw;
+  background: #90d7ef;
+  filter: blur(8cqw);
+}
+.sp-glass-body {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2cqw;
+  padding: 7cqw 5cqw 4cqw;
+  align-items: center;
+}
+.sp-glass-pill {
+  border: 1px solid #ffffff44;
+  border-radius: 10cqw;
+  padding: 0.9cqw 1.8cqw;
+  font-size: 1.2cqw;
+  letter-spacing: 0.06em;
+  background: #ffffff0e;
+}
+.sp-glass h2 {
+  font-size: 8.1cqw;
+  line-height: 1.08;
+  margin-top: 3.4cqw;
+  letter-spacing: -0.065em;
+}
+.sp-glass h2 em {
+  font-style: normal;
+  color: #c9d6ff;
+}
+.sp-glass p {
+  font-size: 1.9cqw;
+  color: #d8e2fd;
+  margin-top: 2.6cqw;
+}
+.sp-glass-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 4cqw;
+  padding: 1.5cqw 2.2cqw;
+  background: #f1f2ff;
+  color: #293e7c;
+  border-radius: 1.2cqw;
+  font-size: 1.8cqw;
+  margin-top: 3.6cqw;
+  box-shadow: 0 1cqw 3cqw #172c7b33;
+}
+.sp-glass-proof {
+  margin-top: 3cqw;
+  font-size: 1.3cqw;
+  color: #dde5ff;
+}
+.sp-glass-proof > span {
+  letter-spacing: -0.45em;
+  margin-right: 1.5cqw;
+  color: #d3bce8;
+  font-size: 3cqw;
+  vertical-align: middle;
+}
+.sp-glass-dashboard {
+  transform: rotate(-5deg);
+  padding-top: 2cqw;
+}
+.sp-glass-panel {
+  background: linear-gradient(130deg, #ffffff38, #ffffff0c);
+  border: 1px solid #ffffff66;
+  box-shadow: 0 2cqw 6cqw #1b1e6944;
+  backdrop-filter: blur(15px);
+  border-radius: 3cqw;
+  padding: 3cqw;
+}
+.sp-glass-panel > span {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5cqw;
+}
+.sp-glass-panel h3 {
+  font-weight: 400;
+  font-size: 3.5cqw;
+  line-height: 1.18;
+  margin-top: 3cqw;
+  letter-spacing: -0.03em;
+}
+.sp-glass-chart {
+  display: flex;
+  gap: 1.5cqw;
+  align-items: end;
+  height: 14cqw;
+  margin-top: 1cqw;
+  border-bottom: 1px solid #ffffff33;
+}
+.sp-glass-chart i {
+  flex: 1;
+  background: linear-gradient(#cfdeff99, #a9c7fd11);
+  height: 35%;
+  border-radius: 0.7cqw 0.7cqw 0 0;
+}
+.sp-glass-chart i:nth-child(2n) {
+  height: 50%;
+}
+.sp-glass-chart i:nth-child(3n) {
+  height: 42%;
+}
+.sp-glass-chart i:nth-child(4n) {
+  height: 65%;
+}
+.sp-glass-chart i:nth-child(5n) {
+  height: 76%;
+}
+.sp-glass-chart i:nth-child(7n) {
+  height: 100%;
+  background: linear-gradient(#f8faff, #a9c7fd22);
+}
+.sp-glass-panel-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.8cqw;
+  font-size: 1.4cqw;
+}
+.sp-glass-mini {
+  display: flex;
+  align-items: center;
+  gap: 1.5cqw;
+  transform: translateX(-4cqw);
+  margin-top: 2cqw;
+  background: #ffffff2e;
+  border: 1px solid #ffffff55;
+  border-radius: 1.8cqw;
+  padding: 2cqw;
+  backdrop-filter: blur(12px);
+  font-size: 1.5cqw;
+  box-shadow: 0 2cqw 4cqw #293b8b22;
+}
+.sp-glass-mini b {
+  font-weight: 400;
+  font-size: 1.15cqw;
+  opacity: 0.8;
+}
+.sp-glass-mini-icon {
+  font-size: 4cqw;
+  padding: 0 0.6cqw;
+}
+.sp-glass-mini > i {
+  margin-left: auto;
+}
+/* A compact specimen and a full preview share proportions; mobile changes the composition. */
+.sp-mode-desktop .sp-canvas {
+  font-size: 1.6cqw;
+}
+.sp-mode-desktop .sp-nav {
+  padding-top: 2.8cqw;
+  padding-bottom: 2.8cqw;
+}
+.sp-mode-desktop .sp-wabi-body {
+  min-height: 38cqw;
+  padding-top: 0;
+}
+.sp-mode-desktop .sp-pottery {
+  max-height: 38cqw;
+}
+.sp-mode-desktop .sp-wabi-copy h2 {
+  font-size: 7.8cqw;
+}
+.sp-mode-desktop .sp-wabi-bottom {
+  margin-top: 1cqw;
+}
+.sp-mode-desktop .sp-brutal h2 {
+  font-size: 9.8cqw;
+}
+.sp-mode-desktop .sp-brutal-body {
+  padding-top: 3cqw;
+}
+.sp-mode-desktop .sp-brutal p {
+  margin-top: 1.8cqw;
+}
+.sp-mode-desktop .sp-brutal-cta {
+  margin-top: 2cqw;
+}
+.sp-mode-desktop .sp-glass-body {
+  padding-top: 4cqw;
+}
+.sp-mode-desktop .sp-glass h2 {
+  font-size: 7.3cqw;
+}
+.sp-mode-mobile .sp-nav {
+  padding: 6cqw 6cqw 4cqw;
+}
+.sp-mode-mobile .sp-nav > b {
+  font-size: 5cqw;
+}
+.sp-mode-mobile .sp-nav > span {
+  display: none;
+}
+.sp-mode-mobile .sp-nav > i {
+  font-size: 2.7cqw;
+}
+.sp-mode-mobile .sp-kicker {
+  font-size: 2.25cqw !important;
+  margin-bottom: 4cqw !important;
+}
+.sp-mode-mobile .sp-canvas p {
+  font-size: 3.2cqw;
+}
+.sp-mode-mobile .sp-wabi-body {
+  grid-template-columns: 1fr;
+  padding: 4cqw 8cqw 0;
+}
+.sp-mode-mobile .sp-wabi-copy h2 {
+  font-size: 13cqw;
+  margin-bottom: 4cqw;
+}
+.sp-mode-mobile .sp-line-link {
+  max-width: 46cqw;
+  font-size: 2.9cqw;
+  margin-top: 4cqw;
+  padding: 2cqw 0;
+}
+.sp-mode-mobile .sp-wabi-art {
+  height: 72cqw;
+  margin-top: 0;
+  width: 73%;
+  margin-left: auto;
+  margin-right: -2cqw;
+}
+.sp-mode-mobile .sp-pottery {
+  max-height: 72cqw;
+}
+.sp-mode-mobile .sp-wabi-art > span {
+  font-size: 2cqw;
+  left: 15cqw;
+  bottom: 2cqw;
+}
+.sp-mode-mobile .sp-wabi-bottom {
+  font-size: 1.8cqw;
+  margin-top: 4cqw;
+  padding-top: 3cqw;
+}
+.sp-mode-mobile .sp-brutal .sp-nav > b {
+  font-size: 7cqw;
+}
+.sp-mode-mobile .sp-brutal-body {
+  padding: 8cqw 6cqw;
+  grid-template-columns: 1fr;
+}
+.sp-mode-mobile .sp-brutal-label {
+  font-size: 2.1cqw;
+  padding: 1cqw 2cqw;
+}
+.sp-mode-mobile .sp-brutal h2 {
+  font-size: 20cqw;
+  margin-top: 5cqw;
+}
+.sp-mode-mobile .sp-brutal p {
+  font-size: 3cqw;
+  margin-top: 5cqw;
+}
+.sp-mode-mobile .sp-brutal-cta {
+  font-size: 2.8cqw;
+  padding: 3cqw 4cqw;
+  margin-top: 5cqw;
+}
+.sp-mode-mobile .sp-brutal-art {
+  position: absolute;
+  bottom: 16cqw;
+  right: 7cqw;
+  width: 35cqw;
+  height: 38cqw;
+}
+.sp-mode-mobile .sp-brutal-star {
+  font-size: 42cqw;
+  right: 0;
+  top: -6cqw;
+}
+.sp-mode-mobile .sp-brutal-note {
+  font-size: 5cqw;
+  right: 4cqw;
+  top: 19cqw;
+}
+.sp-mode-mobile .sp-brutal-arrow {
+  font-size: 18cqw;
+  left: -31cqw;
+  top: 13cqw;
+}
+.sp-mode-mobile .sp-brutal-small {
+  font-size: 2cqw;
+  top: 5cqw;
+  right: 1cqw;
+}
+.sp-mode-mobile .sp-brutal-ticker {
+  font-size: 3cqw;
+  padding: 2cqw;
+}
+.sp-mode-mobile .sp-glass-body {
+  grid-template-columns: 1fr;
+  padding: 8cqw 8cqw 0;
+}
+.sp-mode-mobile .sp-glass-pill {
+  font-size: 1.9cqw;
+  padding: 1.5cqw 2.6cqw;
+}
+.sp-mode-mobile .sp-glass h2 {
+  font-size: 13.8cqw;
+  margin-top: 5cqw;
+}
+.sp-mode-mobile .sp-glass p {
+  margin-top: 4cqw;
+  font-size: 3cqw;
+}
+.sp-mode-mobile .sp-glass-cta {
+  padding: 2.8cqw 4cqw;
+  font-size: 3cqw;
+  margin-top: 5cqw;
+}
+.sp-mode-mobile .sp-glass-proof {
+  font-size: 2.1cqw;
+  margin-top: 3cqw;
+}
+.sp-mode-mobile .sp-glass-proof > span {
+  font-size: 4cqw;
+}
+.sp-mode-mobile .sp-glass-dashboard {
+  margin: 7cqw 4cqw 0 13cqw;
+  transform: rotate(-5deg);
+}
+.sp-mode-mobile .sp-glass-panel {
+  padding: 4cqw;
+  border-radius: 4cqw;
+}
+.sp-mode-mobile .sp-glass-panel > span {
+  font-size: 2.3cqw;
+}
+.sp-mode-mobile .sp-glass-panel h3 {
+  font-size: 5.4cqw;
+}
+.sp-mode-mobile .sp-glass-chart {
+  height: 20cqw;
+  gap: 2cqw;
+}
+.sp-mode-mobile .sp-glass-panel-bottom {
+  font-size: 2cqw;
+}
+.sp-mode-mobile .sp-glass-mini {
+  font-size: 2.4cqw;
+  padding: 3cqw;
+}
+.sp-mode-mobile .sp-glass-mini b {
+  font-size: 1.8cqw;
+}
+.sp-mode-mobile .sp-glass-mini-icon {
+  font-size: 6cqw;
+}
+.sp-mode-mobile .sp-glass-orb-a {
+  top: 60cqw;
+  right: -25cqw;
+  width: 100cqw;
+  height: 100cqw;
+}
+/* Locally bundled typography makes each art direction distinct. */
+.sp-brutal h2,
+.sp-maximal .sp-nav > b {
+  font-family: "Archivo Black", Arial, sans-serif;
+  font-weight: 400;
+}
+.sp-clay {
+  font-family: "Nunito", sans-serif;
+}
+.sp-swiss {
+  font-family: "Inter", Arial, sans-serif;
+}
+.sp-cybercore {
+  font-family: "IBM Plex Mono", monospace;
+}
+.sp-y2k h2 {
+  font-family: "Syne", sans-serif;
+}
+.sp-luxury h2 {
+  font-family: "Bodoni Moda", Georgia, serif;
+}
+.sp-vic-brand {
+  font-family: "UnifrakturMaguntia", Georgia, serif;
+  font-size: 6.8cqw;
+}
+.sp-maximal h2 {
+  font-family: "Playfair Display", Georgia, serif;
+}
+.sp-pixel h2 {
+  font-family: "Press Start 2P", monospace;
+  font-size: 5cqw;
+  line-height: 1.5;
+  letter-spacing: -0.075em;
+  font-weight: 400;
+}
+.sp-mode-desktop .sp-vic-brand {
+  font-size: 5.7cqw;
+}
+.sp-mode-mobile .sp-vic-brand {
+  font-size: 10.5cqw;
+}
+.sp-mode-mobile .sp-pixel h2 {
+  font-size: 8.4cqw;
+  line-height: 1.5;
+}
+.sp-mode-mobile .sp-brutal h2 {
+  font-size: 18.5cqw;
+}
