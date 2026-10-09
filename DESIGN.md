@@ -1,18 +1,18 @@
 # DesignKit interface direction
 
-DesignKit is a visual reference tool for choosing a direction, studying its details, and carrying those decisions into a project. The specimens are the product's primary visual content.
+DesignKit is a creative reference library for exploring visual languages and trying out a direction before starting a project. Its own identity should feel curious and expressive, while the 22 specimens remain useful, distinct examples.
 
-## Audit and decisions
+## Composition and typography
 
-The original shell used DM Sans throughout, a permanent desktop sidebar, a decorative poster collage, small catalog metadata, and controls layered over specimens. The 22 original specimen compositions already had distinct identities. The redesign gives the shell its own typographic character and more space for those specimens.
+The opening is a typographic poster: Karrik's direct “Follow your” meets the oversized, eccentric slab shapes of Oi in “instinct.” Space Grotesk handles reading and controls, with Caveat reserved for the handwritten “Surprise me” action. Oi is a signature moment, not a typeface for navigation or long text.
 
-- A compact masthead replaces the permanent sidebar. Explore, saved styles, and comparison remain immediate; Toolkit opens the navigation drawer. The drawer serves smaller screens as well.
-- A short typographic introduction leads directly to the collection. The random-style action opens an actual guide.
-- Equally proportioned previews support scanning and comparison. Save controls sit alongside the title, outside the artwork. No arbitrary masonry, card entrance animation, or specimen zoom on hover.
-- Six family filters, search, sort, grid/list, and all existing hashes remain available. Font/palette tools, collection persistence, comparison, and downloadable briefs remain part of the library.
-- Display typography uses Karrik Regular; body text and controls use Space Grotesk. Original specimens keep their own font pairings.
+A deck of six actual specimens sits beside the headline. Previous/next controls and arrow keys cycle the featured directions; the front card opens its guide. No invented dashboard, decorative screenshot, autonomous carousel, or floating loop substitutes for the library's own content.
 
-Design dials: visual variance 7 in the specimens and 4 in the surrounding interface; motion intensity 2; content density 6. A bespoke creative-tool interface is appropriate here. This is not a reproduction of Apple's native materials or a marketing-page template.
+The desktop collection alternates seven- and five-column spans within a twelve-column grid. Paired rows and restrained offsets create changes in scale while preserving a consistent specimen aspect ratio and reading order. Tablets use equal columns; phones use one column. List mode remains compact and orderly. Larger Karrik captions, visible font-pairing names, and rectangular palette strips connect the artwork to practical design decisions.
+
+The masthead uses plain navigation with an underline for the current view. Search, saved styles, and comparison remain immediately available; Toolkit opens the secondary drawer. The collection retains six family filters, sorting, grid/list views, all existing hashes, and saved-state migration.
+
+Design dials: visual variance 8, motion intensity 4, content density 5. The shell has a strong display identity without competing with the individual styles through unrelated colors or ornamental sections.
 
 ## Tokens
 
@@ -26,23 +26,27 @@ Design dials: visual variance 7 in the specimens and 4 in the surrounding interf
 | Accent         | `#3155DF` | `#A5B5FF` |
 | Accent surface | `#E9EDFF` | `#303A61` |
 
-Chrome uses one cobalt accent, 6px control corners, and 8px preview/panel corners. Styles inside specimens are intentionally exempt from shell palette, typography, and geometry rules. Their diversity is the explicit purpose of the library. No forest green is used in the shell.
+Cobalt is the shell's single accent. Gallery previews use fine ink borders and 3px corners; the featured deck has thin paper edges and shallow shadows to convey its layers. Circular deck controls indicate the paired directional actions. Specimens intentionally retain their independent palettes, typography, and geometry. No forest green is used in the shell.
 
 ## Interaction and accessibility
 
-Frequent navigation and preview viewport changes are immediate. Hover feedback is limited to fine pointers with brief 140-160ms transitions; motion never carries essential information. Reduced-motion settings remove transforms and shorten transitions. Higher-contrast preferences strengthen secondary text and boundaries. Phone controls have 44px targets; color swatches include larger padded targets.
+The deck uses Motion springs with position and rotation targets that can change without waiting for a previous transition. Only transform and opacity animate; there are no pointer-move React updates. Press feedback begins immediately. Frequent navigation, filters, and viewport switches remain immediate.
 
-Detail navigation focuses the new heading and restores the originating card on return. Comparison controls expose their selected state. The navigation drawer traps focus, makes the page inert, and returns focus to its trigger. Appearance defaults to the operating system and supports persisted light/dark overrides; a small pre-hydration script applies the override before paint. Specimen colors never change with appearance.
+Background and exiting deck cards are inert and hidden from assistive technology. Only the front card can receive focus. Keyboard arrows change its direction, previous/next buttons have 44px targets, and the current name is announced politely. Opening a featured guide and returning preserves its selected direction and restores focus to the deck. Returning from the collection restores the originating card.
+
+Reduced motion makes deck changes immediate, removes press transforms, and shortens CSS transitions. Higher-contrast preferences strengthen secondary text and boundaries. Phone controls have 44px targets; palette swatches keep padded click areas.
+
+The navigation drawer traps focus, makes the page inert, locks background scrolling, and returns focus to its trigger. Appearance defaults to the operating system and supports persisted light/dark overrides applied before paint. Specimen colors remain unchanged by appearance. Clipboard denial exposes complete selectable text in an accessible dialog.
 
 ## Typography provenance
 
-Karrik was discovered via [Free Faces](https://www.freefaces.gallery/). It is designed by **Jean-Baptiste Morizot and Lucas Le Bihan**, distributed by [Velvetyne](https://velvetyne.fr/fonts/karrik/), and licensed under SIL Open Font License 1.1. The original Regular WOFF2 (31,180 bytes) and unmodified license are bundled under `public/fonts/`. No subsetting or glyph modifications were made. Source archive revision: `42ae96dcdfdd75b883d4d56a783c337f818f6651` from [the foundry repository](https://gitlab.com/phantomfoundry/karrik_fonts).
+Oi by **Kostas Bartsokas** was discovered via [Free Faces](https://www.freefaces.gallery/display). The original Regular WOFF2 and unchanged SIL OFL 1.1 license are bundled from [the author's repository](https://github.com/kosbarts/Oi), revision `bd7ccfa844054ec4a0b2b17e56c33830646668ea`. See `public/fonts/OI-SOURCE.md` for binary provenance. No glyph modifications or subsetting were made.
 
-Space Grotesk by Florian Karsten is also featured on Free Faces. Its existing local font and OFL license are reused. All other local fonts continue to serve the individual specimens. The two shell fonts are preloaded; every face uses `font-display: swap`.
+Karrik by **Jean-Baptiste Morizot and Lucas Le Bihan**, distributed by [Velvetyne](https://velvetyne.fr/fonts/karrik/), is also OFL 1.1. The original Regular WOFF2 and license are bundled from [the foundry repository](https://gitlab.com/phantomfoundry/karrik_fonts), revision `42ae96dcdfdd75b883d4d56a783c337f818f6651`. Space Grotesk by Florian Karsten reuses the existing local font and license. All shell faces use `font-display: swap`; Oi, Karrik, and Space Grotesk are preloaded.
 
 ## References applied
 
-- [Dick Wu's Apple design skill](https://github.com/dickwu/apple-design-skill): hierarchy, legible controls, consistent feedback, and accessibility before decorative polish.
-- [Emil Kowalski's design engineering skill](https://github.com/emilkowalski/skills/tree/main/skills/emil-design-eng): immediate frequent actions, restrained interruptible feedback, fine-pointer hover, and reduced motion.
-- The local design-taste-frontend skill: audit before redesign, deliberate type, real visual content, responsive composition, and coherent shell tokens. Its landing-page rules are scoped to this product: a uniform comparison grid and 22 independently styled specimens are intentional.
-- [VoltAgent's awesome-design-md](https://github.com/voltagent/awesome-design-md): neutral framing around expressive content from its Figma interpretation, visual browsing and accessible save actions from Pinterest, and clear typographic roles from Wired. These are community interpretations, not official brand systems; no proprietary assets were copied.
+- The local **design-taste-frontend** skill: audit first, commit to a visual identity, make typography carry the design, use genuine content, and validate responsive composition.
+- The local **Apple motion** skill: immediate feedback, interruptible springs, spatially consistent navigation, reduced-motion alternatives, and deliberate tracking and leading.
+- [VoltAgent's awesome-design-md](https://github.com/voltagent/awesome-design-md), specifically [The Verge](https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/theverge/DESIGN.md) for display type as identity, [Figma](https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/figma/DESIGN.md) for compositions made from design content, and [Pinterest](https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/pinterest/DESIGN.md) for visual discovery and accessible collection actions. These are community analyses, not official brand systems; no proprietary assets were copied.
+- [Dick Wu's Apple design skill](https://github.com/dickwu/apple-design-skill) and [Emil Kowalski's design engineering skill](https://github.com/emilkowalski/skills/tree/main/skills/emil-design-eng) informed the retained focus management, clear hierarchy, and fine-pointer hover behavior.

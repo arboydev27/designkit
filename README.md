@@ -34,20 +34,23 @@ The accompanying `designkit-source.zip` contains the editable project. `designki
 - Saved styles stored in this browser's local storage.
 - Existing Form Atlas saved styles migrate automatically to DesignKit on the same browser origin.
 - Two-style comparison and downloadable Markdown design briefs.
-- Compact masthead and mobile drawer with keyboard navigation, focus restoration, and reduced-motion support.
+- An interactive deck of six featured styles with interruptible springs, arrow-key browsing, and focus restoration.
+- An expressive gallery with varied desktop proportions, a single-column phone layout, and a compact list view.
+- Plain masthead navigation and a mobile drawer with keyboard navigation and reduced-motion support.
 - System, light, and dark appearance modes that preserve each specimen’s own colors.
-- Karrik display typography discovered through Free Faces, paired with Space Grotesk.
+- Oi and Karrik display typography discovered through Free Faces, paired with Space Grotesk.
 - Selectable text fallback when browser clipboard access is unavailable.
-- Self-hosted fonts and their licenses in `public/fonts/licenses/`, including the unmodified Karrik Regular WOFF2.
+- Self-hosted fonts and their licenses in `public/fonts/licenses/`, including the unmodified Oi and Karrik Regular WOFF2 files.
 
 The illustrations and specimen brands are original fictional examples. Styles are interpretations, and suggested palettes and pairings are not historical prescriptions. Primary references are linked in applicable guides. The initial style list was inspired by Talha × Codes' Instagram reel, credited in the About page.
 
-See [DESIGN.md](DESIGN.md) for the design audit, tokens, interaction decisions, and the Emil Kowalski, Dick Wu, Free Faces, and awesome-design-md references. Karrik is by Jean-Baptiste Morizot and Lucas Le Bihan, distributed by Velvetyne under OFL 1.1.
+See [DESIGN.md](DESIGN.md) for the design audit, tokens, interaction decisions, and the Emil Kowalski, Dick Wu, Free Faces, and awesome-design-md references. Oi is by Kostas Bartsokas under OFL 1.1. Karrik is by Jean-Baptiste Morizot and Lucas Le Bihan, distributed by Velvetyne under OFL 1.1.
 
 ## Source map
 
 - `src/data/styles.ts` — typed catalog and editorial guidance.
 - `src/components/Library.tsx` — browsing, saved collection, search, and comparison.
+- `src/components/InspirationDeck.tsx` and `inspiration-deck.css` — featured specimen deck and spring interaction.
 - `src/components/StylePreview.tsx` and `previews.css` — all original visual specimens.
 - `src/components/StyleDetail.tsx` and `detail.css` — interactive style guides.
 - `src/app/globals.css` — library shell, responsive layout, and Tailwind import.
@@ -57,8 +60,10 @@ To add a language, add a catalog entry and an original specimen, then verify its
 
 ## Verification
 
-The production build and TypeScript checks pass. All 22 specimens were rendered in card, desktop, and mobile modes, then checked in the browser. Phone-width checks at 390px found no page overflow or clipped specimen headings. Search, category filters, sorting, grid/list views, palette and CSS copying, type editing, saved-style persistence, and two-style comparison were exercised. All 22 complete briefs are generated as static downloadable files under `public/briefs/` during the build. Production browser checks reported no console errors. The refreshed shell was checked at 1440px and 390px, including light/dark appearance, theme persistence, drawer scroll locking and return focus, search, list layout, comparison state, toolkit views, editable typography, and successful CSS clipboard output. The clipboard fallback was verified against the production export served with `Permissions-Policy: clipboard-write=(), clipboard-read=()`: complete CSS text, full text selection, read-only input, keyboard focus, background scroll locking, Escape dismissal, and return focus all passed. No Lighthouse score is claimed.
+The production build and TypeScript checks pass, along with all five saved-collection tests. The creative shell was checked in the production browser at 320px, 390px, 900px, and 1440px with no page overflow. Light and dark appearances, theme persistence, deck buttons and arrow keys, featured-guide return focus, gallery navigation, search, family filters, sorting, grid/list views, saving, two-style comparison, preview viewport switching, and drawer focus/scroll locking were exercised. No browser console errors were reported. Reduced-motion branches and hidden-card accessibility were also reviewed in code.
 
-A final catalog audit confirmed exactly the 22 requested languages, 22 distinct specimen components, 110 valid palette entries, every font file present in both source and export, and all 22 generated briefs matching the current catalog.
+Catalog verification confirms the 22 requested languages, 22 distinct specimens, 110 valid palette entries, and 22 complete generated briefs. All 21 WOFF2 files and all briefs match the static export. Previous full-catalog browser checks covered card, desktop, and mobile specimen layouts, editable typography, palette/CSS copying, and the complete selectable-text fallback under denied clipboard permissions; those implementations are retained.
+
+A Lighthouse CLI run was attempted, but Chrome aborted during macOS application registration before exposing its debugging port. No Lighthouse or Core Web Vitals score is claimed.
 
 The production export is independent of any hosting provider. Deploy the contents of `out/` to a static host when ready.
