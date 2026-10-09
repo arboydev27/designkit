@@ -358,6 +358,196 @@ function Editorial() {
     </div>
   );
 }
+function Cybercore() {
+  return (
+    <div className="sp-cybercore">
+      <div className="sp-nav">
+        <b>[ SYS.01 ]</b>
+        <span>NETWORK ONLINE ●</span>
+        <i>ENTER PORTAL ↗</i>
+      </div>
+      <div className="sp-cyber-core">
+        <div className="sp-cyber-ring" />
+        <span className="sp-cyber-code">
+          &gt; INITIATE_NEW_REALITY
+          <br />
+          &gt; HUMAN × MACHINE
+          <br />
+          &gt; CONNECTION_ESTABLISHED
+        </span>
+        <h2>
+          BEYOND
+          <br />
+          <span>HUMAN.</span>
+        </h2>
+        <div className="sp-cyber-meta">
+          <span>
+            THE NEXT SYSTEM
+            <br />
+            IS ALREADY HERE.
+          </span>
+          <b>ACCESS THE FUTURE ↗</b>
+        </div>
+      </div>
+      <div className="sp-cyber-footer">
+        01100110 01110101 01110100 &nbsp; // &nbsp; SYSTEM VERSION 3.0.1
+      </div>
+    </div>
+  );
+}
+function Scrapbook() {
+  return (
+    <div className="sp-scrapbook">
+      <div className="sp-nav">
+        <b>little things ☼</b>
+        <span>Notes &nbsp; Moments &nbsp; Me</span>
+      </div>
+      <div className="sp-scrapbook-body">
+        <div>
+          <span className="sp-scrap-label">
+            a collection of happy accidents
+          </span>
+          <h2>
+            Life is a<br />
+            <em>beautiful</em>
+            <br />
+            mess.
+          </h2>
+          <span className="sp-scrap-link">come have a look ↗</span>
+        </div>
+        <div className="sp-scrap-collage">
+          <div className="sp-scrap-photo">
+            <div />
+            <span>somewhere, someday ♡</span>
+          </div>
+          <div className="sp-scrap-note">
+            more making.
+            <br />
+            less thinking.
+            <br />
+            <b>— note to self</b>
+          </div>
+          <Flower />
+          <span className="sp-scrap-sticker">
+            made
+            <br />
+            with love
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+function Surreal() {
+  return (
+    <div className="sp-surreal">
+      <div className="sp-nav">
+        <b>OTHERWHERE</b>
+        <span>A PLACE BEYOND THE ORDINARY</span>
+        <i>↗</i>
+      </div>
+      <div className="sp-surreal-body">
+        <div className="sp-surreal-arch">
+          <div className="sp-surreal-sun" />
+          <div className="sp-surreal-stair" />
+        </div>
+        <div className="sp-surreal-ball" />
+        <div className="sp-surreal-cloud" />
+        <h2>
+          Reality is
+          <br />
+          <em>only a suggestion.</em>
+        </h2>
+        <span className="sp-surreal-bottom">
+          STEP INTO THE UNEXPECTED &nbsp; ↓
+        </span>
+      </div>
+    </div>
+  );
+}
+function Y2k() {
+  return (
+    <div className="sp-y2k">
+      <div className="sp-nav">
+        <b>gloss.exe ✦</b>
+        <span>NEW DROPS &nbsp; THE CLUB</span>
+        <i>♥ 0</i>
+      </div>
+      <div className="sp-y2k-body">
+        <span className="sp-y2k-mini">★ WELCOME TO YOUR NEXT OBSESSION ★</span>
+        <h2>
+          too cute
+          <br />
+          to <em>compute.</em>
+        </h2>
+        <div className="sp-y2k-star">✦</div>
+        <div className="sp-y2k-heart">♡</div>
+        <span className="sp-y2k-cta">ENTER THE GLOSSVERSE ↗</span>
+        <span className="sp-y2k-stamp">
+          100%
+          <br />
+          DIGITAL
+          <br />
+          DAYDREAM
+        </span>
+      </div>
+      <div className="sp-y2k-footer">
+        BE YOUR OWN MAIN CHARACTER ✧ EST. 2000 FOREVER
+      </div>
+    </div>
+  );
+}
+function Pixel() {
+  return (
+    <div className="sp-pixel">
+      <div className="sp-nav">
+        <b>★ SIDEQUEST</b>
+        <span>LVL. 01 &nbsp; ♥ ♥ ♥</span>
+      </div>
+      <div className="sp-pixel-body">
+        <span className="sp-pixel-label">A LITTLE ADVENTURE AWAITS</span>
+        <h2>
+          YOUR NEXT
+          <br />
+          CHAPTER
+          <br />
+          STARTS HERE.
+        </h2>
+        <span className="sp-pixel-cta">▶ PRESS START</span>
+        <div className="sp-pixel-landscape">
+          <span className="sp-pixel-sun" />
+          <div className="sp-pixel-mountain" />
+          <div className="sp-pixel-tree" />
+          <div className="sp-pixel-house" />
+          <span className="sp-pixel-hero">▟</span>
+        </div>
+      </div>
+      <div className="sp-pixel-ground" />
+    </div>
+  );
+}
+function Synthwave() {
+  return (
+    <div className="sp-synth">
+      <div className="sp-nav">
+        <b>NIGHTDRIVE</b>
+        <span>FM 88.4 &nbsp; ◉ LIVE</span>
+      </div>
+      <div className="sp-synth-sun" />
+      <div className="sp-synth-grid" />
+      <div className="sp-synth-copy">
+        <span>THE SOUNDTRACK TO AFTER HOURS</span>
+        <h2>
+          NEON
+          <br />
+          <em>forever.</em>
+        </h2>
+        <div>TURN ON. TUNE IN. DRIFT AWAY.</div>
+        <b>▷ &nbsp; START THE NIGHT</b>
+      </div>
+    </div>
+  );
+}
 const specimens: Record<string, ComponentType> = {
   "wabi-sabi": Wabi,
   "neo-brutalism": Brutal,
@@ -365,6 +555,12 @@ const specimens: Record<string, ComponentType> = {
   "swiss-design": Swiss,
   claymorphism: Clay,
   "editorial-design": Editorial,
+  cybercore: Cybercore,
+  scrapbook: Scrapbook,
+  surrealism: Surreal,
+  y2k: Y2k,
+  "pixel-art": Pixel,
+  synthwave: Synthwave,
 };
 
 export const StylePreview = memo(function StylePreview({
