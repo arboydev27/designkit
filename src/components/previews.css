@@ -1954,6 +1954,594 @@
   font-size: 1.8cqw;
   font-weight: 800;
 }
+.sp-luxury {
+  background: #292329;
+  color: #e9d6b4;
+}
+.sp-luxury .sp-nav {
+  padding: 4cqw 6cqw;
+  border-bottom: 1px solid #dbc7a422;
+}
+.sp-luxury .sp-nav > b {
+  font-family: Georgia, serif;
+  font-size: 2.7cqw;
+  letter-spacing: 0.16em;
+  font-weight: 400;
+}
+.sp-luxury .sp-nav > span {
+  font-size: 1cqw;
+  letter-spacing: 0.1em;
+}
+.sp-luxury-body {
+  padding: 6cqw;
+  position: relative;
+}
+.sp-luxury-body > span:first-child {
+  font-size: 1.2cqw;
+  letter-spacing: 0.2em;
+}
+.sp-luxury h2 {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 10.4cqw;
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  margin-top: 3cqw;
+  position: relative;
+  z-index: 1;
+}
+.sp-luxury h2 em {
+  color: #b9a489;
+}
+.sp-luxury p {
+  font-size: 1.45cqw;
+  color: #b7a98f;
+  margin-top: 2.2cqw;
+}
+.sp-luxury-link {
+  display: block;
+  font-size: 1.2cqw;
+  letter-spacing: 0.13em;
+  margin-top: 4cqw;
+  color: #d9c09a;
+}
+.sp-luxury-jewel {
+  position: absolute;
+  width: 30cqw;
+  height: 38cqw;
+  right: 4cqw;
+  top: 3cqw;
+  transform: rotate(19deg);
+}
+.sp-luxury-jewel > i {
+  position: absolute;
+  width: 21cqw;
+  height: 29cqw;
+  border: 1.6cqw solid #b59153;
+  box-shadow:
+    inset 0.5cqw 0.5cqw 0.6cqw #fde8b877,
+    0.3cqw 0.3cqw 0.8cqw #fde8b855;
+  border-radius: 50%;
+  transform: rotate(-22deg);
+  top: 3cqw;
+}
+.sp-luxury-jewel > i:nth-child(2) {
+  left: 8cqw;
+  top: 9cqw;
+  border-color: #dab880;
+  transform: rotate(22deg);
+  width: 15cqw;
+  height: 21cqw;
+}
+.sp-luxury-jewel > i:nth-child(3) {
+  width: 4cqw;
+  height: 5cqw;
+  left: 7cqw;
+  top: 2.5cqw;
+  background: linear-gradient(45deg, #796b56, #f8efe0, #75675a);
+  border: 1px solid #aa8d60;
+  border-radius: 30%;
+}
+.sp-sketch {
+  background: #f9f6ee;
+  color: #4b4844;
+  background-image:
+    linear-gradient(#98a6bf13 1px, transparent 1px),
+    linear-gradient(90deg, #98a6bf13 1px, transparent 1px);
+  background-size: 3cqw 3cqw;
+}
+.sp-sketch .sp-nav > b {
+  font-family: Georgia, serif;
+  font-size: 3.5cqw;
+  font-style: italic;
+  font-weight: 500;
+}
+.sp-sketch .sp-nav > span {
+  font-family: "Caveat", cursive;
+  font-size: 1.6cqw;
+}
+.sp-sketch-body {
+  padding: 2cqw 6cqw;
+}
+.sp-sketch-note {
+  font-family: "Caveat", cursive;
+  font-size: 2cqw;
+  display: inline-block;
+  transform: rotate(-3deg);
+  color: #878077;
+}
+.sp-sketch h2 {
+  font-family: Georgia, serif;
+  font-size: 8.5cqw;
+  line-height: 1.1;
+  margin-top: 3cqw;
+  letter-spacing: -0.06em;
+}
+.sp-sketch h2 em {
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: #b7916e;
+  text-decoration-thickness: 0.3cqw;
+  text-underline-offset: 1cqw;
+}
+.sp-sketch-art {
+  position: absolute;
+  right: 8cqw;
+  top: 16cqw;
+  width: 22cqw;
+  height: 26cqw;
+}
+.sp-sketch-art > div {
+  height: 21cqw;
+  width: 21cqw;
+  border: 1px solid #7b756b;
+  border-radius: 42% 53% 46% 48%;
+  font-family: Georgia, serif;
+  font-size: 14cqw;
+  line-height: 1.45;
+  text-align: center;
+  transform: rotate(15deg);
+}
+.sp-sketch-art > div:before {
+  content: "";
+  position: absolute;
+  inset: 0.8cqw;
+  border: 1px solid #7b756b;
+  border-radius: 48% 48% 51% 43%;
+}
+.sp-sketch-art > span {
+  font-family: "Caveat", cursive;
+  font-size: 2.6cqw;
+  display: block;
+  text-align: center;
+  transform: rotate(-9deg);
+  margin-top: 2cqw;
+}
+.sp-sketch-art > svg {
+  width: 24cqw;
+  transform: rotate(20deg) translateX(-5cqw);
+}
+.sp-sketch-cta {
+  display: inline-block;
+  border: 1px solid #706d65;
+  border-radius: 48% 4% 45% 5%/7% 60% 10% 80%;
+  padding: 1.5cqw 3cqw;
+  font-size: 1.8cqw;
+  margin-top: 4cqw;
+  transform: rotate(-2deg);
+}
+.sp-ethereal {
+  background:
+    radial-gradient(ellipse at 15% 95%, #f3dbdb 0, transparent 45%),
+    radial-gradient(ellipse at 85% 10%, #ddd6f0 0, transparent 45%), #f0ebf4;
+  color: #776889;
+}
+.sp-ethereal .sp-nav > b {
+  font-family: Georgia, serif;
+  font-size: 4cqw;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+.sp-ethereal .sp-nav > span {
+  font-size: 1.5cqw;
+}
+.sp-ethereal .sp-nav > i {
+  font-size: 3cqw;
+}
+.sp-ethereal-aura {
+  position: absolute;
+  width: 50cqw;
+  height: 50cqw;
+  left: 24cqw;
+  top: 10cqw;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    #fff9ed 0 22%,
+    #f7e6d866 36%,
+    #cdbeda77 52%,
+    #e2d7f300 65%
+  );
+  filter: blur(2cqw);
+}
+.sp-ethereal-body {
+  position: relative;
+  text-align: center;
+  padding: 5cqw;
+}
+.sp-ethereal-body > span:first-child {
+  font-size: 1.25cqw;
+  letter-spacing: 0.21em;
+}
+.sp-ethereal h2 {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 10.5cqw;
+  line-height: 1.03;
+  letter-spacing: -0.04em;
+  margin-top: 3cqw;
+  font-weight: 400;
+}
+.sp-ethereal h2 em {
+  color: #aa8cae;
+}
+.sp-ethereal p {
+  font-size: 1.8cqw;
+  margin-top: 3cqw;
+  color: #a08eaa;
+}
+.sp-ethereal-link {
+  display: inline-block;
+  border: 1px solid #cdbed4;
+  padding: 1.5cqw 3cqw;
+  border-radius: 8cqw;
+  font-size: 1.55cqw;
+  background: #ffffff33;
+  margin-top: 3cqw;
+}
+.sp-ethereal-spark {
+  position: absolute;
+  font-size: 10cqw;
+  line-height: 1;
+  color: #bca9cb;
+  font-family: Georgia, serif;
+}
+.sp-ethereal-spark-a {
+  left: 10cqw;
+  top: 9cqw;
+}
+.sp-ethereal-spark-b {
+  right: 13cqw;
+  bottom: 5cqw;
+  font-size: 6cqw;
+}
+.sp-bohemian {
+  background: #eddfc4;
+  color: #794c36;
+}
+.sp-bohemian .sp-nav > b {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: 3.8cqw;
+  letter-spacing: -0.06em;
+}
+.sp-boho-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3cqw;
+  padding: 5cqw 6cqw;
+}
+.sp-bohemian h2 {
+  font-family: Georgia, serif;
+  font-size: 11cqw;
+  line-height: 0.98;
+  letter-spacing: -0.07em;
+  margin-top: 2cqw;
+}
+.sp-bohemian h2 em {
+  color: #b46f4e;
+}
+.sp-bohemian p {
+  font-size: 1.85cqw;
+  margin-top: 3cqw;
+}
+.sp-boho-cta {
+  display: inline-block;
+  background: #aa6344;
+  color: #f5e8cd;
+  border-radius: 10cqw;
+  padding: 1.5cqw 2cqw;
+  font-size: 1.5cqw;
+  margin-top: 3cqw;
+}
+.sp-boho-art {
+  position: relative;
+  height: 42cqw;
+}
+.sp-boho-arch {
+  position: absolute;
+  inset: 0 2cqw 3cqw 3cqw;
+  border-radius: 20cqw 20cqw 0 0;
+  background: #c87c58;
+  overflow: hidden;
+}
+.sp-boho-arch > div {
+  position: absolute;
+  bottom: 0;
+  width: 120%;
+  left: -10%;
+  height: 24cqw;
+  background: #e4ba7b;
+  border-radius: 50% 60% 0 0;
+  transform: rotate(-13deg);
+}
+.sp-boho-arch > div:after {
+  content: "";
+  position: absolute;
+  bottom: -6cqw;
+  left: -8cqw;
+  width: 40cqw;
+  height: 21cqw;
+  border-radius: 50%;
+  background: #ab5943;
+  transform: rotate(20deg);
+}
+.sp-boho-arch > span {
+  position: absolute;
+  top: 3cqw;
+  left: 8cqw;
+  font-size: 17cqw;
+  color: #efd998;
+  line-height: 1;
+}
+.sp-boho-rainbow {
+  position: absolute;
+  right: -2cqw;
+  bottom: 4cqw;
+  width: 18cqw;
+  height: 23cqw;
+  border-radius: 13cqw 13cqw 0 0;
+  border: 2cqw solid #f1d4a0;
+  box-shadow:
+    inset 0 0 0 1.5cqw #bc6d4a,
+    0 0 0 1.4cqw #99503b;
+  background: #eddfc4;
+}
+.sp-boho-caption {
+  position: absolute;
+  bottom: -1cqw;
+  width: 100%;
+  text-align: center;
+  font-size: 1.1cqw;
+  font-style: italic;
+}
+.sp-victorian {
+  background: #efe1c1;
+  color: #57432e;
+  padding: 3cqw;
+}
+.sp-vic-border {
+  height: 100%;
+  border: 3px double #9d7f51;
+  padding: 2cqw 4cqw;
+  text-align: center;
+  position: relative;
+  background: radial-gradient(ellipse at center, transparent 50%, #c9ad7422);
+}
+.sp-vic-border:before,
+.sp-vic-border:after {
+  content: "❧";
+  position: absolute;
+  top: 11cqw;
+  left: 1cqw;
+  font-family: Georgia, serif;
+  font-size: 13cqw;
+  color: #9d7f51;
+  writing-mode: vertical-rl;
+}
+.sp-vic-border:after {
+  left: auto;
+  right: 1cqw;
+  transform: rotate(180deg);
+}
+.sp-vic-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6cqw;
+  font-family: Georgia, serif;
+  font-size: 0.95cqw;
+  letter-spacing: 0.1em;
+}
+.sp-vic-top > span {
+  font-size: 3.5cqw;
+  line-height: 1.2;
+}
+.sp-vic-brand {
+  font-family: Georgia, serif;
+  font-size: 5.8cqw;
+  line-height: 1.2;
+  margin-top: 0.4cqw;
+  letter-spacing: -0.045em;
+}
+.sp-vic-rule {
+  font-family: Georgia, serif;
+  font-size: 1.8cqw;
+  color: #947649;
+  margin: 1cqw 0;
+}
+.sp-vic-kicker {
+  font-size: 1.1cqw;
+  letter-spacing: 0.15em;
+}
+.sp-victorian h2 {
+  font-family: Georgia, serif;
+  font-size: 7.6cqw;
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+  margin-top: 2cqw;
+}
+.sp-victorian h2 em {
+  font-size: 10cqw;
+}
+.sp-victorian p {
+  font-family: Georgia, serif;
+  font-size: 1.6cqw;
+  line-height: 1.45;
+  margin-top: 1.4cqw;
+}
+.sp-vic-link {
+  display: inline-block;
+  margin-top: 2cqw;
+  border-top: 1px solid #987643;
+  border-bottom: 1px solid #987643;
+  padding: 1.1cqw 2cqw;
+  font-size: 1.1cqw;
+  letter-spacing: 0.15em;
+}
+.sp-vic-bottom {
+  font-family: Georgia, serif;
+  font-size: 0.9cqw;
+  letter-spacing: 0.12em;
+  margin-top: 2cqw;
+}
+.sp-cyberpunk {
+  background: #221a32;
+  color: #f8e961;
+}
+.sp-cyberpunk:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(0deg, transparent 0 3px, #0002 3px 4px);
+}
+.sp-cyberpunk .sp-nav {
+  padding: 3cqw 4cqw;
+  border-bottom: 1px solid #ecdb6b66;
+}
+.sp-cyberpunk .sp-nav > b {
+  font-size: 3cqw;
+  letter-spacing: -0.07em;
+  font-weight: 900;
+}
+.sp-cyberpunk .sp-nav > span {
+  font-family: monospace;
+  font-size: 1.15cqw;
+  letter-spacing: 0.025em;
+}
+.sp-punk-body {
+  position: relative;
+  z-index: 2;
+  padding: 4cqw 5cqw;
+}
+.sp-punk-body > span:first-child {
+  font-family: monospace;
+  font-size: 1.3cqw;
+  letter-spacing: 0.14em;
+}
+.sp-cyberpunk h2 {
+  font-size: 11.7cqw;
+  font-weight: 900;
+  font-style: italic;
+  line-height: 0.85;
+  letter-spacing: -0.07em;
+  margin-top: 3cqw;
+  text-shadow: 0.5cqw 0 #ee458f;
+}
+.sp-cyberpunk h2 em {
+  font-style: inherit;
+  color: transparent;
+  -webkit-text-stroke: 1px #f8e961;
+  text-shadow: none;
+}
+.sp-cyberpunk p {
+  font-family: monospace;
+  font-size: 1.5cqw;
+  margin-top: 2cqw;
+  color: #e4bdd2;
+}
+.sp-punk-cta {
+  display: inline-block;
+  padding: 1.5cqw 5cqw 1.5cqw 2cqw;
+  background: #f8e961;
+  color: #271d30;
+  font-size: 1.6cqw;
+  font-weight: 900;
+  margin-top: 3cqw;
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 90% 100%, 0 100%);
+}
+.sp-punk-city {
+  position: absolute;
+  inset: 8cqw 0 0 35cqw;
+  background: linear-gradient(90deg, transparent, #f142ae33);
+}
+.sp-punk-city > i {
+  position: absolute;
+  bottom: 0;
+  width: 11cqw;
+  height: 35cqw;
+  background: repeating-linear-gradient(
+    0deg,
+    #301e49 0 3cqw,
+    #e4479466 3cqw 3.4cqw
+  );
+  border-left: 1px solid #cd358788;
+  left: 0;
+  transform: skewY(-5deg);
+}
+.sp-punk-city > i:nth-child(2) {
+  height: 48cqw;
+  left: 14cqw;
+  width: 14cqw;
+  border-right: 2px solid #3ac7d9;
+}
+.sp-punk-city > i:nth-child(3) {
+  height: 28cqw;
+  left: 29cqw;
+  width: 14cqw;
+  background: repeating-linear-gradient(
+    0deg,
+    #21162d 0 2cqw,
+    #a4578b77 2cqw 2.4cqw
+  );
+}
+.sp-punk-city > i:nth-child(4) {
+  height: 40cqw;
+  left: 46cqw;
+  width: 12cqw;
+  border-right: 2px solid #e777b4;
+}
+.sp-punk-city > i:nth-child(5) {
+  height: 23cqw;
+  left: 7cqw;
+  width: 10cqw;
+  background: #422541;
+}
+.sp-punk-japanese {
+  position: absolute;
+  top: 17cqw;
+  right: 11cqw;
+  writing-mode: vertical-rl;
+  font-size: 5cqw;
+  color: #fc6bbe;
+  border: 1px solid #fc6bbe;
+  padding: 1cqw;
+  line-height: 1.2;
+  text-shadow: 0 0 2cqw #f72aa8;
+  box-shadow: 0 0 2cqw #f72aa844;
+}
+.sp-punk-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1.5cqw 5cqw;
+  font-family: monospace;
+  font-size: 1.1cqw;
+  letter-spacing: 0.08em;
+  background: #f8e961;
+  color: #302033;
+  z-index: 3;
+}
 /* A compact specimen and a full preview share proportions; mobile changes the composition. */
 .sp-mode-desktop .sp-canvas {
   font-size: 1.6cqw;
@@ -2062,6 +2650,48 @@
 }
 .sp-mode-desktop .sp-maximal h2 {
   font-size: 13.8cqw;
+}
+.sp-mode-desktop .sp-luxury-body {
+  padding-top: 4cqw;
+}
+.sp-mode-desktop .sp-luxury h2 {
+  font-size: 9cqw;
+}
+.sp-mode-desktop .sp-sketch h2 {
+  font-size: 7.4cqw;
+}
+.sp-mode-desktop .sp-ethereal-body {
+  padding-top: 3cqw;
+}
+.sp-mode-desktop .sp-ethereal h2 {
+  font-size: 9.5cqw;
+}
+.sp-mode-desktop .sp-boho-body {
+  padding-top: 2cqw;
+}
+.sp-mode-desktop .sp-bohemian h2 {
+  font-size: 9.5cqw;
+}
+.sp-mode-desktop .sp-boho-art {
+  height: 37cqw;
+}
+.sp-mode-desktop .sp-victorian h2 {
+  font-size: 6.8cqw;
+}
+.sp-mode-desktop .sp-victorian h2 em {
+  font-size: 8.5cqw;
+}
+.sp-mode-desktop .sp-vic-brand {
+  font-size: 4.9cqw;
+}
+.sp-mode-desktop .sp-vic-border {
+  padding-top: 1cqw;
+}
+.sp-mode-desktop .sp-punk-body {
+  padding-top: 2cqw;
+}
+.sp-mode-desktop .sp-cyberpunk h2 {
+  font-size: 10.4cqw;
 }
 .sp-mode-mobile .sp-nav {
   padding: 6cqw 6cqw 4cqw;
@@ -2783,6 +3413,227 @@
   top: 134cqw;
   bottom: auto;
 }
+.sp-mode-mobile .sp-luxury-body {
+  padding: 12cqw 8cqw;
+}
+.sp-mode-mobile .sp-luxury-body > span:first-child {
+  font-size: 1.9cqw;
+  letter-spacing: 0.14em;
+}
+.sp-mode-mobile .sp-luxury h2 {
+  font-size: 16cqw;
+  margin-top: 8cqw;
+}
+.sp-mode-mobile .sp-luxury p {
+  font-size: 2.7cqw;
+  margin-top: 8cqw;
+  max-width: 61cqw;
+}
+.sp-mode-mobile .sp-luxury-jewel {
+  top: 80cqw;
+  right: 20cqw;
+  transform: scale(1.6) rotate(15deg);
+}
+.sp-mode-mobile .sp-luxury-link {
+  font-size: 2cqw;
+  margin-top: 7cqw;
+}
+.sp-mode-mobile .sp-sketch-body {
+  padding: 11cqw 8cqw;
+}
+.sp-mode-mobile .sp-sketch-note {
+  font-size: 3cqw;
+}
+.sp-mode-mobile .sp-sketch h2 {
+  font-size: 13.6cqw;
+  margin-top: 7cqw;
+}
+.sp-mode-mobile .sp-sketch-art {
+  top: 96cqw;
+  right: 23cqw;
+  transform: scale(1.8);
+  transform-origin: top center;
+}
+.sp-mode-mobile .sp-sketch-cta {
+  font-size: 3cqw;
+  padding: 3cqw 5cqw;
+  margin-top: 9cqw;
+}
+.sp-mode-mobile .sp-ethereal-body {
+  padding: 29cqw 5cqw 0;
+}
+.sp-mode-mobile .sp-ethereal-body > span:first-child {
+  font-size: 2cqw;
+}
+.sp-mode-mobile .sp-ethereal h2 {
+  font-size: 15.7cqw;
+  margin-top: 8cqw;
+}
+.sp-mode-mobile .sp-ethereal p {
+  font-size: 2.7cqw;
+  margin-top: 7cqw;
+}
+.sp-mode-mobile .sp-ethereal-link {
+  font-size: 2.8cqw;
+  padding: 3cqw 5cqw;
+  margin-top: 8cqw;
+}
+.sp-mode-mobile .sp-ethereal-aura {
+  width: 95cqw;
+  height: 95cqw;
+  top: 30cqw;
+  left: 2cqw;
+}
+.sp-mode-mobile .sp-ethereal-spark-a {
+  left: 12cqw;
+  top: 5cqw;
+  font-size: 16cqw;
+}
+.sp-mode-mobile .sp-ethereal-spark-b {
+  right: 17cqw;
+  bottom: -30cqw;
+  font-size: 13cqw;
+}
+.sp-mode-mobile .sp-boho-body {
+  grid-template-columns: 1fr;
+  padding: 10cqw 8cqw;
+}
+.sp-mode-mobile .sp-bohemian h2 {
+  font-size: 17cqw;
+}
+.sp-mode-mobile .sp-bohemian p {
+  font-size: 3.2cqw;
+  margin-top: 5cqw;
+}
+.sp-mode-mobile .sp-boho-cta {
+  font-size: 2.7cqw;
+  padding: 3cqw 5cqw;
+  margin-top: 5cqw;
+}
+.sp-mode-mobile .sp-boho-art {
+  height: 60cqw;
+  width: 63cqw;
+  margin-top: 7cqw;
+  margin-left: auto;
+}
+.sp-mode-mobile .sp-boho-arch {
+  inset: 0 3cqw 4cqw 4cqw;
+  border-radius: 28cqw 28cqw 0 0;
+}
+.sp-mode-mobile .sp-boho-arch > div {
+  height: 37cqw;
+}
+.sp-mode-mobile .sp-boho-arch > div:after {
+  width: 60cqw;
+  height: 31cqw;
+}
+.sp-mode-mobile .sp-boho-arch > span {
+  font-size: 26cqw;
+  left: 15cqw;
+  top: 3cqw;
+}
+.sp-mode-mobile .sp-boho-rainbow {
+  transform: scale(1.4);
+  transform-origin: bottom right;
+  bottom: 5cqw;
+}
+.sp-mode-mobile .sp-boho-caption {
+  font-size: 1.7cqw;
+  bottom: 0;
+}
+.sp-mode-mobile .sp-victorian {
+  padding: 5cqw;
+}
+.sp-mode-mobile .sp-vic-border {
+  padding: 7cqw 5cqw;
+}
+.sp-mode-mobile .sp-vic-top {
+  font-size: 1.7cqw;
+  gap: 3cqw;
+}
+.sp-mode-mobile .sp-vic-top > span {
+  font-size: 7cqw;
+}
+.sp-mode-mobile .sp-vic-brand {
+  font-size: 10cqw;
+  margin-top: 10cqw;
+}
+.sp-mode-mobile .sp-vic-rule {
+  font-size: 2.4cqw;
+  margin: 7cqw 0;
+}
+.sp-mode-mobile .sp-vic-kicker {
+  font-size: 1.8cqw;
+}
+.sp-mode-mobile .sp-victorian h2 {
+  font-size: 12cqw;
+  margin-top: 9cqw;
+}
+.sp-mode-mobile .sp-victorian h2 em {
+  font-size: 17cqw;
+  line-height: 1.5;
+}
+.sp-mode-mobile .sp-victorian p {
+  font-size: 2.6cqw;
+  line-height: 1.7;
+  margin-top: 6cqw;
+}
+.sp-mode-mobile .sp-vic-link {
+  font-size: 2cqw;
+  padding: 2cqw 3cqw;
+  margin-top: 8cqw;
+}
+.sp-mode-mobile .sp-vic-bottom {
+  font-size: 1.5cqw;
+  margin-top: 12cqw;
+}
+.sp-mode-mobile .sp-vic-border:before,
+.sp-mode-mobile .sp-vic-border:after {
+  top: 61cqw;
+  font-size: 17cqw;
+  left: -1cqw;
+}
+.sp-mode-mobile .sp-vic-border:after {
+  left: auto;
+  right: -1cqw;
+}
+.sp-mode-mobile .sp-punk-body {
+  padding: 14cqw 7cqw;
+}
+.sp-mode-mobile .sp-punk-body > span:first-child {
+  font-size: 2.3cqw;
+}
+.sp-mode-mobile .sp-cyberpunk h2 {
+  font-size: 18cqw;
+  margin-top: 9cqw;
+}
+.sp-mode-mobile .sp-cyberpunk p {
+  font-size: 2.5cqw;
+  margin-top: 6cqw;
+}
+.sp-mode-mobile .sp-punk-cta {
+  font-size: 3cqw;
+  padding: 3cqw 10cqw 3cqw 4cqw;
+  margin-top: 7cqw;
+}
+.sp-mode-mobile .sp-punk-city {
+  inset: 0 0 0 0;
+  transform: scale(1.7);
+  transform-origin: bottom right;
+  opacity: 0.7;
+}
+.sp-mode-mobile .sp-punk-japanese {
+  top: 110cqw;
+  right: 18cqw;
+  font-size: 8cqw;
+  z-index: 2;
+  padding: 2cqw;
+}
+.sp-mode-mobile .sp-punk-footer {
+  font-size: 1.8cqw;
+  padding: 3cqw 6cqw;
+}
+
 /* Locally bundled typography makes each art direction distinct. */
 .sp-brutal h2,
 .sp-maximal .sp-nav > b {

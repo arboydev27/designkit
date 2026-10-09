@@ -699,6 +699,190 @@ function Maximal() {
     </div>
   );
 }
+function Luxury() {
+  return (
+    <div className="sp-luxury">
+      <div className="sp-nav">
+        <b>
+          MAISON <em>É</em>
+        </b>
+        <span>COLLECTIONS &nbsp; THE MAISON</span>
+        <i>EN</i>
+      </div>
+      <div className="sp-luxury-body">
+        <span>THE ART OF QUIET DISTINCTION</span>
+        <h2>
+          Some things
+          <br />
+          are <em>timeless.</em>
+        </h2>
+        <div className="sp-luxury-jewel">
+          <i />
+          <i />
+          <i />
+        </div>
+        <p>Exceptional by nature. Essential by design.</p>
+        <span className="sp-luxury-link">DISCOVER THE COLLECTION —</span>
+      </div>
+    </div>
+  );
+}
+function Sketch() {
+  return (
+    <div className="sp-sketch">
+      <div className="sp-nav">
+        <b>rough ideas ✎</b>
+        <span>Work in progress, always.</span>
+      </div>
+      <div className="sp-sketch-body">
+        <span className="sp-sketch-note">everything starts somewhere ↓</span>
+        <h2>
+          Great things
+          <br />
+          start with a<br />
+          <em>little scribble.</em>
+        </h2>
+        <div className="sp-sketch-art">
+          <div>?</div>
+          <span>what if?</span>
+          <svg viewBox="0 0 160 80" aria-hidden="true">
+            <path
+              d="M10 20Q110 0 145 58 M124 42L145 58L123 67"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            />
+          </svg>
+        </div>
+        <span className="sp-sketch-cta">Let’s make something ↗</span>
+      </div>
+    </div>
+  );
+}
+function Ethereal() {
+  return (
+    <div className="sp-ethereal">
+      <div className="sp-nav">
+        <b>lumière</b>
+        <span>Rituals &nbsp; Our world &nbsp; Journal</span>
+        <i>✧</i>
+      </div>
+      <div className="sp-ethereal-aura" />
+      <div className="sp-ethereal-body">
+        <span>RETURN TO YOURSELF</span>
+        <h2>
+          A little closer
+          <br />
+          to <em>the light.</em>
+        </h2>
+        <p>Everyday rituals for a softer existence.</p>
+        <span className="sp-ethereal-link">Find your moment &nbsp; ↗</span>
+        <span className="sp-ethereal-spark sp-ethereal-spark-a">✧</span>
+        <span className="sp-ethereal-spark sp-ethereal-spark-b">✧</span>
+      </div>
+    </div>
+  );
+}
+function Bohemian() {
+  return (
+    <div className="sp-bohemian">
+      <div className="sp-nav">
+        <b>sol & luna ☼</b>
+        <span>Wear &nbsp; Wander &nbsp; Our story</span>
+        <i>Bag (0)</i>
+      </div>
+      <div className="sp-boho-body">
+        <div>
+          <span className="sp-kicker">FOR THE FREE-SPIRITED</span>
+          <h2>
+            Follow
+            <br />
+            your <em>wild.</em>
+          </h2>
+          <p>
+            Earth-made treasures.
+            <br />
+            Stories waiting to be worn.
+          </p>
+          <span className="sp-boho-cta">Explore the collection ↗</span>
+        </div>
+        <div className="sp-boho-art">
+          <div className="sp-boho-arch">
+            <div />
+            <span>☼</span>
+          </div>
+          <div className="sp-boho-rainbow" />
+          <span className="sp-boho-caption">
+            Rooted in earth. Made for everywhere.
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+function Victorian() {
+  return (
+    <div className="sp-victorian">
+      <div className="sp-vic-border">
+        <div className="sp-vic-top">
+          EST. MDCCCLXXXVIII <span>❦</span> LONDON, ENGLAND
+        </div>
+        <div className="sp-vic-brand">The Gilded Hour</div>
+        <div className="sp-vic-rule">❧ ───────── ✦ ───────── ❧</div>
+        <span className="sp-vic-kicker">PURVEYORS OF THE EXCEPTIONAL</span>
+        <h2>
+          A most exquisite
+          <br />
+          <em>affair.</em>
+        </h2>
+        <p>
+          Curiosities, keepsakes & uncommon delights
+          <br />
+          for those with a taste for wonder.
+        </p>
+        <span className="sp-vic-link">ENTER THE EMPORIUM</span>
+        <div className="sp-vic-bottom">
+          ✦ &nbsp; FINE THINGS. FOUND HERE. &nbsp; ✦
+        </div>
+      </div>
+    </div>
+  );
+}
+function Cyberpunk() {
+  return (
+    <div className="sp-cyberpunk">
+      <div className="sp-nav">
+        <b>NØ SIGNAL</b>
+        <span>東京 / 2077 &nbsp; ● UNDERGROUND</span>
+        <i>≡</i>
+      </div>
+      <div className="sp-punk-city">
+        <i />
+        <i />
+        <i />
+        <i />
+        <i />
+      </div>
+      <div className="sp-punk-body">
+        <span>THE CITY NEVER LOGS OFF.</span>
+        <h2>
+          BREAK
+          <br />
+          THE
+          <br />
+          <em>SYSTEM.</em>
+        </h2>
+        <p>New world. No permission required.</p>
+        <span className="sp-punk-cta">JACK IN ↗</span>
+      </div>
+      <span className="sp-punk-japanese">未来は今</span>
+      <div className="sp-punk-footer">
+        // INDEPENDENT CULTURE. UNFILTERED FREQUENCIES. //
+      </div>
+    </div>
+  );
+}
+
 const specimens: Record<string, ComponentType> = {
   "wabi-sabi": Wabi,
   "neo-brutalism": Brutal,
@@ -716,6 +900,12 @@ const specimens: Record<string, ComponentType> = {
   "bento-grid": Bento,
   minimalism: Minimal,
   maximalism: Maximal,
+  "luxury-typography": Luxury,
+  "conceptual-sketch": Sketch,
+  ethereal: Ethereal,
+  bohemian: Bohemian,
+  victorian: Victorian,
+  cyberpunk: Cyberpunk,
 };
 
 export const StylePreview = memo(function StylePreview({
