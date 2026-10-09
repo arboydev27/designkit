@@ -243,6 +243,7 @@ export default function Library() {
   const compare = (id: string) => {
     if (comparedIds.includes(id)) {
       setComparison(comparison.map((x) => (x === id ? "" : x)));
+      notify("Removed from comparison");
       return;
     }
     if (comparedIds.length === 2) {
@@ -484,6 +485,7 @@ export default function Library() {
               key={style.id}
               style={style}
               saved={saved.includes(style.id)}
+              compared={comparedIds.includes(style.id)}
               onSave={() => save(style.id)}
               onBack={goBack}
               onCompare={() => compare(style.id)}

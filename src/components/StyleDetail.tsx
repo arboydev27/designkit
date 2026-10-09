@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   ArrowDownToLine,
   ArrowLeft,
@@ -21,6 +21,7 @@ import { StylePreview } from "./StylePreview";
 type StyleDetailProps = {
   style: DesignStyle;
   saved: boolean;
+  compared: boolean;
   onSave: () => void;
   onBack: () => void;
   onCompare: () => void;
@@ -133,12 +134,19 @@ function TypographyLab({ style }: { style: DesignStyle }) {
 export default function StyleDetail({
   style,
   saved,
+  compared,
   onSave,
   onBack,
   onCompare,
   onCopy,
 }: StyleDetailProps) {
   const [mode, setMode] = useState<"desktop" | "mobile">("desktop");
+  const headingRef = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    headingRef.current?.focus({ preventScroll: true });
+  }, [style.id]);
+
   return (
     <article className="detail-page">
       <button type="button" className="detail-back" onClick={onBack}>
@@ -147,7 +155,7 @@ export default function StyleDetail({
       <header className="detail-header">
         <div className="detail-intro">
           <span className="detail-category">{style.category}</span>
-          <h1>
+          <h1 ref={headingRef} tabIndex={-1}>
             {style.name}
             <span className="detail-title-dot">.</span>
           </h1>
@@ -169,9 +177,19 @@ export default function StyleDetail({
             {saved ? "Saved to collection" : "Save to collection"}
           </button>
           <div className="detail-secondary-actions">
-            <button type="button" className="detail-button" onClick={onCompare}>
-              <GitCompareArrows size={16} aria-hidden="true" />
-              Compare
+            <button
+              type="button"
+              className={`detail-button${compared ? " detail-button-compared" : ""}`}
+              onClick={onCompare}
+              aria-pressed={compared}
+              aria-label={`${compared ? "Remove" : "Add"} ${style.name} ${compared ? "from" : "to"} comparison`}
+            >
+              {compared ? (
+                <Check size={16} aria-hidden="true" />
+              ) : (
+                <GitCompareArrows size={16} aria-hidden="true" />
+              )}
+              {compared ? "In comparison" : "Compare"}
             </button>
             <a
               className="detail-button"
@@ -191,7 +209,6 @@ export default function StyleDetail({
       >
         <div className="detail-preview-toolbar">
           <div className="detail-preview-label">
-            <span className="detail-preview-dot" />
             <h2 id="detail-preview-heading">Style in action</h2>
             <span className="detail-preview-caption">
               An illustrative specimen
@@ -272,7 +289,7 @@ export default function StyleDetail({
                   key={color.hex}
                   className="detail-color"
                   onClick={() =>
-                    onCopy(color.hex, `${color.name} copied — ${color.hex}`)
+                    onCopy(color.hex, `${color.name} copied: ${color.hex}`)
                   }
                   aria-label={`Copy ${color.name}, ${color.hex}`}
                 >
