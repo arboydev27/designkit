@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import {
-  ArrowDown,
   ArrowRight,
   ArrowUpRight,
   Bookmark,
@@ -19,19 +18,27 @@ import {
   Search,
   Shuffle,
   SlidersHorizontal,
-  Sparkles,
   SplitSquareHorizontal,
   Type,
   X,
 } from "lucide-react";
 import { styles } from "@/data/styles";
-import { readSavedStyles, SAVED_STYLES_KEY as SAVE_KEY } from "@/lib/saved-styles";
+import {
+  readSavedStyles,
+  SAVED_STYLES_KEY as SAVE_KEY,
+} from "@/lib/saved-styles";
 import { StylePreview } from "./StylePreview";
+import ThemeToggle from "./ThemeToggle";
 import "./previews.css";
 const StyleDetail = dynamic(() => import("./StyleDetail"));
 
 type View =
-  "library" | "saved" | "compare" | "palettes" | "typography" | "about";
+  | "library"
+  | "saved"
+  | "compare"
+  | "palettes"
+  | "typography"
+  | "about";
 const families = [
   "All styles",
   "Organic",
@@ -40,14 +47,6 @@ const families = [
   "Structured",
   "Classic",
 ] as const;
-const categories: Record<string, string> = {
-  Organic: "#A68D72",
-  Expressive: "#EC8A60",
-  Digital: "#8E85D0",
-  Structured: "#7095C8",
-  Classic: "#B99B76",
-};
-
 function Mark() {
   return (
     <svg
@@ -65,46 +64,6 @@ function Mark() {
     </svg>
   );
 }
-function HeroArt() {
-  return (
-    <div className="hero-art" aria-hidden="true">
-      <div className="art-grid" />
-      <div className="art-paper art-paper-back">
-        <span>
-          LESS,
-          <br />
-          BUT
-          <br />
-          BETTER.
-        </span>
-        <i>STUDIES IN FORM / 02</i>
-      </div>
-      <div className="art-paper art-paper-front">
-        <span className="art-caption">THE SHAPE OF IDEAS</span>
-        <span className="art-type">Aa</span>
-        <div className="art-color-row">
-          <i />
-          <i />
-          <i />
-          <i />
-        </div>
-      </div>
-      <svg className="hero-asterisk" viewBox="0 0 100 100">
-        <g stroke="currentColor" strokeWidth="13">
-          {[0, 30, 60, 90, 120, 150].map((n) => (
-            <path key={n} d="M50 4V96" transform={`rotate(${n} 50 50)`} />
-          ))}
-        </g>
-      </svg>
-      <span className="art-handwriting">
-        a little inspiration
-        <br />
-        goes a long way ↗
-      </span>
-    </div>
-  );
-}
-
 export default function Library() {
   const [view, setView] = useState<View>("library");
   const [selected, setSelected] = useState<string | null>(null);
@@ -118,6 +77,7 @@ export default function Library() {
   const [sidebar, setSidebar] = useState(false);
   const [toast, setToast] = useState("");
   const searchRef = useRef<HTMLInputElement>(null);
+  const navigationTrigger = useRef<HTMLButtonElement | null>(null);
   const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const lastCard = useRef<string | null>(null);
   const style = styles.find((s) => s.id === selected);
@@ -163,6 +123,9 @@ export default function Library() {
   }, []);
   useEffect(() => {
     if (!sidebar) return;
+    const opener = navigationTrigger.current;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
     const panel = document.querySelector<HTMLElement>(".sidebar");
     const first = panel?.querySelector<HTMLElement>("button");
     first?.focus();
@@ -183,17 +146,10 @@ export default function Library() {
     document.addEventListener("keydown", trap);
     return () => {
       document.removeEventListener("keydown", trap);
-      document.querySelector<HTMLButtonElement>(".mobile-menu")?.focus();
+      document.body.style.overflow = previousOverflow;
+      opener?.focus({ preventScroll: true });
     };
   }, [sidebar]);
-  useEffect(() => {
-    const media = window.matchMedia("(min-width: 761px)");
-    const close = () => {
-      if (media.matches) setSidebar(false);
-    };
-    media.addEventListener("change", close);
-    return () => media.removeEventListener("change", close);
-  }, []);
   const notify = (message: string) => {
     setToast(message);
     if (toastTimer.current) clearTimeout(toastTimer.current);
@@ -305,16 +261,6 @@ export default function Library() {
   );
   if (sort === "az")
     shown = [...shown].sort((a, b) => a.name.localeCompare(b.name));
-  const title =
-    style?.name ||
-    {
-      library: "Explore the library",
-      saved: "Saved styles",
-      compare: "Compare styles",
-      palettes: "Color palettes",
-      typography: "Type pairings",
-      about: "About DesignKit",
-    }[view];
 
   return (
     <div className="app-shell">
@@ -332,13 +278,18 @@ export default function Library() {
       {sidebar ? (
         <button
           className="sidebar-scrim"
+          tabIndex={-1}
           aria-label="Close navigation"
           onClick={() => setSidebar(false)}
         />
       ) : null}
       <aside
         className={`sidebar ${sidebar ? "is-open" : ""}`}
+        role="dialog"
+        aria-modal={sidebar}
         aria-label="Main navigation"
+        aria-hidden={!sidebar}
+        inert={!sidebar}
       >
         <button
           className="mobile-sidebar-close icon-button"
@@ -357,11 +308,14 @@ export default function Library() {
             Design<span className="brand-light">Kit</span>
           </span>
         </button>
-        <div className="sidebar-intro">A library of visual languages.</div>
-        <span className="nav-section-label">WORKSPACE</span>
+        <div className="sidebar-intro">
+          Your design reference, all in one place.
+        </div>
+        <span className="nav-section-label">Library</span>
         <nav className="nav-main">
           <button
             className={!selected && view === "library" ? "active" : ""}
+            aria-current={!selected && view === "library" ? "page" : undefined}
             onClick={() => navigate("library")}
           >
             <Grid2X2 />
@@ -370,6 +324,7 @@ export default function Library() {
           </button>
           <button
             className={!selected && view === "saved" ? "active" : ""}
+            aria-current={!selected && view === "saved" ? "page" : undefined}
             onClick={() => navigate("saved")}
           >
             <Bookmark />
@@ -380,6 +335,7 @@ export default function Library() {
           </button>
           <button
             className={!selected && view === "compare" ? "active" : ""}
+            aria-current={!selected && view === "compare" ? "page" : undefined}
             onClick={() => navigate("compare")}
           >
             <SplitSquareHorizontal />
@@ -389,24 +345,25 @@ export default function Library() {
             ) : null}
           </button>
         </nav>
-        <span className="nav-section-label">BROWSE BY FEEL</span>
+        <span className="nav-section-label">Browse by feel</span>
         <nav className="nav-families">
           {families.slice(1).map((f) => (
             <button
               key={f}
               className={category === f && !selected ? "active" : ""}
+              aria-pressed={category === f && !selected}
               onClick={() => filterCategory(f)}
             >
-              <i style={{ background: categories[f] }} />
               <span>{f}</span>
               <span>{styles.filter((s) => s.category === f).length}</span>
             </button>
           ))}
         </nav>
-        <span className="nav-section-label">THE TOOLKIT</span>
+        <span className="nav-section-label">Toolkit</span>
         <nav className="nav-main">
           <button
             className={view === "palettes" && !selected ? "active" : ""}
+            aria-current={!selected && view === "palettes" ? "page" : undefined}
             onClick={() => navigate("palettes")}
           >
             <Palette />
@@ -414,6 +371,9 @@ export default function Library() {
           </button>
           <button
             className={view === "typography" && !selected ? "active" : ""}
+            aria-current={
+              !selected && view === "typography" ? "page" : undefined
+            }
             onClick={() => navigate("typography")}
           >
             <Type />
@@ -421,45 +381,78 @@ export default function Library() {
           </button>
         </nav>
         <div className="sidebar-bottom">
-          <div className="sidebar-note">
-            <Sparkles size={18} />
-            <p>
-              A starting point.
-              <br />
-              <strong>Never a set of rules.</strong>
-            </p>
-            <span>Find a direction, then make it yours.</span>
-          </div>
           <button className="about-button" onClick={() => navigate("about")}>
             <CircleHelp size={16} /> About this library{" "}
             <ArrowUpRight size={14} />
           </button>
-          <div className="edition">
-            INDEPENDENTLY CURATED <span>VOL. 01</span>
-          </div>
         </div>
       </aside>
       <div className="workspace" inert={sidebar}>
         <header className="topbar">
-          <div className="breadcrumb">
+          <button
+            className="icon-button mobile-menu"
+            onClick={(event) => {
+              navigationTrigger.current = event.currentTarget;
+              setSidebar(true);
+            }}
+            aria-label="Open navigation"
+            aria-expanded={sidebar}
+          >
+            <Menu size={21} />
+          </button>
+          <button
+            className="brand"
+            onClick={() => navigate("library")}
+            aria-label="DesignKit home"
+          >
+            <Mark />
+            <span>DesignKit</span>
+          </button>
+          <nav className="desktop-navigation" aria-label="Library">
             <button
-              className="icon-button mobile-menu"
-              onClick={() => setSidebar(!sidebar)}
-              aria-label={sidebar ? "Close navigation" : "Open navigation"}
+              aria-current={
+                !selected && view === "library" ? "page" : undefined
+              }
+              onClick={() => navigate("library")}
+            >
+              Explore styles
+            </button>
+            <button
+              aria-current={!selected && view === "saved" ? "page" : undefined}
+              onClick={() => navigate("saved")}
+            >
+              Saved styles{" "}
+              {saved.length > 0 && (
+                <span className="nav-count">{saved.length}</span>
+              )}
+            </button>
+            <button
+              aria-current={
+                !selected && view === "compare" ? "page" : undefined
+              }
+              onClick={() => navigate("compare")}
+            >
+              Compare styles{" "}
+              {comparedIds.length > 0 && (
+                <span className="nav-count">{comparedIds.length}</span>
+              )}
+            </button>
+            <button
+              onClick={(event) => {
+                navigationTrigger.current = event.currentTarget;
+                setSidebar(true);
+              }}
               aria-expanded={sidebar}
             >
-              {sidebar ? <X size={20} /> : <Menu size={20} />}
+              Toolkit <ChevronDown size={14} />
             </button>
-            <span className="desktop-crumb">Library</span>
-            <span className="crumb-slash">/</span>
-            <span>{title}</span>
-          </div>
+          </nav>
           <label className="global-search">
             <Search size={16} />
             <input
               ref={searchRef}
               aria-label="Search styles, moods, or fonts"
-              placeholder="Search styles, moods, fonts..."
+              placeholder="Search styles, moods, fonts"
               value={query}
               onChange={(e) => search(e.target.value)}
             />
@@ -471,13 +464,7 @@ export default function Library() {
               <kbd>⌘ K</kbd>
             )}
           </label>
-          <button
-            className="top-save icon-button"
-            onClick={() => navigate("saved")}
-            aria-label="Open saved styles"
-          >
-            <Bookmark size={19} />
-          </button>
+          <ThemeToggle />
         </header>
         <main id="main-content" className="main-content" tabIndex={-1}>
           {style ? (
@@ -588,40 +575,13 @@ export default function Library() {
             <>
               {view === "library" && !query && category === "All styles" ? (
                 <section className="hero">
-                  <div className="hero-copy">
-                    <div className="eyebrow">
-                      <span className="blue-dot" /> YOUR NEXT PROJECT STARTS
-                      HERE
-                    </div>
-                    <h1>
-                      Find your
-                      <br />
-                      <span>visual language.</span>
-                    </h1>
-                    <p>
-                      A world of design directions, in one place.
-                      <br />
-                      Explore the details. Collect what speaks to you.
-                    </p>
-                    <button
-                      className="hero-link"
-                      onClick={() =>
-                        document
-                          .getElementById("style-grid")
-                          ?.scrollIntoView({
-                            behavior: window.matchMedia(
-                              "(prefers-reduced-motion: reduce)",
-                            ).matches
-                              ? "instant"
-                              : "smooth",
-                            block: "start",
-                          })
-                      }
-                    >
-                      Explore 22 design languages <ArrowDown size={16} />
-                    </button>
-                  </div>
-                  <HeroArt />
+                  <h1>
+                    Find your <span>visual language.</span>
+                  </h1>
+                  <p>
+                    Explore 22 design directions, collect what speaks to you,
+                    and make it your own.
+                  </p>
                 </section>
               ) : (
                 <PageHeading
@@ -656,9 +616,16 @@ export default function Library() {
                         : "The collection"}{" "}
                     <span>{shown.length}</span>
                   </h2>
-                  <span className="collection-caption">
-                    Different languages. Infinite possibilities.
-                  </span>
+                  <button
+                    className="hero-link"
+                    onClick={() =>
+                      openStyle(
+                        styles[Math.floor(Math.random() * styles.length)].id,
+                      )
+                    }
+                  >
+                    <Shuffle size={16} /> Surprise me <ArrowUpRight size={16} />
+                  </button>
                 </div>
                 <div className="filter-bar">
                   <div
@@ -685,7 +652,7 @@ export default function Library() {
                         onChange={(e) => setSort(e.target.value)}
                       >
                         <option value="curated">Curated order</option>
-                        <option value="az">A–Z</option>
+                        <option value="az">A-Z</option>
                       </select>
                       <ChevronDown size={12} />
                     </label>
@@ -723,34 +690,26 @@ export default function Library() {
                             aria-label={`Explore ${s.name}`}
                           >
                             <StylePreview id={s.id} />
-                            <span className="preview-hover">
-                              Explore style <ArrowUpRight size={16} />
-                            </span>
                           </button>
-                          <button
-                            className={`card-save ${saved.includes(s.id) ? "is-saved" : ""}`}
-                            onClick={() => save(s.id)}
-                            aria-label={`${saved.includes(s.id) ? "Unsave" : "Save"} ${s.name}`}
-                            aria-pressed={saved.includes(s.id)}
-                          >
-                            {saved.includes(s.id) ? (
-                              <Bookmark size={16} fill="currentColor" />
-                            ) : (
-                              <Bookmark size={16} />
-                            )}
-                          </button>
-                          {s.id === "wabi-sabi" ? (
-                            <span className="card-featured">
-                              <span /> A QUIETER PERSPECTIVE
-                            </span>
-                          ) : null}
                         </div>
                         <div className="card-info">
                           <div className="card-title-row">
                             <button onClick={() => openStyle(s.id)}>
-                              {s.name}
+                              {s.name} <ArrowUpRight size={17} />
                             </button>
                             <span className="category-badge">{s.category}</span>
+                            <button
+                              className={`card-save ${saved.includes(s.id) ? "is-saved" : ""}`}
+                              onClick={() => save(s.id)}
+                              aria-label={`${saved.includes(s.id) ? "Unsave" : "Save"} ${s.name}`}
+                              aria-pressed={saved.includes(s.id)}
+                            >
+                              {saved.includes(s.id) ? (
+                                <Bookmark size={16} fill="currentColor" />
+                              ) : (
+                                <Bookmark size={16} />
+                              )}
+                            </button>
                           </div>
                           <p>{s.tagline}</p>
                           <div className="card-bottom">
@@ -812,29 +771,14 @@ export default function Library() {
                   </div>
                 )}
               </section>
-              <div className="end-note">
-                <span className="tiny-asterisk">✳</span>
-                <p>
-                  Inspiration is a starting point.
-                  <br />
-                  <strong>The next interpretation is yours.</strong>
-                </p>
-                <button
-                  onClick={() =>
-                    openStyle(
-                      styles[Math.floor(Math.random() * styles.length)].id,
-                    )
-                  }
-                >
-                  <Shuffle size={16} /> Surprise me <ArrowUpRight size={15} />
-                </button>
-              </div>
             </>
           )}
           <footer className="footer">
             <span>
-              <Mark /> DESIGNKIT <span className="footer-dash">/</span> A field
-              guide for the visually curious.
+              <Mark /> DesignKit{" "}
+              <span className="footer-description">
+                A library for the visually curious.
+              </span>
             </span>
             <button onClick={() => navigate("about")}>
               Made to be explored <ArrowUpRight size={13} />
@@ -843,7 +787,7 @@ export default function Library() {
         </main>
       </div>
       {comparedIds.length > 0 && view !== "compare" ? (
-        <div className="compare-tray">
+        <div className="compare-tray" inert={sidebar} aria-hidden={sidebar}>
           <span className="compare-tray-label">
             <SplitSquareHorizontal size={18} />
             <strong>{comparedIds.length}/2</strong> styles selected
@@ -1045,7 +989,7 @@ function About({ onExplore }: { onExplore: () => void }) {
         <h2>Suggested, not prescribed.</h2>
         <p>
           Design languages overlap and evolve. These are original, illustrative
-          interpretations—not official templates or rigid definitions. Font
+          interpretations, not official templates or rigid definitions. Font
           pairings and color palettes are starting points to adapt to your
           content, audience, and accessibility needs.
         </p>
