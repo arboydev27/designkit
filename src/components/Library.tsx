@@ -58,9 +58,9 @@ function Mark() {
       aria-hidden="true"
     >
       <path
-        d="M5 27V5h22M5 16h17M16 27V5"
+        d="M4 6v20h5c6 0 9-4 9-10S15 6 9 6H4M22 6v20M29 7l-7 9 7 9"
         stroke="currentColor"
-        strokeWidth="3.8"
+        strokeWidth="2.5"
       />
     </svg>
   );
@@ -319,7 +319,7 @@ export default function Library() {
       compare: "Compare styles",
       palettes: "Color palettes",
       typography: "Type pairings",
-      about: "About Form Atlas",
+      about: "About DesignKit",
     }[view];
 
   return (
@@ -356,12 +356,11 @@ export default function Library() {
         <button
           className="brand"
           onClick={() => navigate("library")}
-          aria-label="Form Atlas home"
+          aria-label="DesignKit home"
         >
           <Mark />
           <span>
-            form<span className="brand-light">atlas</span>
-            <sup>®</sup>
+            Design<span className="brand-light">Kit</span>
           </span>
         </button>
         <div className="sidebar-intro">A library of visual languages.</div>
@@ -839,7 +838,7 @@ export default function Library() {
           )}
           <footer className="footer">
             <span>
-              <Mark /> FORM ATLAS <span className="footer-dash">/</span> A field
+              <Mark /> DESIGNKIT <span className="footer-dash">/</span> A field
               guide for the visually curious.
             </span>
             <button onClick={() => navigate("about")}>
@@ -1037,9 +1036,9 @@ function About({ onExplore }: { onExplore: () => void }) {
   return (
     <div className="about-page">
       <PageHeading
-        eyebrow="THE IDEA BEHIND THE ATLAS"
+        eyebrow="THE IDEA BEHIND DESIGNKIT"
         title="A starting point. Never a set of rules."
-        description="Form Atlas is a personal field guide for turning a visual feeling into a considered design direction."
+        description="DesignKit is a personal field guide for turning a visual feeling into a considered design direction."
       />
       <div className="about-content">
         <h2>Look closer. Make it yours.</h2>

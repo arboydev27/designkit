@@ -1,8 +1,10 @@
-# Form Atlas
+# DesignKit
 
-A personal design library for exploring 22 visual languages. Built with **Next.js 16, TypeScript, React 19, and Tailwind CSS 4**.
+DesignKit is a personal reference for exploring 22 visual languages and planning design directions. It complements the sibling SystemKit project, which focuses on system design. Built with **Next.js 16, TypeScript, React 19, and Tailwind CSS 4**.
 
 ## Run locally
+
+The main repository lives at `/Users/arboy/dev/personal-projects/designkit`.
 
 ```sh
 npm ci
@@ -19,7 +21,7 @@ npm start
 
 The build creates a standalone static export in `out/`. `npm start` previews that export at http://127.0.0.1:3000; use `PORT=3001 npm start` to choose another port. It can be hosted with any static server. This app has no server-side database or API keys.
 
-The accompanying `form-atlas-source.zip` contains the editable project. `form-atlas-static.zip` contains the built site, ready to extract and upload to a static host.
+The accompanying `designkit-source.zip` contains the editable project. `designkit-static.zip` contains the built site, ready to extract and upload to a static host.
 
 ## What's inside
 

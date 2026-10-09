@@ -60,5 +60,5 @@ createServer(async (request, response) => {
     response.end(request.method === "HEAD" ? undefined : body);
   }
 }).listen(port, "127.0.0.1", () => {
-  console.log(`Form Atlas is available at http://127.0.0.1:${port}`);
+  console.log(`DesignKit is available at http://127.0.0.1:${port}`);
 });

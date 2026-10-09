@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @theme {
   --font-sans: "DM Sans", sans-serif;
-  --color-atlas-blue: #3158ed;
+  --color-designkit-blue: #3158ed;
 }
 :root {
   --ink: #252627;

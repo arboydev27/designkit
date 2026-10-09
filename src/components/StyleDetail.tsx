@@ -32,7 +32,7 @@ function fontUrl(family: string) {
 }
 
 function cssTokens(style: DesignStyle) {
-  return `/* ${style.name} · Form Atlas */\n:root {\n${style.palette
+  return `/* ${style.name} · DesignKit */\n:root {\n${style.palette
     .map(
       ({ name, hex }) =>
         `  --${name

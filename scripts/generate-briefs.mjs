@@ -22,7 +22,7 @@ for (const s of styles) {
   const css = `:root {\n${s.palette.map((c) => `  --${c.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}: ${c.hex};`).join("\n")}\n  --font-heading: '${s.fonts.heading}';\n  --font-body: '${s.fonts.body}';\n}`;
   const brief = [
     `# ${s.name} — design brief`,
-    "A curated starting point from Form Atlas.",
+    "A curated starting point from DesignKit.",
     `## Direction\n\n${s.tagline}\n\n${s.description}\n\nCategory: ${s.category}`,
     `## Defining characteristics\n\n${bullets(s.traits)}`,
     `## Suggested color palette\n\n${bullets(s.palette.map((c) => `${c.name}: ${c.hex}`))}`,

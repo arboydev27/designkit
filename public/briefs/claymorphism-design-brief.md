@@ -1,6 +1,6 @@
 # Claymorphism — design brief
 
-A curated starting point from Form Atlas.
+A curated starting point from DesignKit.
 
 ## Direction
 
