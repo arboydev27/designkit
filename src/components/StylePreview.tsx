@@ -548,6 +548,157 @@ function Synthwave() {
     </div>
   );
 }
+function Neumorphism() {
+  return (
+    <div className="sp-neu">
+      <div className="sp-nav">
+        <b>◉ resonant</b>
+        <span>YOUR PERSONAL LISTENING SPACE</span>
+        <i>☰</i>
+      </div>
+      <div className="sp-neu-body">
+        <div className="sp-neu-record">
+          <div>
+            <span>∿</span>
+            <b>slow mornings</b>
+          </div>
+        </div>
+        <div className="sp-neu-player">
+          <span>NOW PLAYING</span>
+          <h2>
+            A softer
+            <br />
+            kind of sound.
+          </h2>
+          <p>Slow mornings — Vol. 03</p>
+          <div className="sp-neu-progress">
+            <i />
+          </div>
+          <div className="sp-neu-time">
+            <span>1:42</span>
+            <span>4:08</span>
+          </div>
+          <div className="sp-neu-controls">
+            <span>↶</span>
+            <b>Ⅱ</b>
+            <span>↷</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+function Bento() {
+  return (
+    <div className="sp-bento">
+      <div className="sp-nav">
+        <b>orbit.</b>
+        <span>YOUR LIFE, IN GOOD ORDER</span>
+        <i>↗</i>
+      </div>
+      <div className="sp-bento-grid">
+        <div className="sp-bento-main">
+          <span>A LITTLE MORE POSSIBILITY</span>
+          <h2>
+            Everything.
+            <br />
+            In its place.
+          </h2>
+          <b>Meet your new everyday ↗</b>
+        </div>
+        <div className="sp-bento-clock">
+          <span>MAKE TIME FOR YOU</span>
+          <div>
+            10:24<span>AM</span>
+          </div>
+          <p>A good time to begin.</p>
+        </div>
+        <div className="sp-bento-flower">
+          <Flower />
+        </div>
+        <div className="sp-bento-stats">
+          <span>SMALL STEPS, REAL PROGRESS</span>
+          <b>
+            84<span>%</span>
+          </b>
+          <div>
+            <i />
+          </div>
+        </div>
+        <div className="sp-bento-note">
+          <span>↗</span>
+          <h3>
+            Room for
+            <br />
+            what matters.
+          </h3>
+        </div>
+      </div>
+    </div>
+  );
+}
+function Minimal() {
+  return (
+    <div className="sp-minimal">
+      <div className="sp-nav">
+        <b>still.</b>
+        <span>Objects &nbsp; Philosophy</span>
+        <i>Cart — 0</i>
+      </div>
+      <div className="sp-minimal-body">
+        <div>
+          <span className="sp-kicker">LESS, BUT CONSIDERED.</span>
+          <h2>
+            Space to
+            <br />
+            simply be.
+          </h2>
+          <p>
+            Everyday objects.
+            <br />
+            Nothing more. Nothing less.
+          </p>
+          <span className="sp-line-link">Explore objects ↗</span>
+        </div>
+        <div className="sp-minimal-art">
+          <div className="sp-minimal-lamp">
+            <i />
+            <b />
+          </div>
+          <span>No. 004 — The everyday lamp</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+function Maximal() {
+  return (
+    <div className="sp-maximal">
+      <div className="sp-nav">
+        <b>MORE IS MORE®</b>
+        <span>NO RULES. JUST GOOD TASTE.</span>
+      </div>
+      <div className="sp-max-body">
+        <h2>
+          WHY
+          <br />
+          <em>BE</em>
+          <br />
+          BORING?
+        </h2>
+        <span className="sp-max-orbit">♡</span>
+        <Flower />
+        <span className="sp-max-sticker">
+          EXTRA
+          <br />
+          EVERYTHING!
+        </span>
+        <div className="sp-max-check" />
+        <span className="sp-max-link">TAKE UP SPACE ↗</span>
+      </div>
+    </div>
+  );
+}
 const specimens: Record<string, ComponentType> = {
   "wabi-sabi": Wabi,
   "neo-brutalism": Brutal,
@@ -561,6 +712,10 @@ const specimens: Record<string, ComponentType> = {
   y2k: Y2k,
   "pixel-art": Pixel,
   synthwave: Synthwave,
+  neumorphism: Neumorphism,
+  "bento-grid": Bento,
+  minimalism: Minimal,
+  maximalism: Maximal,
 };
 
 export const StylePreview = memo(function StylePreview({
