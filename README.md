@@ -34,10 +34,15 @@ The accompanying `designkit-source.zip` contains the editable project. `designki
 - Saved styles stored in this browser's local storage.
 - Existing Form Atlas saved styles migrate automatically to DesignKit on the same browser origin.
 - Two-style comparison and downloadable Markdown design briefs.
-- Keyboard navigation, focus indicators, mobile navigation, and reduced-motion/transparency support.
-- Locally bundled Latin font subsets with corresponding licenses in `public/fonts/licenses/`.
+- Compact masthead and mobile drawer with keyboard navigation, focus restoration, and reduced-motion support.
+- System, light, and dark appearance modes that preserve each specimen’s own colors.
+- Karrik display typography discovered through Free Faces, paired with Space Grotesk.
+- Selectable text fallback when browser clipboard access is unavailable.
+- Self-hosted fonts and their licenses in `public/fonts/licenses/`, including the unmodified Karrik Regular WOFF2.
 
 The illustrations and specimen brands are original fictional examples. Styles are interpretations, and suggested palettes and pairings are not historical prescriptions. Primary references are linked in applicable guides. The initial style list was inspired by Talha × Codes' Instagram reel, credited in the About page.
+
+See [DESIGN.md](DESIGN.md) for the design audit, tokens, interaction decisions, and the Emil Kowalski, Dick Wu, Free Faces, and awesome-design-md references. Karrik is by Jean-Baptiste Morizot and Lucas Le Bihan, distributed by Velvetyne under OFL 1.1.
 
 ## Source map
 
@@ -52,6 +57,6 @@ To add a language, add a catalog entry and an original specimen, then verify its
 
 ## Verification
 
-The production build and TypeScript checks pass. All 22 specimens were rendered in card, desktop, and mobile modes, then checked in the browser. Phone-width checks at 390px found no page overflow or clipped specimen headings. Search, category filters, sorting, grid/list views, palette and CSS copying, type editing, saved-style persistence, and two-style comparison were exercised. All 22 complete briefs are generated as static downloadable files under `public/briefs/` during the build. Production browser checks reported no console errors.
+The production build and TypeScript checks pass. All 22 specimens were rendered in card, desktop, and mobile modes, then checked in the browser. Phone-width checks at 390px found no page overflow or clipped specimen headings. Search, category filters, sorting, grid/list views, palette and CSS copying, type editing, saved-style persistence, and two-style comparison were exercised. All 22 complete briefs are generated as static downloadable files under `public/briefs/` during the build. Production browser checks reported no console errors. The refreshed shell was checked at 1440px and 390px, including light/dark appearance, theme persistence, drawer scroll locking and return focus, search, list layout, comparison state, toolkit views, editable typography, and successful CSS clipboard output. The fallback dialog was typechecked and reviewed; clipboard denial was not forced during browser verification. No Lighthouse score is claimed.
 
 The private Site was registered, but source publication is pending: this session's automatic approval policy rejected input to the publishing helper. No deployment is claimed. The local source and static production export are complete.
