@@ -61,4 +61,4 @@ The production build and TypeScript checks pass. All 22 specimens were rendered 
 
 A final catalog audit confirmed exactly the 22 requested languages, 22 distinct specimen components, 110 valid palette entries, every font file present in both source and export, and all 22 generated briefs matching the current catalog.
 
-The private Site was registered, but source publication is pending: this session's automatic approval policy rejected input to the publishing helper. No deployment is claimed. The local source and static production export are complete.
+The production export is independent of any hosting provider. Deploy the contents of `out/` to a static host when ready.

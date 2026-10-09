@@ -14,3 +14,8 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - Use concise, one-sentence commit messages naming the concrete change.
 - Use the existing configured Git author and committer identity; do not replace it with Codex.
 - Inspect the staged diff before committing, and keep unrelated changes separate.
+
+## Hosting
+
+- This project does not use OpenAI Sites. Do not recreate `.openai/` or register or publish this project through Sites.
+- Keep the static `out/` export compatible with other hosting providers; deploy only when the user chooses a provider and requests it.
