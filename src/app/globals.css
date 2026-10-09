@@ -1061,6 +1061,54 @@ select:focus-visible,
   font-size: 13px;
 }
 
+.copy-dialog {
+  width: min(540px, calc(100vw - 32px));
+  max-height: calc(100dvh - 48px);
+  margin: auto;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ink);
+  overflow: auto;
+}
+.copy-dialog::backdrop {
+  background: #11132180;
+}
+.copy-dialog-title {
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 400;
+}
+.copy-dialog-note {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.copy-dialog-text {
+  display: block;
+  width: 100%;
+  margin: 22px 0;
+  padding: 14px;
+  max-height: 45dvh;
+  resize: vertical;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.7;
+}
+.copy-dialog-text:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+.copy-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
 /* Feedback is brief and interruptible; previews stay still while browsing. */
 @media (hover: hover) and (pointer: fine) {
   .desktop-navigation > button,

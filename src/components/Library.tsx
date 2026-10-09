@@ -29,6 +29,7 @@ import {
 } from "@/lib/saved-styles";
 import { StylePreview } from "./StylePreview";
 import ThemeToggle from "./ThemeToggle";
+import CopyFallback from "./CopyFallback";
 import "./previews.css";
 const StyleDetail = dynamic(() => import("./StyleDetail"));
 
@@ -76,6 +77,9 @@ export default function Library() {
   const [layout, setLayout] = useState<"grid" | "list">("grid");
   const [sidebar, setSidebar] = useState(false);
   const [toast, setToast] = useState("");
+  const [clipboardFallback, setClipboardFallback] = useState<string | null>(
+    null,
+  );
   const searchRef = useRef<HTMLInputElement>(null);
   const navigationTrigger = useRef<HTMLButtonElement | null>(null);
   const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -220,7 +224,7 @@ export default function Library() {
       await navigator.clipboard.writeText(text);
       notify(message);
     } catch {
-      notify("Clipboard unavailable. Select and copy the displayed value.");
+      setClipboardFallback(text);
     }
   };
   const filterCategory = (next: string) => {
@@ -819,6 +823,12 @@ export default function Library() {
           </button>
         </div>
       ) : null}
+      {clipboardFallback !== null && (
+        <CopyFallback
+          value={clipboardFallback}
+          onClose={() => setClipboardFallback(null)}
+        />
+      )}
       <div
         role="status"
         aria-live="polite"
