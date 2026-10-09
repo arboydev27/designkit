@@ -29,6 +29,7 @@ import {
 } from "@/lib/saved-styles";
 import { StylePreview } from "./StylePreview";
 import ThemeToggle from "./ThemeToggle";
+import InspirationDeck from "./InspirationDeck";
 import CopyFallback from "./CopyFallback";
 import "./previews.css";
 const StyleDetail = dynamic(() => import("./StyleDetail"));
@@ -84,6 +85,8 @@ export default function Library() {
   const navigationTrigger = useRef<HTMLButtonElement | null>(null);
   const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const lastCard = useRef<string | null>(null);
+  const lastOrigin = useRef<"gallery" | "deck">("gallery");
+  const [featuredStyle, setFeaturedStyle] = useState("neo-brutalism");
   const style = styles.find((s) => s.id === selected);
 
   useEffect(() => {
@@ -168,8 +171,9 @@ export default function Library() {
     location.hash = next;
     window.scrollTo({ top: 0, behavior: "instant" });
   };
-  const openStyle = (id: string) => {
+  const openStyle = (id: string, origin: "gallery" | "deck" = "gallery") => {
     lastCard.current = id;
+    lastOrigin.current = origin;
     setSelected(id);
     setSidebar(false);
     location.hash = id;
@@ -179,7 +183,9 @@ export default function Library() {
     setSelected(null);
     location.hash = view;
     requestAnimationFrame(() => {
-      const card = document.getElementById(`open-${lastCard.current}`);
+      const card = document.getElementById(
+        lastOrigin.current === "deck" ? "featured-style" : `open-${lastCard.current}`,
+      );
       if (card) card.focus();
       else window.scrollTo({ top: 0 });
     });
@@ -579,13 +585,32 @@ export default function Library() {
             <>
               {view === "library" && !query && category === "All styles" ? (
                 <section className="hero">
-                  <h1>
-                    Find your <span>visual language.</span>
-                  </h1>
-                  <p>
-                    Explore 22 design directions, collect what speaks to you,
-                    and make it your own.
-                  </p>
+                  <div className="hero-copy">
+                    <h1>
+                      Follow your <span>instinct.</span>
+                    </h1>
+                    <p>
+                      A playground of 22 visual languages. Try on a style,
+                      collect what moves you, and make it your own.
+                    </p>
+                    <button
+                      className="hero-explore"
+                      onClick={() => {
+                        const gallery = document.getElementById("style-grid");
+                        gallery?.scrollIntoView({ behavior: "instant" });
+                        gallery?.focus({ preventScroll: true });
+                      }}
+                    >
+                      Explore the collection <ArrowRight size={20} />
+                    </button>
+                  </div>
+                  <InspirationDeck
+                    initialId={featuredStyle}
+                    onOpen={(id) => {
+                      setFeaturedStyle(id);
+                      openStyle(id, "deck");
+                    }}
+                  />
                 </section>
               ) : (
                 <PageHeading
@@ -609,6 +634,7 @@ export default function Library() {
               <section
                 id="style-grid"
                 className="explore-section"
+                tabIndex={-1}
                 aria-label="Design style gallery"
               >
                 <div className="collection-title">
@@ -716,6 +742,10 @@ export default function Library() {
                             </button>
                           </div>
                           <p>{s.tagline}</p>
+                          <span className="card-fonts">
+                            {s.fonts.heading} <span aria-hidden="true">↔</span>{" "}
+                            {s.fonts.body}
+                          </span>
                           <div className="card-bottom">
                             <div
                               className="card-swatches"
