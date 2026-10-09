@@ -25,6 +25,7 @@ import {
   X,
 } from "lucide-react";
 import { styles } from "@/data/styles";
+import { readSavedStyles, SAVED_STYLES_KEY as SAVE_KEY } from "@/lib/saved-styles";
 import { StylePreview } from "./StylePreview";
 import "./previews.css";
 const StyleDetail = dynamic(() => import("./StyleDetail"));
@@ -39,7 +40,6 @@ const families = [
   "Structured",
   "Classic",
 ] as const;
-const SAVE_KEY = "form-atlas-saved-v1";
 const categories: Record<string, string> = {
   Organic: "#A68D72",
   Expressive: "#EC8A60",
@@ -124,14 +124,7 @@ export default function Library() {
 
   useEffect(() => {
     try {
-      const data = JSON.parse(localStorage.getItem(SAVE_KEY) || "[]");
-      if (Array.isArray(data))
-        setSaved(
-          data.filter(
-            (s: unknown) =>
-              typeof s === "string" && styles.some((x) => x.id === s),
-          ),
-        );
+      setSaved(readSavedStyles(localStorage, new Set(styles.map((s) => s.id))));
     } catch {}
     const sync = () => {
       let id = location.hash.slice(1);

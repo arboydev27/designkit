@@ -15,6 +15,7 @@ Open http://127.0.0.1:3000. The development script uses webpack so it works in r
 
 ```sh
 npm run typecheck
+npm test
 npm run build
 npm start
 ```
@@ -31,6 +32,7 @@ The accompanying `designkit-source.zip` contains the editable project. `designki
 - Copy a color, a palette, or ready-to-use CSS variables.
 - Editable typography specimens and links to the fonts.
 - Saved styles stored in this browser's local storage.
+- Existing Form Atlas saved styles migrate automatically to DesignKit on the same browser origin.
 - Two-style comparison and downloadable Markdown design briefs.
 - Keyboard navigation, focus indicators, mobile navigation, and reduced-motion/transparency support.
 - Locally bundled Latin font subsets with corresponding licenses in `public/fonts/licenses/`.
