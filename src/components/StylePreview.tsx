@@ -232,10 +232,139 @@ function Glass() {
     </div>
   );
 }
+function Swiss() {
+  return (
+    <div className="sp-swiss">
+      <div className="sp-nav">
+        <b>FORM / 25</b>
+        <span>INTERNATIONAL DESIGN SYMPOSIUM</span>
+        <i>EN / DE</i>
+      </div>
+      <div className="sp-swiss-title">
+        <span>
+          Less.
+          <br />
+          But better.
+        </span>
+        <b>↗</b>
+      </div>
+      <div className="sp-swiss-rule" />
+      <div className="sp-swiss-bottom">
+        <span>
+          01—03
+          <br />
+          ZÜRICH
+        </span>
+        <p>
+          Three days of ideas.
+          <br />
+          One common language.
+          <br />
+          The future takes form.
+        </p>
+        <div>
+          <span>OCTOBER 24—26, 2025</span>
+          <b>Explore the programme ↗</b>
+        </div>
+      </div>
+    </div>
+  );
+}
+function Clay() {
+  return (
+    <div className="sp-clay">
+      <div className="sp-nav">
+        <b>
+          poppy<span>✿</span>
+        </b>
+        <span>How it works &nbsp; Community</span>
+        <i>Say hello ☺</i>
+      </div>
+      <div className="sp-clay-body">
+        <div>
+          <span className="sp-kicker">LITTLE STEPS, HAPPY DAYS</span>
+          <h2>
+            Make room
+            <br />
+            for <em>good things.</em>
+          </h2>
+          <p>
+            Build habits that feel like you.
+            <br />A softer way to grow, every day.
+          </p>
+          <span className="sp-clay-cta">Let’s bloom together ↗</span>
+          <span className="sp-clay-caption">
+            A little progress is still progress. ♡
+          </span>
+        </div>
+        <div className="sp-clay-art">
+          <div className="sp-clay-cloud">
+            <i />
+            <i />
+            <i />
+          </div>
+          <div className="sp-clay-orb">
+            <span>• &nbsp; •</span>
+            <b>⌣</b>
+          </div>
+          <div className="sp-clay-heart">♥</div>
+          <div className="sp-clay-tile">
+            <span>✿</span>
+            <b>You’ve got this!</b>
+            <i>Day 01 of a happier you</i>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+function Editorial() {
+  return (
+    <div className="sp-editorial">
+      <div className="sp-editorial-top">
+        <span>INDEPENDENT JOURNAL OF CULTURE & LIVING</span>
+        <span>VOL. 08 — AUTUMN 2025</span>
+      </div>
+      <div className="sp-editorial-masthead">
+        The Ordinary<span>®</span>
+      </div>
+      <div className="sp-editorial-nav">
+        <span>DESIGN</span>
+        <span>CULTURE</span>
+        <span>PLACES</span>
+        <span>PEOPLE</span>
+        <span>ABOUT</span>
+      </div>
+      <div className="sp-editorial-story">
+        <div className="sp-editorial-photo">
+          <div className="sp-editorial-building" />
+          <span>THE ART OF PAYING ATTENTION</span>
+        </div>
+        <div className="sp-editorial-copy">
+          <span>ESSAY — 06 MIN READ</span>
+          <h2>
+            On the quiet
+            <br />
+            art of <em>living.</em>
+          </h2>
+          <p>
+            Finding something extraordinary
+            <br />
+            in the spaces between.
+          </p>
+          <b>Read the story ↗</b>
+        </div>
+      </div>
+    </div>
+  );
+}
 const specimens: Record<string, ComponentType> = {
   "wabi-sabi": Wabi,
   "neo-brutalism": Brutal,
   glassmorphism: Glass,
+  "swiss-design": Swiss,
+  claymorphism: Clay,
+  "editorial-design": Editorial,
 };
 
 export const StylePreview = memo(function StylePreview({
