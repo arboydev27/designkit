@@ -1,0 +1,229 @@
+.inspiration-deck {
+  width: 100%;
+  max-width: 520px;
+  min-width: 0;
+  color: var(--ink);
+}
+
+.inspiration-stage {
+  position: relative;
+  height: 340px;
+  isolation: isolate;
+  overflow: clip;
+}
+
+.inspiration-card {
+  position: absolute;
+  top: 24px;
+  left: 12%;
+  width: 76%;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  background: var(--surface);
+  box-shadow: 0 3px 5px rgb(0 0 0 / 0.06), 0 12px 26px rgb(0 0 0 / 0.1);
+  transform-origin: 50% 70%;
+}
+
+.inspiration-paper {
+  padding: 8px 8px 0;
+}
+
+.inspiration-specimen {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.65;
+  overflow: hidden;
+  background: var(--paper);
+}
+
+.inspiration-specimen > .sp-root {
+  width: 100%;
+  height: 100%;
+}
+
+.inspiration-paper-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 44px;
+  padding: 8px 3px;
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.inspiration-paper-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  color: var(--muted, var(--ink));
+}
+
+.inspiration-paper-action svg {
+  flex: none;
+}
+
+.inspiration-open {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 2px;
+  background: transparent;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.inspiration-open:active {
+  background: rgb(0 0 0 / 0.045);
+  transform: none !important;
+  transition: none;
+}
+
+.inspiration-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0 26px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+
+.inspiration-current {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  min-width: 0;
+}
+
+.inspiration-counter {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  color: var(--muted, var(--ink));
+  font-size: 10px;
+  letter-spacing: -0.025em;
+  white-space: nowrap;
+}
+
+.inspiration-name {
+  font-family: var(--font-display, var(--font-sans));
+  font-size: 18px;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.inspiration-buttons {
+  display: flex;
+  flex: none;
+  gap: 7px;
+}
+
+.inspiration-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.inspiration-arrow:active {
+  color: var(--paper);
+  background: var(--ink);
+  border-color: var(--ink);
+  transform: none !important;
+  transition: none;
+}
+
+.inspiration-deck :is(button):focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 4px;
+}
+
+.inspiration-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .inspiration-open {
+    transition: box-shadow 150ms ease;
+  }
+  .inspiration-open:hover {
+    box-shadow: inset 0 0 0 2px var(--blue);
+  }
+  .inspiration-arrow {
+    transition: background-color 150ms ease, border-color 150ms ease;
+  }
+  .inspiration-arrow:hover {
+    background: var(--surface);
+    border-color: var(--ink);
+  }
+  .inspiration-arrow:active {
+    background: var(--ink);
+    transition: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .inspiration-deck {
+    margin-inline: auto;
+  }
+  .inspiration-stage {
+    height: clamp(264px, 72vw, 340px);
+  }
+  .inspiration-controls {
+    margin-inline: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .inspiration-current {
+    gap: 5px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .inspiration-paper-action {
+    font-size: 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .inspiration-deck :is(button) {
+    transition: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .inspiration-card,
+  .inspiration-arrow {
+    border-color: var(--ink);
+  }
+  .inspiration-counter,
+  .inspiration-paper-action {
+    color: var(--ink);
+  }
+}
