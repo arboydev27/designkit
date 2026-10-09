@@ -1,0 +1,53 @@
+# Form Atlas
+
+A personal design library for exploring 22 visual languages. Built with **Next.js 16, TypeScript, React 19, and Tailwind CSS 4**.
+
+## Run locally
+
+```sh
+npm ci
+npm run dev
+```
+
+Open http://127.0.0.1:3000. The development script uses webpack so it works in restricted environments where native filesystem events are unavailable. If filesystem watching is restricted, run `WATCHPACK_POLLING=true npm run dev`.
+
+```sh
+npm run typecheck
+npm run build
+npm start
+```
+
+The build creates a standalone static export in `out/`. `npm start` previews that export at http://127.0.0.1:3000; use `PORT=3001 npm start` to choose another port. It can be hosted with any static server. This app has no server-side database or API keys.
+
+The accompanying `form-atlas-source.zip` contains the editable project. `form-atlas-static.zip` contains the built site, ready to extract and upload to a static host.
+
+## What's inside
+
+- 22 original, distinctly composed specimens, each with desktop and mobile layouts.
+- Search across names, moods, font pairings, and characteristics; filter by family; sort; browse as a grid or list.
+- Style guides with suggested palettes, practical font pairings, use cases, characteristic traits, and guidance.
+- Copy a color, a palette, or ready-to-use CSS variables.
+- Editable typography specimens and links to the fonts.
+- Saved styles stored in this browser's local storage.
+- Two-style comparison and downloadable Markdown design briefs.
+- Keyboard navigation, focus indicators, mobile navigation, and reduced-motion/transparency support.
+- Locally bundled Latin font subsets with corresponding licenses in `public/fonts/licenses/`.
+
+The illustrations and specimen brands are original fictional examples. Styles are interpretations, and suggested palettes and pairings are not historical prescriptions. Primary references are linked in applicable guides. The initial style list was inspired by Talha × Codes' Instagram reel, credited in the About page.
+
+## Source map
+
+- `src/data/styles.ts` — typed catalog and editorial guidance.
+- `src/components/Library.tsx` — browsing, saved collection, search, and comparison.
+- `src/components/StylePreview.tsx` and `previews.css` — all original visual specimens.
+- `src/components/StyleDetail.tsx` and `detail.css` — interactive style guides.
+- `src/app/globals.css` — library shell, responsive layout, and Tailwind import.
+- `src/app/fonts.css` — self-hosted font declarations.
+
+To add a language, add a catalog entry and an original specimen, then verify its desktop and mobile layouts.
+
+## Verification
+
+The production build and TypeScript checks pass. All 22 specimens were rendered in card, desktop, and mobile modes, then checked in the browser. Phone-width checks at 390px found no page overflow or clipped specimen headings. Search, category filters, sorting, grid/list views, palette and CSS copying, type editing, saved-style persistence, and two-style comparison were exercised. All 22 complete briefs are generated as static downloadable files under `public/briefs/` during the build. Production browser checks reported no console errors.
+
+The private Site was registered, but source publication is pending: this session's automatic approval policy rejected input to the publishing helper. No deployment is claimed. The local source and static production export are complete.
