@@ -10,9 +10,13 @@ export function readSavedStyles(
     const legacy = current === null ? storage.getItem(LEGACY_KEY) : null;
     const data: unknown = JSON.parse(current ?? legacy ?? "[]");
     if (!Array.isArray(data)) return [];
-    const saved = data.filter(
-      (id): id is string => typeof id === "string" && knownIds.has(id),
-    );
+    const saved = [
+      ...new Set(
+        data.filter(
+          (id): id is string => typeof id === "string" && knownIds.has(id),
+        ),
+      ),
+    ];
     if (current === null && legacy !== null) {
       try {
         storage.setItem(SAVED_STYLES_KEY, JSON.stringify(saved));
