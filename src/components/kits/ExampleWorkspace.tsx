@@ -19,6 +19,7 @@ import {
 } from "../../lib/kit-tokens";
 import { downloadText } from "../../lib/download";
 import ExampleCanvas from "./ExampleCanvas";
+import BoardPicker from "./BoardPicker";
 
 export default function ExampleWorkspace({
   examples,
@@ -36,6 +37,7 @@ export default function ExampleWorkspace({
   );
   const [mode, setMode] = useState<"desktop" | "mobile">("desktop");
   const [showControls, setShowControls] = useState(true);
+  const [saveKind, setSaveKind] = useState("example");
   const [format, setFormat] = useState<"css" | "tailwind" | "json">("css");
   const values = resolveTokens(example, recipe, settings).values;
   const source =
@@ -268,6 +270,33 @@ export default function ExampleWorkspace({
           ))}
         </div>
       </div>
+      <label className="board-save-kind">
+        Save a decision
+        <select
+          value={saveKind}
+          onChange={(event) => setSaveKind(event.target.value)}
+        >
+          <option value="example">Example and playground choices</option>
+          <option value="palette">This example's palette</option>
+          <option value="heading">Selected heading font</option>
+          <option value="body">Selected body font</option>
+        </select>
+      </label>
+      <BoardPicker
+        item={
+          saveKind === "example"
+            ? { kind: "example", id: example.id, settings }
+            : saveKind === "palette"
+              ? { kind: "palette", id: example.id, settings }
+              : {
+                  kind: "font",
+                  id:
+                    saveKind === "heading"
+                      ? settings.headingFont
+                      : settings.bodyFont,
+                }
+        }
+      />
       <details className="example-source">
         <summary>
           Inspect the exported {format === "json" ? "tokens" : "CSS"}

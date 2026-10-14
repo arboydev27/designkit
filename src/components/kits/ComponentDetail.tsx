@@ -5,6 +5,7 @@ import type { KitComponent, StyleKit } from "../../data/kit-types";
 import { exportCss } from "../../lib/kit-tokens";
 import { downloadText } from "../../lib/download";
 import ComponentSample from "./ComponentSample";
+import BoardPicker from "./BoardPicker";
 
 export default function ComponentDetail({
   component,
@@ -75,6 +76,7 @@ export default function ComponentDetail({
           </button>
         </aside>
       </div>
+      <BoardPicker item={{ kind: "component", id: component.id }} />
       <details className="example-source">
         <summary>Inspect the style tokens</summary>
         <pre>
