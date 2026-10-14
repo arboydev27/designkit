@@ -154,7 +154,7 @@ async function sharedFiles(kit: StyleKit, inlineFonts = false) {
       .replaceAll("../../data/kit-types", "./types")
       .replaceAll("../../lib/kit-tokens", "./tokens"),
     "types.ts": typesSource,
-    "styles.ts": commonTypes,
+    "styles.ts": commonTypes.trimEnd() + "\n",
     "tokens.ts": tokensSource
       .replaceAll("../data/kit-types", "./types")
       .replaceAll("../data/examples", "./examples")

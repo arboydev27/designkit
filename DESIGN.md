@@ -50,3 +50,13 @@ Karrik by **Jean-Baptiste Morizot and Lucas Le Bihan**, distributed by [Velvetyn
 - The local **Apple motion** skill: immediate feedback, interruptible springs, spatially consistent navigation, reduced-motion alternatives, and deliberate tracking and leading.
 - [VoltAgent's awesome-design-md](https://github.com/voltagent/awesome-design-md), specifically [The Verge](https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/theverge/DESIGN.md) for display type as identity, [Figma](https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/figma/DESIGN.md) for compositions made from design content, and [Pinterest](https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/pinterest/DESIGN.md) for visual discovery and accessible collection actions. These are community analyses, not official brand systems; no proprietary assets were copied.
 - [Dick Wu's Apple design skill](https://github.com/dickwu/apple-design-skill) and [Emil Kowalski's design engineering skill](https://github.com/emilkowalski/skills/tree/main/skills/emil-design-eng) informed the retained focus management, clear hierarchy, and fine-pointer hover behavior.
+
+## Expanded library workspaces
+
+The shell now connects styles, examples, components, boards, and agent access. Those pages retain the cobalt accent, Karrik hierarchy, plain navigation, and neutral light/dark materials. They use the actual example renderer in thumbnails so discovery leads to the same editable interface.
+
+Each style offers three different project contexts from shop, journal, studio, planner, event, and archive compositions. Genre-specific geometry, material, type, and palette remain scoped to the preview. Desktop/mobile toggles expose their responsive behavior; a full-page route provides an unobstructed reference.
+
+Design decisions are explicit and portable. A board's primary example anchors its exported brief, while supplementary components, fonts, and palettes retain their exact identities. Customized token JSON stores the actual text and CSS material choices, and starter entries accept those settings. Scoped CSS foundations let copied kits work independently of the library's global reset.
+
+The agent page presents installation, examples, components, and machine-readable references in a sequential document. It avoids quality scores or promises unsupported by recorded checks. Original screenshots, design reasoning, licensed fonts, and local source travel together in the skill packages.

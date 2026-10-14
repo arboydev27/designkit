@@ -22,10 +22,15 @@ The accepted objective is to implement all seven recommendations for a public, f
 - Keep public publishing separate from local implementation. Do not deploy through OpenAI Sites or recreate `.openai/`.
 - Keep focused commits with the configured Arboy Magomba author.
 
-## Current evidence
+## Completion evidence
 
-- Shared authored manifest: 66 distinct example IDs, three contexts per style, six component entries per style (132 total).
-- Style recipes: 22 authored geometry/material/composition/motion interpretations.
-- Token utilities: bounded playground values, readable text on canvas/surface/accent, CSS/Tailwind/DTCG-style JSON exports.
-- Nine unit checks pass, including all existing saved-style migration checks.
-- Renderers, routes, boards, downloadable kits, skills, registry, and browser verification are still pending.
+- 22 authored style recipes, 66 original interactive contexts, and 132 reusable component interpretations, exposed through canonical routes.
+- Actual text/font/accent/geometry/spacing controls and consistent CSS, Tailwind v4, and JSON exports. JSON extensions retain custom text and CSS shadow layers.
+- Locally persistent project boards with validated import, customized decisions, exact project briefs, and removal/Undo.
+- 66 complete source ZIPs, 132 component ZIPs and shadcn registry records, 23 portable skills, a licensed font bundle, and a working well-known skill discovery endpoint.
+- Original desktop/mobile screenshots for every example, included in source and skill packages. Guides and JSON link to their corresponding previews and assets.
+- All 23 packages installed through the current skills CLI; six component kinds installed through shadcn and checked in an isolated TypeScript project.
+- Each of the 22 style skills evaluated against portfolio, storefront, and plain-JavaScript reading-list briefs, with actual artifacts and functional checks.
+- 15 unit tests, package integrity checks, a 294-page production export, and static-link checks pass. All 66 examples rendered without horizontal overflow at 1280 and 375 widths. Representative interaction, keyboard, board, and theme checks were performed.
+
+The implementation remains on the feature branch for review. Public deployment is separate. MCP, accounts, community publishing, native Figma files, and additional styles are future work rather than advertised capabilities. Detailed check scope and limits are in [quality.md](quality.md).

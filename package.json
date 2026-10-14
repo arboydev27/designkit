@@ -10,7 +10,8 @@
     "test": "node --import tsx --test tests/*.test.mjs tests/*.test.ts",
     "prebuild": "node scripts/generate-briefs.mjs && npm run generate:kits",
     "generate:kits": "node --import tsx scripts/generate-kits.mts",
-    "check:kits": "npm run generate:kits && node --import tsx scripts/check-kits.mts"
+    "check:kits": "npm run generate:kits && node --import tsx scripts/check-kits.mts",
+    "check:site": "node scripts/check-site.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",
