@@ -1,0 +1,293 @@
+{
+  "version": "2.0.0",
+  "contentDigest": "f2fce7355d694be5093b9369b4bd1d5feda599fd8a65665fa1c2a6bfb1e868e3",
+  "license": "MIT",
+  "fontsLicense": "OFL-1.1",
+  "source": "https://github.com/arboydev27/designkit",
+  "style": {
+    "id": "cyberpunk",
+    "name": "Cyberpunk",
+    "category": "Digital",
+    "tagline": "High tech. After dark.",
+    "description": "Cyberpunk imagery places advanced technology within gritty, socially fractured futures. Digital interfaces inspired by it often combine dark urban surfaces, sharp neon accents, industrial labels, and signs of technological interference.",
+    "traits": [
+      "Neon accents",
+      "Dark urban surfaces",
+      "Industrial details",
+      "Controlled interference"
+    ],
+    "palette": [
+      {
+        "name": "Asphalt",
+        "hex": "#171722"
+      },
+      {
+        "name": "Warning yellow",
+        "hex": "#EBD64E"
+      },
+      {
+        "name": "Neon pink",
+        "hex": "#EB4B98"
+      },
+      {
+        "name": "Electric cyan",
+        "hex": "#61DDE1"
+      },
+      {
+        "name": "Steel",
+        "hex": "#A2A7B7"
+      }
+    ],
+    "fonts": {
+      "heading": "Space Grotesk",
+      "body": "IBM Plex Mono",
+      "rationale": "Bold geometric headings and technical monospaced details evoke industrial systems without resorting to unreadable novelty type."
+    },
+    "useCases": [
+      "Science-fiction worlds",
+      "Gaming communities",
+      "Experimental music events"
+    ],
+    "tips": [
+      "Use neon as a signal against quieter dark surfaces.",
+      "Make technical labels convey real content.",
+      "Keep glitch effects optional and brief."
+    ],
+    "avoid": [
+      "Flashing effects or persistent visual interference.",
+      "Decorative warning states that look actionable.",
+      "Dense neon text without resting space."
+    ],
+    "keywords": [
+      "neon",
+      "dystopian",
+      "urban",
+      "technology",
+      "glitch",
+      "science fiction"
+    ]
+  },
+  "recipe": {
+    "colors": {
+      "canvas": "#151823",
+      "surface": "#222738",
+      "accent": "#F3D746",
+      "ink": "#F0EEF5",
+      "line": "#8E93B1"
+    },
+    "radius": 0,
+    "border": 1,
+    "shadow": "hard",
+    "texture": "scanlines",
+    "composition": "Use clipped corners, strong warning-like contrast, and technical alignment; retain an obvious reading path.",
+    "motion": "Use immediate state feedback; avoid glitch loops, flashing text, and fake security alerts.",
+    "signature": "Dystopian contrast, angular surfaces, and an intentionally charged technical atmosphere.",
+    "controls": {
+      "radius": [
+        0,
+        8
+      ],
+      "shadow": true,
+      "spacing": [
+        16,
+        40
+      ]
+    }
+  },
+  "examples": [
+    {
+      "id": "cyberpunk-night-festival",
+      "styleId": "cyberpunk",
+      "name": "NØ SIGNAL · event",
+      "brand": "NØ SIGNAL",
+      "kind": "event",
+      "headline": "Find your frequency.",
+      "description": "An independent electronic night at the edge of sound, code, and the city after dark.",
+      "action": "Explore the programme",
+      "colors": {
+        "canvas": "#151823",
+        "surface": "#222738",
+        "accent": "#F3D746",
+        "ink": "#F0EEF5",
+        "line": "#8E93B1"
+      },
+      "fonts": {
+        "heading": "Space Grotesk",
+        "body": "IBM Plex Mono"
+      },
+      "items": [
+        {
+          "title": "The opening transmission",
+          "detail": "A conversation to begin the gathering.",
+          "label": "10:00"
+        },
+        {
+          "title": "A live-coded midnight",
+          "detail": "Time to make, listen, and try something.",
+          "label": "13:00"
+        },
+        {
+          "title": "The final frequency",
+          "detail": "Bring the day's ideas together.",
+          "label": "16:00"
+        }
+      ],
+      "anatomy": [
+        {
+          "decision": "Composition",
+          "reason": "Angular panels and charged contrast express the atmosphere around a readable timetable."
+        },
+        {
+          "decision": "Material and geometry",
+          "reason": "Dystopian contrast, angular surfaces, and an intentionally charged technical atmosphere."
+        },
+        {
+          "decision": "Reading and interaction",
+          "reason": "Use clipped corners, strong warning-like contrast, and technical alignment; retain an obvious reading path. Use immediate state feedback; avoid glitch loops, flashing text, and fake security alerts."
+        }
+      ]
+    },
+    {
+      "id": "cyberpunk-streetwear-shop",
+      "styleId": "cyberpunk",
+      "name": "NIGHT MARKET · shop",
+      "brand": "NIGHT MARKET",
+      "kind": "shop",
+      "headline": "Built for the city after dark.",
+      "description": "Independent streetwear and objects for people moving through their own version of tomorrow.",
+      "action": "Explore the collection",
+      "colors": {
+        "canvas": "#171F29",
+        "surface": "#263546",
+        "accent": "#A0DAE8",
+        "ink": "#ECF5F9",
+        "line": "#88A9BD"
+      },
+      "fonts": {
+        "heading": "Space Mono",
+        "body": "IBM Plex Mono"
+      },
+      "items": [
+        {
+          "title": "The reflective field jacket",
+          "detail": "A small edition, made with care.",
+          "label": "$36"
+        },
+        {
+          "title": "Signal patch set",
+          "detail": "A useful companion for everyday rituals.",
+          "label": "$48"
+        },
+        {
+          "title": "The transit shoulder bag",
+          "detail": "A little character for your own space.",
+          "label": "$24"
+        }
+      ],
+      "anatomy": [
+        {
+          "decision": "Composition",
+          "reason": "A product grid channels technical intensity while prices and cart actions remain obvious."
+        },
+        {
+          "decision": "Material and geometry",
+          "reason": "Dystopian contrast, angular surfaces, and an intentionally charged technical atmosphere."
+        },
+        {
+          "decision": "Reading and interaction",
+          "reason": "Use clipped corners, strong warning-like contrast, and technical alignment; retain an obvious reading path. Use immediate state feedback; avoid glitch loops, flashing text, and fake security alerts."
+        }
+      ]
+    },
+    {
+      "id": "cyberpunk-creative-console",
+      "styleId": "cyberpunk",
+      "name": "SECTOR 7 · planner",
+      "brand": "SECTOR 7",
+      "kind": "planner",
+      "headline": "Keep the next move in sight.",
+      "description": "A personal planning console for the experiments, projects, and ideas you want to bring into the world.",
+      "action": "Make a little progress",
+      "colors": {
+        "canvas": "#251B2C",
+        "surface": "#3D2C49",
+        "accent": "#D5A8E6",
+        "ink": "#F8EDF9",
+        "line": "#AD86B6"
+      },
+      "fonts": {
+        "heading": "Space Grotesk",
+        "body": "IBM Plex Mono"
+      },
+      "items": [
+        {
+          "title": "Locate the useful signal",
+          "detail": "Start small and give it your attention.",
+          "label": "Today"
+        },
+        {
+          "title": "Build the first prototype",
+          "detail": "A little space for the next useful step.",
+          "label": "This week"
+        },
+        {
+          "title": "Record the next move",
+          "detail": "Leave a note about what worked.",
+          "label": "Reflection"
+        }
+      ],
+      "anatomy": [
+        {
+          "decision": "Composition",
+          "reason": "Task controls use explicit completion states rather than simulated warnings or glitches."
+        },
+        {
+          "decision": "Material and geometry",
+          "reason": "Dystopian contrast, angular surfaces, and an intentionally charged technical atmosphere."
+        },
+        {
+          "decision": "Reading and interaction",
+          "reason": "Use clipped corners, strong warning-like contrast, and technical alignment; retain an obvious reading path. Use immediate state feedback; avoid glitch loops, flashing text, and fake security alerts."
+        }
+      ]
+    }
+  ],
+  "components": [
+    {
+      "id": "cyberpunk-button",
+      "styleId": "cyberpunk",
+      "kind": "button",
+      "name": "Cyberpunk button"
+    },
+    {
+      "id": "cyberpunk-card",
+      "styleId": "cyberpunk",
+      "kind": "card",
+      "name": "Cyberpunk card"
+    },
+    {
+      "id": "cyberpunk-navigation",
+      "styleId": "cyberpunk",
+      "kind": "navigation",
+      "name": "Cyberpunk navigation"
+    },
+    {
+      "id": "cyberpunk-field",
+      "styleId": "cyberpunk",
+      "kind": "field",
+      "name": "Cyberpunk field"
+    },
+    {
+      "id": "cyberpunk-dialog",
+      "styleId": "cyberpunk",
+      "kind": "dialog",
+      "name": "Cyberpunk dialog"
+    },
+    {
+      "id": "cyberpunk-status",
+      "styleId": "cyberpunk",
+      "kind": "status",
+      "name": "Cyberpunk status"
+    }
+  ]
+}
