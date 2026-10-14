@@ -271,7 +271,6 @@ export default function ExampleCanvas({
                       <p>{item.detail}</p>
                       <KitDialog trigger="Read the project" title={item.title}>
                         <p>{example.description}</p>
-                        <p>{example.anatomy[0].reason}</p>
                       </KitDialog>
                     </div>
                   </article>
@@ -300,7 +299,6 @@ export default function ExampleCanvas({
                         >
                           <p>{item.detail}</p>
                           <p>{example.description}</p>
-                          <p>{example.anatomy[0].reason}</p>
                         </KitDialog>
                       )
                     }
@@ -328,7 +326,6 @@ export default function ExampleCanvas({
         <span className="kit-label">A little about us</span>
         <h3>{example.brand}, with a point of view.</h3>
         <p>{example.description}</p>
-        <p>{example.anatomy[0].reason}</p>
       </section>
       <footer className="kit-footer">
         <span className="kit-brand">{example.brand}</span>

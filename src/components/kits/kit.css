@@ -226,6 +226,7 @@
   gap: var(--dk-space);
 }
 .kit-card {
+  --dk-muted: var(--dk-surface-muted);
   padding: var(--dk-space);
   border: var(--dk-border) solid var(--dk-line);
   border-radius: var(--dk-radius);
@@ -682,6 +683,7 @@
 .kit-style-glassmorphism .kit-card,
 .kit-style-y2k .kit-card,
 .kit-style-ethereal .kit-card {
+  --dk-muted: var(--dk-surface-muted);
   backdrop-filter: blur(12px);
 }
 .kit-style-editorial-design .kit-hero h2,
@@ -894,6 +896,7 @@
 }
 @media (prefers-reduced-transparency: reduce) {
   .kit-card {
+    --dk-muted: var(--dk-surface-muted);
     backdrop-filter: none !important;
   }
   .kit-art-circle {
@@ -912,5 +915,6 @@
 }
 .kit-style-glassmorphism .kit-card,
 .kit-style-ethereal .kit-card {
+  --dk-muted: var(--dk-surface-muted);
   background: color-mix(in srgb, var(--dk-surface) 88%, transparent);
 }

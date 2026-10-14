@@ -139,10 +139,17 @@ export function projectBrief(board: ProjectBoard) {
   const list = (values: string[]) =>
     values.map((value) => `- ${value}`).join("\n");
   const resources = list(
-    checked.items.map(
-      (item) =>
-        `${item.kind}: ${boardItemName(item)}${item.kind === "font" ? "" : ` (${siteUrl}/${item.kind === "component" ? "components" : "examples"}/${item.id}/)`}`,
-    ),
+    checked.items.map((item) => {
+      const reference = `${item.kind}: ${boardItemName(item)}${item.kind === "font" ? "" : ` (${siteUrl}/${item.kind === "component" ? "components" : "examples"}/${item.id}/)`}`;
+      if (item.kind !== "palette") return reference;
+      const source = examples.find((entry) => entry.id === item.id)!;
+      const { values } = resolveTokens(
+        source,
+        kitsById[source.styleId].recipe,
+        item.settings,
+      );
+      return `${reference} — canvas ${values["--dk-canvas"]}, surface ${values["--dk-surface"]}, accent ${values["--dk-accent"]}, ink ${values["--dk-ink"]}`;
+    }),
   );
   return (
     [
