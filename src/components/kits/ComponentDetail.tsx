@@ -1,10 +1,12 @@
 "use client";
-import { useState } from "react";
 import Link from "next/link";
 import type { KitComponent, StyleKit } from "../../data/kit-types";
 import { exportCss } from "../../lib/kit-tokens";
 import { downloadText } from "../../lib/download";
 import ComponentSample from "./ComponentSample";
+import BackLink from "./BackLink";
+import ContextLink from "./ContextLink";
+import useUrlQuery from "./useUrlQuery";
 import BoardPicker from "./BoardPicker";
 import CommandBox from "./CommandBox";
 import { componentStates } from "../../lib/component-states";
@@ -16,15 +18,15 @@ export default function ComponentDetail({
   component: KitComponent;
   kit: StyleKit;
 }) {
-  const [state, setState] = useState<
-    "default" | "disabled" | "loading" | "error"
-  >("default");
+  const { params, update } = useUrlQuery();
+  const state =
+    componentStates(component.kind).find(
+      (option) => option === params.get("state"),
+    ) || "default";
   const css = exportCss(kit.examples[0], kit.recipe);
   return (
     <>
-      <Link href="/components" className="kit-example-return">
-        ← All components
-      </Link>
+      <BackLink fallback="/components/">← Back to components</BackLink>
       <div className="kit-page-intro">
         <p>
           {kit.style.name} · {component.kind}
@@ -43,7 +45,12 @@ export default function ComponentDetail({
                 value={state}
                 disabled={componentStates(component.kind).length === 1}
                 onChange={(event) =>
-                  setState(event.target.value as typeof state)
+                  update({
+                    state:
+                      event.target.value === "default"
+                        ? null
+                        : event.target.value,
+                  })
                 }
               >
                 {componentStates(component.kind).map((option) => (
@@ -110,9 +117,12 @@ export default function ComponentDetail({
         </pre>
       </details>
       <div className="kit-example-links">
-        <Link href={`/styles/${component.styleId}`}>
+        <ContextLink
+          href={`/styles/${component.styleId}/`}
+          fallback={`/components/${component.id}/`}
+        >
           Explore the full {kit.style.name} kit ↗
-        </Link>
+        </ContextLink>
         <Link href={`/components?style=${component.styleId}`}>
           All six {kit.style.name} components ↗
         </Link>

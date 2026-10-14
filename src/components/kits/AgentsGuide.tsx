@@ -1,11 +1,17 @@
 "use client";
-import { useState } from "react";
 import Link from "next/link";
 import { styles } from "../../data/styles";
 import { kitVersion, repositoryUrl } from "../../data/kit-types";
+import useUrlQuery from "./useUrlQuery";
+import { withReturnPath } from "../../lib/navigation";
 import CommandBox from "./CommandBox";
 export default function AgentsGuide() {
-  const [styleId, setStyleId] = useState("wabi-sabi");
+  const { params, update, search } = useUrlQuery();
+  const requested = params.get("style");
+  const styleId =
+    requested === "discovery" || styles.some((entry) => entry.id === requested)
+      ? requested!
+      : "wabi-sabi";
   const style = styles.find((entry) => entry.id === styleId)!;
   return (
     <>
@@ -13,8 +19,9 @@ export default function AgentsGuide() {
         <p>Good directions travel.</p>
         <h1>Take the kit with you.</h1>
         <p>
-          Give your agent a design language with real examples, visual references,
-          usable source, and the reasoning behind it. Free, open, and yours to adapt.
+          Give your agent a design language with real examples, visual
+          references, usable source, and the reasoning behind it. Free, open,
+          and yours to adapt.
         </p>
       </div>
       <section className="agent-step" aria-labelledby="agent-skills">
@@ -32,7 +39,7 @@ export default function AgentsGuide() {
             Design language
             <select
               value={styleId}
-              onChange={(event) => setStyleId(event.target.value)}
+              onChange={(event) => update({ style: event.target.value })}
             >
               <option value="discovery">Help me choose</option>
               {styles.map((entry) => (
@@ -61,7 +68,14 @@ export default function AgentsGuide() {
               Download the skill ↗
             </a>
             {styleId !== "discovery" ? (
-              <Link href={`/styles/${styleId}`}>Explore this direction ↗</Link>
+              <Link
+                href={withReturnPath(
+                  `/styles/${styleId}/`,
+                  `/agents/${search}`,
+                )}
+              >
+                Explore this direction ↗
+              </Link>
             ) : null}
           </div>
         </div>
@@ -147,7 +161,14 @@ export default function AgentsGuide() {
         <div>
           {styles.map((entry) => (
             <article key={entry.id}>
-              <Link href={`/styles/${entry.id}`}>{entry.name}</Link>
+              <Link
+                href={withReturnPath(
+                  `/styles/${entry.id}/`,
+                  `/agents/${search}`,
+                )}
+              >
+                {entry.name}
+              </Link>
               <a href={`/kits/styles/${entry.id}.md`}>Markdown</a>
               <a href={`/kits/styles/${entry.id}.json`}>JSON</a>
               <a href={`/kits/skills/designkit-${entry.id}.zip`} download>

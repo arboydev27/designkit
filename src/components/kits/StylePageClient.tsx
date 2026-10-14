@@ -1,67 +1,65 @@
 "use client";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import type { DesignStyle } from "../../data/styles";
-import { styles } from "../../data/styles";
-import { readSavedStyles, SAVED_STYLES_KEY } from "../../lib/saved-styles";
+import { useStyleCollections } from "../../lib/useStyleCollections";
+import { safeReturnPath } from "../../lib/navigation";
 import StyleDetail from "../StyleDetail";
 import CopyFallback from "../CopyFallback";
 
 export default function StylePageClient({ style }: { style: DesignStyle }) {
-  const [saved, setSaved] = useState<string[]>([]);
-  const [comparison, setComparison] = useState<string[]>([]);
+  const router = useRouter();
+  const { saved, comparison, setSaved, setCompared, error } =
+    useStyleCollections();
   const [message, setMessage] = useState("");
   const [fallback, setFallback] = useState<string | null>(null);
+  const [backTarget, setBackTarget] = useState("/");
   useEffect(() => {
-    try {
-      const known = new Set(styles.map((style) => style.id));
-      setSaved(readSavedStyles(localStorage, known));
-      const stored: unknown = JSON.parse(
-        localStorage.getItem("designkit:comparison:v1") || "[]",
-      );
-      if (Array.isArray(stored))
-        setComparison(
-          [
-            ...new Set(
-              stored.filter((id) => typeof id === "string" && known.has(id)),
-            ),
-          ].slice(0, 2),
-        );
-    } catch {
-      setMessage(
-        "Your collection is available for this visit. Browser storage could not be read.",
-      );
+    let target = safeReturnPath(
+      new URLSearchParams(location.search).get("return"),
+      "",
+    );
+    if (!target && document.referrer) {
+      try {
+        const referrer = new URL(document.referrer);
+        if (referrer.origin === location.origin)
+          target = safeReturnPath(
+            `${referrer.pathname}${referrer.search}${referrer.hash}`,
+            "",
+          );
+      } catch {}
     }
-  }, []);
+    if (
+      target &&
+      new URL(target, location.origin).pathname.replace(/\/$/, "") ===
+        location.pathname.replace(/\/$/, "")
+    )
+      target = "";
+    setBackTarget(target || "/");
+  }, [style.id]);
   const toggle = (kind: "saved" | "comparison") => {
     const current = kind === "saved" ? saved : comparison;
+    const adding = !current.includes(style.id);
+    const result =
+      kind === "saved"
+        ? setSaved(style.id, adding)
+        : setCompared(style.id, adding);
     if (
       kind === "comparison" &&
-      current.length === 2 &&
-      !current.includes(style.id)
+      adding &&
+      !result.comparison.includes(style.id)
     ) {
       setMessage(
         "Two styles are already selected. Remove one in Compare styles to add this direction.",
       );
       return;
     }
-    const next = current.includes(style.id)
-      ? current.filter((id) => id !== style.id)
-      : [...current, style.id];
-    if (kind === "saved") setSaved(next);
-    else setComparison(next);
-    try {
-      localStorage.setItem(
-        kind === "saved" ? SAVED_STYLES_KEY : "designkit:comparison:v1",
-        JSON.stringify(next),
-      );
-      setMessage(
-        next.includes(style.id)
+    setMessage(
+      result.error ||
+        (adding
           ? `Added to ${kind === "saved" ? "your collection" : "comparison"}.`
-          : "Removed.",
-      );
-    } catch {
-      setMessage("Updated for this visit. Browser storage is unavailable.");
-    }
+          : "Removed."),
+    );
   };
   return (
     <>
@@ -71,9 +69,7 @@ export default function StylePageClient({ style }: { style: DesignStyle }) {
         compared={comparison.includes(style.id)}
         onSave={() => toggle("saved")}
         onCompare={() => toggle("comparison")}
-        onBack={() => {
-          window.location.href = "/";
-        }}
+        onBack={() => router.push(backTarget)}
         onCopy={async (text, success) => {
           try {
             await navigator.clipboard.writeText(text);
@@ -87,9 +83,9 @@ export default function StylePageClient({ style }: { style: DesignStyle }) {
         <a href="/#saved">Your saved collection ↗</a>
         <a href="/#compare">Compare selected styles ↗</a>
       </div>
-      {message ? (
+      {message || error ? (
         <p className="kit-results" role="status">
-          {message}
+          {error || message}
         </p>
       ) : null}
       {fallback ? (

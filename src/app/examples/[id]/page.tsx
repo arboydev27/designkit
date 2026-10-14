@@ -5,6 +5,8 @@ import { examples } from "../../../data/examples";
 import { recipes } from "../../../data/recipes";
 import { styles } from "../../../data/styles";
 import KitShell from "../../../components/kits/KitShell";
+import ContextLink from "../../../components/kits/ContextLink";
+import BackLink from "../../../components/kits/BackLink";
 import ExampleWorkspace from "../../../components/kits/ExampleWorkspace";
 
 export const dynamicParams = false;
@@ -34,9 +36,7 @@ export default async function Page({
   const style = styles.find((entry) => entry.id === example.styleId)!;
   return (
     <KitShell active="Examples">
-      <Link href="/examples" className="kit-example-return">
-        ← All examples
-      </Link>
+      <BackLink fallback="/examples/">← Back to examples</BackLink>
       <div className="kit-page-intro">
         <p>
           {style.name} · {example.kind}
@@ -49,9 +49,12 @@ export default async function Page({
         recipe={recipes[example.styleId]}
       />
       <div className="kit-example-links">
-        <Link href={`/styles/${example.styleId}`}>
+        <ContextLink
+          href={`/styles/${example.styleId}/`}
+          fallback={`/examples/${example.id}/`}
+        >
           Explore all three {style.name} interpretations ↗
-        </Link>
+        </ContextLink>
         <Link href={`/components?style=${example.styleId}`}>
           Study its components ↗
         </Link>

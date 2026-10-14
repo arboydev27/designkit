@@ -23,10 +23,15 @@ import {
   X,
 } from "lucide-react";
 import { styles } from "@/data/styles";
+import { useStyleCollections } from "@/lib/useStyleCollections";
 import {
-  readSavedStyles,
-  SAVED_STYLES_KEY as SAVE_KEY,
-} from "@/lib/saved-styles";
+  initialLibraryRoute,
+  libraryFamilies,
+  libraryRouteUrl,
+  readLibraryRoute,
+  type LibraryRoute,
+  type LibraryView,
+} from "@/lib/library-navigation";
 import { StylePreview } from "./StylePreview";
 import ThemeToggle from "./ThemeToggle";
 import InspirationDeck from "./InspirationDeck";
@@ -34,16 +39,9 @@ import CopyFallback from "./CopyFallback";
 import "./previews.css";
 const StyleDetail = dynamic(() => import("./StyleDetail"));
 
-type View =
-  "library" | "saved" | "compare" | "palettes" | "typography" | "about";
-const families = [
-  "All styles",
-  "Organic",
-  "Expressive",
-  "Digital",
-  "Structured",
-  "Classic",
-] as const;
+type View = LibraryView;
+const families = libraryFamilies;
+const knownStyleIds = new Set(styles.map((style) => style.id));
 function Mark() {
   return (
     <svg
@@ -62,16 +60,18 @@ function Mark() {
   );
 }
 export default function Library() {
-  const [view, setView] = useState<View>("library");
-  const [selected, setSelected] = useState<string | null>(null);
-  const [category, setCategory] = useState<string>("All styles");
-  const [query, setQuery] = useState("");
-  const [saved, setSaved] = useState<string[]>([]);
-  const [comparison, setComparison] = useState<string[]>([]);
-  const [comparisonLoaded, setComparisonLoaded] = useState(false);
+  const [route, setRoute] = useState<LibraryRoute>(initialLibraryRoute);
+  const { view, selected, category, query, sort, layout } = route;
+  const {
+    saved,
+    comparison,
+    setSaved,
+    setCompared,
+    setComparisonSlot,
+    clearComparison,
+    error: collectionError,
+  } = useStyleCollections();
   const comparedIds = comparison.filter(Boolean);
-  const [sort, setSort] = useState("curated");
-  const [layout, setLayout] = useState<"grid" | "list">("grid");
   const [sidebar, setSidebar] = useState(false);
   const [toast, setToast] = useState("");
   const [clipboardFallback, setClipboardFallback] = useState<string | null>(
@@ -86,48 +86,12 @@ export default function Library() {
   const style = styles.find((s) => s.id === selected);
 
   useEffect(() => {
-    try {
-      setSaved(readSavedStyles(localStorage, new Set(styles.map((s) => s.id))));
-    } catch {}
-    try {
-      const stored: unknown = JSON.parse(
-        localStorage.getItem("designkit:comparison:v1") || "[]",
-      );
-      if (Array.isArray(stored))
-        setComparison(
-          [
-            ...new Set(
-              stored.filter(
-                (id) =>
-                  typeof id === "string" &&
-                  styles.some((style) => style.id === id),
-              ),
-            ),
-          ].slice(0, 2),
-        );
-    } catch {}
-    setComparisonLoaded(true);
-    const sync = () => {
-      let id = location.hash.slice(1);
-      try {
-        id = decodeURIComponent(id);
-      } catch {}
-      setSelected(styles.some((s) => s.id === id) ? id : null);
-      if (
-        !styles.some((s) => s.id === id) &&
-        [
-          "library",
-          "saved",
-          "compare",
-          "palettes",
-          "typography",
-          "about",
-        ].includes(id)
-      )
-        setView(id as View);
-    };
+    const sync = () =>
+      setRoute(readLibraryRoute(new URL(location.href), knownStyleIds));
     sync();
     window.addEventListener("hashchange", sync);
+    window.addEventListener("popstate", sync);
+    window.addEventListener("designkit:query-change", sync);
     const keys = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === "k") {
         e.preventDefault();
@@ -138,20 +102,12 @@ export default function Library() {
     window.addEventListener("keydown", keys);
     return () => {
       window.removeEventListener("hashchange", sync);
+      window.removeEventListener("popstate", sync);
+      window.removeEventListener("designkit:query-change", sync);
       window.removeEventListener("keydown", keys);
       if (toastTimer.current) clearTimeout(toastTimer.current);
     };
   }, []);
-  useEffect(() => {
-    if (comparisonLoaded) {
-      try {
-        localStorage.setItem(
-          "designkit:comparison:v1",
-          JSON.stringify(comparison.filter(Boolean)),
-        );
-      } catch {}
-    }
-  }, [comparison, comparisonLoaded]);
   useEffect(() => {
     if (!sidebar) return;
     const opener = navigationTrigger.current;
@@ -186,26 +142,41 @@ export default function Library() {
     if (toastTimer.current) clearTimeout(toastTimer.current);
     toastTimer.current = setTimeout(() => setToast(""), 3000);
   };
+  const changeRoute = (
+    patch: Partial<LibraryRoute>,
+    mode: "push" | "replace" = "push",
+  ) => {
+    const next = {
+      ...readLibraryRoute(new URL(location.href), knownStyleIds),
+      ...patch,
+    };
+    const url = libraryRouteUrl(next);
+    setRoute(next);
+    if (url !== `${location.pathname}${location.search}${location.hash}`) {
+      if (mode === "replace") history.replaceState(history.state, "", url);
+      else history.pushState(history.state, "", url);
+      window.dispatchEvent(new Event("designkit:query-change"));
+    }
+  };
   const navigate = (next: View) => {
-    setView(next);
-    setSelected(null);
+    changeRoute({
+      view: next,
+      selected: null,
+      query: "",
+      category: "All styles",
+    });
     setSidebar(false);
-    setQuery("");
-    setCategory("All styles");
-    location.hash = next;
     window.scrollTo({ top: 0, behavior: "instant" });
   };
   const openStyle = (id: string, origin: "gallery" | "deck" = "gallery") => {
     lastCard.current = id;
     lastOrigin.current = origin;
-    setSelected(id);
+    changeRoute({ selected: id });
     setSidebar(false);
-    location.hash = id;
     window.scrollTo({ top: 0, behavior: "instant" });
   };
   const goBack = () => {
-    setSelected(null);
-    location.hash = view;
+    changeRoute({ selected: null });
     requestAnimationFrame(() => {
       const card = document.getElementById(
         lastOrigin.current === "deck"
@@ -217,39 +188,25 @@ export default function Library() {
     });
   };
   const save = (id: string) => {
-    const next = saved.includes(id)
-      ? saved.filter((x) => x !== id)
-      : [...saved, id];
-    setSaved(next);
-    try {
-      localStorage.setItem(SAVE_KEY, JSON.stringify(next));
-      notify(
-        next.includes(id)
+    const result = setSaved(id, !saved.includes(id));
+    notify(
+      result.error ||
+        (result.saved.includes(id)
           ? "Saved to your collection"
-          : "Removed from your collection",
-      );
-    } catch {
-      notify("Saved for this visit. Browser storage is unavailable.");
-    }
+          : "Removed from your collection"),
+    );
   };
   const compare = (id: string) => {
-    if (comparedIds.includes(id)) {
-      setComparison(comparison.map((x) => (x === id ? "" : x)));
-      notify("Removed from comparison");
-      return;
-    }
-    if (comparedIds.length === 2) {
+    const adding = !comparedIds.includes(id);
+    const result = setCompared(id, adding);
+    if (adding && !result.comparison.includes(id)) {
       notify("Two styles selected. Remove one to add another.");
       return;
     }
-    setComparison((current) => {
-      const next = [...current];
-      const empty = next.findIndex((x) => !x);
-      if (empty >= 0) next[empty] = id;
-      else next.push(id);
-      return next;
-    });
-    notify("Added to comparison");
+    notify(
+      result.error ||
+        (adding ? "Added to comparison" : "Removed from comparison"),
+    );
   };
   const copy = async (text: string, message = "Copied to clipboard") => {
     try {
@@ -260,23 +217,19 @@ export default function Library() {
     }
   };
   const filterCategory = (next: string) => {
-    setQuery("");
-    setCategory(next);
-    setView("library");
-    setSelected(null);
+    changeRoute({ query: "", category: next, view: "library", selected: null });
     setSidebar(false);
-    location.hash = "library";
   };
   const search = (value: string) => {
-    setQuery(value);
-    setSelected(null);
-    if (view !== "saved") setView("library");
-    history.replaceState(
-      null,
-      "",
-      `#${view === "saved" ? "saved" : "library"}`,
+    changeRoute(
+      {
+        query: value,
+        selected: null,
+        view: view === "saved" ? "saved" : "library",
+        category: "All styles",
+      },
+      selected || (view !== "saved" && view !== "library") ? "push" : "replace",
     );
-    setCategory("All styles");
   };
   let shown = styles.filter(
     (s) =>
@@ -493,7 +446,7 @@ export default function Library() {
               onChange={(e) => search(e.target.value)}
             />
             {query ? (
-              <button aria-label="Clear search" onClick={() => setQuery("")}>
+              <button aria-label="Clear search" onClick={() => search("")}>
                 <X size={14} />
               </button>
             ) : (
@@ -503,6 +456,28 @@ export default function Library() {
           <ThemeToggle />
         </header>
         <main id="main-content" className="main-content" tabIndex={-1}>
+          <nav
+            className="library-kit-links"
+            aria-label="Explore the full library"
+          >
+            <a href="/examples">
+              66 original examples <ArrowUpRight size={16} />
+            </a>
+            <a href="/components">
+              Reusable components <ArrowUpRight size={16} />
+            </a>
+            <a href="/boards">
+              Project boards <ArrowUpRight size={16} />
+            </a>
+            <a href="/agents">
+              Design kits for your agent <ArrowUpRight size={16} />
+            </a>
+          </nav>
+          {collectionError ? (
+            <p className="kit-results" role="status">
+              {collectionError}
+            </p>
+          ) : null}
           {style ? (
             <StyleDetail
               key={style.id}
@@ -517,7 +492,7 @@ export default function Library() {
           ) : view === "compare" ? (
             <CompareView
               comparison={comparison}
-              onChange={setComparison}
+              onChange={(index, id) => setComparisonSlot(index, id)}
               onExplore={() => navigate("library")}
               onOpen={openStyle}
               onCopy={copy}
@@ -525,6 +500,7 @@ export default function Library() {
           ) : view === "palettes" ? (
             <>
               <PageHeading
+                id="palettes"
                 eyebrow="THE TOOLKIT"
                 title="Color, with character."
                 description="22 suggested palettes. Click a swatch to copy its hex code, or take the whole palette."
@@ -574,6 +550,7 @@ export default function Library() {
           ) : view === "typography" ? (
             <>
               <PageHeading
+                id="typography"
                 eyebrow="THE TOOLKIT"
                 title="Let the type do the talking."
                 description="Considered pairings to try, not fixed rules. Open a style to test your own text and explore its fonts."
@@ -612,7 +589,7 @@ export default function Library() {
               {view === "library" && !query && category === "All styles" ? (
                 <section className="hero">
                   <div className="hero-copy">
-                    <h1>
+                    <h1 id="library">
                       Follow your <span>instinct.</span>
                     </h1>
                     <p>
@@ -640,6 +617,7 @@ export default function Library() {
                 </section>
               ) : (
                 <PageHeading
+                  id={view}
                   eyebrow={view === "saved" ? "YOUR COLLECTION" : "THE LIBRARY"}
                   title={
                     view === "saved"
@@ -657,25 +635,6 @@ export default function Library() {
                   }
                 />
               )}
-              {view === "library" && !query && category === "All styles" ? (
-                <nav
-                  className="library-kit-links"
-                  aria-label="Explore the full library"
-                >
-                  <a href="/examples">
-                    66 original examples <ArrowUpRight size={16} />
-                  </a>
-                  <a href="/components">
-                    Reusable components <ArrowUpRight size={16} />
-                  </a>
-                  <a href="/boards">
-                    Project boards <ArrowUpRight size={16} />
-                  </a>
-                  <a href="/agents">
-                    Design kits for your agent <ArrowUpRight size={16} />
-                  </a>
-                </nav>
-              ) : null}
               <section
                 id="style-grid"
                 className="explore-section"
@@ -712,7 +671,7 @@ export default function Library() {
                         key={f}
                         aria-pressed={category === f}
                         className={category === f ? "selected" : ""}
-                        onClick={() => setCategory(f)}
+                        onClick={() => changeRoute({ category: f })}
                       >
                         {f}
                       </button>
@@ -724,7 +683,11 @@ export default function Library() {
                       <select
                         aria-label="Sort styles"
                         value={sort}
-                        onChange={(e) => setSort(e.target.value)}
+                        onChange={(e) =>
+                          changeRoute({
+                            sort: e.target.value === "az" ? "az" : "curated",
+                          })
+                        }
                       >
                         <option value="curated">Curated order</option>
                         <option value="az">A-Z</option>
@@ -736,7 +699,7 @@ export default function Library() {
                         aria-label="Grid view"
                         aria-pressed={layout === "grid"}
                         className={layout === "grid" ? "chosen" : ""}
-                        onClick={() => setLayout("grid")}
+                        onClick={() => changeRoute({ layout: "grid" })}
                       >
                         <Grid2X2 size={16} />
                       </button>
@@ -744,7 +707,7 @@ export default function Library() {
                         aria-label="List view"
                         aria-pressed={layout === "list"}
                         className={layout === "list" ? "chosen" : ""}
-                        onClick={() => setLayout("list")}
+                        onClick={() => changeRoute({ layout: "list" })}
                       >
                         <List size={17} />
                       </button>
@@ -843,9 +806,12 @@ export default function Library() {
                     <button
                       className="primary-button"
                       onClick={() => {
-                        setQuery("");
-                        setCategory("All styles");
-                        if (view === "saved") navigate("library");
+                        changeRoute({
+                          query: "",
+                          category: "All styles",
+                          view: "library",
+                          selected: null,
+                        });
                       }}
                     >
                       Explore all styles <ArrowRight size={16} />
@@ -895,7 +861,7 @@ export default function Library() {
           <button
             className="icon-button"
             aria-label="Clear comparison"
-            onClick={() => setComparison([])}
+            onClick={clearComparison}
           >
             <X size={18} />
           </button>
@@ -923,10 +889,12 @@ export default function Library() {
   );
 }
 function PageHeading({
+  id,
   eyebrow,
   title,
   description,
 }: {
+  id?: string;
   eyebrow: string;
   title: string;
   description: string;
@@ -934,7 +902,7 @@ function PageHeading({
   return (
     <header className="page-heading">
       <div className="eyebrow">{eyebrow}</div>
-      <h1>{title}</h1>
+      <h1 id={id}>{title}</h1>
       <p>{description}</p>
     </header>
   );
@@ -947,7 +915,7 @@ function CompareView({
   onCopy,
 }: {
   comparison: string[];
-  onChange: (ids: string[]) => void;
+  onChange: (index: number, id: string) => void;
   onExplore: () => void;
   onOpen: (id: string) => void;
   onCopy: (text: string, message?: string) => void;
@@ -955,6 +923,7 @@ function CompareView({
   return (
     <>
       <PageHeading
+        id="compare"
         eyebrow="A LITTLE PERSPECTIVE"
         title="See the difference."
         description="Two directions, side by side. Find the right visual language for what you’re building."
@@ -974,9 +943,7 @@ function CompareView({
                   }
                   value={s?.id || ""}
                   onChange={(e) => {
-                    const next = [...comparison];
-                    next[index] = e.target.value;
-                    onChange(next);
+                    onChange(index, e.target.value);
                   }}
                 >
                   <option value="">Select a design language</option>
@@ -1063,6 +1030,7 @@ function About({ onExplore }: { onExplore: () => void }) {
   return (
     <div className="about-page">
       <PageHeading
+        id="about"
         eyebrow="THE IDEA BEHIND DESIGNKIT"
         title="A starting point. Never a set of rules."
         description="DesignKit is a personal field guide for turning a visual feeling into a considered design direction."
