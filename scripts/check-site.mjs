@@ -1,46 +1,32 @@
 import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 import path from "node:path";
+import { tsImport } from "tsx/esm/api";
+import { inspectStaticSite } from "./lib/static-site.mjs";
+
 const root = path.resolve(import.meta.dirname, "../out");
-async function files(directory) {
-  const entries = await fs.readdir(directory, { withFileTypes: true });
-  return (
-    await Promise.all(
-      entries.map((entry) =>
-        entry.isDirectory()
-          ? files(path.join(directory, entry.name))
-          : [path.join(directory, entry.name)],
-      ),
-    )
-  ).flat();
-}
-const pages = (await files(root)).filter((file) => file.endsWith(".html"));
+const { libraryViews } = await tsImport(
+  "../src/lib/library-navigation.ts",
+  import.meta.url,
+);
+const catalog = JSON.parse(
+  await fs.readFile(path.join(root, "kits/catalog.json"), "utf8"),
+);
+// Library hashes select hydrated views and styles rather than static DOM anchors.
+const result = await inspectStaticSite(root, {
+  clientFragments: {
+    "/": [...libraryViews, ...catalog.styles.map((style) => style.id)],
+  },
+});
 assert.ok(
-  pages.length >= 294,
+  result.pages >= 294,
   "Build the complete static library before checking its links.",
 );
-const failures = [];
-let checked = 0;
-for (const page of pages) {
-  const html = await fs.readFile(page, "utf8");
-  for (const match of html.matchAll(
-    /(?:href|src)="(\/[^"#?]*)(?:[?#][^"]*)?"/g,
-  )) {
-    const url = decodeURIComponent(match[1]);
-    if (url === "/") continue;
-    try {
-      await fs.stat(path.join(root, url));
-      checked++;
-    } catch {
-      failures.push(`${path.relative(root, page)}: ${url}`);
-    }
-  }
-}
 assert.deepEqual(
-  failures,
+  result.failures,
   [],
-  "Static pages contain unresolved local links or assets.",
+  "Static pages contain unresolved local routes, assets, or fragments.",
 );
 console.log(
-  `Verified ${checked} local links/assets across ${pages.length} static pages.`,
+  `Verified ${result.checked} local links/assets and fragments across ${result.pages} static pages, including CSS dependencies.`,
 );
