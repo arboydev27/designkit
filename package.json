@@ -8,7 +8,9 @@
     "start": "node scripts/serve.mjs",
     "typecheck": "tsc --noEmit",
     "test": "node --import tsx --test tests/*.test.mjs tests/*.test.ts",
-    "prebuild": "node scripts/generate-briefs.mjs"
+    "prebuild": "node scripts/generate-briefs.mjs && npm run generate:kits",
+    "generate:kits": "node --import tsx scripts/generate-kits.mts",
+    "check:kits": "npm run generate:kits && node --import tsx scripts/check-kits.mts"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",

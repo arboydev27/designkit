@@ -3,3 +3,10 @@ node_modules/
 out/
 *.tsbuildinfo
 .DS_Store
+
+# Rebuilt from the shared catalog before every production build.
+public/kits/
+public/r/
+public/llms.txt
+
+/public/.well-known/agent-skills/
