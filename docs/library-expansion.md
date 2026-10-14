@@ -29,8 +29,8 @@ The accepted objective is to implement all seven recommendations for a public, f
 - Locally persistent project boards with validated import, customized decisions, exact project briefs, and removal/Undo.
 - 66 complete source ZIPs, 132 component ZIPs and shadcn registry records, 23 portable skills, a licensed font bundle, and a working well-known skill discovery endpoint.
 - Original desktop/mobile screenshots for every example, included in source and skill packages. Guides and JSON link to their corresponding previews and assets.
-- All 23 packages installed through the current skills CLI; six component kinds installed through shadcn and checked in an isolated TypeScript project.
-- Each of the 22 style skills evaluated against portfolio, storefront, and plain-JavaScript reading-list briefs, with actual artifacts and functional checks.
-- 15 unit tests, package integrity checks, a 294-page production export, and static-link checks pass. All 66 examples rendered without horizontal overflow at 1280 and 375 widths. Representative interaction, keyboard, board, and theme checks were performed.
+- The October 13 review installed all 23 packages through the skills CLI and six component kinds through shadcn in an isolated TypeScript project. These installation checks are historical; the current audit rechecks the generated packages and copied source.
+- The October 13 review evaluated each of the 22 style skills against portfolio, storefront, and plain-JavaScript reading-list briefs, with actual artifacts and functional checks.
+- The October 14 audit passes 67 automated tests, strict compilation of 1,453 copied source files, integrity checks for 222 archives, a 294-page production export, and verification of 12,802 static references. Browser sweeps cover 596 route/width cases, with representative interaction, focus, board, history, and theme checks. All 132 visual references were refreshed with verified complete page coverage.
 
 The implementation remains on the feature branch for review. Public deployment is separate. MCP, accounts, community publishing, native Figma files, and additional styles are future work rather than advertised capabilities. Detailed check scope and limits are in [quality.md](quality.md).

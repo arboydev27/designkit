@@ -1,0 +1,1662 @@
+{
+  "method": "Overlapping browser viewport captures with loaded fonts and verified dimensions; complete page coverage.",
+  "desktopViewport": {
+    "width": 1280,
+    "height": 900
+  },
+  "mobileViewport": {
+    "width": 375,
+    "height": 812
+  },
+  "captures": [
+    {
+      "id": "wabi-sabi-earthware",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1801,
+      "pageHeight": 1801,
+      "tiles": [
+        0,
+        768,
+        901
+      ]
+    },
+    {
+      "id": "wabi-sabi-rain-journal",
+      "device": "desktop",
+      "width": 1280,
+      "height": 2133,
+      "pageHeight": 2133,
+      "tiles": [
+        0,
+        768,
+        1233
+      ]
+    },
+    {
+      "id": "wabi-sabi-architecture",
+      "device": "desktop",
+      "width": 1280,
+      "height": 2438,
+      "pageHeight": 2438,
+      "tiles": [
+        0,
+        768,
+        1536,
+        1538
+      ]
+    },
+    {
+      "id": "neo-brutalism-creative-studio",
+      "device": "desktop",
+      "width": 1280,
+      "height": 2461,
+      "pageHeight": 2461,
+      "tiles": [
+        0,
+        768,
+        1536,
+        1561
+      ]
+    },
+    {
+      "id": "neo-brutalism-print-shop",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1854,
+      "pageHeight": 1854,
+      "tiles": [
+        0,
+        768,
+        954
+      ]
+    },
+    {
+      "id": "neo-brutalism-music-weekender",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1767,
+      "pageHeight": 1767,
+      "tiles": [
+        0,
+        768,
+        867
+      ]
+    },
+    {
+      "id": "glassmorphism-focus-app",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1369,
+      "pageHeight": 1369,
+      "tiles": [
+        0,
+        469
+      ]
+    },
+    {
+      "id": "glassmorphism-digital-studio",
+      "device": "desktop",
+      "width": 1280,
+      "height": 2488,
+      "pageHeight": 2488,
+      "tiles": [
+        0,
+        768,
+        1536,
+        1588
+      ]
+    },
+    {
+      "id": "glassmorphism-research-library",
+      "device": "desktop",
+      "width": 1280,
+      "height": 3167,
+      "pageHeight": 3167,
+      "tiles": [
+        0,
+        768,
+        1536,
+        2267
+      ]
+    },
+    {
+      "id": "swiss-design-design-programme",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1585,
+      "pageHeight": 1585,
+      "tiles": [
+        0,
+        685
+      ]
+    },
+    {
+      "id": "swiss-design-design-publication",
+      "device": "desktop",
+      "width": 1280,
+      "height": 2210,
+      "pageHeight": 2210,
+      "tiles": [
+        0,
+        768,
+        1310
+      ]
+    },
+    {
+      "id": "swiss-design-industrial-studio",
+      "device": "desktop",
+      "width": 1280,
+      "height": 2411,
+      "pageHeight": 2411,
+      "tiles": [
+        0,
+        768,
+        1511
+      ]
+    },
+    {
+      "id": "claymorphism-habit-planner",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1420,
+      "pageHeight": 1420,
+      "tiles": [
+        0,
+        520
+      ]
+    },
+    {
+      "id": "claymorphism-desk-shop",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1852,
+      "pageHeight": 1852,
+      "tiles": [
+        0,
+        768,
+        952
+      ]
+    },
+    {
+      "id": "claymorphism-making-workshop",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1562,
+      "pageHeight": 1562,
+      "tiles": [
+        0,
+        662
+      ]
+    },
+    {
+      "id": "editorial-design-culture-magazine",
+      "device": "desktop",
+      "width": 1280,
+      "height": 2160,
+      "pageHeight": 2160,
+      "tiles": [
+        0,
+        768,
+        1260
+      ]
+    },
+    {
+      "id": "editorial-design-book-shop",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1801,
+      "pageHeight": 1801,
+      "tiles": [
+        0,
+        768,
+        901
+      ]
+    },
+    {
+      "id": "editorial-design-publishing-studio",
+      "device": "desktop",
+      "width": 1280,
+      "height": 2461,
+      "pageHeight": 2461,
+      "tiles": [
+        0,
+        768,
+        1536,
+        1561
+      ]
+    },
+    {
+      "id": "cybercore-systems-archive",
+      "device": "desktop",
+      "width": 1280,
+      "height": 3197,
+      "pageHeight": 3197,
+      "tiles": [
+        0,
+        768,
+        1536,
+        2297
+      ]
+    },
+    {
+      "id": "cybercore-build-planner",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1528,
+      "pageHeight": 1528,
+      "tiles": [
+        0,
+        628
+      ]
+    },
+    {
+      "id": "cybercore-creative-coding-meetup",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1866,
+      "pageHeight": 1866,
+      "tiles": [
+        0,
+        768,
+        966
+      ]
+    },
+    {
+      "id": "scrapbook-personal-journal",
+      "device": "desktop",
+      "width": 1280,
+      "height": 2044,
+      "pageHeight": 2044,
+      "tiles": [
+        0,
+        768,
+        1144
+      ]
+    },
+    {
+      "id": "scrapbook-illustration-studio",
+      "device": "desktop",
+      "width": 1280,
+      "height": 2411,
+      "pageHeight": 2411,
+      "tiles": [
+        0,
+        768,
+        1511
+      ]
+    },
+    {
+      "id": "scrapbook-stationery-shop",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1852,
+      "pageHeight": 1852,
+      "tiles": [
+        0,
+        768,
+        952
+      ]
+    },
+    {
+      "id": "surrealism-exhibition",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1585,
+      "pageHeight": 1585,
+      "tiles": [
+        0,
+        685
+      ]
+    },
+    {
+      "id": "surrealism-object-shop",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1852,
+      "pageHeight": 1852,
+      "tiles": [
+        0,
+        768,
+        952
+      ]
+    },
+    {
+      "id": "surrealism-image-archive",
+      "device": "desktop",
+      "width": 1280,
+      "height": 3167,
+      "pageHeight": 3167,
+      "tiles": [
+        0,
+        768,
+        1536,
+        2267
+      ]
+    },
+    {
+      "id": "y2k-accessory-shop",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1830,
+      "pageHeight": 1830,
+      "tiles": [
+        0,
+        768,
+        930
+      ]
+    },
+    {
+      "id": "y2k-pop-night",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1587,
+      "pageHeight": 1587,
+      "tiles": [
+        0,
+        687
+      ]
+    },
+    {
+      "id": "y2k-culture-zine",
+      "device": "desktop",
+      "width": 1280,
+      "height": 2215,
+      "pageHeight": 2215,
+      "tiles": [
+        0,
+        768,
+        1315
+      ]
+    },
+    {
+      "id": "pixel-art-game-festival",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1755,
+      "pageHeight": 1755,
+      "tiles": [
+        0,
+        768,
+        855
+      ]
+    },
+    {
+      "id": "pixel-art-quest-planner",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1654,
+      "pageHeight": 1654,
+      "tiles": [
+        0,
+        754
+      ]
+    },
+    {
+      "id": "pixel-art-game-merch-shop",
+      "device": "desktop",
+      "width": 1280,
+      "height": 2040,
+      "pageHeight": 2040,
+      "tiles": [
+        0,
+        768,
+        1140
+      ]
+    },
+    {
+      "id": "synthwave-music-night",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1620,
+      "pageHeight": 1620,
+      "tiles": [
+        0,
+        720
+      ]
+    },
+    {
+      "id": "synthwave-record-shop",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1901,
+      "pageHeight": 1901,
+      "tiles": [
+        0,
+        768,
+        1001
+      ]
+    },
+    {
+      "id": "synthwave-music-journal",
+      "device": "desktop",
+      "width": 1280,
+      "height": 2210,
+      "pageHeight": 2210,
+      "tiles": [
+        0,
+        768,
+        1310
+      ]
+    },
+    {
+      "id": "neumorphism-listening-planner",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1471,
+      "pageHeight": 1471,
+      "tiles": [
+        0,
+        571
+      ]
+    },
+    {
+      "id": "neumorphism-audio-shop",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1879,
+      "pageHeight": 1879,
+      "tiles": [
+        0,
+        768,
+        979
+      ]
+    },
+    {
+      "id": "neumorphism-sound-studio",
+      "device": "desktop",
+      "width": 1280,
+      "height": 2488,
+      "pageHeight": 2488,
+      "tiles": [
+        0,
+        768,
+        1536,
+        1588
+      ]
+    },
+    {
+      "id": "bento-grid-daily-planner",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1396,
+      "pageHeight": 1396,
+      "tiles": [
+        0,
+        496
+      ]
+    },
+    {
+      "id": "bento-grid-object-shop",
+      "device": "desktop",
+      "width": 1280,
+      "height": 2596,
+      "pageHeight": 2596,
+      "tiles": [
+        0,
+        768,
+        1536,
+        1696
+      ]
+    },
+    {
+      "id": "bento-grid-digital-practice",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1989,
+      "pageHeight": 1989,
+      "tiles": [
+        0,
+        768,
+        1089
+      ]
+    },
+    {
+      "id": "minimalism-architecture-studio",
+      "device": "desktop",
+      "width": 1280,
+      "height": 2411,
+      "pageHeight": 2411,
+      "tiles": [
+        0,
+        768,
+        1511
+      ]
+    },
+    {
+      "id": "minimalism-everyday-shop",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1801,
+      "pageHeight": 1801,
+      "tiles": [
+        0,
+        768,
+        901
+      ]
+    },
+    {
+      "id": "minimalism-design-journal",
+      "device": "desktop",
+      "width": 1280,
+      "height": 2133,
+      "pageHeight": 2133,
+      "tiles": [
+        0,
+        768,
+        1233
+      ]
+    },
+    {
+      "id": "maximalism-creative-festival",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1828,
+      "pageHeight": 1828,
+      "tiles": [
+        0,
+        768,
+        928
+      ]
+    },
+    {
+      "id": "maximalism-design-shop",
+      "device": "desktop",
+      "width": 1280,
+      "height": 2049,
+      "pageHeight": 2049,
+      "tiles": [
+        0,
+        768,
+        1149
+      ]
+    },
+    {
+      "id": "maximalism-creative-agency",
+      "device": "desktop",
+      "width": 1280,
+      "height": 2461,
+      "pageHeight": 2461,
+      "tiles": [
+        0,
+        768,
+        1536,
+        1561
+      ]
+    },
+    {
+      "id": "luxury-typography-design-editions",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1852,
+      "pageHeight": 1852,
+      "tiles": [
+        0,
+        768,
+        952
+      ]
+    },
+    {
+      "id": "luxury-typography-brand-practice",
+      "device": "desktop",
+      "width": 1280,
+      "height": 2438,
+      "pageHeight": 2438,
+      "tiles": [
+        0,
+        768,
+        1536,
+        1538
+      ]
+    },
+    {
+      "id": "luxury-typography-culture-review",
+      "device": "desktop",
+      "width": 1280,
+      "height": 2102,
+      "pageHeight": 2102,
+      "tiles": [
+        0,
+        768,
+        1202
+      ]
+    },
+    {
+      "id": "conceptual-sketch-creative-practice",
+      "device": "desktop",
+      "width": 1280,
+      "height": 2438,
+      "pageHeight": 2438,
+      "tiles": [
+        0,
+        768,
+        1536,
+        1538
+      ]
+    },
+    {
+      "id": "conceptual-sketch-project-notebook",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1455,
+      "pageHeight": 1455,
+      "tiles": [
+        0,
+        555
+      ]
+    },
+    {
+      "id": "conceptual-sketch-process-journal",
+      "device": "desktop",
+      "width": 1280,
+      "height": 2215,
+      "pageHeight": 2215,
+      "tiles": [
+        0,
+        768,
+        1315
+      ]
+    },
+    {
+      "id": "ethereal-wellness-practice",
+      "device": "desktop",
+      "width": 1280,
+      "height": 2411,
+      "pageHeight": 2411,
+      "tiles": [
+        0,
+        768,
+        1511
+      ]
+    },
+    {
+      "id": "ethereal-reflection-planner",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1420,
+      "pageHeight": 1420,
+      "tiles": [
+        0,
+        520
+      ]
+    },
+    {
+      "id": "ethereal-ritual-shop",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1885,
+      "pageHeight": 1885,
+      "tiles": [
+        0,
+        768,
+        985
+      ]
+    },
+    {
+      "id": "bohemian-crafted-shop",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1801,
+      "pageHeight": 1801,
+      "tiles": [
+        0,
+        768,
+        901
+      ]
+    },
+    {
+      "id": "bohemian-travel-journal",
+      "device": "desktop",
+      "width": 1280,
+      "height": 2183,
+      "pageHeight": 2183,
+      "tiles": [
+        0,
+        768,
+        1283
+      ]
+    },
+    {
+      "id": "bohemian-creative-retreat",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1628,
+      "pageHeight": 1628,
+      "tiles": [
+        0,
+        728
+      ]
+    },
+    {
+      "id": "victorian-literary-journal",
+      "device": "desktop",
+      "width": 1280,
+      "height": 2314,
+      "pageHeight": 2314,
+      "tiles": [
+        0,
+        768,
+        1414
+      ]
+    },
+    {
+      "id": "victorian-curiosity-shop",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1924,
+      "pageHeight": 1924,
+      "tiles": [
+        0,
+        768,
+        1024
+      ]
+    },
+    {
+      "id": "victorian-literary-salon",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1693,
+      "pageHeight": 1693,
+      "tiles": [
+        0,
+        768,
+        793
+      ]
+    },
+    {
+      "id": "cyberpunk-night-festival",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1620,
+      "pageHeight": 1620,
+      "tiles": [
+        0,
+        720
+      ]
+    },
+    {
+      "id": "cyberpunk-streetwear-shop",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1912,
+      "pageHeight": 1912,
+      "tiles": [
+        0,
+        768,
+        1012
+      ]
+    },
+    {
+      "id": "cyberpunk-creative-console",
+      "device": "desktop",
+      "width": 1280,
+      "height": 1528,
+      "pageHeight": 1528,
+      "tiles": [
+        0,
+        628
+      ]
+    },
+    {
+      "id": "wabi-sabi-earthware",
+      "device": "mobile",
+      "width": 375,
+      "height": 2689,
+      "pageHeight": 2689,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1877
+      ]
+    },
+    {
+      "id": "wabi-sabi-rain-journal",
+      "device": "mobile",
+      "width": 375,
+      "height": 2662,
+      "pageHeight": 2662,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1850
+      ]
+    },
+    {
+      "id": "wabi-sabi-architecture",
+      "device": "mobile",
+      "width": 375,
+      "height": 2505,
+      "pageHeight": 2505,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1693
+      ]
+    },
+    {
+      "id": "neo-brutalism-creative-studio",
+      "device": "mobile",
+      "width": 375,
+      "height": 2567,
+      "pageHeight": 2567,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1755
+      ]
+    },
+    {
+      "id": "neo-brutalism-print-shop",
+      "device": "mobile",
+      "width": 375,
+      "height": 2722,
+      "pageHeight": 2722,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1896,
+        1910
+      ]
+    },
+    {
+      "id": "neo-brutalism-music-weekender",
+      "device": "mobile",
+      "width": 375,
+      "height": 2225,
+      "pageHeight": 2225,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1413
+      ]
+    },
+    {
+      "id": "glassmorphism-focus-app",
+      "device": "mobile",
+      "width": 375,
+      "height": 1492,
+      "pageHeight": 1492,
+      "tiles": [
+        0,
+        632,
+        680
+      ]
+    },
+    {
+      "id": "glassmorphism-digital-studio",
+      "device": "mobile",
+      "width": 375,
+      "height": 2562,
+      "pageHeight": 2562,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1750
+      ]
+    },
+    {
+      "id": "glassmorphism-research-library",
+      "device": "mobile",
+      "width": 375,
+      "height": 2451,
+      "pageHeight": 2451,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1639
+      ]
+    },
+    {
+      "id": "swiss-design-design-programme",
+      "device": "mobile",
+      "width": 375,
+      "height": 1972,
+      "pageHeight": 1972,
+      "tiles": [
+        0,
+        632,
+        1160
+      ]
+    },
+    {
+      "id": "swiss-design-design-publication",
+      "device": "mobile",
+      "width": 375,
+      "height": 2712,
+      "pageHeight": 2712,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1896,
+        1900
+      ]
+    },
+    {
+      "id": "swiss-design-industrial-studio",
+      "device": "mobile",
+      "width": 375,
+      "height": 2535,
+      "pageHeight": 2535,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1723
+      ]
+    },
+    {
+      "id": "claymorphism-habit-planner",
+      "device": "mobile",
+      "width": 375,
+      "height": 1524,
+      "pageHeight": 1524,
+      "tiles": [
+        0,
+        632,
+        712
+      ]
+    },
+    {
+      "id": "claymorphism-desk-shop",
+      "device": "mobile",
+      "width": 375,
+      "height": 2719,
+      "pageHeight": 2719,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1896,
+        1907
+      ]
+    },
+    {
+      "id": "claymorphism-making-workshop",
+      "device": "mobile",
+      "width": 375,
+      "height": 2039,
+      "pageHeight": 2039,
+      "tiles": [
+        0,
+        632,
+        1227
+      ]
+    },
+    {
+      "id": "editorial-design-culture-magazine",
+      "device": "mobile",
+      "width": 375,
+      "height": 2662,
+      "pageHeight": 2662,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1850
+      ]
+    },
+    {
+      "id": "editorial-design-book-shop",
+      "device": "mobile",
+      "width": 375,
+      "height": 2689,
+      "pageHeight": 2689,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1877
+      ]
+    },
+    {
+      "id": "editorial-design-publishing-studio",
+      "device": "mobile",
+      "width": 375,
+      "height": 2535,
+      "pageHeight": 2535,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1723
+      ]
+    },
+    {
+      "id": "cybercore-systems-archive",
+      "device": "mobile",
+      "width": 375,
+      "height": 2546,
+      "pageHeight": 2546,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1734
+      ]
+    },
+    {
+      "id": "cybercore-build-planner",
+      "device": "mobile",
+      "width": 375,
+      "height": 1670,
+      "pageHeight": 1670,
+      "tiles": [
+        0,
+        632,
+        858
+      ]
+    },
+    {
+      "id": "cybercore-creative-coding-meetup",
+      "device": "mobile",
+      "width": 375,
+      "height": 2292,
+      "pageHeight": 2292,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1480
+      ]
+    },
+    {
+      "id": "scrapbook-personal-journal",
+      "device": "mobile",
+      "width": 375,
+      "height": 2593,
+      "pageHeight": 2593,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1781
+      ]
+    },
+    {
+      "id": "scrapbook-illustration-studio",
+      "device": "mobile",
+      "width": 375,
+      "height": 2505,
+      "pageHeight": 2505,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1693
+      ]
+    },
+    {
+      "id": "scrapbook-stationery-shop",
+      "device": "mobile",
+      "width": 375,
+      "height": 2719,
+      "pageHeight": 2719,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1896,
+        1907
+      ]
+    },
+    {
+      "id": "surrealism-exhibition",
+      "device": "mobile",
+      "width": 375,
+      "height": 2018,
+      "pageHeight": 2018,
+      "tiles": [
+        0,
+        632,
+        1206
+      ]
+    },
+    {
+      "id": "surrealism-object-shop",
+      "device": "mobile",
+      "width": 375,
+      "height": 2719,
+      "pageHeight": 2719,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1896,
+        1907
+      ]
+    },
+    {
+      "id": "surrealism-image-archive",
+      "device": "mobile",
+      "width": 375,
+      "height": 2451,
+      "pageHeight": 2451,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1639
+      ]
+    },
+    {
+      "id": "y2k-accessory-shop",
+      "device": "mobile",
+      "width": 375,
+      "height": 2755,
+      "pageHeight": 2755,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1896,
+        1943
+      ]
+    },
+    {
+      "id": "y2k-pop-night",
+      "device": "mobile",
+      "width": 375,
+      "height": 2018,
+      "pageHeight": 2018,
+      "tiles": [
+        0,
+        632,
+        1206
+      ]
+    },
+    {
+      "id": "y2k-culture-zine",
+      "device": "mobile",
+      "width": 375,
+      "height": 2671,
+      "pageHeight": 2671,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1859
+      ]
+    },
+    {
+      "id": "pixel-art-game-festival",
+      "device": "mobile",
+      "width": 375,
+      "height": 2443,
+      "pageHeight": 2443,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1631
+      ]
+    },
+    {
+      "id": "pixel-art-quest-planner",
+      "device": "mobile",
+      "width": 375,
+      "height": 1867,
+      "pageHeight": 1867,
+      "tiles": [
+        0,
+        632,
+        1055
+      ]
+    },
+    {
+      "id": "pixel-art-game-merch-shop",
+      "device": "mobile",
+      "width": 375,
+      "height": 3019,
+      "pageHeight": 3019,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1896,
+        2207
+      ]
+    },
+    {
+      "id": "synthwave-music-night",
+      "device": "mobile",
+      "width": 375,
+      "height": 2113,
+      "pageHeight": 2113,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1301
+      ]
+    },
+    {
+      "id": "synthwave-record-shop",
+      "device": "mobile",
+      "width": 375,
+      "height": 2814,
+      "pageHeight": 2814,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1896,
+        2002
+      ]
+    },
+    {
+      "id": "synthwave-music-journal",
+      "device": "mobile",
+      "width": 375,
+      "height": 2735,
+      "pageHeight": 2735,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1896,
+        1923
+      ]
+    },
+    {
+      "id": "neumorphism-listening-planner",
+      "device": "mobile",
+      "width": 375,
+      "height": 1554,
+      "pageHeight": 1554,
+      "tiles": [
+        0,
+        632,
+        742
+      ]
+    },
+    {
+      "id": "neumorphism-audio-shop",
+      "device": "mobile",
+      "width": 375,
+      "height": 2746,
+      "pageHeight": 2746,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1896,
+        1934
+      ]
+    },
+    {
+      "id": "neumorphism-sound-studio",
+      "device": "mobile",
+      "width": 375,
+      "height": 2562,
+      "pageHeight": 2562,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1750
+      ]
+    },
+    {
+      "id": "bento-grid-daily-planner",
+      "device": "mobile",
+      "width": 375,
+      "height": 1492,
+      "pageHeight": 1492,
+      "tiles": [
+        0,
+        632,
+        680
+      ]
+    },
+    {
+      "id": "bento-grid-object-shop",
+      "device": "mobile",
+      "width": 375,
+      "height": 2758,
+      "pageHeight": 2758,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1896,
+        1946
+      ]
+    },
+    {
+      "id": "bento-grid-digital-practice",
+      "device": "mobile",
+      "width": 375,
+      "height": 2591,
+      "pageHeight": 2591,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1779
+      ]
+    },
+    {
+      "id": "minimalism-architecture-studio",
+      "device": "mobile",
+      "width": 375,
+      "height": 2505,
+      "pageHeight": 2505,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1693
+      ]
+    },
+    {
+      "id": "minimalism-everyday-shop",
+      "device": "mobile",
+      "width": 375,
+      "height": 2719,
+      "pageHeight": 2719,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1896,
+        1907
+      ]
+    },
+    {
+      "id": "minimalism-design-journal",
+      "device": "mobile",
+      "width": 375,
+      "height": 2632,
+      "pageHeight": 2632,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1820
+      ]
+    },
+    {
+      "id": "maximalism-creative-festival",
+      "device": "mobile",
+      "width": 375,
+      "height": 2147,
+      "pageHeight": 2147,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1335
+      ]
+    },
+    {
+      "id": "maximalism-design-shop",
+      "device": "mobile",
+      "width": 375,
+      "height": 2794,
+      "pageHeight": 2794,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1896,
+        1982
+      ]
+    },
+    {
+      "id": "maximalism-creative-agency",
+      "device": "mobile",
+      "width": 375,
+      "height": 2626,
+      "pageHeight": 2626,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1814
+      ]
+    },
+    {
+      "id": "luxury-typography-design-editions",
+      "device": "mobile",
+      "width": 375,
+      "height": 2719,
+      "pageHeight": 2719,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1896,
+        1907
+      ]
+    },
+    {
+      "id": "luxury-typography-brand-practice",
+      "device": "mobile",
+      "width": 375,
+      "height": 2585,
+      "pageHeight": 2585,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1773
+      ]
+    },
+    {
+      "id": "luxury-typography-culture-review",
+      "device": "mobile",
+      "width": 375,
+      "height": 2662,
+      "pageHeight": 2662,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1850
+      ]
+    },
+    {
+      "id": "conceptual-sketch-creative-practice",
+      "device": "mobile",
+      "width": 375,
+      "height": 2525,
+      "pageHeight": 2525,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1713
+      ]
+    },
+    {
+      "id": "conceptual-sketch-project-notebook",
+      "device": "mobile",
+      "width": 375,
+      "height": 1549,
+      "pageHeight": 1549,
+      "tiles": [
+        0,
+        632,
+        737
+      ]
+    },
+    {
+      "id": "conceptual-sketch-process-journal",
+      "device": "mobile",
+      "width": 375,
+      "height": 2722,
+      "pageHeight": 2722,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1896,
+        1910
+      ]
+    },
+    {
+      "id": "ethereal-wellness-practice",
+      "device": "mobile",
+      "width": 375,
+      "height": 2505,
+      "pageHeight": 2505,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1693
+      ]
+    },
+    {
+      "id": "ethereal-reflection-planner",
+      "device": "mobile",
+      "width": 375,
+      "height": 1524,
+      "pageHeight": 1524,
+      "tiles": [
+        0,
+        632,
+        712
+      ]
+    },
+    {
+      "id": "ethereal-ritual-shop",
+      "device": "mobile",
+      "width": 375,
+      "height": 2719,
+      "pageHeight": 2719,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1896,
+        1907
+      ]
+    },
+    {
+      "id": "bohemian-crafted-shop",
+      "device": "mobile",
+      "width": 375,
+      "height": 2650,
+      "pageHeight": 2650,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1838
+      ]
+    },
+    {
+      "id": "bohemian-travel-journal",
+      "device": "mobile",
+      "width": 375,
+      "height": 2662,
+      "pageHeight": 2662,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1850
+      ]
+    },
+    {
+      "id": "bohemian-creative-retreat",
+      "device": "mobile",
+      "width": 375,
+      "height": 2012,
+      "pageHeight": 2012,
+      "tiles": [
+        0,
+        632,
+        1200
+      ]
+    },
+    {
+      "id": "victorian-literary-journal",
+      "device": "mobile",
+      "width": 375,
+      "height": 2675,
+      "pageHeight": 2675,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1863
+      ]
+    },
+    {
+      "id": "victorian-curiosity-shop",
+      "device": "mobile",
+      "width": 375,
+      "height": 2738,
+      "pageHeight": 2738,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1896,
+        1926
+      ]
+    },
+    {
+      "id": "victorian-literary-salon",
+      "device": "mobile",
+      "width": 375,
+      "height": 1980,
+      "pageHeight": 1980,
+      "tiles": [
+        0,
+        632,
+        1168
+      ]
+    },
+    {
+      "id": "cyberpunk-night-festival",
+      "device": "mobile",
+      "width": 375,
+      "height": 2139,
+      "pageHeight": 2139,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1327
+      ]
+    },
+    {
+      "id": "cyberpunk-streetwear-shop",
+      "device": "mobile",
+      "width": 375,
+      "height": 2889,
+      "pageHeight": 2889,
+      "tiles": [
+        0,
+        632,
+        1264,
+        1896,
+        2077
+      ]
+    },
+    {
+      "id": "cyberpunk-creative-console",
+      "device": "mobile",
+      "width": 375,
+      "height": 1643,
+      "pageHeight": 1643,
+      "tiles": [
+        0,
+        632,
+        831
+      ]
+    }
+  ]
+}
