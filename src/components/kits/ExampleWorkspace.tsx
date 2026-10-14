@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useId, useState } from "react";
 import Link from "next/link";
 import { ArrowDownToLine, RotateCcw } from "lucide-react";
 import type {
@@ -36,6 +36,10 @@ export default function ExampleWorkspace({
     defaultSettings(example, recipe),
   );
   const [mode, setMode] = useState<"desktop" | "mobile">("desktop");
+  const controlId = useId();
+  useEffect(() => {
+    if (window.matchMedia("(max-width: 760px)").matches) setMode("mobile");
+  }, []);
   const [showControls, setShowControls] = useState(true);
   const [saveKind, setSaveKind] = useState("example");
   const [format, setFormat] = useState<"css" | "tailwind" | "json">("css");
@@ -108,8 +112,17 @@ export default function ExampleWorkspace({
         >
           {showControls ? "Hide" : "Show"} playground
         </button>
-        <Link className="text-link" href={`/examples/${example.id}`}>
-          Open example ↗
+        {examples.length > 1 ? (
+          <Link className="text-link" href={`/examples/${example.id}`}>
+            Open example ↗
+          </Link>
+        ) : null}
+        <Link
+          className="text-link"
+          href={`/preview/${example.id}`}
+          target="_blank"
+        >
+          Full-page preview ↗
         </Link>
       </div>
       <div
@@ -177,6 +190,9 @@ export default function ExampleWorkspace({
                 ))}
               </select>
             </label>
+            <a href="/kits/fonts.zip" className="text-link" download>
+              Download library fonts ↗
+            </a>
             <label>
               Accent color
               <span className="example-color-input">
@@ -188,10 +204,11 @@ export default function ExampleWorkspace({
                 <span>{settings.accent.toUpperCase()}</span>
               </span>
             </label>
-            <label>
+            <label htmlFor={`${controlId}-radius`}>
               Corner radius <output>{settings.radius}px</output>
               <input
                 type="range"
+                id={`${controlId}-radius`}
                 min={recipe.controls.radius[0]}
                 max={recipe.controls.radius[1]}
                 value={settings.radius}
@@ -201,10 +218,11 @@ export default function ExampleWorkspace({
               />
             </label>
             {recipe.controls.shadow ? (
-              <label>
+              <label htmlFor={`${controlId}-shadow`}>
                 Shadow strength <output>{settings.shadow}%</output>
                 <input
                   type="range"
+                  id={`${controlId}-shadow`}
                   min={0}
                   max={100}
                   value={settings.shadow}
@@ -214,10 +232,11 @@ export default function ExampleWorkspace({
                 />
               </label>
             ) : null}
-            <label>
+            <label htmlFor={`${controlId}-spacing`}>
               Spacing <output>{settings.spacing}px</output>
               <input
                 type="range"
+                id={`${controlId}-spacing`}
                 min={recipe.controls.spacing[0]}
                 max={recipe.controls.spacing[1]}
                 value={settings.spacing}
@@ -297,6 +316,25 @@ export default function ExampleWorkspace({
                 }
         }
       />
+      <div className="example-kit-download">
+        <div>
+          <h3>Start with the complete example.</h3>
+          <p>
+            Default source, native React controls, scoped CSS, fonts, licenses,
+            and DESIGN.md. Export your playground choices above to apply your
+            custom direction.
+          </p>
+        </div>
+        <div className="kit-example-links">
+          <a href={`/kits/examples/${example.id}.zip`} download>
+            Download source kit ↗
+          </a>
+          <a href={`/kits/examples/${example.id}.md`}>Read DESIGN.md ↗</a>
+          <a href={`/kits/examples/${example.id}.json`}>Example JSON ↗</a>
+          <a href={`/previews/${example.id}-desktop.webp`}>Desktop image ↗</a>
+          <a href={`/previews/${example.id}-mobile.webp`}>Mobile image ↗</a>
+        </div>
+      </div>
       <details className="example-source">
         <summary>
           Inspect the exported {format === "json" ? "tokens" : "CSS"}
