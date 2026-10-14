@@ -23,6 +23,7 @@ import {
   X,
 } from "lucide-react";
 import { styles } from "@/data/styles";
+import { normalizeSearch } from "@/lib/gallery-filters";
 import { useStyleCollections } from "@/lib/useStyleCollections";
 import {
   initialLibraryRoute,
@@ -235,18 +236,17 @@ export default function Library() {
     (s) =>
       (view !== "saved" || saved.includes(s.id)) &&
       (category === "All styles" || s.category === category) &&
-      [
-        s.name,
-        s.category,
-        s.tagline,
-        ...s.keywords,
-        ...s.traits,
-        s.fonts.heading,
-        s.fonts.body,
-      ]
-        .join(" ")
-        .toLowerCase()
-        .includes(query.toLowerCase().trim()),
+      normalizeSearch(
+        [
+          s.name,
+          s.category,
+          s.tagline,
+          ...s.keywords,
+          ...s.traits,
+          s.fonts.heading,
+          s.fonts.body,
+        ].join(" "),
+      ).includes(normalizeSearch(query)),
   );
   if (sort === "az")
     shown = [...shown].sort((a, b) => a.name.localeCompare(b.name));
@@ -441,12 +441,19 @@ export default function Library() {
             <input
               ref={searchRef}
               aria-label="Search styles, moods, or fonts"
+              maxLength={200}
               placeholder="Search styles, moods, fonts"
               value={query}
               onChange={(e) => search(e.target.value)}
             />
             {query ? (
-              <button aria-label="Clear search" onClick={() => search("")}>
+              <button
+                aria-label="Clear search"
+                onClick={() => {
+                  search("");
+                  searchRef.current?.focus();
+                }}
+              >
                 <X size={14} />
               </button>
             ) : (
@@ -812,6 +819,9 @@ export default function Library() {
                           view: "library",
                           selected: null,
                         });
+                        requestAnimationFrame(() =>
+                          document.getElementById("style-grid")?.focus(),
+                        );
                       }}
                     >
                       Explore all styles <ArrowRight size={16} />

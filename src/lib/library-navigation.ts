@@ -58,7 +58,7 @@ export function readLibraryRoute(
     category: libraryFamilies.some((family) => family === category)
       ? category!
       : "All styles",
-    query: url.searchParams.get("q") || "",
+    query: (url.searchParams.get("q") || "").slice(0, 200),
     sort: url.searchParams.get("sort") === "az" ? "az" : "curated",
     layout: url.searchParams.get("layout") === "list" ? "list" : "grid",
   };

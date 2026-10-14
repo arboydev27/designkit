@@ -1,4 +1,5 @@
 "use client";
+import { useRef } from "react";
 import { examplesByStyle } from "../../data/examples";
 import { styles } from "../../data/styles";
 import { exampleKinds } from "../../data/kit-types";
@@ -11,6 +12,7 @@ const discoveryExamples = [0, 1, 2].flatMap((index) =>
 );
 
 export default function ExamplesGallery() {
+  const searchInput = useRef<HTMLInputElement>(null);
   const { params, update, search } = useUrlQuery();
   const { query, styleId, kind, limit } = exampleFilters(params);
   const shown = discoveryExamples.filter(
@@ -41,7 +43,9 @@ export default function ExamplesGallery() {
         <label className="kit-search-label">
           Find an example
           <input
+            ref={searchInput}
             type="search"
+            maxLength={200}
             name="q"
             autoComplete="off"
             value={query}
@@ -104,6 +108,7 @@ export default function ExamplesGallery() {
             type="button"
             onClick={() => {
               update({ q: null, style: null, kind: null, count: null });
+              searchInput.current?.focus();
             }}
           >
             Explore every example
