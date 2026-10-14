@@ -1,9 +1,11 @@
 {
   "version": "2.0.0",
-  "contentDigest": "f2fce7355d694be5093b9369b4bd1d5feda599fd8a65665fa1c2a6bfb1e868e3",
+  "contentDigest": "42f2d165de4c8b64035979af69d26d65774ad9cafd4640d861306e78d44b5ef0",
   "license": "MIT",
   "fontsLicense": "OFL-1.1",
   "source": "https://github.com/arboydev27/designkit",
+  "repository": "https://github.com/arboydev27/designkit",
+  "homepage": "https://designkit-vert.vercel.app",
   "style": {
     "id": "victorian",
     "name": "Victorian",
