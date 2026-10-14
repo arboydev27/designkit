@@ -18,8 +18,12 @@ import {
   resolveTokens,
 } from "../../lib/kit-tokens";
 import { downloadText } from "../../lib/download";
+import { createBoardDecisionRestorer } from "../../lib/board-navigation";
 import ExampleCanvas from "./ExampleCanvas";
 import BoardPicker from "./BoardPicker";
+import ContextLink from "./ContextLink";
+import { useBoards } from "./useBoards";
+import useUrlQuery from "./useUrlQuery";
 
 export default function ExampleWorkspace({
   examples,
@@ -30,7 +34,16 @@ export default function ExampleWorkspace({
   recipe: StyleRecipe;
   initialId?: string;
 }) {
-  const [id, setId] = useState(initialId || examples[0].id);
+  const { boards, ready } = useBoards();
+  const { params } = useUrlQuery();
+  const boardId = params.get("board");
+  const decisionKind = params.get("decision");
+  const entryId = initialId || examples[0].id;
+  const entryExample =
+    examples.find((entry) => entry.id === entryId) || examples[0];
+  const [restoreEntry] = useState(createBoardDecisionRestorer);
+  const [savedDecisionMessage, setSavedDecisionMessage] = useState("");
+  const [id, setId] = useState(entryId);
   const example = examples.find((entry) => entry.id === id) || examples[0];
   const [settings, setSettings] = useState<PlaygroundSettings>(() =>
     defaultSettings(example, recipe),
@@ -42,6 +55,42 @@ export default function ExampleWorkspace({
   }, []);
   const [showControls, setShowControls] = useState(true);
   const [saveKind, setSaveKind] = useState("example");
+  useEffect(() => {
+    const restored = restoreEntry({
+      boards,
+      ready,
+      boardId,
+      kind: decisionKind,
+      example: entryExample,
+      recipe,
+    });
+    if (!restored) {
+      if (
+        !boardId ||
+        (decisionKind !== "example" && decisionKind !== "palette")
+      )
+        setSavedDecisionMessage("");
+      return;
+    }
+    setId(entryExample.id);
+    setSettings(restored.settings);
+    setSaveKind(restored.kind);
+    setSavedDecisionMessage(
+      restored.status === "found"
+        ? `Opened the saved ${restored.kind} from ${restored.boardName}.`
+        : restored.status === "missing-board"
+          ? "That project board is no longer available. Showing the default example."
+          : "That decision is no longer on the board. Showing the default example.",
+    );
+  }, [
+    boards,
+    ready,
+    boardId,
+    decisionKind,
+    entryExample,
+    recipe,
+    restoreEntry,
+  ]);
   const [format, setFormat] = useState<"css" | "tailwind" | "json">("css");
   const values = resolveTokens(example, recipe, settings).values;
   const source =
@@ -63,6 +112,11 @@ export default function ExampleWorkspace({
       className="example-workspace"
       aria-label="Interactive example playground"
     >
+      {savedDecisionMessage ? (
+        <p className="kit-results" role="status">
+          {savedDecisionMessage}
+        </p>
+      ) : null}
       {examples.length > 1 ? (
         <div
           className="example-picker"
@@ -113,9 +167,13 @@ export default function ExampleWorkspace({
           {showControls ? "Hide" : "Show"} playground
         </button>
         {examples.length > 1 ? (
-          <Link className="text-link" href={`/examples/${example.id}`}>
+          <ContextLink
+            className="text-link"
+            href={`/examples/${example.id}/`}
+            fallback={`/styles/${example.styleId}/`}
+          >
             Open example ↗
-          </Link>
+          </ContextLink>
         ) : null}
         <Link
           className="text-link"

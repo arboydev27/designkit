@@ -1,30 +1,73 @@
 "use client";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import {
   boardItemName,
   exportBoard,
   importBoard,
   projectBrief,
+  removeBoardItem,
+  restoreBoard,
   type ProjectBoard,
 } from "../../lib/boards";
 import { downloadText } from "../../lib/download";
+import {
+  boardDecisionHref,
+  boardHref,
+  selectedBoard,
+} from "../../lib/board-navigation";
+import ContextLink from "./ContextLink";
+import useUrlQuery from "./useUrlQuery";
 import { useBoards } from "./useBoards";
 
 export default function BoardsWorkspace() {
   const { boards, ready, error, update } = useBoards();
-  const [selectedId, setSelectedId] = useState("");
+  const { params, update: updateQuery } = useUrlQuery();
+  const selectedId = params.get("board") || "";
+  const selectBoard = (id: string, replace = false) =>
+    updateQuery({ board: id || null }, replace);
   const [message, setMessage] = useState("");
-  const [removed, setRemoved] = useState<ProjectBoard | null>(null);
+  const [removed, setRemoved] = useState<{
+    board: ProjectBoard;
+    index: number;
+  } | null>(null);
+  const [importing, setImporting] = useState(false);
   const input = useRef<HTMLInputElement>(null);
-  const board = boards.find((board) => board.id === selectedId) || boards[0];
-  const patch = (changes: Partial<ProjectBoard>) => {
-    if (board)
-      update(
-        boards.map((current) =>
-          current.id === board.id ? { ...current, ...changes } : current,
-        ),
+  const nameInput = useRef<HTMLInputElement>(null);
+  const createButton = useRef<HTMLButtonElement>(null);
+  const primarySelect = useRef<HTMLSelectElement>(null);
+  const decisions = useRef<HTMLDivElement>(null);
+  const board = selectedBoard(boards, selectedId);
+  const activeBoardId = board?.id || "";
+  useEffect(() => {
+    if (ready && selectedId !== activeBoardId)
+      updateQuery({ board: activeBoardId || null }, true);
+  }, [ready, selectedId, activeBoardId, updateQuery]);
+  const focusName = () => {
+    requestAnimationFrame(() => {
+      if (nameInput.current) nameInput.current.focus();
+      else createButton.current?.focus();
+    });
+  };
+  const patch = (
+    changes:
+      Partial<ProjectBoard> | ((board: ProjectBoard) => Partial<ProjectBoard>),
+  ) => {
+    if (!board) return null;
+    return update((current) => {
+      if (!current.some((entry) => entry.id === board.id))
+        throw new Error(
+          "This board was removed in another tab. Choose another board.",
+        );
+      return current.map((entry) =>
+        entry.id === board.id
+          ? {
+              ...entry,
+              ...(typeof changes === "function" ? changes(entry) : changes),
+            }
+          : entry,
       );
+    });
   };
   const create = () => {
     const newBoard: ProjectBoard = {
@@ -36,8 +79,10 @@ export default function BoardsWorkspace() {
       primaryExampleId: "",
       items: [],
     };
-    update([...boards, newBoard]);
-    setSelectedId(newBoard.id);
+    if (!update((current) => [...current, newBoard])) return;
+    selectBoard(newBoard.id);
+    setMessage("Project board created.");
+    focusName();
   };
   return (
     <>
@@ -51,6 +96,7 @@ export default function BoardsWorkspace() {
       </div>
       <div className="board-actions">
         <button
+          ref={createButton}
           className="primary-button"
           type="button"
           disabled={!ready}
@@ -61,19 +107,25 @@ export default function BoardsWorkspace() {
         <button
           className="small-button"
           type="button"
+          disabled={!ready || importing}
           onClick={() => input.current?.click()}
         >
-          Import a board
+          {importing ? "Importing board…" : "Import a board"}
         </button>
         <input
           ref={input}
           type="file"
           accept="application/json,.json"
           className="detail-sr-only"
+          tabIndex={-1}
+          disabled={!ready || importing}
           aria-label="Import board JSON"
           onChange={async (event) => {
-            const file = event.target.files?.[0];
+            const fileInput = event.currentTarget;
+            const file = fileInput.files?.[0];
             if (!file) return;
+            setImporting(true);
+            setMessage("");
             try {
               if (file.size > 1_000_000)
                 throw new Error("Choose a board smaller than 1 MB.");
@@ -81,35 +133,43 @@ export default function BoardsWorkspace() {
               const copy = {
                 ...imported,
                 id: crypto.randomUUID(),
-                name: `${imported.name} (imported)`,
+                name: `${imported.name.slice(0, 109)} (imported)`,
               };
-              update([...boards, copy]);
-              setSelectedId(copy.id);
-              setMessage("Board imported. Your existing boards were kept.");
+              if (update((current) => [...current, copy])) {
+                selectBoard(copy.id);
+                setMessage("Board imported. Your existing boards were kept.");
+                focusName();
+              }
             } catch (error) {
               setMessage(
                 error instanceof Error
                   ? error.message
                   : "This file could not be imported.",
               );
+            } finally {
+              fileInput.value = "";
+              setImporting(false);
             }
-            event.target.value = "";
           }}
         />
       </div>
       {removed ? (
         <p className="kit-results" role="status">
-          {removed.name} removed.{" "}
+          {removed.board.name} removed.{" "}
           <button
             className="small-button"
             type="button"
             onClick={() => {
-              update([
-                ...boards.filter((entry) => entry.id !== removed.id),
-                removed,
-              ]);
-              setSelectedId(removed.id);
+              if (
+                !update((current) =>
+                  restoreBoard(current, removed.board, removed.index),
+                )
+              )
+                return;
+              selectBoard(removed.board.id);
               setRemoved(null);
+              setMessage("Project board restored.");
+              focusName();
             }}
           >
             Undo
@@ -118,7 +178,7 @@ export default function BoardsWorkspace() {
       ) : null}
       {message || error ? (
         <p role="status" className="kit-results">
-          {error || message}
+          {[message, error].filter(Boolean).join(" ")}
         </p>
       ) : null}
       {!ready ? (
@@ -141,7 +201,10 @@ export default function BoardsWorkspace() {
                 key={entry.id}
                 type="button"
                 aria-pressed={entry.id === board.id}
-                onClick={() => setSelectedId(entry.id)}
+                onClick={() => {
+                  selectBoard(entry.id);
+                  setMessage("");
+                }}
               >
                 <strong>{entry.name}</strong>
                 <span>
@@ -155,7 +218,8 @@ export default function BoardsWorkspace() {
             <label>
               Project name
               <input
-                key={board.id}
+                ref={nameInput}
+                key={`${board.id}-${board.name}`}
                 defaultValue={board.name}
                 maxLength={120}
                 onBlur={(event) => {
@@ -198,6 +262,7 @@ export default function BoardsWorkspace() {
             <label>
               Primary design direction
               <select
+                ref={primarySelect}
                 value={board.primaryExampleId}
                 onChange={(event) =>
                   patch({ primaryExampleId: event.target.value })
@@ -213,14 +278,14 @@ export default function BoardsWorkspace() {
                   ))}
               </select>
             </label>
-            <div className="board-decisions">
+            <div ref={decisions} className="board-decisions">
               <h2>Your decisions.</h2>
               {!board.items.length ? (
                 <p>
                   Find a useful example or component, then add it to this board.
                 </p>
               ) : (
-                board.items.map((item) => (
+                board.items.map((item, index) => (
                   <article key={`${item.kind}-${item.id}`}>
                     <div>
                       <span>{item.kind}</span>
@@ -229,11 +294,12 @@ export default function BoardsWorkspace() {
                           {item.id}
                         </strong>
                       ) : (
-                        <Link
-                          href={`/${item.kind === "component" ? "components" : "examples"}/${item.id}`}
+                        <ContextLink
+                          href={boardDecisionHref(board.id, item.kind, item.id)}
+                          fallback={boardHref(board.id)}
                         >
                           {boardItemName(item)} ↗
-                        </Link>
+                        </ContextLink>
                       )}
                       {item.settings ? (
                         <small>Includes your playground choices.</small>
@@ -243,21 +309,21 @@ export default function BoardsWorkspace() {
                       className="small-button"
                       type="button"
                       aria-label={`Remove ${boardItemName(item)}`}
-                      onClick={() =>
-                        patch({
-                          items: board.items.filter(
-                            (entry) =>
-                              !(
-                                entry.kind === item.kind && entry.id === item.id
-                              ),
-                          ),
-                          primaryExampleId:
-                            board.primaryExampleId === item.id &&
-                            item.kind === "example"
-                              ? ""
-                              : board.primaryExampleId,
-                        })
-                      }
+                      onClick={() => {
+                        if (!patch((current) => removeBoardItem(current, item)))
+                          return;
+                        setMessage(`${boardItemName(item)} removed.`);
+                        requestAnimationFrame(() => {
+                          const buttons =
+                            decisions.current?.querySelectorAll<HTMLButtonElement>(
+                              "button",
+                            );
+                          const next =
+                            buttons?.[Math.min(index, buttons.length - 1)];
+                          if (next) next.focus();
+                          else primarySelect.current?.focus();
+                        });
+                      }}
                     >
                       Remove
                     </button>
@@ -309,9 +375,23 @@ export default function BoardsWorkspace() {
               type="button"
               className="small-button"
               onClick={() => {
-                setRemoved(board);
-                update(boards.filter((entry) => entry.id !== board.id));
-                setSelectedId("");
+                let deleted: { board: ProjectBoard; index: number } | undefined;
+                const result = update((current) => {
+                  const index = current.findIndex(
+                    (entry) => entry.id === board.id,
+                  );
+                  if (index === -1)
+                    throw new Error(
+                      "This board was already removed in another tab.",
+                    );
+                  deleted = { board: current[index], index };
+                  return current.filter((entry) => entry.id !== board.id);
+                });
+                if (!result || !deleted) return;
+                setRemoved(deleted);
+                selectBoard(result[0]?.id || "", true);
+                setMessage("");
+                focusName();
               }}
             >
               Remove this board
