@@ -1,9 +1,11 @@
 {
   "version": "2.0.0",
-  "contentDigest": "f2fce7355d694be5093b9369b4bd1d5feda599fd8a65665fa1c2a6bfb1e868e3",
+  "contentDigest": "42f2d165de4c8b64035979af69d26d65774ad9cafd4640d861306e78d44b5ef0",
   "license": "MIT",
   "fontsLicense": "OFL-1.1",
   "source": "https://github.com/arboydev27/designkit",
+  "repository": "https://github.com/arboydev27/designkit",
+  "homepage": "https://designkit-vert.vercel.app",
   "styles": [
     {
       "id": "wabi-sabi",
@@ -21,7 +23,11 @@
           "screenshots": {
             "desktop": "/previews/wabi-sabi-earthware-desktop.webp",
             "mobile": "/previews/wabi-sabi-earthware-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/wabi-sabi-earthware.md",
+          "json": "/kits/examples/wabi-sabi-earthware.json",
+          "source": "/kits/examples/wabi-sabi-earthware.zip",
+          "tokens": "/kits/examples/wabi-sabi-earthware.tokens.json"
         },
         {
           "id": "wabi-sabi-rain-journal",
@@ -33,7 +39,11 @@
           "screenshots": {
             "desktop": "/previews/wabi-sabi-rain-journal-desktop.webp",
             "mobile": "/previews/wabi-sabi-rain-journal-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/wabi-sabi-rain-journal.md",
+          "json": "/kits/examples/wabi-sabi-rain-journal.json",
+          "source": "/kits/examples/wabi-sabi-rain-journal.zip",
+          "tokens": "/kits/examples/wabi-sabi-rain-journal.tokens.json"
         },
         {
           "id": "wabi-sabi-architecture",
@@ -45,7 +55,11 @@
           "screenshots": {
             "desktop": "/previews/wabi-sabi-architecture-desktop.webp",
             "mobile": "/previews/wabi-sabi-architecture-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/wabi-sabi-architecture.md",
+          "json": "/kits/examples/wabi-sabi-architecture.json",
+          "source": "/kits/examples/wabi-sabi-architecture.zip",
+          "tokens": "/kits/examples/wabi-sabi-architecture.tokens.json"
         }
       ],
       "components": [
@@ -54,46 +68,59 @@
           "styleId": "wabi-sabi",
           "kind": "button",
           "name": "Wabi-sabi button",
-          "url": "/components/wabi-sabi-button/"
+          "url": "/components/wabi-sabi-button/",
+          "registry": "/r/wabi-sabi-button.json",
+          "source": "/kits/components/wabi-sabi-button.zip"
         },
         {
           "id": "wabi-sabi-card",
           "styleId": "wabi-sabi",
           "kind": "card",
           "name": "Wabi-sabi card",
-          "url": "/components/wabi-sabi-card/"
+          "url": "/components/wabi-sabi-card/",
+          "registry": "/r/wabi-sabi-card.json",
+          "source": "/kits/components/wabi-sabi-card.zip"
         },
         {
           "id": "wabi-sabi-navigation",
           "styleId": "wabi-sabi",
           "kind": "navigation",
           "name": "Wabi-sabi navigation",
-          "url": "/components/wabi-sabi-navigation/"
+          "url": "/components/wabi-sabi-navigation/",
+          "registry": "/r/wabi-sabi-navigation.json",
+          "source": "/kits/components/wabi-sabi-navigation.zip"
         },
         {
           "id": "wabi-sabi-field",
           "styleId": "wabi-sabi",
           "kind": "field",
           "name": "Wabi-sabi field",
-          "url": "/components/wabi-sabi-field/"
+          "url": "/components/wabi-sabi-field/",
+          "registry": "/r/wabi-sabi-field.json",
+          "source": "/kits/components/wabi-sabi-field.zip"
         },
         {
           "id": "wabi-sabi-dialog",
           "styleId": "wabi-sabi",
           "kind": "dialog",
           "name": "Wabi-sabi dialog",
-          "url": "/components/wabi-sabi-dialog/"
+          "url": "/components/wabi-sabi-dialog/",
+          "registry": "/r/wabi-sabi-dialog.json",
+          "source": "/kits/components/wabi-sabi-dialog.zip"
         },
         {
           "id": "wabi-sabi-status",
           "styleId": "wabi-sabi",
           "kind": "status",
           "name": "Wabi-sabi status",
-          "url": "/components/wabi-sabi-status/"
+          "url": "/components/wabi-sabi-status/",
+          "registry": "/r/wabi-sabi-status.json",
+          "source": "/kits/components/wabi-sabi-status.zip"
         }
       ],
       "guide": "/kits/styles/wabi-sabi.md",
-      "json": "/kits/styles/wabi-sabi.json"
+      "json": "/kits/styles/wabi-sabi.json",
+      "skill": "/kits/skills/designkit-wabi-sabi.zip"
     },
     {
       "id": "neo-brutalism",
@@ -111,7 +138,11 @@
           "screenshots": {
             "desktop": "/previews/neo-brutalism-creative-studio-desktop.webp",
             "mobile": "/previews/neo-brutalism-creative-studio-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/neo-brutalism-creative-studio.md",
+          "json": "/kits/examples/neo-brutalism-creative-studio.json",
+          "source": "/kits/examples/neo-brutalism-creative-studio.zip",
+          "tokens": "/kits/examples/neo-brutalism-creative-studio.tokens.json"
         },
         {
           "id": "neo-brutalism-print-shop",
@@ -123,7 +154,11 @@
           "screenshots": {
             "desktop": "/previews/neo-brutalism-print-shop-desktop.webp",
             "mobile": "/previews/neo-brutalism-print-shop-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/neo-brutalism-print-shop.md",
+          "json": "/kits/examples/neo-brutalism-print-shop.json",
+          "source": "/kits/examples/neo-brutalism-print-shop.zip",
+          "tokens": "/kits/examples/neo-brutalism-print-shop.tokens.json"
         },
         {
           "id": "neo-brutalism-music-weekender",
@@ -135,7 +170,11 @@
           "screenshots": {
             "desktop": "/previews/neo-brutalism-music-weekender-desktop.webp",
             "mobile": "/previews/neo-brutalism-music-weekender-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/neo-brutalism-music-weekender.md",
+          "json": "/kits/examples/neo-brutalism-music-weekender.json",
+          "source": "/kits/examples/neo-brutalism-music-weekender.zip",
+          "tokens": "/kits/examples/neo-brutalism-music-weekender.tokens.json"
         }
       ],
       "components": [
@@ -144,46 +183,59 @@
           "styleId": "neo-brutalism",
           "kind": "button",
           "name": "Neo-brutalism button",
-          "url": "/components/neo-brutalism-button/"
+          "url": "/components/neo-brutalism-button/",
+          "registry": "/r/neo-brutalism-button.json",
+          "source": "/kits/components/neo-brutalism-button.zip"
         },
         {
           "id": "neo-brutalism-card",
           "styleId": "neo-brutalism",
           "kind": "card",
           "name": "Neo-brutalism card",
-          "url": "/components/neo-brutalism-card/"
+          "url": "/components/neo-brutalism-card/",
+          "registry": "/r/neo-brutalism-card.json",
+          "source": "/kits/components/neo-brutalism-card.zip"
         },
         {
           "id": "neo-brutalism-navigation",
           "styleId": "neo-brutalism",
           "kind": "navigation",
           "name": "Neo-brutalism navigation",
-          "url": "/components/neo-brutalism-navigation/"
+          "url": "/components/neo-brutalism-navigation/",
+          "registry": "/r/neo-brutalism-navigation.json",
+          "source": "/kits/components/neo-brutalism-navigation.zip"
         },
         {
           "id": "neo-brutalism-field",
           "styleId": "neo-brutalism",
           "kind": "field",
           "name": "Neo-brutalism field",
-          "url": "/components/neo-brutalism-field/"
+          "url": "/components/neo-brutalism-field/",
+          "registry": "/r/neo-brutalism-field.json",
+          "source": "/kits/components/neo-brutalism-field.zip"
         },
         {
           "id": "neo-brutalism-dialog",
           "styleId": "neo-brutalism",
           "kind": "dialog",
           "name": "Neo-brutalism dialog",
-          "url": "/components/neo-brutalism-dialog/"
+          "url": "/components/neo-brutalism-dialog/",
+          "registry": "/r/neo-brutalism-dialog.json",
+          "source": "/kits/components/neo-brutalism-dialog.zip"
         },
         {
           "id": "neo-brutalism-status",
           "styleId": "neo-brutalism",
           "kind": "status",
           "name": "Neo-brutalism status",
-          "url": "/components/neo-brutalism-status/"
+          "url": "/components/neo-brutalism-status/",
+          "registry": "/r/neo-brutalism-status.json",
+          "source": "/kits/components/neo-brutalism-status.zip"
         }
       ],
       "guide": "/kits/styles/neo-brutalism.md",
-      "json": "/kits/styles/neo-brutalism.json"
+      "json": "/kits/styles/neo-brutalism.json",
+      "skill": "/kits/skills/designkit-neo-brutalism.zip"
     },
     {
       "id": "glassmorphism",
@@ -201,7 +253,11 @@
           "screenshots": {
             "desktop": "/previews/glassmorphism-focus-app-desktop.webp",
             "mobile": "/previews/glassmorphism-focus-app-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/glassmorphism-focus-app.md",
+          "json": "/kits/examples/glassmorphism-focus-app.json",
+          "source": "/kits/examples/glassmorphism-focus-app.zip",
+          "tokens": "/kits/examples/glassmorphism-focus-app.tokens.json"
         },
         {
           "id": "glassmorphism-digital-studio",
@@ -213,7 +269,11 @@
           "screenshots": {
             "desktop": "/previews/glassmorphism-digital-studio-desktop.webp",
             "mobile": "/previews/glassmorphism-digital-studio-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/glassmorphism-digital-studio.md",
+          "json": "/kits/examples/glassmorphism-digital-studio.json",
+          "source": "/kits/examples/glassmorphism-digital-studio.zip",
+          "tokens": "/kits/examples/glassmorphism-digital-studio.tokens.json"
         },
         {
           "id": "glassmorphism-research-library",
@@ -225,7 +285,11 @@
           "screenshots": {
             "desktop": "/previews/glassmorphism-research-library-desktop.webp",
             "mobile": "/previews/glassmorphism-research-library-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/glassmorphism-research-library.md",
+          "json": "/kits/examples/glassmorphism-research-library.json",
+          "source": "/kits/examples/glassmorphism-research-library.zip",
+          "tokens": "/kits/examples/glassmorphism-research-library.tokens.json"
         }
       ],
       "components": [
@@ -234,46 +298,59 @@
           "styleId": "glassmorphism",
           "kind": "button",
           "name": "Glassmorphism button",
-          "url": "/components/glassmorphism-button/"
+          "url": "/components/glassmorphism-button/",
+          "registry": "/r/glassmorphism-button.json",
+          "source": "/kits/components/glassmorphism-button.zip"
         },
         {
           "id": "glassmorphism-card",
           "styleId": "glassmorphism",
           "kind": "card",
           "name": "Glassmorphism card",
-          "url": "/components/glassmorphism-card/"
+          "url": "/components/glassmorphism-card/",
+          "registry": "/r/glassmorphism-card.json",
+          "source": "/kits/components/glassmorphism-card.zip"
         },
         {
           "id": "glassmorphism-navigation",
           "styleId": "glassmorphism",
           "kind": "navigation",
           "name": "Glassmorphism navigation",
-          "url": "/components/glassmorphism-navigation/"
+          "url": "/components/glassmorphism-navigation/",
+          "registry": "/r/glassmorphism-navigation.json",
+          "source": "/kits/components/glassmorphism-navigation.zip"
         },
         {
           "id": "glassmorphism-field",
           "styleId": "glassmorphism",
           "kind": "field",
           "name": "Glassmorphism field",
-          "url": "/components/glassmorphism-field/"
+          "url": "/components/glassmorphism-field/",
+          "registry": "/r/glassmorphism-field.json",
+          "source": "/kits/components/glassmorphism-field.zip"
         },
         {
           "id": "glassmorphism-dialog",
           "styleId": "glassmorphism",
           "kind": "dialog",
           "name": "Glassmorphism dialog",
-          "url": "/components/glassmorphism-dialog/"
+          "url": "/components/glassmorphism-dialog/",
+          "registry": "/r/glassmorphism-dialog.json",
+          "source": "/kits/components/glassmorphism-dialog.zip"
         },
         {
           "id": "glassmorphism-status",
           "styleId": "glassmorphism",
           "kind": "status",
           "name": "Glassmorphism status",
-          "url": "/components/glassmorphism-status/"
+          "url": "/components/glassmorphism-status/",
+          "registry": "/r/glassmorphism-status.json",
+          "source": "/kits/components/glassmorphism-status.zip"
         }
       ],
       "guide": "/kits/styles/glassmorphism.md",
-      "json": "/kits/styles/glassmorphism.json"
+      "json": "/kits/styles/glassmorphism.json",
+      "skill": "/kits/skills/designkit-glassmorphism.zip"
     },
     {
       "id": "swiss-design",
@@ -291,7 +368,11 @@
           "screenshots": {
             "desktop": "/previews/swiss-design-design-programme-desktop.webp",
             "mobile": "/previews/swiss-design-design-programme-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/swiss-design-design-programme.md",
+          "json": "/kits/examples/swiss-design-design-programme.json",
+          "source": "/kits/examples/swiss-design-design-programme.zip",
+          "tokens": "/kits/examples/swiss-design-design-programme.tokens.json"
         },
         {
           "id": "swiss-design-design-publication",
@@ -303,7 +384,11 @@
           "screenshots": {
             "desktop": "/previews/swiss-design-design-publication-desktop.webp",
             "mobile": "/previews/swiss-design-design-publication-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/swiss-design-design-publication.md",
+          "json": "/kits/examples/swiss-design-design-publication.json",
+          "source": "/kits/examples/swiss-design-design-publication.zip",
+          "tokens": "/kits/examples/swiss-design-design-publication.tokens.json"
         },
         {
           "id": "swiss-design-industrial-studio",
@@ -315,7 +400,11 @@
           "screenshots": {
             "desktop": "/previews/swiss-design-industrial-studio-desktop.webp",
             "mobile": "/previews/swiss-design-industrial-studio-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/swiss-design-industrial-studio.md",
+          "json": "/kits/examples/swiss-design-industrial-studio.json",
+          "source": "/kits/examples/swiss-design-industrial-studio.zip",
+          "tokens": "/kits/examples/swiss-design-industrial-studio.tokens.json"
         }
       ],
       "components": [
@@ -324,46 +413,59 @@
           "styleId": "swiss-design",
           "kind": "button",
           "name": "Swiss design button",
-          "url": "/components/swiss-design-button/"
+          "url": "/components/swiss-design-button/",
+          "registry": "/r/swiss-design-button.json",
+          "source": "/kits/components/swiss-design-button.zip"
         },
         {
           "id": "swiss-design-card",
           "styleId": "swiss-design",
           "kind": "card",
           "name": "Swiss design card",
-          "url": "/components/swiss-design-card/"
+          "url": "/components/swiss-design-card/",
+          "registry": "/r/swiss-design-card.json",
+          "source": "/kits/components/swiss-design-card.zip"
         },
         {
           "id": "swiss-design-navigation",
           "styleId": "swiss-design",
           "kind": "navigation",
           "name": "Swiss design navigation",
-          "url": "/components/swiss-design-navigation/"
+          "url": "/components/swiss-design-navigation/",
+          "registry": "/r/swiss-design-navigation.json",
+          "source": "/kits/components/swiss-design-navigation.zip"
         },
         {
           "id": "swiss-design-field",
           "styleId": "swiss-design",
           "kind": "field",
           "name": "Swiss design field",
-          "url": "/components/swiss-design-field/"
+          "url": "/components/swiss-design-field/",
+          "registry": "/r/swiss-design-field.json",
+          "source": "/kits/components/swiss-design-field.zip"
         },
         {
           "id": "swiss-design-dialog",
           "styleId": "swiss-design",
           "kind": "dialog",
           "name": "Swiss design dialog",
-          "url": "/components/swiss-design-dialog/"
+          "url": "/components/swiss-design-dialog/",
+          "registry": "/r/swiss-design-dialog.json",
+          "source": "/kits/components/swiss-design-dialog.zip"
         },
         {
           "id": "swiss-design-status",
           "styleId": "swiss-design",
           "kind": "status",
           "name": "Swiss design status",
-          "url": "/components/swiss-design-status/"
+          "url": "/components/swiss-design-status/",
+          "registry": "/r/swiss-design-status.json",
+          "source": "/kits/components/swiss-design-status.zip"
         }
       ],
       "guide": "/kits/styles/swiss-design.md",
-      "json": "/kits/styles/swiss-design.json"
+      "json": "/kits/styles/swiss-design.json",
+      "skill": "/kits/skills/designkit-swiss-design.zip"
     },
     {
       "id": "claymorphism",
@@ -381,7 +483,11 @@
           "screenshots": {
             "desktop": "/previews/claymorphism-habit-planner-desktop.webp",
             "mobile": "/previews/claymorphism-habit-planner-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/claymorphism-habit-planner.md",
+          "json": "/kits/examples/claymorphism-habit-planner.json",
+          "source": "/kits/examples/claymorphism-habit-planner.zip",
+          "tokens": "/kits/examples/claymorphism-habit-planner.tokens.json"
         },
         {
           "id": "claymorphism-desk-shop",
@@ -393,7 +499,11 @@
           "screenshots": {
             "desktop": "/previews/claymorphism-desk-shop-desktop.webp",
             "mobile": "/previews/claymorphism-desk-shop-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/claymorphism-desk-shop.md",
+          "json": "/kits/examples/claymorphism-desk-shop.json",
+          "source": "/kits/examples/claymorphism-desk-shop.zip",
+          "tokens": "/kits/examples/claymorphism-desk-shop.tokens.json"
         },
         {
           "id": "claymorphism-making-workshop",
@@ -405,7 +515,11 @@
           "screenshots": {
             "desktop": "/previews/claymorphism-making-workshop-desktop.webp",
             "mobile": "/previews/claymorphism-making-workshop-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/claymorphism-making-workshop.md",
+          "json": "/kits/examples/claymorphism-making-workshop.json",
+          "source": "/kits/examples/claymorphism-making-workshop.zip",
+          "tokens": "/kits/examples/claymorphism-making-workshop.tokens.json"
         }
       ],
       "components": [
@@ -414,46 +528,59 @@
           "styleId": "claymorphism",
           "kind": "button",
           "name": "Claymorphism button",
-          "url": "/components/claymorphism-button/"
+          "url": "/components/claymorphism-button/",
+          "registry": "/r/claymorphism-button.json",
+          "source": "/kits/components/claymorphism-button.zip"
         },
         {
           "id": "claymorphism-card",
           "styleId": "claymorphism",
           "kind": "card",
           "name": "Claymorphism card",
-          "url": "/components/claymorphism-card/"
+          "url": "/components/claymorphism-card/",
+          "registry": "/r/claymorphism-card.json",
+          "source": "/kits/components/claymorphism-card.zip"
         },
         {
           "id": "claymorphism-navigation",
           "styleId": "claymorphism",
           "kind": "navigation",
           "name": "Claymorphism navigation",
-          "url": "/components/claymorphism-navigation/"
+          "url": "/components/claymorphism-navigation/",
+          "registry": "/r/claymorphism-navigation.json",
+          "source": "/kits/components/claymorphism-navigation.zip"
         },
         {
           "id": "claymorphism-field",
           "styleId": "claymorphism",
           "kind": "field",
           "name": "Claymorphism field",
-          "url": "/components/claymorphism-field/"
+          "url": "/components/claymorphism-field/",
+          "registry": "/r/claymorphism-field.json",
+          "source": "/kits/components/claymorphism-field.zip"
         },
         {
           "id": "claymorphism-dialog",
           "styleId": "claymorphism",
           "kind": "dialog",
           "name": "Claymorphism dialog",
-          "url": "/components/claymorphism-dialog/"
+          "url": "/components/claymorphism-dialog/",
+          "registry": "/r/claymorphism-dialog.json",
+          "source": "/kits/components/claymorphism-dialog.zip"
         },
         {
           "id": "claymorphism-status",
           "styleId": "claymorphism",
           "kind": "status",
           "name": "Claymorphism status",
-          "url": "/components/claymorphism-status/"
+          "url": "/components/claymorphism-status/",
+          "registry": "/r/claymorphism-status.json",
+          "source": "/kits/components/claymorphism-status.zip"
         }
       ],
       "guide": "/kits/styles/claymorphism.md",
-      "json": "/kits/styles/claymorphism.json"
+      "json": "/kits/styles/claymorphism.json",
+      "skill": "/kits/skills/designkit-claymorphism.zip"
     },
     {
       "id": "editorial-design",
@@ -471,7 +598,11 @@
           "screenshots": {
             "desktop": "/previews/editorial-design-culture-magazine-desktop.webp",
             "mobile": "/previews/editorial-design-culture-magazine-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/editorial-design-culture-magazine.md",
+          "json": "/kits/examples/editorial-design-culture-magazine.json",
+          "source": "/kits/examples/editorial-design-culture-magazine.zip",
+          "tokens": "/kits/examples/editorial-design-culture-magazine.tokens.json"
         },
         {
           "id": "editorial-design-book-shop",
@@ -483,7 +614,11 @@
           "screenshots": {
             "desktop": "/previews/editorial-design-book-shop-desktop.webp",
             "mobile": "/previews/editorial-design-book-shop-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/editorial-design-book-shop.md",
+          "json": "/kits/examples/editorial-design-book-shop.json",
+          "source": "/kits/examples/editorial-design-book-shop.zip",
+          "tokens": "/kits/examples/editorial-design-book-shop.tokens.json"
         },
         {
           "id": "editorial-design-publishing-studio",
@@ -495,7 +630,11 @@
           "screenshots": {
             "desktop": "/previews/editorial-design-publishing-studio-desktop.webp",
             "mobile": "/previews/editorial-design-publishing-studio-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/editorial-design-publishing-studio.md",
+          "json": "/kits/examples/editorial-design-publishing-studio.json",
+          "source": "/kits/examples/editorial-design-publishing-studio.zip",
+          "tokens": "/kits/examples/editorial-design-publishing-studio.tokens.json"
         }
       ],
       "components": [
@@ -504,46 +643,59 @@
           "styleId": "editorial-design",
           "kind": "button",
           "name": "Editorial design button",
-          "url": "/components/editorial-design-button/"
+          "url": "/components/editorial-design-button/",
+          "registry": "/r/editorial-design-button.json",
+          "source": "/kits/components/editorial-design-button.zip"
         },
         {
           "id": "editorial-design-card",
           "styleId": "editorial-design",
           "kind": "card",
           "name": "Editorial design card",
-          "url": "/components/editorial-design-card/"
+          "url": "/components/editorial-design-card/",
+          "registry": "/r/editorial-design-card.json",
+          "source": "/kits/components/editorial-design-card.zip"
         },
         {
           "id": "editorial-design-navigation",
           "styleId": "editorial-design",
           "kind": "navigation",
           "name": "Editorial design navigation",
-          "url": "/components/editorial-design-navigation/"
+          "url": "/components/editorial-design-navigation/",
+          "registry": "/r/editorial-design-navigation.json",
+          "source": "/kits/components/editorial-design-navigation.zip"
         },
         {
           "id": "editorial-design-field",
           "styleId": "editorial-design",
           "kind": "field",
           "name": "Editorial design field",
-          "url": "/components/editorial-design-field/"
+          "url": "/components/editorial-design-field/",
+          "registry": "/r/editorial-design-field.json",
+          "source": "/kits/components/editorial-design-field.zip"
         },
         {
           "id": "editorial-design-dialog",
           "styleId": "editorial-design",
           "kind": "dialog",
           "name": "Editorial design dialog",
-          "url": "/components/editorial-design-dialog/"
+          "url": "/components/editorial-design-dialog/",
+          "registry": "/r/editorial-design-dialog.json",
+          "source": "/kits/components/editorial-design-dialog.zip"
         },
         {
           "id": "editorial-design-status",
           "styleId": "editorial-design",
           "kind": "status",
           "name": "Editorial design status",
-          "url": "/components/editorial-design-status/"
+          "url": "/components/editorial-design-status/",
+          "registry": "/r/editorial-design-status.json",
+          "source": "/kits/components/editorial-design-status.zip"
         }
       ],
       "guide": "/kits/styles/editorial-design.md",
-      "json": "/kits/styles/editorial-design.json"
+      "json": "/kits/styles/editorial-design.json",
+      "skill": "/kits/skills/designkit-editorial-design.zip"
     },
     {
       "id": "cybercore",
@@ -561,7 +713,11 @@
           "screenshots": {
             "desktop": "/previews/cybercore-systems-archive-desktop.webp",
             "mobile": "/previews/cybercore-systems-archive-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/cybercore-systems-archive.md",
+          "json": "/kits/examples/cybercore-systems-archive.json",
+          "source": "/kits/examples/cybercore-systems-archive.zip",
+          "tokens": "/kits/examples/cybercore-systems-archive.tokens.json"
         },
         {
           "id": "cybercore-build-planner",
@@ -573,7 +729,11 @@
           "screenshots": {
             "desktop": "/previews/cybercore-build-planner-desktop.webp",
             "mobile": "/previews/cybercore-build-planner-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/cybercore-build-planner.md",
+          "json": "/kits/examples/cybercore-build-planner.json",
+          "source": "/kits/examples/cybercore-build-planner.zip",
+          "tokens": "/kits/examples/cybercore-build-planner.tokens.json"
         },
         {
           "id": "cybercore-creative-coding-meetup",
@@ -585,7 +745,11 @@
           "screenshots": {
             "desktop": "/previews/cybercore-creative-coding-meetup-desktop.webp",
             "mobile": "/previews/cybercore-creative-coding-meetup-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/cybercore-creative-coding-meetup.md",
+          "json": "/kits/examples/cybercore-creative-coding-meetup.json",
+          "source": "/kits/examples/cybercore-creative-coding-meetup.zip",
+          "tokens": "/kits/examples/cybercore-creative-coding-meetup.tokens.json"
         }
       ],
       "components": [
@@ -594,46 +758,59 @@
           "styleId": "cybercore",
           "kind": "button",
           "name": "Cybercore button",
-          "url": "/components/cybercore-button/"
+          "url": "/components/cybercore-button/",
+          "registry": "/r/cybercore-button.json",
+          "source": "/kits/components/cybercore-button.zip"
         },
         {
           "id": "cybercore-card",
           "styleId": "cybercore",
           "kind": "card",
           "name": "Cybercore card",
-          "url": "/components/cybercore-card/"
+          "url": "/components/cybercore-card/",
+          "registry": "/r/cybercore-card.json",
+          "source": "/kits/components/cybercore-card.zip"
         },
         {
           "id": "cybercore-navigation",
           "styleId": "cybercore",
           "kind": "navigation",
           "name": "Cybercore navigation",
-          "url": "/components/cybercore-navigation/"
+          "url": "/components/cybercore-navigation/",
+          "registry": "/r/cybercore-navigation.json",
+          "source": "/kits/components/cybercore-navigation.zip"
         },
         {
           "id": "cybercore-field",
           "styleId": "cybercore",
           "kind": "field",
           "name": "Cybercore field",
-          "url": "/components/cybercore-field/"
+          "url": "/components/cybercore-field/",
+          "registry": "/r/cybercore-field.json",
+          "source": "/kits/components/cybercore-field.zip"
         },
         {
           "id": "cybercore-dialog",
           "styleId": "cybercore",
           "kind": "dialog",
           "name": "Cybercore dialog",
-          "url": "/components/cybercore-dialog/"
+          "url": "/components/cybercore-dialog/",
+          "registry": "/r/cybercore-dialog.json",
+          "source": "/kits/components/cybercore-dialog.zip"
         },
         {
           "id": "cybercore-status",
           "styleId": "cybercore",
           "kind": "status",
           "name": "Cybercore status",
-          "url": "/components/cybercore-status/"
+          "url": "/components/cybercore-status/",
+          "registry": "/r/cybercore-status.json",
+          "source": "/kits/components/cybercore-status.zip"
         }
       ],
       "guide": "/kits/styles/cybercore.md",
-      "json": "/kits/styles/cybercore.json"
+      "json": "/kits/styles/cybercore.json",
+      "skill": "/kits/skills/designkit-cybercore.zip"
     },
     {
       "id": "scrapbook",
@@ -651,7 +828,11 @@
           "screenshots": {
             "desktop": "/previews/scrapbook-personal-journal-desktop.webp",
             "mobile": "/previews/scrapbook-personal-journal-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/scrapbook-personal-journal.md",
+          "json": "/kits/examples/scrapbook-personal-journal.json",
+          "source": "/kits/examples/scrapbook-personal-journal.zip",
+          "tokens": "/kits/examples/scrapbook-personal-journal.tokens.json"
         },
         {
           "id": "scrapbook-illustration-studio",
@@ -663,7 +844,11 @@
           "screenshots": {
             "desktop": "/previews/scrapbook-illustration-studio-desktop.webp",
             "mobile": "/previews/scrapbook-illustration-studio-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/scrapbook-illustration-studio.md",
+          "json": "/kits/examples/scrapbook-illustration-studio.json",
+          "source": "/kits/examples/scrapbook-illustration-studio.zip",
+          "tokens": "/kits/examples/scrapbook-illustration-studio.tokens.json"
         },
         {
           "id": "scrapbook-stationery-shop",
@@ -675,7 +860,11 @@
           "screenshots": {
             "desktop": "/previews/scrapbook-stationery-shop-desktop.webp",
             "mobile": "/previews/scrapbook-stationery-shop-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/scrapbook-stationery-shop.md",
+          "json": "/kits/examples/scrapbook-stationery-shop.json",
+          "source": "/kits/examples/scrapbook-stationery-shop.zip",
+          "tokens": "/kits/examples/scrapbook-stationery-shop.tokens.json"
         }
       ],
       "components": [
@@ -684,46 +873,59 @@
           "styleId": "scrapbook",
           "kind": "button",
           "name": "Scrapbook button",
-          "url": "/components/scrapbook-button/"
+          "url": "/components/scrapbook-button/",
+          "registry": "/r/scrapbook-button.json",
+          "source": "/kits/components/scrapbook-button.zip"
         },
         {
           "id": "scrapbook-card",
           "styleId": "scrapbook",
           "kind": "card",
           "name": "Scrapbook card",
-          "url": "/components/scrapbook-card/"
+          "url": "/components/scrapbook-card/",
+          "registry": "/r/scrapbook-card.json",
+          "source": "/kits/components/scrapbook-card.zip"
         },
         {
           "id": "scrapbook-navigation",
           "styleId": "scrapbook",
           "kind": "navigation",
           "name": "Scrapbook navigation",
-          "url": "/components/scrapbook-navigation/"
+          "url": "/components/scrapbook-navigation/",
+          "registry": "/r/scrapbook-navigation.json",
+          "source": "/kits/components/scrapbook-navigation.zip"
         },
         {
           "id": "scrapbook-field",
           "styleId": "scrapbook",
           "kind": "field",
           "name": "Scrapbook field",
-          "url": "/components/scrapbook-field/"
+          "url": "/components/scrapbook-field/",
+          "registry": "/r/scrapbook-field.json",
+          "source": "/kits/components/scrapbook-field.zip"
         },
         {
           "id": "scrapbook-dialog",
           "styleId": "scrapbook",
           "kind": "dialog",
           "name": "Scrapbook dialog",
-          "url": "/components/scrapbook-dialog/"
+          "url": "/components/scrapbook-dialog/",
+          "registry": "/r/scrapbook-dialog.json",
+          "source": "/kits/components/scrapbook-dialog.zip"
         },
         {
           "id": "scrapbook-status",
           "styleId": "scrapbook",
           "kind": "status",
           "name": "Scrapbook status",
-          "url": "/components/scrapbook-status/"
+          "url": "/components/scrapbook-status/",
+          "registry": "/r/scrapbook-status.json",
+          "source": "/kits/components/scrapbook-status.zip"
         }
       ],
       "guide": "/kits/styles/scrapbook.md",
-      "json": "/kits/styles/scrapbook.json"
+      "json": "/kits/styles/scrapbook.json",
+      "skill": "/kits/skills/designkit-scrapbook.zip"
     },
     {
       "id": "surrealism",
@@ -741,7 +943,11 @@
           "screenshots": {
             "desktop": "/previews/surrealism-exhibition-desktop.webp",
             "mobile": "/previews/surrealism-exhibition-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/surrealism-exhibition.md",
+          "json": "/kits/examples/surrealism-exhibition.json",
+          "source": "/kits/examples/surrealism-exhibition.zip",
+          "tokens": "/kits/examples/surrealism-exhibition.tokens.json"
         },
         {
           "id": "surrealism-object-shop",
@@ -753,7 +959,11 @@
           "screenshots": {
             "desktop": "/previews/surrealism-object-shop-desktop.webp",
             "mobile": "/previews/surrealism-object-shop-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/surrealism-object-shop.md",
+          "json": "/kits/examples/surrealism-object-shop.json",
+          "source": "/kits/examples/surrealism-object-shop.zip",
+          "tokens": "/kits/examples/surrealism-object-shop.tokens.json"
         },
         {
           "id": "surrealism-image-archive",
@@ -765,7 +975,11 @@
           "screenshots": {
             "desktop": "/previews/surrealism-image-archive-desktop.webp",
             "mobile": "/previews/surrealism-image-archive-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/surrealism-image-archive.md",
+          "json": "/kits/examples/surrealism-image-archive.json",
+          "source": "/kits/examples/surrealism-image-archive.zip",
+          "tokens": "/kits/examples/surrealism-image-archive.tokens.json"
         }
       ],
       "components": [
@@ -774,46 +988,59 @@
           "styleId": "surrealism",
           "kind": "button",
           "name": "Surrealism button",
-          "url": "/components/surrealism-button/"
+          "url": "/components/surrealism-button/",
+          "registry": "/r/surrealism-button.json",
+          "source": "/kits/components/surrealism-button.zip"
         },
         {
           "id": "surrealism-card",
           "styleId": "surrealism",
           "kind": "card",
           "name": "Surrealism card",
-          "url": "/components/surrealism-card/"
+          "url": "/components/surrealism-card/",
+          "registry": "/r/surrealism-card.json",
+          "source": "/kits/components/surrealism-card.zip"
         },
         {
           "id": "surrealism-navigation",
           "styleId": "surrealism",
           "kind": "navigation",
           "name": "Surrealism navigation",
-          "url": "/components/surrealism-navigation/"
+          "url": "/components/surrealism-navigation/",
+          "registry": "/r/surrealism-navigation.json",
+          "source": "/kits/components/surrealism-navigation.zip"
         },
         {
           "id": "surrealism-field",
           "styleId": "surrealism",
           "kind": "field",
           "name": "Surrealism field",
-          "url": "/components/surrealism-field/"
+          "url": "/components/surrealism-field/",
+          "registry": "/r/surrealism-field.json",
+          "source": "/kits/components/surrealism-field.zip"
         },
         {
           "id": "surrealism-dialog",
           "styleId": "surrealism",
           "kind": "dialog",
           "name": "Surrealism dialog",
-          "url": "/components/surrealism-dialog/"
+          "url": "/components/surrealism-dialog/",
+          "registry": "/r/surrealism-dialog.json",
+          "source": "/kits/components/surrealism-dialog.zip"
         },
         {
           "id": "surrealism-status",
           "styleId": "surrealism",
           "kind": "status",
           "name": "Surrealism status",
-          "url": "/components/surrealism-status/"
+          "url": "/components/surrealism-status/",
+          "registry": "/r/surrealism-status.json",
+          "source": "/kits/components/surrealism-status.zip"
         }
       ],
       "guide": "/kits/styles/surrealism.md",
-      "json": "/kits/styles/surrealism.json"
+      "json": "/kits/styles/surrealism.json",
+      "skill": "/kits/skills/designkit-surrealism.zip"
     },
     {
       "id": "y2k",
@@ -831,7 +1058,11 @@
           "screenshots": {
             "desktop": "/previews/y2k-accessory-shop-desktop.webp",
             "mobile": "/previews/y2k-accessory-shop-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/y2k-accessory-shop.md",
+          "json": "/kits/examples/y2k-accessory-shop.json",
+          "source": "/kits/examples/y2k-accessory-shop.zip",
+          "tokens": "/kits/examples/y2k-accessory-shop.tokens.json"
         },
         {
           "id": "y2k-pop-night",
@@ -843,7 +1074,11 @@
           "screenshots": {
             "desktop": "/previews/y2k-pop-night-desktop.webp",
             "mobile": "/previews/y2k-pop-night-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/y2k-pop-night.md",
+          "json": "/kits/examples/y2k-pop-night.json",
+          "source": "/kits/examples/y2k-pop-night.zip",
+          "tokens": "/kits/examples/y2k-pop-night.tokens.json"
         },
         {
           "id": "y2k-culture-zine",
@@ -855,7 +1090,11 @@
           "screenshots": {
             "desktop": "/previews/y2k-culture-zine-desktop.webp",
             "mobile": "/previews/y2k-culture-zine-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/y2k-culture-zine.md",
+          "json": "/kits/examples/y2k-culture-zine.json",
+          "source": "/kits/examples/y2k-culture-zine.zip",
+          "tokens": "/kits/examples/y2k-culture-zine.tokens.json"
         }
       ],
       "components": [
@@ -864,46 +1103,59 @@
           "styleId": "y2k",
           "kind": "button",
           "name": "Y2K aesthetic button",
-          "url": "/components/y2k-button/"
+          "url": "/components/y2k-button/",
+          "registry": "/r/y2k-button.json",
+          "source": "/kits/components/y2k-button.zip"
         },
         {
           "id": "y2k-card",
           "styleId": "y2k",
           "kind": "card",
           "name": "Y2K aesthetic card",
-          "url": "/components/y2k-card/"
+          "url": "/components/y2k-card/",
+          "registry": "/r/y2k-card.json",
+          "source": "/kits/components/y2k-card.zip"
         },
         {
           "id": "y2k-navigation",
           "styleId": "y2k",
           "kind": "navigation",
           "name": "Y2K aesthetic navigation",
-          "url": "/components/y2k-navigation/"
+          "url": "/components/y2k-navigation/",
+          "registry": "/r/y2k-navigation.json",
+          "source": "/kits/components/y2k-navigation.zip"
         },
         {
           "id": "y2k-field",
           "styleId": "y2k",
           "kind": "field",
           "name": "Y2K aesthetic field",
-          "url": "/components/y2k-field/"
+          "url": "/components/y2k-field/",
+          "registry": "/r/y2k-field.json",
+          "source": "/kits/components/y2k-field.zip"
         },
         {
           "id": "y2k-dialog",
           "styleId": "y2k",
           "kind": "dialog",
           "name": "Y2K aesthetic dialog",
-          "url": "/components/y2k-dialog/"
+          "url": "/components/y2k-dialog/",
+          "registry": "/r/y2k-dialog.json",
+          "source": "/kits/components/y2k-dialog.zip"
         },
         {
           "id": "y2k-status",
           "styleId": "y2k",
           "kind": "status",
           "name": "Y2K aesthetic status",
-          "url": "/components/y2k-status/"
+          "url": "/components/y2k-status/",
+          "registry": "/r/y2k-status.json",
+          "source": "/kits/components/y2k-status.zip"
         }
       ],
       "guide": "/kits/styles/y2k.md",
-      "json": "/kits/styles/y2k.json"
+      "json": "/kits/styles/y2k.json",
+      "skill": "/kits/skills/designkit-y2k.zip"
     },
     {
       "id": "pixel-art",
@@ -921,7 +1173,11 @@
           "screenshots": {
             "desktop": "/previews/pixel-art-game-festival-desktop.webp",
             "mobile": "/previews/pixel-art-game-festival-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/pixel-art-game-festival.md",
+          "json": "/kits/examples/pixel-art-game-festival.json",
+          "source": "/kits/examples/pixel-art-game-festival.zip",
+          "tokens": "/kits/examples/pixel-art-game-festival.tokens.json"
         },
         {
           "id": "pixel-art-quest-planner",
@@ -933,7 +1189,11 @@
           "screenshots": {
             "desktop": "/previews/pixel-art-quest-planner-desktop.webp",
             "mobile": "/previews/pixel-art-quest-planner-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/pixel-art-quest-planner.md",
+          "json": "/kits/examples/pixel-art-quest-planner.json",
+          "source": "/kits/examples/pixel-art-quest-planner.zip",
+          "tokens": "/kits/examples/pixel-art-quest-planner.tokens.json"
         },
         {
           "id": "pixel-art-game-merch-shop",
@@ -945,7 +1205,11 @@
           "screenshots": {
             "desktop": "/previews/pixel-art-game-merch-shop-desktop.webp",
             "mobile": "/previews/pixel-art-game-merch-shop-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/pixel-art-game-merch-shop.md",
+          "json": "/kits/examples/pixel-art-game-merch-shop.json",
+          "source": "/kits/examples/pixel-art-game-merch-shop.zip",
+          "tokens": "/kits/examples/pixel-art-game-merch-shop.tokens.json"
         }
       ],
       "components": [
@@ -954,46 +1218,59 @@
           "styleId": "pixel-art",
           "kind": "button",
           "name": "Pixel art button",
-          "url": "/components/pixel-art-button/"
+          "url": "/components/pixel-art-button/",
+          "registry": "/r/pixel-art-button.json",
+          "source": "/kits/components/pixel-art-button.zip"
         },
         {
           "id": "pixel-art-card",
           "styleId": "pixel-art",
           "kind": "card",
           "name": "Pixel art card",
-          "url": "/components/pixel-art-card/"
+          "url": "/components/pixel-art-card/",
+          "registry": "/r/pixel-art-card.json",
+          "source": "/kits/components/pixel-art-card.zip"
         },
         {
           "id": "pixel-art-navigation",
           "styleId": "pixel-art",
           "kind": "navigation",
           "name": "Pixel art navigation",
-          "url": "/components/pixel-art-navigation/"
+          "url": "/components/pixel-art-navigation/",
+          "registry": "/r/pixel-art-navigation.json",
+          "source": "/kits/components/pixel-art-navigation.zip"
         },
         {
           "id": "pixel-art-field",
           "styleId": "pixel-art",
           "kind": "field",
           "name": "Pixel art field",
-          "url": "/components/pixel-art-field/"
+          "url": "/components/pixel-art-field/",
+          "registry": "/r/pixel-art-field.json",
+          "source": "/kits/components/pixel-art-field.zip"
         },
         {
           "id": "pixel-art-dialog",
           "styleId": "pixel-art",
           "kind": "dialog",
           "name": "Pixel art dialog",
-          "url": "/components/pixel-art-dialog/"
+          "url": "/components/pixel-art-dialog/",
+          "registry": "/r/pixel-art-dialog.json",
+          "source": "/kits/components/pixel-art-dialog.zip"
         },
         {
           "id": "pixel-art-status",
           "styleId": "pixel-art",
           "kind": "status",
           "name": "Pixel art status",
-          "url": "/components/pixel-art-status/"
+          "url": "/components/pixel-art-status/",
+          "registry": "/r/pixel-art-status.json",
+          "source": "/kits/components/pixel-art-status.zip"
         }
       ],
       "guide": "/kits/styles/pixel-art.md",
-      "json": "/kits/styles/pixel-art.json"
+      "json": "/kits/styles/pixel-art.json",
+      "skill": "/kits/skills/designkit-pixel-art.zip"
     },
     {
       "id": "synthwave",
@@ -1011,7 +1288,11 @@
           "screenshots": {
             "desktop": "/previews/synthwave-music-night-desktop.webp",
             "mobile": "/previews/synthwave-music-night-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/synthwave-music-night.md",
+          "json": "/kits/examples/synthwave-music-night.json",
+          "source": "/kits/examples/synthwave-music-night.zip",
+          "tokens": "/kits/examples/synthwave-music-night.tokens.json"
         },
         {
           "id": "synthwave-record-shop",
@@ -1023,7 +1304,11 @@
           "screenshots": {
             "desktop": "/previews/synthwave-record-shop-desktop.webp",
             "mobile": "/previews/synthwave-record-shop-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/synthwave-record-shop.md",
+          "json": "/kits/examples/synthwave-record-shop.json",
+          "source": "/kits/examples/synthwave-record-shop.zip",
+          "tokens": "/kits/examples/synthwave-record-shop.tokens.json"
         },
         {
           "id": "synthwave-music-journal",
@@ -1035,7 +1320,11 @@
           "screenshots": {
             "desktop": "/previews/synthwave-music-journal-desktop.webp",
             "mobile": "/previews/synthwave-music-journal-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/synthwave-music-journal.md",
+          "json": "/kits/examples/synthwave-music-journal.json",
+          "source": "/kits/examples/synthwave-music-journal.zip",
+          "tokens": "/kits/examples/synthwave-music-journal.tokens.json"
         }
       ],
       "components": [
@@ -1044,46 +1333,59 @@
           "styleId": "synthwave",
           "kind": "button",
           "name": "Synthwave button",
-          "url": "/components/synthwave-button/"
+          "url": "/components/synthwave-button/",
+          "registry": "/r/synthwave-button.json",
+          "source": "/kits/components/synthwave-button.zip"
         },
         {
           "id": "synthwave-card",
           "styleId": "synthwave",
           "kind": "card",
           "name": "Synthwave card",
-          "url": "/components/synthwave-card/"
+          "url": "/components/synthwave-card/",
+          "registry": "/r/synthwave-card.json",
+          "source": "/kits/components/synthwave-card.zip"
         },
         {
           "id": "synthwave-navigation",
           "styleId": "synthwave",
           "kind": "navigation",
           "name": "Synthwave navigation",
-          "url": "/components/synthwave-navigation/"
+          "url": "/components/synthwave-navigation/",
+          "registry": "/r/synthwave-navigation.json",
+          "source": "/kits/components/synthwave-navigation.zip"
         },
         {
           "id": "synthwave-field",
           "styleId": "synthwave",
           "kind": "field",
           "name": "Synthwave field",
-          "url": "/components/synthwave-field/"
+          "url": "/components/synthwave-field/",
+          "registry": "/r/synthwave-field.json",
+          "source": "/kits/components/synthwave-field.zip"
         },
         {
           "id": "synthwave-dialog",
           "styleId": "synthwave",
           "kind": "dialog",
           "name": "Synthwave dialog",
-          "url": "/components/synthwave-dialog/"
+          "url": "/components/synthwave-dialog/",
+          "registry": "/r/synthwave-dialog.json",
+          "source": "/kits/components/synthwave-dialog.zip"
         },
         {
           "id": "synthwave-status",
           "styleId": "synthwave",
           "kind": "status",
           "name": "Synthwave status",
-          "url": "/components/synthwave-status/"
+          "url": "/components/synthwave-status/",
+          "registry": "/r/synthwave-status.json",
+          "source": "/kits/components/synthwave-status.zip"
         }
       ],
       "guide": "/kits/styles/synthwave.md",
-      "json": "/kits/styles/synthwave.json"
+      "json": "/kits/styles/synthwave.json",
+      "skill": "/kits/skills/designkit-synthwave.zip"
     },
     {
       "id": "neumorphism",
@@ -1101,7 +1403,11 @@
           "screenshots": {
             "desktop": "/previews/neumorphism-listening-planner-desktop.webp",
             "mobile": "/previews/neumorphism-listening-planner-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/neumorphism-listening-planner.md",
+          "json": "/kits/examples/neumorphism-listening-planner.json",
+          "source": "/kits/examples/neumorphism-listening-planner.zip",
+          "tokens": "/kits/examples/neumorphism-listening-planner.tokens.json"
         },
         {
           "id": "neumorphism-audio-shop",
@@ -1113,7 +1419,11 @@
           "screenshots": {
             "desktop": "/previews/neumorphism-audio-shop-desktop.webp",
             "mobile": "/previews/neumorphism-audio-shop-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/neumorphism-audio-shop.md",
+          "json": "/kits/examples/neumorphism-audio-shop.json",
+          "source": "/kits/examples/neumorphism-audio-shop.zip",
+          "tokens": "/kits/examples/neumorphism-audio-shop.tokens.json"
         },
         {
           "id": "neumorphism-sound-studio",
@@ -1125,7 +1435,11 @@
           "screenshots": {
             "desktop": "/previews/neumorphism-sound-studio-desktop.webp",
             "mobile": "/previews/neumorphism-sound-studio-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/neumorphism-sound-studio.md",
+          "json": "/kits/examples/neumorphism-sound-studio.json",
+          "source": "/kits/examples/neumorphism-sound-studio.zip",
+          "tokens": "/kits/examples/neumorphism-sound-studio.tokens.json"
         }
       ],
       "components": [
@@ -1134,46 +1448,59 @@
           "styleId": "neumorphism",
           "kind": "button",
           "name": "Neumorphism button",
-          "url": "/components/neumorphism-button/"
+          "url": "/components/neumorphism-button/",
+          "registry": "/r/neumorphism-button.json",
+          "source": "/kits/components/neumorphism-button.zip"
         },
         {
           "id": "neumorphism-card",
           "styleId": "neumorphism",
           "kind": "card",
           "name": "Neumorphism card",
-          "url": "/components/neumorphism-card/"
+          "url": "/components/neumorphism-card/",
+          "registry": "/r/neumorphism-card.json",
+          "source": "/kits/components/neumorphism-card.zip"
         },
         {
           "id": "neumorphism-navigation",
           "styleId": "neumorphism",
           "kind": "navigation",
           "name": "Neumorphism navigation",
-          "url": "/components/neumorphism-navigation/"
+          "url": "/components/neumorphism-navigation/",
+          "registry": "/r/neumorphism-navigation.json",
+          "source": "/kits/components/neumorphism-navigation.zip"
         },
         {
           "id": "neumorphism-field",
           "styleId": "neumorphism",
           "kind": "field",
           "name": "Neumorphism field",
-          "url": "/components/neumorphism-field/"
+          "url": "/components/neumorphism-field/",
+          "registry": "/r/neumorphism-field.json",
+          "source": "/kits/components/neumorphism-field.zip"
         },
         {
           "id": "neumorphism-dialog",
           "styleId": "neumorphism",
           "kind": "dialog",
           "name": "Neumorphism dialog",
-          "url": "/components/neumorphism-dialog/"
+          "url": "/components/neumorphism-dialog/",
+          "registry": "/r/neumorphism-dialog.json",
+          "source": "/kits/components/neumorphism-dialog.zip"
         },
         {
           "id": "neumorphism-status",
           "styleId": "neumorphism",
           "kind": "status",
           "name": "Neumorphism status",
-          "url": "/components/neumorphism-status/"
+          "url": "/components/neumorphism-status/",
+          "registry": "/r/neumorphism-status.json",
+          "source": "/kits/components/neumorphism-status.zip"
         }
       ],
       "guide": "/kits/styles/neumorphism.md",
-      "json": "/kits/styles/neumorphism.json"
+      "json": "/kits/styles/neumorphism.json",
+      "skill": "/kits/skills/designkit-neumorphism.zip"
     },
     {
       "id": "bento-grid",
@@ -1191,7 +1518,11 @@
           "screenshots": {
             "desktop": "/previews/bento-grid-daily-planner-desktop.webp",
             "mobile": "/previews/bento-grid-daily-planner-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/bento-grid-daily-planner.md",
+          "json": "/kits/examples/bento-grid-daily-planner.json",
+          "source": "/kits/examples/bento-grid-daily-planner.zip",
+          "tokens": "/kits/examples/bento-grid-daily-planner.tokens.json"
         },
         {
           "id": "bento-grid-object-shop",
@@ -1203,7 +1534,11 @@
           "screenshots": {
             "desktop": "/previews/bento-grid-object-shop-desktop.webp",
             "mobile": "/previews/bento-grid-object-shop-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/bento-grid-object-shop.md",
+          "json": "/kits/examples/bento-grid-object-shop.json",
+          "source": "/kits/examples/bento-grid-object-shop.zip",
+          "tokens": "/kits/examples/bento-grid-object-shop.tokens.json"
         },
         {
           "id": "bento-grid-digital-practice",
@@ -1215,7 +1550,11 @@
           "screenshots": {
             "desktop": "/previews/bento-grid-digital-practice-desktop.webp",
             "mobile": "/previews/bento-grid-digital-practice-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/bento-grid-digital-practice.md",
+          "json": "/kits/examples/bento-grid-digital-practice.json",
+          "source": "/kits/examples/bento-grid-digital-practice.zip",
+          "tokens": "/kits/examples/bento-grid-digital-practice.tokens.json"
         }
       ],
       "components": [
@@ -1224,46 +1563,59 @@
           "styleId": "bento-grid",
           "kind": "button",
           "name": "Bento grid button",
-          "url": "/components/bento-grid-button/"
+          "url": "/components/bento-grid-button/",
+          "registry": "/r/bento-grid-button.json",
+          "source": "/kits/components/bento-grid-button.zip"
         },
         {
           "id": "bento-grid-card",
           "styleId": "bento-grid",
           "kind": "card",
           "name": "Bento grid card",
-          "url": "/components/bento-grid-card/"
+          "url": "/components/bento-grid-card/",
+          "registry": "/r/bento-grid-card.json",
+          "source": "/kits/components/bento-grid-card.zip"
         },
         {
           "id": "bento-grid-navigation",
           "styleId": "bento-grid",
           "kind": "navigation",
           "name": "Bento grid navigation",
-          "url": "/components/bento-grid-navigation/"
+          "url": "/components/bento-grid-navigation/",
+          "registry": "/r/bento-grid-navigation.json",
+          "source": "/kits/components/bento-grid-navigation.zip"
         },
         {
           "id": "bento-grid-field",
           "styleId": "bento-grid",
           "kind": "field",
           "name": "Bento grid field",
-          "url": "/components/bento-grid-field/"
+          "url": "/components/bento-grid-field/",
+          "registry": "/r/bento-grid-field.json",
+          "source": "/kits/components/bento-grid-field.zip"
         },
         {
           "id": "bento-grid-dialog",
           "styleId": "bento-grid",
           "kind": "dialog",
           "name": "Bento grid dialog",
-          "url": "/components/bento-grid-dialog/"
+          "url": "/components/bento-grid-dialog/",
+          "registry": "/r/bento-grid-dialog.json",
+          "source": "/kits/components/bento-grid-dialog.zip"
         },
         {
           "id": "bento-grid-status",
           "styleId": "bento-grid",
           "kind": "status",
           "name": "Bento grid status",
-          "url": "/components/bento-grid-status/"
+          "url": "/components/bento-grid-status/",
+          "registry": "/r/bento-grid-status.json",
+          "source": "/kits/components/bento-grid-status.zip"
         }
       ],
       "guide": "/kits/styles/bento-grid.md",
-      "json": "/kits/styles/bento-grid.json"
+      "json": "/kits/styles/bento-grid.json",
+      "skill": "/kits/skills/designkit-bento-grid.zip"
     },
     {
       "id": "minimalism",
@@ -1281,7 +1633,11 @@
           "screenshots": {
             "desktop": "/previews/minimalism-architecture-studio-desktop.webp",
             "mobile": "/previews/minimalism-architecture-studio-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/minimalism-architecture-studio.md",
+          "json": "/kits/examples/minimalism-architecture-studio.json",
+          "source": "/kits/examples/minimalism-architecture-studio.zip",
+          "tokens": "/kits/examples/minimalism-architecture-studio.tokens.json"
         },
         {
           "id": "minimalism-everyday-shop",
@@ -1293,7 +1649,11 @@
           "screenshots": {
             "desktop": "/previews/minimalism-everyday-shop-desktop.webp",
             "mobile": "/previews/minimalism-everyday-shop-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/minimalism-everyday-shop.md",
+          "json": "/kits/examples/minimalism-everyday-shop.json",
+          "source": "/kits/examples/minimalism-everyday-shop.zip",
+          "tokens": "/kits/examples/minimalism-everyday-shop.tokens.json"
         },
         {
           "id": "minimalism-design-journal",
@@ -1305,7 +1665,11 @@
           "screenshots": {
             "desktop": "/previews/minimalism-design-journal-desktop.webp",
             "mobile": "/previews/minimalism-design-journal-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/minimalism-design-journal.md",
+          "json": "/kits/examples/minimalism-design-journal.json",
+          "source": "/kits/examples/minimalism-design-journal.zip",
+          "tokens": "/kits/examples/minimalism-design-journal.tokens.json"
         }
       ],
       "components": [
@@ -1314,46 +1678,59 @@
           "styleId": "minimalism",
           "kind": "button",
           "name": "Minimalism button",
-          "url": "/components/minimalism-button/"
+          "url": "/components/minimalism-button/",
+          "registry": "/r/minimalism-button.json",
+          "source": "/kits/components/minimalism-button.zip"
         },
         {
           "id": "minimalism-card",
           "styleId": "minimalism",
           "kind": "card",
           "name": "Minimalism card",
-          "url": "/components/minimalism-card/"
+          "url": "/components/minimalism-card/",
+          "registry": "/r/minimalism-card.json",
+          "source": "/kits/components/minimalism-card.zip"
         },
         {
           "id": "minimalism-navigation",
           "styleId": "minimalism",
           "kind": "navigation",
           "name": "Minimalism navigation",
-          "url": "/components/minimalism-navigation/"
+          "url": "/components/minimalism-navigation/",
+          "registry": "/r/minimalism-navigation.json",
+          "source": "/kits/components/minimalism-navigation.zip"
         },
         {
           "id": "minimalism-field",
           "styleId": "minimalism",
           "kind": "field",
           "name": "Minimalism field",
-          "url": "/components/minimalism-field/"
+          "url": "/components/minimalism-field/",
+          "registry": "/r/minimalism-field.json",
+          "source": "/kits/components/minimalism-field.zip"
         },
         {
           "id": "minimalism-dialog",
           "styleId": "minimalism",
           "kind": "dialog",
           "name": "Minimalism dialog",
-          "url": "/components/minimalism-dialog/"
+          "url": "/components/minimalism-dialog/",
+          "registry": "/r/minimalism-dialog.json",
+          "source": "/kits/components/minimalism-dialog.zip"
         },
         {
           "id": "minimalism-status",
           "styleId": "minimalism",
           "kind": "status",
           "name": "Minimalism status",
-          "url": "/components/minimalism-status/"
+          "url": "/components/minimalism-status/",
+          "registry": "/r/minimalism-status.json",
+          "source": "/kits/components/minimalism-status.zip"
         }
       ],
       "guide": "/kits/styles/minimalism.md",
-      "json": "/kits/styles/minimalism.json"
+      "json": "/kits/styles/minimalism.json",
+      "skill": "/kits/skills/designkit-minimalism.zip"
     },
     {
       "id": "maximalism",
@@ -1371,7 +1748,11 @@
           "screenshots": {
             "desktop": "/previews/maximalism-creative-festival-desktop.webp",
             "mobile": "/previews/maximalism-creative-festival-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/maximalism-creative-festival.md",
+          "json": "/kits/examples/maximalism-creative-festival.json",
+          "source": "/kits/examples/maximalism-creative-festival.zip",
+          "tokens": "/kits/examples/maximalism-creative-festival.tokens.json"
         },
         {
           "id": "maximalism-design-shop",
@@ -1383,7 +1764,11 @@
           "screenshots": {
             "desktop": "/previews/maximalism-design-shop-desktop.webp",
             "mobile": "/previews/maximalism-design-shop-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/maximalism-design-shop.md",
+          "json": "/kits/examples/maximalism-design-shop.json",
+          "source": "/kits/examples/maximalism-design-shop.zip",
+          "tokens": "/kits/examples/maximalism-design-shop.tokens.json"
         },
         {
           "id": "maximalism-creative-agency",
@@ -1395,7 +1780,11 @@
           "screenshots": {
             "desktop": "/previews/maximalism-creative-agency-desktop.webp",
             "mobile": "/previews/maximalism-creative-agency-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/maximalism-creative-agency.md",
+          "json": "/kits/examples/maximalism-creative-agency.json",
+          "source": "/kits/examples/maximalism-creative-agency.zip",
+          "tokens": "/kits/examples/maximalism-creative-agency.tokens.json"
         }
       ],
       "components": [
@@ -1404,46 +1793,59 @@
           "styleId": "maximalism",
           "kind": "button",
           "name": "Maximalism button",
-          "url": "/components/maximalism-button/"
+          "url": "/components/maximalism-button/",
+          "registry": "/r/maximalism-button.json",
+          "source": "/kits/components/maximalism-button.zip"
         },
         {
           "id": "maximalism-card",
           "styleId": "maximalism",
           "kind": "card",
           "name": "Maximalism card",
-          "url": "/components/maximalism-card/"
+          "url": "/components/maximalism-card/",
+          "registry": "/r/maximalism-card.json",
+          "source": "/kits/components/maximalism-card.zip"
         },
         {
           "id": "maximalism-navigation",
           "styleId": "maximalism",
           "kind": "navigation",
           "name": "Maximalism navigation",
-          "url": "/components/maximalism-navigation/"
+          "url": "/components/maximalism-navigation/",
+          "registry": "/r/maximalism-navigation.json",
+          "source": "/kits/components/maximalism-navigation.zip"
         },
         {
           "id": "maximalism-field",
           "styleId": "maximalism",
           "kind": "field",
           "name": "Maximalism field",
-          "url": "/components/maximalism-field/"
+          "url": "/components/maximalism-field/",
+          "registry": "/r/maximalism-field.json",
+          "source": "/kits/components/maximalism-field.zip"
         },
         {
           "id": "maximalism-dialog",
           "styleId": "maximalism",
           "kind": "dialog",
           "name": "Maximalism dialog",
-          "url": "/components/maximalism-dialog/"
+          "url": "/components/maximalism-dialog/",
+          "registry": "/r/maximalism-dialog.json",
+          "source": "/kits/components/maximalism-dialog.zip"
         },
         {
           "id": "maximalism-status",
           "styleId": "maximalism",
           "kind": "status",
           "name": "Maximalism status",
-          "url": "/components/maximalism-status/"
+          "url": "/components/maximalism-status/",
+          "registry": "/r/maximalism-status.json",
+          "source": "/kits/components/maximalism-status.zip"
         }
       ],
       "guide": "/kits/styles/maximalism.md",
-      "json": "/kits/styles/maximalism.json"
+      "json": "/kits/styles/maximalism.json",
+      "skill": "/kits/skills/designkit-maximalism.zip"
     },
     {
       "id": "luxury-typography",
@@ -1461,7 +1863,11 @@
           "screenshots": {
             "desktop": "/previews/luxury-typography-design-editions-desktop.webp",
             "mobile": "/previews/luxury-typography-design-editions-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/luxury-typography-design-editions.md",
+          "json": "/kits/examples/luxury-typography-design-editions.json",
+          "source": "/kits/examples/luxury-typography-design-editions.zip",
+          "tokens": "/kits/examples/luxury-typography-design-editions.tokens.json"
         },
         {
           "id": "luxury-typography-brand-practice",
@@ -1473,7 +1879,11 @@
           "screenshots": {
             "desktop": "/previews/luxury-typography-brand-practice-desktop.webp",
             "mobile": "/previews/luxury-typography-brand-practice-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/luxury-typography-brand-practice.md",
+          "json": "/kits/examples/luxury-typography-brand-practice.json",
+          "source": "/kits/examples/luxury-typography-brand-practice.zip",
+          "tokens": "/kits/examples/luxury-typography-brand-practice.tokens.json"
         },
         {
           "id": "luxury-typography-culture-review",
@@ -1485,7 +1895,11 @@
           "screenshots": {
             "desktop": "/previews/luxury-typography-culture-review-desktop.webp",
             "mobile": "/previews/luxury-typography-culture-review-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/luxury-typography-culture-review.md",
+          "json": "/kits/examples/luxury-typography-culture-review.json",
+          "source": "/kits/examples/luxury-typography-culture-review.zip",
+          "tokens": "/kits/examples/luxury-typography-culture-review.tokens.json"
         }
       ],
       "components": [
@@ -1494,46 +1908,59 @@
           "styleId": "luxury-typography",
           "kind": "button",
           "name": "Luxury typography button",
-          "url": "/components/luxury-typography-button/"
+          "url": "/components/luxury-typography-button/",
+          "registry": "/r/luxury-typography-button.json",
+          "source": "/kits/components/luxury-typography-button.zip"
         },
         {
           "id": "luxury-typography-card",
           "styleId": "luxury-typography",
           "kind": "card",
           "name": "Luxury typography card",
-          "url": "/components/luxury-typography-card/"
+          "url": "/components/luxury-typography-card/",
+          "registry": "/r/luxury-typography-card.json",
+          "source": "/kits/components/luxury-typography-card.zip"
         },
         {
           "id": "luxury-typography-navigation",
           "styleId": "luxury-typography",
           "kind": "navigation",
           "name": "Luxury typography navigation",
-          "url": "/components/luxury-typography-navigation/"
+          "url": "/components/luxury-typography-navigation/",
+          "registry": "/r/luxury-typography-navigation.json",
+          "source": "/kits/components/luxury-typography-navigation.zip"
         },
         {
           "id": "luxury-typography-field",
           "styleId": "luxury-typography",
           "kind": "field",
           "name": "Luxury typography field",
-          "url": "/components/luxury-typography-field/"
+          "url": "/components/luxury-typography-field/",
+          "registry": "/r/luxury-typography-field.json",
+          "source": "/kits/components/luxury-typography-field.zip"
         },
         {
           "id": "luxury-typography-dialog",
           "styleId": "luxury-typography",
           "kind": "dialog",
           "name": "Luxury typography dialog",
-          "url": "/components/luxury-typography-dialog/"
+          "url": "/components/luxury-typography-dialog/",
+          "registry": "/r/luxury-typography-dialog.json",
+          "source": "/kits/components/luxury-typography-dialog.zip"
         },
         {
           "id": "luxury-typography-status",
           "styleId": "luxury-typography",
           "kind": "status",
           "name": "Luxury typography status",
-          "url": "/components/luxury-typography-status/"
+          "url": "/components/luxury-typography-status/",
+          "registry": "/r/luxury-typography-status.json",
+          "source": "/kits/components/luxury-typography-status.zip"
         }
       ],
       "guide": "/kits/styles/luxury-typography.md",
-      "json": "/kits/styles/luxury-typography.json"
+      "json": "/kits/styles/luxury-typography.json",
+      "skill": "/kits/skills/designkit-luxury-typography.zip"
     },
     {
       "id": "conceptual-sketch",
@@ -1551,7 +1978,11 @@
           "screenshots": {
             "desktop": "/previews/conceptual-sketch-creative-practice-desktop.webp",
             "mobile": "/previews/conceptual-sketch-creative-practice-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/conceptual-sketch-creative-practice.md",
+          "json": "/kits/examples/conceptual-sketch-creative-practice.json",
+          "source": "/kits/examples/conceptual-sketch-creative-practice.zip",
+          "tokens": "/kits/examples/conceptual-sketch-creative-practice.tokens.json"
         },
         {
           "id": "conceptual-sketch-project-notebook",
@@ -1563,7 +1994,11 @@
           "screenshots": {
             "desktop": "/previews/conceptual-sketch-project-notebook-desktop.webp",
             "mobile": "/previews/conceptual-sketch-project-notebook-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/conceptual-sketch-project-notebook.md",
+          "json": "/kits/examples/conceptual-sketch-project-notebook.json",
+          "source": "/kits/examples/conceptual-sketch-project-notebook.zip",
+          "tokens": "/kits/examples/conceptual-sketch-project-notebook.tokens.json"
         },
         {
           "id": "conceptual-sketch-process-journal",
@@ -1575,7 +2010,11 @@
           "screenshots": {
             "desktop": "/previews/conceptual-sketch-process-journal-desktop.webp",
             "mobile": "/previews/conceptual-sketch-process-journal-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/conceptual-sketch-process-journal.md",
+          "json": "/kits/examples/conceptual-sketch-process-journal.json",
+          "source": "/kits/examples/conceptual-sketch-process-journal.zip",
+          "tokens": "/kits/examples/conceptual-sketch-process-journal.tokens.json"
         }
       ],
       "components": [
@@ -1584,46 +2023,59 @@
           "styleId": "conceptual-sketch",
           "kind": "button",
           "name": "Conceptual sketch button",
-          "url": "/components/conceptual-sketch-button/"
+          "url": "/components/conceptual-sketch-button/",
+          "registry": "/r/conceptual-sketch-button.json",
+          "source": "/kits/components/conceptual-sketch-button.zip"
         },
         {
           "id": "conceptual-sketch-card",
           "styleId": "conceptual-sketch",
           "kind": "card",
           "name": "Conceptual sketch card",
-          "url": "/components/conceptual-sketch-card/"
+          "url": "/components/conceptual-sketch-card/",
+          "registry": "/r/conceptual-sketch-card.json",
+          "source": "/kits/components/conceptual-sketch-card.zip"
         },
         {
           "id": "conceptual-sketch-navigation",
           "styleId": "conceptual-sketch",
           "kind": "navigation",
           "name": "Conceptual sketch navigation",
-          "url": "/components/conceptual-sketch-navigation/"
+          "url": "/components/conceptual-sketch-navigation/",
+          "registry": "/r/conceptual-sketch-navigation.json",
+          "source": "/kits/components/conceptual-sketch-navigation.zip"
         },
         {
           "id": "conceptual-sketch-field",
           "styleId": "conceptual-sketch",
           "kind": "field",
           "name": "Conceptual sketch field",
-          "url": "/components/conceptual-sketch-field/"
+          "url": "/components/conceptual-sketch-field/",
+          "registry": "/r/conceptual-sketch-field.json",
+          "source": "/kits/components/conceptual-sketch-field.zip"
         },
         {
           "id": "conceptual-sketch-dialog",
           "styleId": "conceptual-sketch",
           "kind": "dialog",
           "name": "Conceptual sketch dialog",
-          "url": "/components/conceptual-sketch-dialog/"
+          "url": "/components/conceptual-sketch-dialog/",
+          "registry": "/r/conceptual-sketch-dialog.json",
+          "source": "/kits/components/conceptual-sketch-dialog.zip"
         },
         {
           "id": "conceptual-sketch-status",
           "styleId": "conceptual-sketch",
           "kind": "status",
           "name": "Conceptual sketch status",
-          "url": "/components/conceptual-sketch-status/"
+          "url": "/components/conceptual-sketch-status/",
+          "registry": "/r/conceptual-sketch-status.json",
+          "source": "/kits/components/conceptual-sketch-status.zip"
         }
       ],
       "guide": "/kits/styles/conceptual-sketch.md",
-      "json": "/kits/styles/conceptual-sketch.json"
+      "json": "/kits/styles/conceptual-sketch.json",
+      "skill": "/kits/skills/designkit-conceptual-sketch.zip"
     },
     {
       "id": "ethereal",
@@ -1641,7 +2093,11 @@
           "screenshots": {
             "desktop": "/previews/ethereal-wellness-practice-desktop.webp",
             "mobile": "/previews/ethereal-wellness-practice-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/ethereal-wellness-practice.md",
+          "json": "/kits/examples/ethereal-wellness-practice.json",
+          "source": "/kits/examples/ethereal-wellness-practice.zip",
+          "tokens": "/kits/examples/ethereal-wellness-practice.tokens.json"
         },
         {
           "id": "ethereal-reflection-planner",
@@ -1653,7 +2109,11 @@
           "screenshots": {
             "desktop": "/previews/ethereal-reflection-planner-desktop.webp",
             "mobile": "/previews/ethereal-reflection-planner-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/ethereal-reflection-planner.md",
+          "json": "/kits/examples/ethereal-reflection-planner.json",
+          "source": "/kits/examples/ethereal-reflection-planner.zip",
+          "tokens": "/kits/examples/ethereal-reflection-planner.tokens.json"
         },
         {
           "id": "ethereal-ritual-shop",
@@ -1665,7 +2125,11 @@
           "screenshots": {
             "desktop": "/previews/ethereal-ritual-shop-desktop.webp",
             "mobile": "/previews/ethereal-ritual-shop-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/ethereal-ritual-shop.md",
+          "json": "/kits/examples/ethereal-ritual-shop.json",
+          "source": "/kits/examples/ethereal-ritual-shop.zip",
+          "tokens": "/kits/examples/ethereal-ritual-shop.tokens.json"
         }
       ],
       "components": [
@@ -1674,46 +2138,59 @@
           "styleId": "ethereal",
           "kind": "button",
           "name": "Ethereal button",
-          "url": "/components/ethereal-button/"
+          "url": "/components/ethereal-button/",
+          "registry": "/r/ethereal-button.json",
+          "source": "/kits/components/ethereal-button.zip"
         },
         {
           "id": "ethereal-card",
           "styleId": "ethereal",
           "kind": "card",
           "name": "Ethereal card",
-          "url": "/components/ethereal-card/"
+          "url": "/components/ethereal-card/",
+          "registry": "/r/ethereal-card.json",
+          "source": "/kits/components/ethereal-card.zip"
         },
         {
           "id": "ethereal-navigation",
           "styleId": "ethereal",
           "kind": "navigation",
           "name": "Ethereal navigation",
-          "url": "/components/ethereal-navigation/"
+          "url": "/components/ethereal-navigation/",
+          "registry": "/r/ethereal-navigation.json",
+          "source": "/kits/components/ethereal-navigation.zip"
         },
         {
           "id": "ethereal-field",
           "styleId": "ethereal",
           "kind": "field",
           "name": "Ethereal field",
-          "url": "/components/ethereal-field/"
+          "url": "/components/ethereal-field/",
+          "registry": "/r/ethereal-field.json",
+          "source": "/kits/components/ethereal-field.zip"
         },
         {
           "id": "ethereal-dialog",
           "styleId": "ethereal",
           "kind": "dialog",
           "name": "Ethereal dialog",
-          "url": "/components/ethereal-dialog/"
+          "url": "/components/ethereal-dialog/",
+          "registry": "/r/ethereal-dialog.json",
+          "source": "/kits/components/ethereal-dialog.zip"
         },
         {
           "id": "ethereal-status",
           "styleId": "ethereal",
           "kind": "status",
           "name": "Ethereal status",
-          "url": "/components/ethereal-status/"
+          "url": "/components/ethereal-status/",
+          "registry": "/r/ethereal-status.json",
+          "source": "/kits/components/ethereal-status.zip"
         }
       ],
       "guide": "/kits/styles/ethereal.md",
-      "json": "/kits/styles/ethereal.json"
+      "json": "/kits/styles/ethereal.json",
+      "skill": "/kits/skills/designkit-ethereal.zip"
     },
     {
       "id": "bohemian",
@@ -1731,7 +2208,11 @@
           "screenshots": {
             "desktop": "/previews/bohemian-crafted-shop-desktop.webp",
             "mobile": "/previews/bohemian-crafted-shop-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/bohemian-crafted-shop.md",
+          "json": "/kits/examples/bohemian-crafted-shop.json",
+          "source": "/kits/examples/bohemian-crafted-shop.zip",
+          "tokens": "/kits/examples/bohemian-crafted-shop.tokens.json"
         },
         {
           "id": "bohemian-travel-journal",
@@ -1743,7 +2224,11 @@
           "screenshots": {
             "desktop": "/previews/bohemian-travel-journal-desktop.webp",
             "mobile": "/previews/bohemian-travel-journal-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/bohemian-travel-journal.md",
+          "json": "/kits/examples/bohemian-travel-journal.json",
+          "source": "/kits/examples/bohemian-travel-journal.zip",
+          "tokens": "/kits/examples/bohemian-travel-journal.tokens.json"
         },
         {
           "id": "bohemian-creative-retreat",
@@ -1755,7 +2240,11 @@
           "screenshots": {
             "desktop": "/previews/bohemian-creative-retreat-desktop.webp",
             "mobile": "/previews/bohemian-creative-retreat-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/bohemian-creative-retreat.md",
+          "json": "/kits/examples/bohemian-creative-retreat.json",
+          "source": "/kits/examples/bohemian-creative-retreat.zip",
+          "tokens": "/kits/examples/bohemian-creative-retreat.tokens.json"
         }
       ],
       "components": [
@@ -1764,46 +2253,59 @@
           "styleId": "bohemian",
           "kind": "button",
           "name": "Bohemian button",
-          "url": "/components/bohemian-button/"
+          "url": "/components/bohemian-button/",
+          "registry": "/r/bohemian-button.json",
+          "source": "/kits/components/bohemian-button.zip"
         },
         {
           "id": "bohemian-card",
           "styleId": "bohemian",
           "kind": "card",
           "name": "Bohemian card",
-          "url": "/components/bohemian-card/"
+          "url": "/components/bohemian-card/",
+          "registry": "/r/bohemian-card.json",
+          "source": "/kits/components/bohemian-card.zip"
         },
         {
           "id": "bohemian-navigation",
           "styleId": "bohemian",
           "kind": "navigation",
           "name": "Bohemian navigation",
-          "url": "/components/bohemian-navigation/"
+          "url": "/components/bohemian-navigation/",
+          "registry": "/r/bohemian-navigation.json",
+          "source": "/kits/components/bohemian-navigation.zip"
         },
         {
           "id": "bohemian-field",
           "styleId": "bohemian",
           "kind": "field",
           "name": "Bohemian field",
-          "url": "/components/bohemian-field/"
+          "url": "/components/bohemian-field/",
+          "registry": "/r/bohemian-field.json",
+          "source": "/kits/components/bohemian-field.zip"
         },
         {
           "id": "bohemian-dialog",
           "styleId": "bohemian",
           "kind": "dialog",
           "name": "Bohemian dialog",
-          "url": "/components/bohemian-dialog/"
+          "url": "/components/bohemian-dialog/",
+          "registry": "/r/bohemian-dialog.json",
+          "source": "/kits/components/bohemian-dialog.zip"
         },
         {
           "id": "bohemian-status",
           "styleId": "bohemian",
           "kind": "status",
           "name": "Bohemian status",
-          "url": "/components/bohemian-status/"
+          "url": "/components/bohemian-status/",
+          "registry": "/r/bohemian-status.json",
+          "source": "/kits/components/bohemian-status.zip"
         }
       ],
       "guide": "/kits/styles/bohemian.md",
-      "json": "/kits/styles/bohemian.json"
+      "json": "/kits/styles/bohemian.json",
+      "skill": "/kits/skills/designkit-bohemian.zip"
     },
     {
       "id": "victorian",
@@ -1821,7 +2323,11 @@
           "screenshots": {
             "desktop": "/previews/victorian-literary-journal-desktop.webp",
             "mobile": "/previews/victorian-literary-journal-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/victorian-literary-journal.md",
+          "json": "/kits/examples/victorian-literary-journal.json",
+          "source": "/kits/examples/victorian-literary-journal.zip",
+          "tokens": "/kits/examples/victorian-literary-journal.tokens.json"
         },
         {
           "id": "victorian-curiosity-shop",
@@ -1833,7 +2339,11 @@
           "screenshots": {
             "desktop": "/previews/victorian-curiosity-shop-desktop.webp",
             "mobile": "/previews/victorian-curiosity-shop-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/victorian-curiosity-shop.md",
+          "json": "/kits/examples/victorian-curiosity-shop.json",
+          "source": "/kits/examples/victorian-curiosity-shop.zip",
+          "tokens": "/kits/examples/victorian-curiosity-shop.tokens.json"
         },
         {
           "id": "victorian-literary-salon",
@@ -1845,7 +2355,11 @@
           "screenshots": {
             "desktop": "/previews/victorian-literary-salon-desktop.webp",
             "mobile": "/previews/victorian-literary-salon-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/victorian-literary-salon.md",
+          "json": "/kits/examples/victorian-literary-salon.json",
+          "source": "/kits/examples/victorian-literary-salon.zip",
+          "tokens": "/kits/examples/victorian-literary-salon.tokens.json"
         }
       ],
       "components": [
@@ -1854,46 +2368,59 @@
           "styleId": "victorian",
           "kind": "button",
           "name": "Victorian button",
-          "url": "/components/victorian-button/"
+          "url": "/components/victorian-button/",
+          "registry": "/r/victorian-button.json",
+          "source": "/kits/components/victorian-button.zip"
         },
         {
           "id": "victorian-card",
           "styleId": "victorian",
           "kind": "card",
           "name": "Victorian card",
-          "url": "/components/victorian-card/"
+          "url": "/components/victorian-card/",
+          "registry": "/r/victorian-card.json",
+          "source": "/kits/components/victorian-card.zip"
         },
         {
           "id": "victorian-navigation",
           "styleId": "victorian",
           "kind": "navigation",
           "name": "Victorian navigation",
-          "url": "/components/victorian-navigation/"
+          "url": "/components/victorian-navigation/",
+          "registry": "/r/victorian-navigation.json",
+          "source": "/kits/components/victorian-navigation.zip"
         },
         {
           "id": "victorian-field",
           "styleId": "victorian",
           "kind": "field",
           "name": "Victorian field",
-          "url": "/components/victorian-field/"
+          "url": "/components/victorian-field/",
+          "registry": "/r/victorian-field.json",
+          "source": "/kits/components/victorian-field.zip"
         },
         {
           "id": "victorian-dialog",
           "styleId": "victorian",
           "kind": "dialog",
           "name": "Victorian dialog",
-          "url": "/components/victorian-dialog/"
+          "url": "/components/victorian-dialog/",
+          "registry": "/r/victorian-dialog.json",
+          "source": "/kits/components/victorian-dialog.zip"
         },
         {
           "id": "victorian-status",
           "styleId": "victorian",
           "kind": "status",
           "name": "Victorian status",
-          "url": "/components/victorian-status/"
+          "url": "/components/victorian-status/",
+          "registry": "/r/victorian-status.json",
+          "source": "/kits/components/victorian-status.zip"
         }
       ],
       "guide": "/kits/styles/victorian.md",
-      "json": "/kits/styles/victorian.json"
+      "json": "/kits/styles/victorian.json",
+      "skill": "/kits/skills/designkit-victorian.zip"
     },
     {
       "id": "cyberpunk",
@@ -1911,7 +2438,11 @@
           "screenshots": {
             "desktop": "/previews/cyberpunk-night-festival-desktop.webp",
             "mobile": "/previews/cyberpunk-night-festival-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/cyberpunk-night-festival.md",
+          "json": "/kits/examples/cyberpunk-night-festival.json",
+          "source": "/kits/examples/cyberpunk-night-festival.zip",
+          "tokens": "/kits/examples/cyberpunk-night-festival.tokens.json"
         },
         {
           "id": "cyberpunk-streetwear-shop",
@@ -1923,7 +2454,11 @@
           "screenshots": {
             "desktop": "/previews/cyberpunk-streetwear-shop-desktop.webp",
             "mobile": "/previews/cyberpunk-streetwear-shop-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/cyberpunk-streetwear-shop.md",
+          "json": "/kits/examples/cyberpunk-streetwear-shop.json",
+          "source": "/kits/examples/cyberpunk-streetwear-shop.zip",
+          "tokens": "/kits/examples/cyberpunk-streetwear-shop.tokens.json"
         },
         {
           "id": "cyberpunk-creative-console",
@@ -1935,7 +2470,11 @@
           "screenshots": {
             "desktop": "/previews/cyberpunk-creative-console-desktop.webp",
             "mobile": "/previews/cyberpunk-creative-console-mobile.webp"
-          }
+          },
+          "guide": "/kits/examples/cyberpunk-creative-console.md",
+          "json": "/kits/examples/cyberpunk-creative-console.json",
+          "source": "/kits/examples/cyberpunk-creative-console.zip",
+          "tokens": "/kits/examples/cyberpunk-creative-console.tokens.json"
         }
       ],
       "components": [
@@ -1944,46 +2483,59 @@
           "styleId": "cyberpunk",
           "kind": "button",
           "name": "Cyberpunk button",
-          "url": "/components/cyberpunk-button/"
+          "url": "/components/cyberpunk-button/",
+          "registry": "/r/cyberpunk-button.json",
+          "source": "/kits/components/cyberpunk-button.zip"
         },
         {
           "id": "cyberpunk-card",
           "styleId": "cyberpunk",
           "kind": "card",
           "name": "Cyberpunk card",
-          "url": "/components/cyberpunk-card/"
+          "url": "/components/cyberpunk-card/",
+          "registry": "/r/cyberpunk-card.json",
+          "source": "/kits/components/cyberpunk-card.zip"
         },
         {
           "id": "cyberpunk-navigation",
           "styleId": "cyberpunk",
           "kind": "navigation",
           "name": "Cyberpunk navigation",
-          "url": "/components/cyberpunk-navigation/"
+          "url": "/components/cyberpunk-navigation/",
+          "registry": "/r/cyberpunk-navigation.json",
+          "source": "/kits/components/cyberpunk-navigation.zip"
         },
         {
           "id": "cyberpunk-field",
           "styleId": "cyberpunk",
           "kind": "field",
           "name": "Cyberpunk field",
-          "url": "/components/cyberpunk-field/"
+          "url": "/components/cyberpunk-field/",
+          "registry": "/r/cyberpunk-field.json",
+          "source": "/kits/components/cyberpunk-field.zip"
         },
         {
           "id": "cyberpunk-dialog",
           "styleId": "cyberpunk",
           "kind": "dialog",
           "name": "Cyberpunk dialog",
-          "url": "/components/cyberpunk-dialog/"
+          "url": "/components/cyberpunk-dialog/",
+          "registry": "/r/cyberpunk-dialog.json",
+          "source": "/kits/components/cyberpunk-dialog.zip"
         },
         {
           "id": "cyberpunk-status",
           "styleId": "cyberpunk",
           "kind": "status",
           "name": "Cyberpunk status",
-          "url": "/components/cyberpunk-status/"
+          "url": "/components/cyberpunk-status/",
+          "registry": "/r/cyberpunk-status.json",
+          "source": "/kits/components/cyberpunk-status.zip"
         }
       ],
       "guide": "/kits/styles/cyberpunk.md",
-      "json": "/kits/styles/cyberpunk.json"
+      "json": "/kits/styles/cyberpunk.json",
+      "skill": "/kits/skills/designkit-cyberpunk.zip"
     }
   ]
 }
