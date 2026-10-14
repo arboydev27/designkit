@@ -1,18 +1,16 @@
 "use client";
 import { useSyncExternalStore } from "react";
-const changed = "designkit:query-change";
-function subscribe(callback: () => void) {
-  window.addEventListener("popstate", callback);
-  window.addEventListener(changed, callback);
-  return () => {
-    window.removeEventListener("popstate", callback);
-    window.removeEventListener(changed, callback);
-  };
-}
-const snapshot = () => window.location.search;
-const serverSnapshot = () => "";
+import { usePathname } from "next/navigation";
+import { urlForRoute, urlStateStore } from "../../lib/url-state";
 export default function useUrlQuery() {
-  const search = useSyncExternalStore(subscribe, snapshot, serverSnapshot);
+  const pathname = usePathname();
+  const current = useSyncExternalStore(
+    urlStateStore.subscribe,
+    urlStateStore.getSnapshot,
+    urlStateStore.getServerSnapshot,
+  );
+  const route = urlForRoute(current, pathname);
+  const search = route?.search || "";
   const params = new URLSearchParams(search);
   const update = (
     patch: Record<string, string | number | null>,
@@ -31,7 +29,13 @@ export default function useUrlQuery() {
       "",
       href,
     );
-    window.dispatchEvent(new Event(changed));
+    window.dispatchEvent(new Event("designkit:query-change"));
   };
-  return { params, update, search };
+  return {
+    params,
+    update,
+    search,
+    ready: route !== null,
+    currentPath: route ? current : null,
+  };
 }

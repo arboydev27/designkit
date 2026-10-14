@@ -12,7 +12,8 @@ import useUrlQuery from "./useUrlQuery";
 
 export default function BoardPicker({ item }: { item: BoardItem }) {
   const { boards, ready, error, update } = useBoards();
-  const { params } = useUrlQuery();
+  const { params, ready: queryReady } = useUrlQuery();
+  const canSave = ready && queryReady;
   const contextBoardId = params.get("board") || "";
   const [selection, setSelection] = useState<{
     sourceId: string;
@@ -69,7 +70,7 @@ export default function BoardPicker({ item }: { item: BoardItem }) {
       aria-label={`Save this ${item.kind} to a project board`}
       onSubmit={(event) => {
         event.preventDefault();
-        if (ready) add();
+        if (canSave) add();
       }}
     >
       <div>
@@ -81,7 +82,7 @@ export default function BoardPicker({ item }: { item: BoardItem }) {
       <label>
         Project board
         <select
-          disabled={!ready}
+          disabled={!canSave}
           value={selectedId}
           onChange={(event) => {
             setBoardId(event.target.value);
@@ -101,7 +102,7 @@ export default function BoardPicker({ item }: { item: BoardItem }) {
           New board name
           <input
             value={name}
-            disabled={!ready}
+            disabled={!canSave}
             onChange={(event) => {
               setName(event.target.value);
               setMessage("");
@@ -111,7 +112,7 @@ export default function BoardPicker({ item }: { item: BoardItem }) {
           />
         </label>
       ) : null}
-      <button type="submit" className="primary-button" disabled={!ready}>
+      <button type="submit" className="primary-button" disabled={!canSave}>
         Add to board
       </button>
       <Link href={selectedId ? boardHref(selectedId) : "/boards/"}>

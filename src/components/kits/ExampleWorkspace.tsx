@@ -35,7 +35,7 @@ export default function ExampleWorkspace({
   initialId?: string;
 }) {
   const { boards, ready } = useBoards();
-  const { params } = useUrlQuery();
+  const { params, ready: queryReady } = useUrlQuery();
   const boardId = params.get("board");
   const decisionKind = params.get("decision");
   const entryId = initialId || examples[0].id;
@@ -56,9 +56,10 @@ export default function ExampleWorkspace({
   const [showControls, setShowControls] = useState(true);
   const [saveKind, setSaveKind] = useState("example");
   useEffect(() => {
+    if (!ready || !queryReady) return;
     const restored = restoreEntry({
       boards,
-      ready,
+      ready: ready && queryReady,
       boardId,
       kind: decisionKind,
       example: entryExample,
@@ -85,6 +86,7 @@ export default function ExampleWorkspace({
   }, [
     boards,
     ready,
+    queryReady,
     boardId,
     decisionKind,
     entryExample,

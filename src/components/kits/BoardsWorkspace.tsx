@@ -22,7 +22,8 @@ import { useBoards } from "./useBoards";
 
 export default function BoardsWorkspace() {
   const { boards, ready, error, update } = useBoards();
-  const { params, update: updateQuery } = useUrlQuery();
+  const { params, update: updateQuery, ready: queryReady } = useUrlQuery();
+  const canEdit = ready && queryReady;
   const selectedId = params.get("board") || "";
   const selectBoard = (id: string, replace = false) =>
     updateQuery({ board: id || null }, replace);
@@ -40,9 +41,9 @@ export default function BoardsWorkspace() {
   const board = selectedBoard(boards, selectedId);
   const activeBoardId = board?.id || "";
   useEffect(() => {
-    if (ready && selectedId !== activeBoardId)
+    if (ready && queryReady && selectedId !== activeBoardId)
       updateQuery({ board: activeBoardId || null }, true);
-  }, [ready, selectedId, activeBoardId, updateQuery]);
+  }, [ready, queryReady, selectedId, activeBoardId, updateQuery]);
   const focusName = () => {
     requestAnimationFrame(() => {
       if (nameInput.current) nameInput.current.focus();
@@ -99,7 +100,7 @@ export default function BoardsWorkspace() {
           ref={createButton}
           className="primary-button"
           type="button"
-          disabled={!ready}
+          disabled={!canEdit}
           onClick={create}
         >
           Create a project board
@@ -107,7 +108,7 @@ export default function BoardsWorkspace() {
         <button
           className="small-button"
           type="button"
-          disabled={!ready || importing}
+          disabled={!canEdit || importing}
           onClick={() => input.current?.click()}
         >
           {importing ? "Importing board…" : "Import a board"}
@@ -118,7 +119,7 @@ export default function BoardsWorkspace() {
           accept="application/json,.json"
           className="detail-sr-only"
           tabIndex={-1}
-          disabled={!ready || importing}
+          disabled={!canEdit || importing}
           aria-label="Import board JSON"
           onChange={async (event) => {
             const fileInput = event.currentTarget;
@@ -181,7 +182,7 @@ export default function BoardsWorkspace() {
           {[message, error].filter(Boolean).join(" ")}
         </p>
       ) : null}
-      {!ready ? (
+      {!canEdit ? (
         <p role="status" className="kit-results">
           Opening your boards…
         </p>

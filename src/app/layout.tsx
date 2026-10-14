@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import UrlStateBridge from "@/components/kits/UrlStateBridge";
 import "./fonts.css";
 import "./globals.css";
 import "@/components/detail.css";
@@ -44,7 +45,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <UrlStateBridge />
+        {children}
+      </body>
     </html>
   );
 }

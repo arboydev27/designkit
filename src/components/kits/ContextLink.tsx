@@ -1,19 +1,8 @@
 "use client";
 import Link from "next/link";
-import { useSyncExternalStore, type ComponentProps } from "react";
+import type { ComponentProps } from "react";
 import { withReturnPath } from "../../lib/navigation";
-function subscribe(listener: () => void) {
-  window.addEventListener("popstate", listener);
-  window.addEventListener("hashchange", listener);
-  window.addEventListener("designkit:query-change", listener);
-  return () => {
-    window.removeEventListener("popstate", listener);
-    window.removeEventListener("hashchange", listener);
-    window.removeEventListener("designkit:query-change", listener);
-  };
-}
-const currentPath = () =>
-  `${location.pathname}${location.search}${location.hash}`;
+import useUrlQuery from "./useUrlQuery";
 export default function ContextLink({
   href,
   fallback,
@@ -22,6 +11,7 @@ export default function ContextLink({
   href: string;
   fallback: string;
 }) {
-  const returnTo = useSyncExternalStore(subscribe, currentPath, () => fallback);
+  const { currentPath } = useUrlQuery();
+  const returnTo = currentPath || fallback;
   return <Link {...props} href={withReturnPath(href, returnTo)} />;
 }
