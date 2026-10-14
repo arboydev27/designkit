@@ -1,0 +1,299 @@
+{
+  "version": "2.0.0",
+  "contentDigest": "f2fce7355d694be5093b9369b4bd1d5feda599fd8a65665fa1c2a6bfb1e868e3",
+  "license": "MIT",
+  "fontsLicense": "OFL-1.1",
+  "source": "https://github.com/arboydev27/designkit",
+  "style": {
+    "id": "surrealism",
+    "name": "Surrealism",
+    "category": "Expressive",
+    "tagline": "Make room for the impossible.",
+    "description": "Surrealism explores dreams, the unconscious, and unexpected connections between familiar things. In digital design, impossible scale and surprising juxtapositions can create a memorable visual world around a clear interface.",
+    "traits": [
+      "Dream logic",
+      "Unexpected scale",
+      "Impossible spaces",
+      "Strange juxtapositions"
+    ],
+    "palette": [
+      {
+        "name": "Dream blue",
+        "hex": "#99C5E2"
+      },
+      {
+        "name": "Apricot",
+        "hex": "#F2AD82"
+      },
+      {
+        "name": "Lilac",
+        "hex": "#B6A0DC"
+      },
+      {
+        "name": "Cloud",
+        "hex": "#F7F0E5"
+      },
+      {
+        "name": "Night",
+        "hex": "#3A3158"
+      }
+    ],
+    "fonts": {
+      "heading": "Syne",
+      "body": "DM Sans",
+      "rationale": "Unconventional display proportions support the visual surprise while a neutral body face gives the reader an anchor."
+    },
+    "useCases": [
+      "Art exhibitions",
+      "Creative campaigns",
+      "Experimental portfolios"
+    ],
+    "tips": [
+      "Build around one strong visual contradiction.",
+      "Keep navigation grounded and predictable.",
+      "Let negative space heighten the unusual."
+    ],
+    "avoid": [
+      "Using arbitrary weirdness without an idea.",
+      "Making essential content difficult to discover.",
+      "Motion that cannot be paused or reduced."
+    ],
+    "keywords": [
+      "dream",
+      "unexpected",
+      "art",
+      "impossible",
+      "imagination",
+      "juxtaposition"
+    ],
+    "sources": [
+      {
+        "label": "MoMA: Surrealism and Dreams",
+        "url": "https://www.moma.org/collection/terms/surrealism/surrealism-and-dreams"
+      }
+    ]
+  },
+  "recipe": {
+    "colors": {
+      "canvas": "#E9C6AF",
+      "surface": "#F0D5C1",
+      "accent": "#8363AF",
+      "ink": "#3F2D31",
+      "line": "#876C72"
+    },
+    "radius": 80,
+    "border": 1,
+    "shadow": "soft",
+    "texture": "none",
+    "composition": "Use one improbable spatial composition, such as an arch around a floating form, beside a legible text block.",
+    "motion": "Reveal a changed object briefly; avoid endless floating or motion that competes with reading.",
+    "signature": "Unexpected scale and spatial relationships made believable by consistent lighting.",
+    "controls": {
+      "radius": [
+        0,
+        160
+      ],
+      "shadow": true,
+      "spacing": [
+        16,
+        40
+      ]
+    }
+  },
+  "examples": [
+    {
+      "id": "surrealism-exhibition",
+      "styleId": "surrealism",
+      "name": "OTHERWHERE · event",
+      "brand": "OTHERWHERE",
+      "kind": "event",
+      "headline": "Reality is only a suggestion.",
+      "description": "An exhibition of impossible spaces, familiar objects, and things that refuse to behave.",
+      "action": "Explore the programme",
+      "colors": {
+        "canvas": "#E9C6AF",
+        "surface": "#F0D5C1",
+        "accent": "#8363AF",
+        "ink": "#3F2D31",
+        "line": "#876C72"
+      },
+      "fonts": {
+        "heading": "Syne",
+        "body": "DM Sans"
+      },
+      "items": [
+        {
+          "title": "The room without a floor",
+          "detail": "A conversation to begin the gathering.",
+          "label": "10:00"
+        },
+        {
+          "title": "An object out of time",
+          "detail": "Time to make, listen, and try something.",
+          "label": "13:00"
+        },
+        {
+          "title": "A conversation with a shadow",
+          "detail": "Bring the day's ideas together.",
+          "label": "16:00"
+        }
+      ],
+      "anatomy": [
+        {
+          "decision": "Composition",
+          "reason": "An improbable arch becomes the visual anchor, while the exhibition details remain ordinary and clear."
+        },
+        {
+          "decision": "Material and geometry",
+          "reason": "Unexpected scale and spatial relationships made believable by consistent lighting."
+        },
+        {
+          "decision": "Reading and interaction",
+          "reason": "Use one improbable spatial composition, such as an arch around a floating form, beside a legible text block. Reveal a changed object briefly; avoid endless floating or motion that competes with reading."
+        }
+      ]
+    },
+    {
+      "id": "surrealism-object-shop",
+      "styleId": "surrealism",
+      "name": "soft matter · shop",
+      "brand": "soft matter",
+      "kind": "shop",
+      "headline": "Objects from another ordinary.",
+      "description": "Small sculptural editions for the corner of your home that could use a question mark.",
+      "action": "Explore the collection",
+      "colors": {
+        "canvas": "#F3E8CF",
+        "surface": "#ECD3A9",
+        "accent": "#94ABCE",
+        "ink": "#3D4150",
+        "line": "#8E95A8"
+      },
+      "fonts": {
+        "heading": "Bodoni Moda",
+        "body": "DM Sans"
+      },
+      "items": [
+        {
+          "title": "The unfinished moon",
+          "detail": "A small edition, made with care.",
+          "label": "$36"
+        },
+        {
+          "title": "A door to nowhere",
+          "detail": "A useful companion for everyday rituals.",
+          "label": "$48"
+        },
+        {
+          "title": "The quiet cloud",
+          "detail": "A little character for your own space.",
+          "label": "$24"
+        }
+      ],
+      "anatomy": [
+        {
+          "decision": "Composition",
+          "reason": "Unexpected product shapes carry the fantasy; cart controls use familiar affordances."
+        },
+        {
+          "decision": "Material and geometry",
+          "reason": "Unexpected scale and spatial relationships made believable by consistent lighting."
+        },
+        {
+          "decision": "Reading and interaction",
+          "reason": "Use one improbable spatial composition, such as an arch around a floating form, beside a legible text block. Reveal a changed object briefly; avoid endless floating or motion that competes with reading."
+        }
+      ]
+    },
+    {
+      "id": "surrealism-image-archive",
+      "styleId": "surrealism",
+      "name": "dream index · archive",
+      "brand": "dream index",
+      "kind": "archive",
+      "headline": "A catalogue of unlikely things.",
+      "description": "Browse a collection of spatial experiments, strange compositions, and speculative objects.",
+      "action": "Browse the archive",
+      "colors": {
+        "canvas": "#E3E3F1",
+        "surface": "#C9C9E3",
+        "accent": "#CC8C9B",
+        "ink": "#393649",
+        "line": "#9290AE"
+      },
+      "fonts": {
+        "heading": "Syne",
+        "body": "DM Sans"
+      },
+      "items": [
+        {
+          "title": "Stairs to the sky",
+          "detail": "An illustrated working reference.",
+          "label": "Reference"
+        },
+        {
+          "title": "The inside of a landscape",
+          "detail": "Notes, patterns, and useful experiments.",
+          "label": "Experiment"
+        },
+        {
+          "title": "A very patient planet",
+          "detail": "A closer look at an underlying idea.",
+          "label": "Guide"
+        }
+      ],
+      "anatomy": [
+        {
+          "decision": "Composition",
+          "reason": "A structured searchable index offers a useful counterweight to the improbable imagery."
+        },
+        {
+          "decision": "Material and geometry",
+          "reason": "Unexpected scale and spatial relationships made believable by consistent lighting."
+        },
+        {
+          "decision": "Reading and interaction",
+          "reason": "Use one improbable spatial composition, such as an arch around a floating form, beside a legible text block. Reveal a changed object briefly; avoid endless floating or motion that competes with reading."
+        }
+      ]
+    }
+  ],
+  "components": [
+    {
+      "id": "surrealism-button",
+      "styleId": "surrealism",
+      "kind": "button",
+      "name": "Surrealism button"
+    },
+    {
+      "id": "surrealism-card",
+      "styleId": "surrealism",
+      "kind": "card",
+      "name": "Surrealism card"
+    },
+    {
+      "id": "surrealism-navigation",
+      "styleId": "surrealism",
+      "kind": "navigation",
+      "name": "Surrealism navigation"
+    },
+    {
+      "id": "surrealism-field",
+      "styleId": "surrealism",
+      "kind": "field",
+      "name": "Surrealism field"
+    },
+    {
+      "id": "surrealism-dialog",
+      "styleId": "surrealism",
+      "kind": "dialog",
+      "name": "Surrealism dialog"
+    },
+    {
+      "id": "surrealism-status",
+      "styleId": "surrealism",
+      "kind": "status",
+      "name": "Surrealism status"
+    }
+  ]
+}
