@@ -1,0 +1,293 @@
+{
+  "version": "2.0.0",
+  "contentDigest": "f2fce7355d694be5093b9369b4bd1d5feda599fd8a65665fa1c2a6bfb1e868e3",
+  "license": "MIT",
+  "fontsLicense": "OFL-1.1",
+  "source": "https://github.com/arboydev27/designkit",
+  "style": {
+    "id": "conceptual-sketch",
+    "name": "Conceptual sketch",
+    "category": "Organic",
+    "tagline": "Ideas, still in motion.",
+    "description": "Conceptual sketch styling exposes the marks of thinking through hand-drawn lines, annotations, and rough diagrams. It can make an experience feel exploratory and human while finished navigation provides a stable frame.",
+    "traits": [
+      "Hand-drawn lines",
+      "Visible annotations",
+      "Rough diagrams",
+      "Paper surfaces"
+    ],
+    "palette": [
+      {
+        "name": "Sketchbook",
+        "hex": "#F6F2E9"
+      },
+      {
+        "name": "Graphite",
+        "hex": "#383835"
+      },
+      {
+        "name": "Pencil gray",
+        "hex": "#9A9993"
+      },
+      {
+        "name": "Blue pencil",
+        "hex": "#547CAC"
+      },
+      {
+        "name": "Red pencil",
+        "hex": "#C76254"
+      }
+    ],
+    "fonts": {
+      "heading": "Caveat",
+      "body": "Space Grotesk",
+      "rationale": "A handwritten display voice signals ideation while a structured sans keeps explanations clear."
+    },
+    "useCases": [
+      "Design process portfolios",
+      "Educational explainers",
+      "Collaborative ideation tools"
+    ],
+    "tips": [
+      "Give annotations a meaningful explanatory role.",
+      "Use consistent line weights despite the rough finish.",
+      "Keep interaction targets clear and generously sized."
+    ],
+    "avoid": [
+      "Making finished features look broken.",
+      "Decorative scribbles that obscure content.",
+      "Using roughness to excuse inconsistent layout."
+    ],
+    "keywords": [
+      "sketch",
+      "drawing",
+      "ideas",
+      "handmade",
+      "process",
+      "annotation"
+    ]
+  },
+  "recipe": {
+    "colors": {
+      "canvas": "#F6F4EA",
+      "surface": "#E8E7D7",
+      "accent": "#F0C55D",
+      "ink": "#343A41",
+      "line": "#788088"
+    },
+    "radius": 5,
+    "border": 2,
+    "shadow": "none",
+    "texture": "paper",
+    "composition": "Use imperfect drawn boundaries and annotations around a clear conceptual structure.",
+    "motion": "Make editing immediate; let line-like accents remain still rather than repeatedly drawing themselves.",
+    "signature": "Visible thinking, hand-drawn framing, and an approachable workshop atmosphere.",
+    "controls": {
+      "radius": [
+        0,
+        32
+      ],
+      "shadow": false,
+      "spacing": [
+        16,
+        40
+      ]
+    }
+  },
+  "examples": [
+    {
+      "id": "conceptual-sketch-creative-practice",
+      "styleId": "conceptual-sketch",
+      "name": "rough ideas · studio",
+      "brand": "rough ideas",
+      "kind": "studio",
+      "headline": "Start with a what if.",
+      "description": "A design workshop turning questions, quick sketches, and conversations into useful possibilities.",
+      "action": "Explore our work",
+      "colors": {
+        "canvas": "#F6F4EA",
+        "surface": "#E8E7D7",
+        "accent": "#F0C55D",
+        "ink": "#343A41",
+        "line": "#788088"
+      },
+      "fonts": {
+        "heading": "Caveat",
+        "body": "Space Grotesk"
+      },
+      "items": [
+        {
+          "title": "A tool for thinking together",
+          "detail": "Identity, concept, and visual direction.",
+          "label": "Identity"
+        },
+        {
+          "title": "A new kind of map",
+          "detail": "Research shaped into a useful experience.",
+          "label": "Digital"
+        },
+        {
+          "title": "A playful public space",
+          "detail": "A considered system, made to grow.",
+          "label": "Objects"
+        }
+      ],
+      "anatomy": [
+        {
+          "decision": "Composition",
+          "reason": "Hand-drawn project framing exposes the thinking process without making navigation uncertain."
+        },
+        {
+          "decision": "Material and geometry",
+          "reason": "Visible thinking, hand-drawn framing, and an approachable workshop atmosphere."
+        },
+        {
+          "decision": "Reading and interaction",
+          "reason": "Use imperfect drawn boundaries and annotations around a clear conceptual structure. Make editing immediate; let line-like accents remain still rather than repeatedly drawing themselves."
+        }
+      ]
+    },
+    {
+      "id": "conceptual-sketch-project-notebook",
+      "styleId": "conceptual-sketch",
+      "name": "FIELDNOTES · planner",
+      "brand": "FIELDNOTES",
+      "kind": "planner",
+      "headline": "Make a little room for an idea.",
+      "description": "A working notebook for collecting questions, trying small experiments, and recording what you learned.",
+      "action": "Make a little progress",
+      "colors": {
+        "canvas": "#E9EFF2",
+        "surface": "#D4E0E5",
+        "accent": "#E9B778",
+        "ink": "#31434D",
+        "line": "#718995"
+      },
+      "fonts": {
+        "heading": "Caveat",
+        "body": "Space Grotesk"
+      },
+      "items": [
+        {
+          "title": "Write the question",
+          "detail": "Start small and give it your attention.",
+          "label": "Today"
+        },
+        {
+          "title": "Sketch three possibilities",
+          "detail": "A little space for the next useful step.",
+          "label": "This week"
+        },
+        {
+          "title": "Try the simplest version",
+          "detail": "Leave a note about what worked.",
+          "label": "Reflection"
+        }
+      ],
+      "anatomy": [
+        {
+          "decision": "Composition",
+          "reason": "Editable tasks and drawn borders turn the workshop atmosphere into a useful planning interface."
+        },
+        {
+          "decision": "Material and geometry",
+          "reason": "Visible thinking, hand-drawn framing, and an approachable workshop atmosphere."
+        },
+        {
+          "decision": "Reading and interaction",
+          "reason": "Use imperfect drawn boundaries and annotations around a clear conceptual structure. Make editing immediate; let line-like accents remain still rather than repeatedly drawing themselves."
+        }
+      ]
+    },
+    {
+      "id": "conceptual-sketch-process-journal",
+      "styleId": "conceptual-sketch",
+      "name": "the draft room · journal",
+      "brand": "the draft room",
+      "kind": "journal",
+      "headline": "Thinking, still in progress.",
+      "description": "Conversations and unfinished notes from people who like figuring things out by making them.",
+      "action": "Find a story",
+      "colors": {
+        "canvas": "#F4EAE3",
+        "surface": "#E7D6CC",
+        "accent": "#BF7D77",
+        "ink": "#4C3937",
+        "line": "#9D817B"
+      },
+      "fonts": {
+        "heading": "Space Grotesk",
+        "body": "Space Grotesk"
+      },
+      "items": [
+        {
+          "title": "The value of a bad first sketch",
+          "detail": "An observation worth spending time with.",
+          "label": "Essay"
+        },
+        {
+          "title": "A question worth keeping",
+          "detail": "A conversation with a different point of view.",
+          "label": "Conversation"
+        },
+        {
+          "title": "Learning in the margins",
+          "detail": "A small story with something to carry onward.",
+          "label": "Field notes"
+        }
+      ],
+      "anatomy": [
+        {
+          "decision": "Composition",
+          "reason": "Annotations belong beside a readable article column rather than on top of its text."
+        },
+        {
+          "decision": "Material and geometry",
+          "reason": "Visible thinking, hand-drawn framing, and an approachable workshop atmosphere."
+        },
+        {
+          "decision": "Reading and interaction",
+          "reason": "Use imperfect drawn boundaries and annotations around a clear conceptual structure. Make editing immediate; let line-like accents remain still rather than repeatedly drawing themselves."
+        }
+      ]
+    }
+  ],
+  "components": [
+    {
+      "id": "conceptual-sketch-button",
+      "styleId": "conceptual-sketch",
+      "kind": "button",
+      "name": "Conceptual sketch button"
+    },
+    {
+      "id": "conceptual-sketch-card",
+      "styleId": "conceptual-sketch",
+      "kind": "card",
+      "name": "Conceptual sketch card"
+    },
+    {
+      "id": "conceptual-sketch-navigation",
+      "styleId": "conceptual-sketch",
+      "kind": "navigation",
+      "name": "Conceptual sketch navigation"
+    },
+    {
+      "id": "conceptual-sketch-field",
+      "styleId": "conceptual-sketch",
+      "kind": "field",
+      "name": "Conceptual sketch field"
+    },
+    {
+      "id": "conceptual-sketch-dialog",
+      "styleId": "conceptual-sketch",
+      "kind": "dialog",
+      "name": "Conceptual sketch dialog"
+    },
+    {
+      "id": "conceptual-sketch-status",
+      "styleId": "conceptual-sketch",
+      "kind": "status",
+      "name": "Conceptual sketch status"
+    }
+  ]
+}
