@@ -3,6 +3,7 @@ import type {
   PlaygroundSettings,
   StyleRecipe,
 } from "../data/kit-types";
+import { kitVersion } from "../data/kit-types";
 import { examples } from "../data/examples";
 
 export const fontFamilies = [
@@ -248,7 +249,7 @@ export function exportDesignTokens(
       "dev.designkit": {
         exampleId: example.id,
         styleId: example.styleId,
-        version: "2.0.0",
+        version: kitVersion,
         settings,
         cssShadow: values["--dk-shadow"],
       },
