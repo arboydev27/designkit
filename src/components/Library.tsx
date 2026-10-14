@@ -35,12 +35,7 @@ import "./previews.css";
 const StyleDetail = dynamic(() => import("./StyleDetail"));
 
 type View =
-  | "library"
-  | "saved"
-  | "compare"
-  | "palettes"
-  | "typography"
-  | "about";
+  "library" | "saved" | "compare" | "palettes" | "typography" | "about";
 const families = [
   "All styles",
   "Organic",
@@ -73,6 +68,7 @@ export default function Library() {
   const [query, setQuery] = useState("");
   const [saved, setSaved] = useState<string[]>([]);
   const [comparison, setComparison] = useState<string[]>([]);
+  const [comparisonLoaded, setComparisonLoaded] = useState(false);
   const comparedIds = comparison.filter(Boolean);
   const [sort, setSort] = useState("curated");
   const [layout, setLayout] = useState<"grid" | "list">("grid");
@@ -93,6 +89,24 @@ export default function Library() {
     try {
       setSaved(readSavedStyles(localStorage, new Set(styles.map((s) => s.id))));
     } catch {}
+    try {
+      const stored: unknown = JSON.parse(
+        localStorage.getItem("designkit:comparison:v1") || "[]",
+      );
+      if (Array.isArray(stored))
+        setComparison(
+          [
+            ...new Set(
+              stored.filter(
+                (id) =>
+                  typeof id === "string" &&
+                  styles.some((style) => style.id === id),
+              ),
+            ),
+          ].slice(0, 2),
+        );
+    } catch {}
+    setComparisonLoaded(true);
     const sync = () => {
       let id = location.hash.slice(1);
       try {
@@ -128,6 +142,16 @@ export default function Library() {
       if (toastTimer.current) clearTimeout(toastTimer.current);
     };
   }, []);
+  useEffect(() => {
+    if (comparisonLoaded) {
+      try {
+        localStorage.setItem(
+          "designkit:comparison:v1",
+          JSON.stringify(comparison.filter(Boolean)),
+        );
+      } catch {}
+    }
+  }, [comparison, comparisonLoaded]);
   useEffect(() => {
     if (!sidebar) return;
     const opener = navigationTrigger.current;
@@ -184,7 +208,9 @@ export default function Library() {
     location.hash = view;
     requestAnimationFrame(() => {
       const card = document.getElementById(
-        lastOrigin.current === "deck" ? "featured-style" : `open-${lastCard.current}`,
+        lastOrigin.current === "deck"
+          ? "featured-style"
+          : `open-${lastCard.current}`,
       );
       if (card) card.focus();
       else window.scrollTo({ top: 0 });
@@ -631,6 +657,25 @@ export default function Library() {
                   }
                 />
               )}
+              {view === "library" && !query && category === "All styles" ? (
+                <nav
+                  className="library-kit-links"
+                  aria-label="Explore the full library"
+                >
+                  <a href="/examples">
+                    66 original examples <ArrowUpRight size={16} />
+                  </a>
+                  <a href="/components">
+                    Reusable components <ArrowUpRight size={16} />
+                  </a>
+                  <a href="/boards">
+                    Project boards <ArrowUpRight size={16} />
+                  </a>
+                  <a href="/agents">
+                    Design kits for your agent <ArrowUpRight size={16} />
+                  </a>
+                </nav>
+              ) : null}
               <section
                 id="style-grid"
                 className="explore-section"
@@ -741,7 +786,10 @@ export default function Library() {
                               )}
                             </button>
                           </div>
-                          <p>{s.tagline}</p>
+                          <p>
+                            {s.tagline}{" "}
+                            <span className="subtle">· 3 interpretations</span>
+                          </p>
                           <span className="card-fonts">
                             {s.fonts.heading} <span aria-hidden="true">↔</span>{" "}
                             {s.fonts.body}

@@ -9,14 +9,13 @@ import {
   Check,
   Copy,
   GitCompareArrows,
-  Monitor,
-  Smartphone,
   Sparkles,
   Type,
   X,
 } from "lucide-react";
 import type { DesignStyle } from "@/data/styles";
-import { StylePreview } from "./StylePreview";
+import ExampleWorkspace from "./kits/ExampleWorkspace";
+import { kitsById } from "@/data/kits";
 
 type StyleDetailProps = {
   style: DesignStyle;
@@ -140,7 +139,6 @@ export default function StyleDetail({
   onCompare,
   onCopy,
 }: StyleDetailProps) {
-  const [mode, setMode] = useState<"desktop" | "mobile">("desktop");
   const headingRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
@@ -209,52 +207,18 @@ export default function StyleDetail({
       >
         <div className="detail-preview-toolbar">
           <div className="detail-preview-label">
-            <h2 id="detail-preview-heading">Style in action</h2>
+            <h2 id="detail-preview-heading">
+              One language. Three interpretations.
+            </h2>
             <span className="detail-preview-caption">
-              An illustrative specimen
+              Choose a project, try its controls, and adapt the direction.
             </span>
           </div>
-          <div
-            className="detail-device-switch"
-            role="group"
-            aria-label="Preview viewport"
-          >
-            <button
-              type="button"
-              aria-pressed={mode === "desktop"}
-              onClick={() => setMode("desktop")}
-            >
-              <Monitor size={16} aria-hidden="true" />
-              <span>Desktop</span>
-            </button>
-            <button
-              type="button"
-              aria-pressed={mode === "mobile"}
-              onClick={() => setMode("mobile")}
-            >
-              <Smartphone size={16} aria-hidden="true" />
-              <span>Mobile</span>
-            </button>
-          </div>
         </div>
-        <div
-          className={`detail-preview-scroll detail-preview-scroll-${mode}`}
-          tabIndex={mode === "desktop" ? 0 : undefined}
-          role="region"
-          aria-label={`${style.name} ${mode} specimen${mode === "desktop" ? ". Scroll horizontally on smaller screens." : ""}`}
-        >
-          <div className={`detail-device detail-device-${mode}`}>
-            <StylePreview id={style.id} mode={mode} />
-          </div>
-        </div>
-        <div className="detail-preview-footnote">
-          <span>
-            {mode === "desktop"
-              ? "A little room to explore the big picture."
-              : "The same visual language, composed for a smaller screen."}
-          </span>
-          <span>{mode === "desktop" ? "DESKTOP VIEW" : "MOBILE VIEW"}</span>
-        </div>
+        <ExampleWorkspace
+          examples={kitsById[style.id].examples}
+          recipe={kitsById[style.id].recipe}
+        />
       </section>
 
       <div className="detail-guide-grid">

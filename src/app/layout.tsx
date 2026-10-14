@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./fonts.css";
 import "./globals.css";
 import "@/components/detail.css";
+import "@/components/kits/kit.css";
+import "@/components/kits/library-kits.css";
 
 export const metadata: Metadata = {
   title: "DesignKit | Find your visual language",
