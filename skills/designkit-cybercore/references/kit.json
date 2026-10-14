@@ -1,0 +1,299 @@
+{
+  "version": "2.0.0",
+  "contentDigest": "f2fce7355d694be5093b9369b4bd1d5feda599fd8a65665fa1c2a6bfb1e868e3",
+  "license": "MIT",
+  "fontsLicense": "OFL-1.1",
+  "source": "https://github.com/arboydev27/designkit",
+  "style": {
+    "id": "cybercore",
+    "name": "Cybercore",
+    "category": "Digital",
+    "tagline": "Born inside the machine.",
+    "description": "Cybercore is a loose contemporary aesthetic built around technological imagery, machine-like graphics, and digital intensity. Chrome forms, sharp geometry, and interface fragments can give an experience the feeling of a speculative computer system.",
+    "traits": [
+      "Machine graphics",
+      "Chrome accents",
+      "Dense metadata",
+      "Sharp geometry"
+    ],
+    "palette": [
+      {
+        "name": "Terminal",
+        "hex": "#11141C"
+      },
+      {
+        "name": "Silver",
+        "hex": "#C6CEDA"
+      },
+      {
+        "name": "Ice",
+        "hex": "#ECF3F9"
+      },
+      {
+        "name": "Electric blue",
+        "hex": "#466CFF"
+      },
+      {
+        "name": "Acid",
+        "hex": "#D9F75B"
+      }
+    ],
+    "fonts": {
+      "heading": "Space Grotesk",
+      "body": "IBM Plex Mono",
+      "rationale": "Angular-feeling display shapes and a monospaced supporting face suggest technical instrumentation."
+    },
+    "useCases": [
+      "Experimental music",
+      "Digital art platforms",
+      "Technology launches"
+    ],
+    "tips": [
+      "Use metadata to reinforce real information.",
+      "Build a clear structure beneath the visual noise.",
+      "Limit chrome to a few focal elements."
+    ],
+    "avoid": [
+      "Unreadable pseudo-technical labels.",
+      "Constant flicker or flashing.",
+      "Confusing decorative panels with interactive controls."
+    ],
+    "keywords": [
+      "technology",
+      "chrome",
+      "machine",
+      "digital",
+      "terminal",
+      "experimental"
+    ],
+    "sources": [
+      {
+        "label": "Suggested type: Space Grotesk",
+        "url": "https://fonts.google.com/specimen/Space+Grotesk"
+      }
+    ]
+  },
+  "recipe": {
+    "colors": {
+      "canvas": "#121B17",
+      "surface": "#1D2B23",
+      "accent": "#C3F85C",
+      "ink": "#E9F5DC",
+      "line": "#80936D"
+    },
+    "radius": 0,
+    "border": 1,
+    "shadow": "none",
+    "texture": "grid",
+    "composition": "Use modular terminal panels and technical typography; group dense information with consistent alignment.",
+    "motion": "Use immediate status updates and a brief focus highlight; do not flicker text or simulate failures.",
+    "signature": "Terminal-like modularity, acid contrast, and purposeful technical annotations.",
+    "controls": {
+      "radius": [
+        0,
+        8
+      ],
+      "shadow": false,
+      "spacing": [
+        16,
+        40
+      ]
+    }
+  },
+  "examples": [
+    {
+      "id": "cybercore-systems-archive",
+      "styleId": "cybercore",
+      "name": "SYS.01 · archive",
+      "brand": "SYS.01",
+      "kind": "archive",
+      "headline": "Find the signal in the system.",
+      "description": "A searchable archive of experiments in tools, networks, and human-machine collaboration.",
+      "action": "Browse the archive",
+      "colors": {
+        "canvas": "#121B17",
+        "surface": "#1D2B23",
+        "accent": "#C3F85C",
+        "ink": "#E9F5DC",
+        "line": "#80936D"
+      },
+      "fonts": {
+        "heading": "Space Grotesk",
+        "body": "IBM Plex Mono"
+      },
+      "items": [
+        {
+          "title": "Protocols for public tools",
+          "detail": "An illustrated working reference.",
+          "label": "Reference"
+        },
+        {
+          "title": "The open hardware notebook",
+          "detail": "Notes, patterns, and useful experiments.",
+          "label": "Experiment"
+        },
+        {
+          "title": "Signals from the edge",
+          "detail": "A closer look at an underlying idea.",
+          "label": "Guide"
+        }
+      ],
+      "anatomy": [
+        {
+          "decision": "Composition",
+          "reason": "Terminal labels and modular records give the archive a technical but readable structure."
+        },
+        {
+          "decision": "Material and geometry",
+          "reason": "Terminal-like modularity, acid contrast, and purposeful technical annotations."
+        },
+        {
+          "decision": "Reading and interaction",
+          "reason": "Use modular terminal panels and technical typography; group dense information with consistent alignment. Use immediate status updates and a brief focus highlight; do not flicker text or simulate failures."
+        }
+      ]
+    },
+    {
+      "id": "cybercore-build-planner",
+      "styleId": "cybercore",
+      "name": "NODE · planner",
+      "brand": "NODE",
+      "kind": "planner",
+      "headline": "Route your next experiment.",
+      "description": "A local planning console for the tasks, notes, and decisions behind your next build.",
+      "action": "Make a little progress",
+      "colors": {
+        "canvas": "#151A24",
+        "surface": "#242E3E",
+        "accent": "#9CBFD5",
+        "ink": "#EBF2F8",
+        "line": "#8196B5"
+      },
+      "fonts": {
+        "heading": "Space Mono",
+        "body": "IBM Plex Mono"
+      },
+      "items": [
+        {
+          "title": "Map the input",
+          "detail": "Start small and give it your attention.",
+          "label": "Today"
+        },
+        {
+          "title": "Build the smallest circuit",
+          "detail": "A little space for the next useful step.",
+          "label": "This week"
+        },
+        {
+          "title": "Record what changed",
+          "detail": "Leave a note about what worked.",
+          "label": "Reflection"
+        }
+      ],
+      "anatomy": [
+        {
+          "decision": "Composition",
+          "reason": "Explicit task states make the technical appearance functional rather than decorative."
+        },
+        {
+          "decision": "Material and geometry",
+          "reason": "Terminal-like modularity, acid contrast, and purposeful technical annotations."
+        },
+        {
+          "decision": "Reading and interaction",
+          "reason": "Use modular terminal panels and technical typography; group dense information with consistent alignment. Use immediate status updates and a brief focus highlight; do not flicker text or simulate failures."
+        }
+      ]
+    },
+    {
+      "id": "cybercore-creative-coding-meetup",
+      "styleId": "cybercore",
+      "name": "KERNEL assembly · event",
+      "brand": "KERNEL assembly",
+      "kind": "event",
+      "headline": "People. Machines. Possibilities.",
+      "description": "A gathering for creative coders, tool builders, and people curious about the space between.",
+      "action": "Explore the programme",
+      "colors": {
+        "canvas": "#1E1914",
+        "surface": "#332B20",
+        "accent": "#D9B878",
+        "ink": "#F8ECD5",
+        "line": "#A38D65"
+      },
+      "fonts": {
+        "heading": "IBM Plex Mono",
+        "body": "IBM Plex Mono"
+      },
+      "items": [
+        {
+          "title": "Interfaces after the screen",
+          "detail": "A conversation to begin the gathering.",
+          "label": "10:00"
+        },
+        {
+          "title": "Tools we can repair",
+          "detail": "Time to make, listen, and try something.",
+          "label": "13:00"
+        },
+        {
+          "title": "Open systems lab",
+          "detail": "Bring the day's ideas together.",
+          "label": "16:00"
+        }
+      ],
+      "anatomy": [
+        {
+          "decision": "Composition",
+          "reason": "A modular timetable demonstrates technical density while preserving the reading order."
+        },
+        {
+          "decision": "Material and geometry",
+          "reason": "Terminal-like modularity, acid contrast, and purposeful technical annotations."
+        },
+        {
+          "decision": "Reading and interaction",
+          "reason": "Use modular terminal panels and technical typography; group dense information with consistent alignment. Use immediate status updates and a brief focus highlight; do not flicker text or simulate failures."
+        }
+      ]
+    }
+  ],
+  "components": [
+    {
+      "id": "cybercore-button",
+      "styleId": "cybercore",
+      "kind": "button",
+      "name": "Cybercore button"
+    },
+    {
+      "id": "cybercore-card",
+      "styleId": "cybercore",
+      "kind": "card",
+      "name": "Cybercore card"
+    },
+    {
+      "id": "cybercore-navigation",
+      "styleId": "cybercore",
+      "kind": "navigation",
+      "name": "Cybercore navigation"
+    },
+    {
+      "id": "cybercore-field",
+      "styleId": "cybercore",
+      "kind": "field",
+      "name": "Cybercore field"
+    },
+    {
+      "id": "cybercore-dialog",
+      "styleId": "cybercore",
+      "kind": "dialog",
+      "name": "Cybercore dialog"
+    },
+    {
+      "id": "cybercore-status",
+      "styleId": "cybercore",
+      "kind": "status",
+      "name": "Cybercore status"
+    }
+  ]
+}
