@@ -1,0 +1,293 @@
+{
+  "version": "2.0.0",
+  "contentDigest": "f2fce7355d694be5093b9369b4bd1d5feda599fd8a65665fa1c2a6bfb1e868e3",
+  "license": "MIT",
+  "fontsLicense": "OFL-1.1",
+  "source": "https://github.com/arboydev27/designkit",
+  "style": {
+    "id": "claymorphism",
+    "name": "Claymorphism",
+    "category": "Digital",
+    "tagline": "Soft shapes. Big personality.",
+    "description": "Claymorphism gives interface elements the rounded volume and matte finish of modeled clay. Soft inner highlights, broad shadows, and friendly color make forms feel inflated and approachable.",
+    "traits": [
+      "Rounded volume",
+      "Matte surfaces",
+      "Soft shadows",
+      "Friendly colors"
+    ],
+    "palette": [
+      {
+        "name": "Peach",
+        "hex": "#F5B8A2"
+      },
+      {
+        "name": "Cream",
+        "hex": "#FFF5E9"
+      },
+      {
+        "name": "Lavender",
+        "hex": "#C9BBF0"
+      },
+      {
+        "name": "Sky",
+        "hex": "#AAD5EE"
+      },
+      {
+        "name": "Plum",
+        "hex": "#453A59"
+      }
+    ],
+    "fonts": {
+      "heading": "Nunito",
+      "body": "DM Sans",
+      "rationale": "Rounded headings echo the soft forms while a quieter body face prevents the page from feeling childish."
+    },
+    "useCases": [
+      "Learning products",
+      "Friendly onboarding",
+      "Playful finance concepts"
+    ],
+    "tips": [
+      "Keep lighting direction consistent.",
+      "Pair dimensional illustrations with clear flat labels.",
+      "Use spacious, comfortably sized controls."
+    ],
+    "avoid": [
+      "Making every component look like a toy.",
+      "Soft shadows as the only control boundary.",
+      "Oversized effects on dense tables."
+    ],
+    "keywords": [
+      "soft",
+      "3d",
+      "clay",
+      "rounded",
+      "friendly",
+      "pastel"
+    ]
+  },
+  "recipe": {
+    "colors": {
+      "canvas": "#F6F0E8",
+      "surface": "#E8DDF7",
+      "accent": "#F2B783",
+      "ink": "#392D47",
+      "line": "#897399"
+    },
+    "radius": 28,
+    "border": 1,
+    "shadow": "soft",
+    "texture": "none",
+    "composition": "Use rounded, inflated forms as a few friendly anchors, with open space around text and controls.",
+    "motion": "A short, critically damped press response suggests softness; reduce it to color feedback when requested.",
+    "signature": "Puffy rounded surfaces and soft shadows with crisp, readable labels.",
+    "controls": {
+      "radius": [
+        0,
+        56
+      ],
+      "shadow": true,
+      "spacing": [
+        16,
+        40
+      ]
+    }
+  },
+  "examples": [
+    {
+      "id": "claymorphism-habit-planner",
+      "styleId": "claymorphism",
+      "name": "poppy · planner",
+      "brand": "poppy",
+      "kind": "planner",
+      "headline": "Small steps. Softer days.",
+      "description": "Make room for a few good habits without turning your life into a performance chart.",
+      "action": "Make a little progress",
+      "colors": {
+        "canvas": "#F6F0E8",
+        "surface": "#E8DDF7",
+        "accent": "#F2B783",
+        "ink": "#392D47",
+        "line": "#897399"
+      },
+      "fonts": {
+        "heading": "Nunito",
+        "body": "DM Sans"
+      },
+      "items": [
+        {
+          "title": "A glass of water",
+          "detail": "Start small and give it your attention.",
+          "label": "Today"
+        },
+        {
+          "title": "Ten minutes outside",
+          "detail": "A little space for the next useful step.",
+          "label": "This week"
+        },
+        {
+          "title": "Something just for you",
+          "detail": "Leave a note about what worked.",
+          "label": "Reflection"
+        }
+      ],
+      "anatomy": [
+        {
+          "decision": "Composition",
+          "reason": "Inflated task cards make completion feel friendly while checkboxes keep the state explicit."
+        },
+        {
+          "decision": "Material and geometry",
+          "reason": "Puffy rounded surfaces and soft shadows with crisp, readable labels."
+        },
+        {
+          "decision": "Reading and interaction",
+          "reason": "Use rounded, inflated forms as a few friendly anchors, with open space around text and controls. A short, critically damped press response suggests softness; reduce it to color feedback when requested."
+        }
+      ]
+    },
+    {
+      "id": "claymorphism-desk-shop",
+      "styleId": "claymorphism",
+      "name": "pebble objects · shop",
+      "brand": "pebble objects",
+      "kind": "shop",
+      "headline": "A happier place to make things.",
+      "description": "Playful desk companions for doodlers, thinkers, and collectors of little comforts.",
+      "action": "Explore the collection",
+      "colors": {
+        "canvas": "#EEF3F9",
+        "surface": "#D3E4F6",
+        "accent": "#C3B0E4",
+        "ink": "#303D55",
+        "line": "#7990AE"
+      },
+      "fonts": {
+        "heading": "Nunito",
+        "body": "DM Sans"
+      },
+      "items": [
+        {
+          "title": "Cloud pencil pot",
+          "detail": "A small edition, made with care.",
+          "label": "$36"
+        },
+        {
+          "title": "Pebble paperweight",
+          "detail": "A useful companion for everyday rituals.",
+          "label": "$48"
+        },
+        {
+          "title": "Squiggle desk tray",
+          "detail": "A little character for your own space.",
+          "label": "$24"
+        }
+      ],
+      "anatomy": [
+        {
+          "decision": "Composition",
+          "reason": "Rounded product silhouettes and puffy controls support the tactile object collection."
+        },
+        {
+          "decision": "Material and geometry",
+          "reason": "Puffy rounded surfaces and soft shadows with crisp, readable labels."
+        },
+        {
+          "decision": "Reading and interaction",
+          "reason": "Use rounded, inflated forms as a few friendly anchors, with open space around text and controls. A short, critically damped press response suggests softness; reduce it to color feedback when requested."
+        }
+      ]
+    },
+    {
+      "id": "claymorphism-making-workshop",
+      "styleId": "claymorphism",
+      "name": "playdate · event",
+      "brand": "playdate",
+      "kind": "event",
+      "headline": "Come make a beautiful mess.",
+      "description": "An afternoon of clay, color, and trying something new with people who are doing the same.",
+      "action": "Explore the programme",
+      "colors": {
+        "canvas": "#FFF2E1",
+        "surface": "#F6D6AD",
+        "accent": "#ED9D7E",
+        "ink": "#5A3736",
+        "line": "#A37A69"
+      },
+      "fonts": {
+        "heading": "Syne",
+        "body": "DM Sans"
+      },
+      "items": [
+        {
+          "title": "Shape a tiny friend",
+          "detail": "A conversation to begin the gathering.",
+          "label": "10:00"
+        },
+        {
+          "title": "Paint without a plan",
+          "detail": "Time to make, listen, and try something.",
+          "label": "13:00"
+        },
+        {
+          "title": "Build a paper garden",
+          "detail": "Bring the day's ideas together.",
+          "label": "16:00"
+        }
+      ],
+      "anatomy": [
+        {
+          "decision": "Composition",
+          "reason": "Soft schedule blocks make the workshop approachable without hiding its practical details."
+        },
+        {
+          "decision": "Material and geometry",
+          "reason": "Puffy rounded surfaces and soft shadows with crisp, readable labels."
+        },
+        {
+          "decision": "Reading and interaction",
+          "reason": "Use rounded, inflated forms as a few friendly anchors, with open space around text and controls. A short, critically damped press response suggests softness; reduce it to color feedback when requested."
+        }
+      ]
+    }
+  ],
+  "components": [
+    {
+      "id": "claymorphism-button",
+      "styleId": "claymorphism",
+      "kind": "button",
+      "name": "Claymorphism button"
+    },
+    {
+      "id": "claymorphism-card",
+      "styleId": "claymorphism",
+      "kind": "card",
+      "name": "Claymorphism card"
+    },
+    {
+      "id": "claymorphism-navigation",
+      "styleId": "claymorphism",
+      "kind": "navigation",
+      "name": "Claymorphism navigation"
+    },
+    {
+      "id": "claymorphism-field",
+      "styleId": "claymorphism",
+      "kind": "field",
+      "name": "Claymorphism field"
+    },
+    {
+      "id": "claymorphism-dialog",
+      "styleId": "claymorphism",
+      "kind": "dialog",
+      "name": "Claymorphism dialog"
+    },
+    {
+      "id": "claymorphism-status",
+      "styleId": "claymorphism",
+      "kind": "status",
+      "name": "Claymorphism status"
+    }
+  ]
+}
