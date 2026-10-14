@@ -177,6 +177,8 @@ export function resolveTokens(
       .join(", ") || "none";
   const values: Record<string, string> = {
     "--dk-canvas": example.colors.canvas,
+    "--dk-color-scheme":
+      luminance(example.colors.canvas) < 0.2 ? "dark" : "light",
     "--dk-surface": example.colors.surface,
     "--dk-accent": settings.accent,
     "--dk-ink": ink,

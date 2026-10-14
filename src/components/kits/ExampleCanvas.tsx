@@ -61,7 +61,7 @@ export default function ExampleCanvas({
   const filtered = example.items.filter((item) =>
     `${item.title} ${item.label}`.toLowerCase().includes(query.toLowerCase()),
   );
-  const headline = normalized.headline || example.headline;
+  const headline = normalized.headline;
   const goToContent = () =>
     document
       .getElementById(sectionId)

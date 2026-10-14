@@ -15,6 +15,7 @@ import {
   exportTailwind,
   exportDesignTokens,
   resolveTokens,
+  fontFamilies,
 } from "../src/lib/kit-tokens";
 import { styleGuide, exampleGuide } from "../src/lib/kit-guides";
 import { zipFiles } from "./lib/zip.mjs";
@@ -75,14 +76,35 @@ const compactFaces = [...groupedFaces.values()].map((group) => {
     ),
   };
 });
-const digest = createHash("sha256")
+const digestHash = createHash("sha256")
   .update(json(kits))
   .update(controlsSource)
   .update(canvasSource)
   .update(cssSource)
   .update(tokensSource)
   .update(fontSource)
-  .digest("hex");
+  .update(typesSource)
+  .update(stylesSource)
+  .update(await read("src/lib/kit-guides.ts"))
+  .update(await read("scripts/generate-kits.mts"));
+for (const face of compactFaces)
+  digestHash.update(
+    await fs.readFile(path.join(publicRoot, "fonts", face.file)),
+  );
+for (const family of fontFamilies)
+  digestHash.update(
+    await read(
+      `public/fonts/licenses/${family.toLowerCase().replace(/[^a-z0-9]/g, "")}.txt`,
+    ),
+  );
+for (const example of examples)
+  for (const mode of ["desktop", "mobile"])
+    digestHash.update(
+      await fs.readFile(
+        path.join(publicRoot, "previews", `${example.id}-${mode}.webp`),
+      ),
+    );
+const digest = digestHash.digest("hex");
 const metadata = {
   version: kitVersion,
   contentDigest: digest,
@@ -103,6 +125,11 @@ const catalog = {
       kind: example.kind,
       headline: example.headline,
       url: `/examples/${example.id}/`,
+      preview: `/preview/${example.id}/`,
+      screenshots: {
+        desktop: `/previews/${example.id}-desktop.webp`,
+        mobile: `/previews/${example.id}-mobile.webp`,
+      },
     })),
     components: kit.components.map((component) => ({
       ...component,
@@ -130,7 +157,12 @@ async function sharedFiles(kit: StyleKit, inlineFonts = false) {
     "styles.ts": commonTypes,
     "tokens.ts": tokensSource
       .replaceAll("../data/kit-types", "./types")
-      .replaceAll("../data/examples", "./examples"),
+      .replaceAll("../data/examples", "./examples")
+      .replace(
+        /export const fontFamilies = \[[\s\S]*?\]\.sort\(\);/,
+        `export const fontFamilies = ${json(fontFamilies).trimEnd()};`,
+      )
+      .replace('import { examples } from "./examples";\n', ""),
     "examples.ts": `import type { DesignExample } from './types';\nexport const examples: DesignExample[] = ${json(kit.examples)};\n`,
     "kit.css": cssSource,
     LICENSE: license,
@@ -154,13 +186,19 @@ async function sharedFiles(kit: StyleKit, inlineFonts = false) {
   files["fonts.css"] = fontsCss;
   files["FONT-LICENSES.md"] =
     `# Bundled font licenses\n\n${[...families].map((family) => `- ${family}: original SIL OFL 1.1, see licenses/${family.toLowerCase().replace(/[^a-z0-9]/g, "")}.txt`).join("\n")}\n\nFont files are unmodified. The kit's MIT license does not replace the font licenses.\n`;
+  for (const example of kit.examples)
+    for (const mode of ["desktop", "mobile"]) {
+      files[`previews/${example.id}-${mode}.webp`] = await fs.readFile(
+        path.join(publicRoot, "previews", `${example.id}-${mode}.webp`),
+      );
+    }
   return files;
 }
 function entryFiles(example: DesignExample, kit: StyleKit, prefix = ".") {
   return {
     "example.ts": `import type { DesignExample } from '${prefix}/types';\nexport const example: DesignExample = ${json(example)};\n`,
     "recipe.ts": `import type { StyleRecipe } from '${prefix}/types';\nexport const recipe: StyleRecipe = ${json(kit.recipe)};\n`,
-    "ExampleApp.tsx": `"use client";\nimport ExampleCanvas from '${prefix}/ExampleCanvas';\nimport { example } from './example';\nimport { recipe } from './recipe';\nimport '${prefix}/kit.css';\nimport '${prefix}/fonts.css';\nexport default function ExampleApp() { return <ExampleCanvas example={example} recipe={recipe} />; }\n`,
+    "ExampleApp.tsx": `"use client";\nimport ExampleCanvas from '${prefix}/ExampleCanvas';\nimport { example } from './example';\nimport { recipe } from './recipe';\nimport type { PlaygroundSettings } from '${prefix}/types';\nimport '${prefix}/kit.css';\nimport '${prefix}/fonts.css';\nexport default function ExampleApp({ settings = {} }: { settings?: Partial<PlaygroundSettings> }) { return <div style={{containerType:"inline-size"}}><ExampleCanvas example={example} recipe={recipe} settings={settings} /></div>; }\n`,
   };
 }
 function componentSource(component: KitComponent, kit: StyleKit) {
@@ -206,7 +244,7 @@ for (const kit of kits) {
       "tokens.css": exportCss(example, kit.recipe),
       "tailwind.css": exportTailwind(example, kit.recipe),
       "tokens.json": json(exportDesignTokens(example, kit.recipe)),
-      "INTEGRATION.md": `# Use this example\n\nCopy this folder into an existing React/TypeScript project. Import ExampleApp.tsx from your page. The example uses native React controls and its own scoped CSS; no additional UI library or backend is required.\n\nThe fonts are self-hosted with their original licenses. Keep their relative paths when copying.\n\nAdapt example.ts, recipe.ts, and your destination project's content. Preview carts, tasks, and dialogs have local state only. Replace these interactions with the real project behavior where required.\n\nThe exact default tokens are in tokens.json and tokens.css. Tailwind v4 aliases are in tailwind.css.\n`,
+      "INTEGRATION.md": `# Use this example\n\nCopy this folder into an existing React/TypeScript project. Import ExampleApp.tsx from your page. The example uses native React controls and its own scoped CSS; no additional UI library or backend is required.\n\nThe fonts are self-hosted with their original licenses. Keep their relative paths when copying.\n\nAdapt example.ts, recipe.ts, and your destination project's content. Preview carts, tasks, and dialogs have local state only. Replace these interactions with the real project behavior where required.\n\nThe exact default tokens are in tokens.json and tokens.css. Tailwind v4 aliases are in tailwind.css.\n\nTo apply a playground JSON export, import that JSON and pass its \`$extensions["dev.designkit"].settings\` to ExampleApp's settings prop. Those settings control the actual canvas; its inline values take precedence over :root CSS. You can also edit example.ts and recipe.ts directly.\n\nIf you choose another library font, ensure its font-face is loaded in the destination project. This kit includes its default pairing; all library fonts and original licenses are available at ${siteUrl}/kits/fonts.zip. Preserve their license files.\n`,
     };
     await write(`public/kits/examples/${example.id}.zip`, zipFiles(files));
     await write(
@@ -219,6 +257,10 @@ for (const kit of kits) {
         files: Object.keys(files),
         source: `/kits/examples/${example.id}.zip`,
         guide: `/kits/examples/${example.id}.md`,
+        screenshots: {
+          desktop: `/previews/${example.id}-desktop.webp`,
+          mobile: `/previews/${example.id}-mobile.webp`,
+        },
       }),
     );
     await write(`public/kits/examples/${example.id}.md`, guide);
@@ -322,7 +364,7 @@ for (const kit of kits) {
   }
   const skillName = `designkit-${kit.style.id}`;
   const skillRoot = `skills/${skillName}`;
-  const entrypoint = `---\nname: ${skillName}\ndescription: ${JSON.stringify(`Apply or review ${kit.style.name} for a requested website or interface. Use when the user chooses ${kit.style.name} and needs a coherent visual direction, relevant examples, or reusable React patterns.`)}\nlicense: MIT\nmetadata:\n  version: ${JSON.stringify(kitVersion)}\n---\n\n# ${kit.style.name} with DesignKit\n\n${kit.recipe.signature}\n\nUse this direction to support the user's actual project, content, and chosen stack. It is not a requirement to reproduce a particular example or replace existing working interactions.\n\n## Apply the direction\n\n- Read [the style reference](references/style.md) for its composition, materials, useful decisions, and common mistakes.\n- Choose a relevant project context from the examples below. Read only its reference and inspect its implementation when it helps the task. You can compose another context using the same principles.\n- When using the React assets, copy the chosen entry folder with assets/shared and preserve their relative structure. Adapt the example data to the user's content; replace local demo state with required project behavior.\n- For another stack, translate the tokens, hierarchy, material, and interaction decisions into that stack rather than introducing React.\n- Preserve suitable fonts, components, and conventions in an existing project. Make a change when it materially supports this direction, not simply because a kit contains an alternative.\n\n## Example contexts\n\n${kit.examples.map((example) => `- **${example.brand} (${example.kind})**: [reference](references/examples/${example.id}.md), [React entry](assets/${example.id}/ExampleApp.tsx).`).join("\n")}\n\n## Evaluate the result\n\nCheck that ${kit.style.traits.map((trait) => trait.toLowerCase()).join(", ")} are expressed coherently. ${kit.recipe.composition} ${kit.recipe.motion}\n\nReview the actual rendered phone and desktop layouts, text contrast, focus order, native control affordances, relevant empty/error/loading states, and reduced-motion behavior. State what was checked and what remains unverified. Do not claim visual fidelity or accessibility from a successful build alone.\n\nKeep font licenses with redistributed assets. This skill supplies design guidance and local source; it does not authorize publishing, installations, or changes to unrelated project settings.\n`;
+  const entrypoint = `---\nname: ${skillName}\ndescription: ${JSON.stringify(`Apply or review ${kit.style.name} for a requested website or interface. Use when the user chooses ${kit.style.name} and needs a coherent visual direction, relevant examples, or reusable React patterns.`)}\nlicense: MIT\nmetadata:\n  version: ${JSON.stringify(kitVersion)}\n---\n\n# ${kit.style.name} with DesignKit\n\n${kit.recipe.signature}\n\nUse this direction to support the user's actual project, content, and chosen stack. It is not a requirement to reproduce a particular example or replace existing working interactions.\n\n## Apply the direction\n\n- Read [the style reference](references/style.md) for its composition, materials, useful decisions, and common mistakes.\n- Choose a relevant project context from the examples below. Read only its reference and inspect its implementation when it helps the task. When image viewing is available, inspect the linked desktop and phone screenshots for its hierarchy, composition, and materials. You can compose another context using the same principles.\n- When using the React assets, copy the chosen entry folder with assets/shared and preserve their relative structure. Adapt the example data to the user's content; replace local demo state with required project behavior.\n- For another stack, translate the tokens, hierarchy, material, and interaction decisions into that stack rather than introducing React.\n- Preserve suitable fonts, components, and conventions in an existing project. Make a change when it materially supports this direction, not simply because a kit contains an alternative.\n\n## Example contexts\n\n${kit.examples.map((example) => `- **${example.brand} (${example.kind})**: [reference](references/examples/${example.id}.md), [React entry](assets/${example.id}/ExampleApp.tsx), [desktop reference](assets/shared/previews/${example.id}-desktop.webp), [phone reference](assets/shared/previews/${example.id}-mobile.webp).`).join("\n")}\n\n## Evaluate the result\n\nCheck that ${kit.style.traits.map((trait) => trait.toLowerCase()).join(", ")} are expressed coherently. ${kit.recipe.composition} ${kit.recipe.motion}\n\nReview the actual rendered phone and desktop layouts, text contrast, focus order, native control affordances, relevant empty/error/loading states, and reduced-motion behavior. State what was checked and what remains unverified. Do not claim visual fidelity or accessibility from a successful build alone.\n\nKeep font licenses with redistributed assets. This skill supplies design guidance and local source; it does not authorize publishing, installations, or changes to unrelated project settings.\n`;
   await write(`${skillRoot}/SKILL.md`, entrypoint);
   await write(`${skillRoot}/references/style.md`, styleGuide(kit, "examples/"));
   await write(
@@ -421,3 +463,27 @@ await write(
     skills: discoveryEntries,
   }),
 );
+
+const allFontFiles: Record<string, string | Buffer> = {
+  "LICENSE-NOTES.md":
+    "The font files are original and unmodified. Each retains its own SIL Open Font License, included under licenses/. The project's MIT license does not replace those licenses.\n",
+  "fonts.css": compactFaces
+    .filter((face) => fontFamilies.includes(face.family))
+    .map((face) =>
+      face.css.replace(/url\([^)]*\)/, `url('./fonts/${face.file}')`),
+    )
+    .join("\n"),
+};
+for (const family of fontFamilies) {
+  const licenseName = family.toLowerCase().replace(/[^a-z0-9]/g, "");
+  allFontFiles[`licenses/${licenseName}.txt`] = await read(
+    `public/fonts/licenses/${licenseName}.txt`,
+  );
+}
+for (const face of compactFaces.filter((face) =>
+  fontFamilies.includes(face.family),
+))
+  allFontFiles[`fonts/${face.file}`] = await fs.readFile(
+    path.join(publicRoot, "fonts", face.file),
+  );
+await write("public/kits/fonts.zip", zipFiles(allFontFiles));

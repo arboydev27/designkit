@@ -157,7 +157,7 @@ export function projectBrief(board: ProjectBoard) {
       `A project-specific brief from DesignKit ${kitVersion}.`,
       `## Project requirements\n\nAudience: ${checked.audience || "Not specified yet."}\n\nPages and views: ${checked.pages || "Not specified yet."}\n\nConstraints: ${checked.constraints || "Not specified yet."}`,
       example && kit
-        ? `## Primary direction\n\n${kit.style.name}, expressed through **${example.brand}** (${example.kind}).\n\n${example.description}\n\nSelected headline: ${saved?.settings?.headline || example.headline}\n\n${kit.recipe.composition}\n\n${kit.recipe.signature}\n\nReference: ${siteUrl}/examples/${example.id}/`
+        ? `## Primary direction\n\n${kit.style.name}, expressed through **${example.brand}** (${example.kind}).\n\n${example.description}\n\nSelected headline: ${saved?.settings?.headline ?? example.headline}\n\n${kit.recipe.composition}\n\n${kit.recipe.signature}\n\nReference: ${siteUrl}/examples/${example.id}/`
         : "## Primary direction\n\nChoose one saved example as the primary direction before implementation.",
       example && kit
         ? `## Exact selected tokens\n\n\`\`\`css\n:root {\n${Object.entries(

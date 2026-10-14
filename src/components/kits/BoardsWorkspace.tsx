@@ -158,11 +158,12 @@ export default function BoardsWorkspace() {
                 key={board.id}
                 defaultValue={board.name}
                 maxLength={120}
-                onBlur={(event) =>
-                  patch({
-                    name: event.target.value.trim() || "An untitled project",
-                  })
-                }
+                onBlur={(event) => {
+                  const name =
+                    event.target.value.trim() || "An untitled project";
+                  event.target.value = name;
+                  patch({ name });
+                }}
               />
             </label>
             <div className="board-brief-fields">

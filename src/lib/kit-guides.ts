@@ -19,7 +19,7 @@ export function exampleGuide(example: DesignExample, kit: StyleKit) {
       `## Content\n\n${example.items.map((item) => `- ${item.title} (${item.label}): ${item.detail}`).join("\n")}`,
       `## Adaptation\n\n${kit.recipe.composition}\n\n${kit.recipe.motion}\n\nUse the page structure for its context, not as a universal template. Keep the user's real content and required interactions.`,
       `## Review\n\n${bullets(kit.style.avoid)}\n\nCheck reading order and text contrast at phone width; ensure native controls retain keyboard and focus feedback. Preview tasks, carts, and schedules are local demonstrations, not backend integrations.`,
-      `## Resources\n\nPreview: ${siteUrl}/examples/${example.id}/\nKit: ${siteUrl}/kits/examples/${example.id}.zip\nJSON: ${siteUrl}/kits/examples/${example.id}.json`,
+      `## Resources\n\nPreview: ${siteUrl}/examples/${example.id}/\nFull-page preview: ${siteUrl}/preview/${example.id}/\nDesktop image: ${siteUrl}/previews/${example.id}-desktop.webp\nPhone image: ${siteUrl}/previews/${example.id}-mobile.webp\nKit: ${siteUrl}/kits/examples/${example.id}.zip\nJSON: ${siteUrl}/kits/examples/${example.id}.json`,
     ].join("\n\n") + "\n"
   );
 }
@@ -30,7 +30,7 @@ export function styleGuide(
   return (
     [
       `# ${kit.style.name}: DesignKit reference`,
-      `Version ${kitVersion}. This is a contemporary interpretation, not a universal historical prescription.`,
+      `Version ${kitVersion}. A contemporary interpretation of this direction. The three projects vary content, palette, and typography while preserving the style’s defining materials and composition. Treat suggested colors and typefaces as adaptable choices.`,
       `## Character\n\n${kit.style.description}\n\n${kit.recipe.signature}\n\n${bullets(kit.style.traits)}`,
       `## Three interpretations\n\n${kit.examples.map((example) => `### ${example.brand} (${example.kind})\n\n${example.description}\n\n${example.anatomy[0].reason}\n\nPreview: ${siteUrl}/examples/${example.id}/\nReference: ${referencePrefix}${example.id}.md`).join("\n\n")}`,
       `## Composition and behavior\n\n${kit.recipe.composition}\n\n${kit.recipe.motion}`,

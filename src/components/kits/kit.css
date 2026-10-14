@@ -1,8 +1,30 @@
+/* Scoped foundations keep copied kits independent of a global CSS reset. */
+:where(.kit-canvas, .kit-component-surface),
+:where(.kit-canvas, .kit-component-surface) *,
+:where(.kit-canvas, .kit-component-surface) *::before,
+:where(.kit-canvas, .kit-component-surface) *::after {
+  box-sizing: border-box;
+}
+:where(.kit-canvas, .kit-component-surface) :is(h1, h2, h3, p) {
+  margin: 0;
+}
+:where(.kit-canvas, .kit-component-surface) a {
+  color: inherit;
+}
+:where(.kit-canvas, .kit-component-surface) button {
+  cursor: pointer;
+}
+:where(.kit-canvas, .kit-component-surface) button:disabled {
+  cursor: not-allowed;
+}
 .kit-canvas,
 .kit-component-surface {
   color: var(--dk-ink);
   background: var(--dk-canvas);
   font-family: var(--dk-body), sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color-scheme: var(--dk-color-scheme, light);
   container-type: inline-size;
   position: relative;
   isolation: isolate;
@@ -683,7 +705,6 @@
 .kit-style-glassmorphism .kit-card,
 .kit-style-y2k .kit-card,
 .kit-style-ethereal .kit-card {
-  --dk-muted: var(--dk-surface-muted);
   backdrop-filter: blur(12px);
 }
 .kit-style-editorial-design .kit-hero h2,
@@ -896,7 +917,6 @@
 }
 @media (prefers-reduced-transparency: reduce) {
   .kit-card {
-    --dk-muted: var(--dk-surface-muted);
     backdrop-filter: none !important;
   }
   .kit-art-circle {
@@ -915,6 +935,5 @@
 }
 .kit-style-glassmorphism .kit-card,
 .kit-style-ethereal .kit-card {
-  --dk-muted: var(--dk-surface-muted);
   background: color-mix(in srgb, var(--dk-surface) 88%, transparent);
 }

@@ -111,7 +111,7 @@ const headingAlternatives: Record<string, [string, string]> = {
   scrapbook: ["Caveat", "Playfair Display"],
   surrealism: ["Bodoni Moda", "Syne"],
   y2k: ["Syne", "Space Grotesk"],
-  "pixel-art": ["Press Start 2P", "Space Mono"],
+  "pixel-art": ["Press Start 2P", "Press Start 2P"],
   synthwave: ["Space Grotesk", "Syne"],
   neumorphism: ["DM Sans", "Space Grotesk"],
   "bento-grid": ["Space Grotesk", "Syne"],
