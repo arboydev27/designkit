@@ -1,0 +1,293 @@
+{
+  "version": "2.0.0",
+  "contentDigest": "f2fce7355d694be5093b9369b4bd1d5feda599fd8a65665fa1c2a6bfb1e868e3",
+  "license": "MIT",
+  "fontsLicense": "OFL-1.1",
+  "source": "https://github.com/arboydev27/designkit",
+  "style": {
+    "id": "scrapbook",
+    "name": "Scrapbook",
+    "category": "Expressive",
+    "tagline": "A collection with a pulse.",
+    "description": "Scrapbook design borrows the visual language of collected photographs, paper scraps, handwritten notes, and tape. Overlaps and small irregularities make the composition feel personal while an underlying structure keeps it navigable.",
+    "traits": [
+      "Paper layers",
+      "Handwritten notes",
+      "Taped photographs",
+      "Casual composition"
+    ],
+    "palette": [
+      {
+        "name": "Notebook",
+        "hex": "#F6EDDC"
+      },
+      {
+        "name": "Tomato",
+        "hex": "#D95742"
+      },
+      {
+        "name": "Denim",
+        "hex": "#547FA2"
+      },
+      {
+        "name": "Butter",
+        "hex": "#EBD283"
+      },
+      {
+        "name": "Graphite",
+        "hex": "#383532"
+      }
+    ],
+    "fonts": {
+      "heading": "Caveat",
+      "body": "DM Sans",
+      "rationale": "Handwritten headings create a personal touch; conventional body text keeps longer notes and navigation accessible."
+    },
+    "useCases": [
+      "Travel journals",
+      "Personal portfolios",
+      "Community storytelling"
+    ],
+    "tips": [
+      "Repeat a small set of paper and tape treatments.",
+      "Keep important controls level and readable.",
+      "Use handwriting for short expressive moments."
+    ],
+    "avoid": [
+      "Random rotation on every item.",
+      "Overlapping essential text.",
+      "Using handwriting for long paragraphs."
+    ],
+    "keywords": [
+      "collage",
+      "paper",
+      "handmade",
+      "personal",
+      "journal",
+      "nostalgia"
+    ]
+  },
+  "recipe": {
+    "colors": {
+      "canvas": "#F5EBD9",
+      "surface": "#F7DCC9",
+      "accent": "#E58BA2",
+      "ink": "#493A33",
+      "line": "#9B7764"
+    },
+    "radius": 2,
+    "border": 1,
+    "shadow": "hard",
+    "texture": "paper",
+    "composition": "Arrange a few layered paper pieces with slight offsets; keep navigation and text baselines dependable.",
+    "motion": "Tiny press feedback makes paper feel tangible; keep larger collages still.",
+    "signature": "Handwritten accents, paper layering, and collected details rather than random clutter.",
+    "controls": {
+      "radius": [
+        0,
+        32
+      ],
+      "shadow": true,
+      "spacing": [
+        16,
+        40
+      ]
+    }
+  },
+  "examples": [
+    {
+      "id": "scrapbook-personal-journal",
+      "styleId": "scrapbook",
+      "name": "little things · journal",
+      "brand": "little things",
+      "kind": "journal",
+      "headline": "Life is a beautiful mess.",
+      "description": "A collection of happy accidents, small adventures, and things found along the way.",
+      "action": "Find a story",
+      "colors": {
+        "canvas": "#F5EBD9",
+        "surface": "#F7DCC9",
+        "accent": "#E58BA2",
+        "ink": "#493A33",
+        "line": "#9B7764"
+      },
+      "fonts": {
+        "heading": "Caveat",
+        "body": "DM Sans"
+      },
+      "items": [
+        {
+          "title": "A postcard from nowhere",
+          "detail": "An observation worth spending time with.",
+          "label": "Essay"
+        },
+        {
+          "title": "Sunday in the kitchen",
+          "detail": "A conversation with a different point of view.",
+          "label": "Conversation"
+        },
+        {
+          "title": "Things worth keeping",
+          "detail": "A small story with something to carry onward.",
+          "label": "Field notes"
+        }
+      ],
+      "anatomy": [
+        {
+          "decision": "Composition",
+          "reason": "Paper layers and handwritten notes support a personal voice around readable articles."
+        },
+        {
+          "decision": "Material and geometry",
+          "reason": "Handwritten accents, paper layering, and collected details rather than random clutter."
+        },
+        {
+          "decision": "Reading and interaction",
+          "reason": "Arrange a few layered paper pieces with slight offsets; keep navigation and text baselines dependable. Tiny press feedback makes paper feel tangible; keep larger collages still."
+        }
+      ]
+    },
+    {
+      "id": "scrapbook-illustration-studio",
+      "styleId": "scrapbook",
+      "name": "paper trail · studio",
+      "brand": "paper trail",
+      "kind": "studio",
+      "headline": "A little imagination goes a long way.",
+      "description": "Illustration, playful identities, and stories pieced together with care.",
+      "action": "Explore our work",
+      "colors": {
+        "canvas": "#E7EEF6",
+        "surface": "#D4E0F0",
+        "accent": "#ECBF7C",
+        "ink": "#3B4458",
+        "line": "#8394AC"
+      },
+      "fonts": {
+        "heading": "Caveat",
+        "body": "DM Sans"
+      },
+      "items": [
+        {
+          "title": "A tiny town of stories",
+          "detail": "Identity, concept, and visual direction.",
+          "label": "Identity"
+        },
+        {
+          "title": "Packaging with a personality",
+          "detail": "Research shaped into a useful experience.",
+          "label": "Digital"
+        },
+        {
+          "title": "An illustrated year",
+          "detail": "A considered system, made to grow.",
+          "label": "Objects"
+        }
+      ],
+      "anatomy": [
+        {
+          "decision": "Composition",
+          "reason": "A collected portfolio gives every project a different paper frame within one navigation system."
+        },
+        {
+          "decision": "Material and geometry",
+          "reason": "Handwritten accents, paper layering, and collected details rather than random clutter."
+        },
+        {
+          "decision": "Reading and interaction",
+          "reason": "Arrange a few layered paper pieces with slight offsets; keep navigation and text baselines dependable. Tiny press feedback makes paper feel tangible; keep larger collages still."
+        }
+      ]
+    },
+    {
+      "id": "scrapbook-stationery-shop",
+      "styleId": "scrapbook",
+      "name": "keepsake club · shop",
+      "brand": "keepsake club",
+      "kind": "shop",
+      "headline": "For your next little story.",
+      "description": "Stationery for making lists, sending love, and saving a piece of an ordinary day.",
+      "action": "Explore the collection",
+      "colors": {
+        "canvas": "#F7E9EB",
+        "surface": "#EFC9D5",
+        "accent": "#AE749B",
+        "ink": "#4F3446",
+        "line": "#A27690"
+      },
+      "fonts": {
+        "heading": "Playfair Display",
+        "body": "DM Sans"
+      },
+      "items": [
+        {
+          "title": "The pocket notebook",
+          "detail": "A small edition, made with care.",
+          "label": "$36"
+        },
+        {
+          "title": "A letter to a friend",
+          "detail": "A useful companion for everyday rituals.",
+          "label": "$48"
+        },
+        {
+          "title": "A sheet of little stickers",
+          "detail": "A little character for your own space.",
+          "label": "$24"
+        }
+      ],
+      "anatomy": [
+        {
+          "decision": "Composition",
+          "reason": "Tape-like framing is used on products while purchase actions stay straight and legible."
+        },
+        {
+          "decision": "Material and geometry",
+          "reason": "Handwritten accents, paper layering, and collected details rather than random clutter."
+        },
+        {
+          "decision": "Reading and interaction",
+          "reason": "Arrange a few layered paper pieces with slight offsets; keep navigation and text baselines dependable. Tiny press feedback makes paper feel tangible; keep larger collages still."
+        }
+      ]
+    }
+  ],
+  "components": [
+    {
+      "id": "scrapbook-button",
+      "styleId": "scrapbook",
+      "kind": "button",
+      "name": "Scrapbook button"
+    },
+    {
+      "id": "scrapbook-card",
+      "styleId": "scrapbook",
+      "kind": "card",
+      "name": "Scrapbook card"
+    },
+    {
+      "id": "scrapbook-navigation",
+      "styleId": "scrapbook",
+      "kind": "navigation",
+      "name": "Scrapbook navigation"
+    },
+    {
+      "id": "scrapbook-field",
+      "styleId": "scrapbook",
+      "kind": "field",
+      "name": "Scrapbook field"
+    },
+    {
+      "id": "scrapbook-dialog",
+      "styleId": "scrapbook",
+      "kind": "dialog",
+      "name": "Scrapbook dialog"
+    },
+    {
+      "id": "scrapbook-status",
+      "styleId": "scrapbook",
+      "kind": "status",
+      "name": "Scrapbook status"
+    }
+  ]
+}
