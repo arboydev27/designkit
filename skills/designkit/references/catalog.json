@@ -1,0 +1,1989 @@
+{
+  "version": "2.0.0",
+  "contentDigest": "f2fce7355d694be5093b9369b4bd1d5feda599fd8a65665fa1c2a6bfb1e868e3",
+  "license": "MIT",
+  "fontsLicense": "OFL-1.1",
+  "source": "https://github.com/arboydev27/designkit",
+  "styles": [
+    {
+      "id": "wabi-sabi",
+      "name": "Wabi-sabi",
+      "category": "Organic",
+      "description": "Rooted in Japanese aesthetics, wabi-sabi values impermanence, modesty, and the character of things shaped by time. A digital interpretation can use natural textures, quiet spacing, and gentle asymmetry to suggest that material sensitivity.",
+      "examples": [
+        {
+          "id": "wabi-sabi-earthware",
+          "brand": "tsuchi",
+          "kind": "shop",
+          "headline": "Beauty in the unfinished.",
+          "url": "/examples/wabi-sabi-earthware/",
+          "preview": "/preview/wabi-sabi-earthware/",
+          "screenshots": {
+            "desktop": "/previews/wabi-sabi-earthware-desktop.webp",
+            "mobile": "/previews/wabi-sabi-earthware-mobile.webp"
+          }
+        },
+        {
+          "id": "wabi-sabi-rain-journal",
+          "brand": "After rain",
+          "kind": "journal",
+          "headline": "Notes from a slower life.",
+          "url": "/examples/wabi-sabi-rain-journal/",
+          "preview": "/preview/wabi-sabi-rain-journal/",
+          "screenshots": {
+            "desktop": "/previews/wabi-sabi-rain-journal-desktop.webp",
+            "mobile": "/previews/wabi-sabi-rain-journal-mobile.webp"
+          }
+        },
+        {
+          "id": "wabi-sabi-architecture",
+          "brand": "ma atelier",
+          "kind": "studio",
+          "headline": "Space to simply be.",
+          "url": "/examples/wabi-sabi-architecture/",
+          "preview": "/preview/wabi-sabi-architecture/",
+          "screenshots": {
+            "desktop": "/previews/wabi-sabi-architecture-desktop.webp",
+            "mobile": "/previews/wabi-sabi-architecture-mobile.webp"
+          }
+        }
+      ],
+      "components": [
+        {
+          "id": "wabi-sabi-button",
+          "styleId": "wabi-sabi",
+          "kind": "button",
+          "name": "Wabi-sabi button",
+          "url": "/components/wabi-sabi-button/"
+        },
+        {
+          "id": "wabi-sabi-card",
+          "styleId": "wabi-sabi",
+          "kind": "card",
+          "name": "Wabi-sabi card",
+          "url": "/components/wabi-sabi-card/"
+        },
+        {
+          "id": "wabi-sabi-navigation",
+          "styleId": "wabi-sabi",
+          "kind": "navigation",
+          "name": "Wabi-sabi navigation",
+          "url": "/components/wabi-sabi-navigation/"
+        },
+        {
+          "id": "wabi-sabi-field",
+          "styleId": "wabi-sabi",
+          "kind": "field",
+          "name": "Wabi-sabi field",
+          "url": "/components/wabi-sabi-field/"
+        },
+        {
+          "id": "wabi-sabi-dialog",
+          "styleId": "wabi-sabi",
+          "kind": "dialog",
+          "name": "Wabi-sabi dialog",
+          "url": "/components/wabi-sabi-dialog/"
+        },
+        {
+          "id": "wabi-sabi-status",
+          "styleId": "wabi-sabi",
+          "kind": "status",
+          "name": "Wabi-sabi status",
+          "url": "/components/wabi-sabi-status/"
+        }
+      ],
+      "guide": "/kits/styles/wabi-sabi.md",
+      "json": "/kits/styles/wabi-sabi.json"
+    },
+    {
+      "id": "neo-brutalism",
+      "name": "Neo-brutalism",
+      "category": "Expressive",
+      "description": "Neo-brutalist interfaces combine blunt geometry, strong outlines, hard offset shadows, and conspicuous color. Their playful directness makes hierarchy visible and gives ordinary controls a graphic, poster-like presence.",
+      "examples": [
+        {
+          "id": "neo-brutalism-creative-studio",
+          "brand": "LOUD®",
+          "kind": "studio",
+          "headline": "Make some noise.",
+          "url": "/examples/neo-brutalism-creative-studio/",
+          "preview": "/preview/neo-brutalism-creative-studio/",
+          "screenshots": {
+            "desktop": "/previews/neo-brutalism-creative-studio-desktop.webp",
+            "mobile": "/previews/neo-brutalism-creative-studio-mobile.webp"
+          }
+        },
+        {
+          "id": "neo-brutalism-print-shop",
+          "brand": "Elsewhere press",
+          "kind": "shop",
+          "headline": "Your walls called. Be louder.",
+          "url": "/examples/neo-brutalism-print-shop/",
+          "preview": "/preview/neo-brutalism-print-shop/",
+          "screenshots": {
+            "desktop": "/previews/neo-brutalism-print-shop-desktop.webp",
+            "mobile": "/previews/neo-brutalism-print-shop-mobile.webp"
+          }
+        },
+        {
+          "id": "neo-brutalism-music-weekender",
+          "brand": "GOOD NOISE",
+          "kind": "event",
+          "headline": "A weekend worth shouting about.",
+          "url": "/examples/neo-brutalism-music-weekender/",
+          "preview": "/preview/neo-brutalism-music-weekender/",
+          "screenshots": {
+            "desktop": "/previews/neo-brutalism-music-weekender-desktop.webp",
+            "mobile": "/previews/neo-brutalism-music-weekender-mobile.webp"
+          }
+        }
+      ],
+      "components": [
+        {
+          "id": "neo-brutalism-button",
+          "styleId": "neo-brutalism",
+          "kind": "button",
+          "name": "Neo-brutalism button",
+          "url": "/components/neo-brutalism-button/"
+        },
+        {
+          "id": "neo-brutalism-card",
+          "styleId": "neo-brutalism",
+          "kind": "card",
+          "name": "Neo-brutalism card",
+          "url": "/components/neo-brutalism-card/"
+        },
+        {
+          "id": "neo-brutalism-navigation",
+          "styleId": "neo-brutalism",
+          "kind": "navigation",
+          "name": "Neo-brutalism navigation",
+          "url": "/components/neo-brutalism-navigation/"
+        },
+        {
+          "id": "neo-brutalism-field",
+          "styleId": "neo-brutalism",
+          "kind": "field",
+          "name": "Neo-brutalism field",
+          "url": "/components/neo-brutalism-field/"
+        },
+        {
+          "id": "neo-brutalism-dialog",
+          "styleId": "neo-brutalism",
+          "kind": "dialog",
+          "name": "Neo-brutalism dialog",
+          "url": "/components/neo-brutalism-dialog/"
+        },
+        {
+          "id": "neo-brutalism-status",
+          "styleId": "neo-brutalism",
+          "kind": "status",
+          "name": "Neo-brutalism status",
+          "url": "/components/neo-brutalism-status/"
+        }
+      ],
+      "guide": "/kits/styles/neo-brutalism.md",
+      "json": "/kits/styles/neo-brutalism.json"
+    },
+    {
+      "id": "glassmorphism",
+      "name": "Glassmorphism",
+      "category": "Digital",
+      "description": "Glassmorphism simulates translucent surfaces using background blur, subtle borders, and layered color. Its effect depends on a visible scene behind each panel, creating depth without the weight of opaque containers.",
+      "examples": [
+        {
+          "id": "glassmorphism-focus-app",
+          "brand": "aura",
+          "kind": "planner",
+          "headline": "Find a little clarity.",
+          "url": "/examples/glassmorphism-focus-app/",
+          "preview": "/preview/glassmorphism-focus-app/",
+          "screenshots": {
+            "desktop": "/previews/glassmorphism-focus-app-desktop.webp",
+            "mobile": "/previews/glassmorphism-focus-app-mobile.webp"
+          }
+        },
+        {
+          "id": "glassmorphism-digital-studio",
+          "brand": "prism practice",
+          "kind": "studio",
+          "headline": "Ideas with another dimension.",
+          "url": "/examples/glassmorphism-digital-studio/",
+          "preview": "/preview/glassmorphism-digital-studio/",
+          "screenshots": {
+            "desktop": "/previews/glassmorphism-digital-studio-desktop.webp",
+            "mobile": "/previews/glassmorphism-digital-studio-mobile.webp"
+          }
+        },
+        {
+          "id": "glassmorphism-research-library",
+          "brand": "orbital library",
+          "kind": "archive",
+          "headline": "Keep your thinking in orbit.",
+          "url": "/examples/glassmorphism-research-library/",
+          "preview": "/preview/glassmorphism-research-library/",
+          "screenshots": {
+            "desktop": "/previews/glassmorphism-research-library-desktop.webp",
+            "mobile": "/previews/glassmorphism-research-library-mobile.webp"
+          }
+        }
+      ],
+      "components": [
+        {
+          "id": "glassmorphism-button",
+          "styleId": "glassmorphism",
+          "kind": "button",
+          "name": "Glassmorphism button",
+          "url": "/components/glassmorphism-button/"
+        },
+        {
+          "id": "glassmorphism-card",
+          "styleId": "glassmorphism",
+          "kind": "card",
+          "name": "Glassmorphism card",
+          "url": "/components/glassmorphism-card/"
+        },
+        {
+          "id": "glassmorphism-navigation",
+          "styleId": "glassmorphism",
+          "kind": "navigation",
+          "name": "Glassmorphism navigation",
+          "url": "/components/glassmorphism-navigation/"
+        },
+        {
+          "id": "glassmorphism-field",
+          "styleId": "glassmorphism",
+          "kind": "field",
+          "name": "Glassmorphism field",
+          "url": "/components/glassmorphism-field/"
+        },
+        {
+          "id": "glassmorphism-dialog",
+          "styleId": "glassmorphism",
+          "kind": "dialog",
+          "name": "Glassmorphism dialog",
+          "url": "/components/glassmorphism-dialog/"
+        },
+        {
+          "id": "glassmorphism-status",
+          "styleId": "glassmorphism",
+          "kind": "status",
+          "name": "Glassmorphism status",
+          "url": "/components/glassmorphism-status/"
+        }
+      ],
+      "guide": "/kits/styles/glassmorphism.md",
+      "json": "/kits/styles/glassmorphism.json"
+    },
+    {
+      "id": "swiss-design",
+      "name": "Swiss design",
+      "category": "Structured",
+      "description": "Swiss graphic design is associated with disciplined grids, asymmetric composition, and a clear typographic hierarchy. Its systematic approach lets typography, photography, and space communicate with precision.",
+      "examples": [
+        {
+          "id": "swiss-design-design-programme",
+          "brand": "FORM / 25",
+          "kind": "event",
+          "headline": "Ideas take form.",
+          "url": "/examples/swiss-design-design-programme/",
+          "preview": "/preview/swiss-design-design-programme/",
+          "screenshots": {
+            "desktop": "/previews/swiss-design-design-programme-desktop.webp",
+            "mobile": "/previews/swiss-design-design-programme-mobile.webp"
+          }
+        },
+        {
+          "id": "swiss-design-design-publication",
+          "brand": "INDEX",
+          "kind": "journal",
+          "headline": "A point of view, precisely set.",
+          "url": "/examples/swiss-design-design-publication/",
+          "preview": "/preview/swiss-design-design-publication/",
+          "screenshots": {
+            "desktop": "/previews/swiss-design-design-publication-desktop.webp",
+            "mobile": "/previews/swiss-design-design-publication-mobile.webp"
+          }
+        },
+        {
+          "id": "swiss-design-industrial-studio",
+          "brand": "WERK",
+          "kind": "studio",
+          "headline": "Useful. Considered. Clear.",
+          "url": "/examples/swiss-design-industrial-studio/",
+          "preview": "/preview/swiss-design-industrial-studio/",
+          "screenshots": {
+            "desktop": "/previews/swiss-design-industrial-studio-desktop.webp",
+            "mobile": "/previews/swiss-design-industrial-studio-mobile.webp"
+          }
+        }
+      ],
+      "components": [
+        {
+          "id": "swiss-design-button",
+          "styleId": "swiss-design",
+          "kind": "button",
+          "name": "Swiss design button",
+          "url": "/components/swiss-design-button/"
+        },
+        {
+          "id": "swiss-design-card",
+          "styleId": "swiss-design",
+          "kind": "card",
+          "name": "Swiss design card",
+          "url": "/components/swiss-design-card/"
+        },
+        {
+          "id": "swiss-design-navigation",
+          "styleId": "swiss-design",
+          "kind": "navigation",
+          "name": "Swiss design navigation",
+          "url": "/components/swiss-design-navigation/"
+        },
+        {
+          "id": "swiss-design-field",
+          "styleId": "swiss-design",
+          "kind": "field",
+          "name": "Swiss design field",
+          "url": "/components/swiss-design-field/"
+        },
+        {
+          "id": "swiss-design-dialog",
+          "styleId": "swiss-design",
+          "kind": "dialog",
+          "name": "Swiss design dialog",
+          "url": "/components/swiss-design-dialog/"
+        },
+        {
+          "id": "swiss-design-status",
+          "styleId": "swiss-design",
+          "kind": "status",
+          "name": "Swiss design status",
+          "url": "/components/swiss-design-status/"
+        }
+      ],
+      "guide": "/kits/styles/swiss-design.md",
+      "json": "/kits/styles/swiss-design.json"
+    },
+    {
+      "id": "claymorphism",
+      "name": "Claymorphism",
+      "category": "Digital",
+      "description": "Claymorphism gives interface elements the rounded volume and matte finish of modeled clay. Soft inner highlights, broad shadows, and friendly color make forms feel inflated and approachable.",
+      "examples": [
+        {
+          "id": "claymorphism-habit-planner",
+          "brand": "poppy",
+          "kind": "planner",
+          "headline": "Small steps. Softer days.",
+          "url": "/examples/claymorphism-habit-planner/",
+          "preview": "/preview/claymorphism-habit-planner/",
+          "screenshots": {
+            "desktop": "/previews/claymorphism-habit-planner-desktop.webp",
+            "mobile": "/previews/claymorphism-habit-planner-mobile.webp"
+          }
+        },
+        {
+          "id": "claymorphism-desk-shop",
+          "brand": "pebble objects",
+          "kind": "shop",
+          "headline": "A happier place to make things.",
+          "url": "/examples/claymorphism-desk-shop/",
+          "preview": "/preview/claymorphism-desk-shop/",
+          "screenshots": {
+            "desktop": "/previews/claymorphism-desk-shop-desktop.webp",
+            "mobile": "/previews/claymorphism-desk-shop-mobile.webp"
+          }
+        },
+        {
+          "id": "claymorphism-making-workshop",
+          "brand": "playdate",
+          "kind": "event",
+          "headline": "Come make a beautiful mess.",
+          "url": "/examples/claymorphism-making-workshop/",
+          "preview": "/preview/claymorphism-making-workshop/",
+          "screenshots": {
+            "desktop": "/previews/claymorphism-making-workshop-desktop.webp",
+            "mobile": "/previews/claymorphism-making-workshop-mobile.webp"
+          }
+        }
+      ],
+      "components": [
+        {
+          "id": "claymorphism-button",
+          "styleId": "claymorphism",
+          "kind": "button",
+          "name": "Claymorphism button",
+          "url": "/components/claymorphism-button/"
+        },
+        {
+          "id": "claymorphism-card",
+          "styleId": "claymorphism",
+          "kind": "card",
+          "name": "Claymorphism card",
+          "url": "/components/claymorphism-card/"
+        },
+        {
+          "id": "claymorphism-navigation",
+          "styleId": "claymorphism",
+          "kind": "navigation",
+          "name": "Claymorphism navigation",
+          "url": "/components/claymorphism-navigation/"
+        },
+        {
+          "id": "claymorphism-field",
+          "styleId": "claymorphism",
+          "kind": "field",
+          "name": "Claymorphism field",
+          "url": "/components/claymorphism-field/"
+        },
+        {
+          "id": "claymorphism-dialog",
+          "styleId": "claymorphism",
+          "kind": "dialog",
+          "name": "Claymorphism dialog",
+          "url": "/components/claymorphism-dialog/"
+        },
+        {
+          "id": "claymorphism-status",
+          "styleId": "claymorphism",
+          "kind": "status",
+          "name": "Claymorphism status",
+          "url": "/components/claymorphism-status/"
+        }
+      ],
+      "guide": "/kits/styles/claymorphism.md",
+      "json": "/kits/styles/claymorphism.json"
+    },
+    {
+      "id": "editorial-design",
+      "name": "Editorial design",
+      "category": "Classic",
+      "description": "Editorial design organizes text and imagery into a deliberate reading experience. Expressive headlines, strong image direction, and a measured rhythm of dense and open space turn information into a narrative.",
+      "examples": [
+        {
+          "id": "editorial-design-culture-magazine",
+          "brand": "MARGIN",
+          "kind": "journal",
+          "headline": "The world, a little closer.",
+          "url": "/examples/editorial-design-culture-magazine/",
+          "preview": "/preview/editorial-design-culture-magazine/",
+          "screenshots": {
+            "desktop": "/previews/editorial-design-culture-magazine-desktop.webp",
+            "mobile": "/previews/editorial-design-culture-magazine-mobile.webp"
+          }
+        },
+        {
+          "id": "editorial-design-book-shop",
+          "brand": "folio books",
+          "kind": "shop",
+          "headline": "Good books ask better questions.",
+          "url": "/examples/editorial-design-book-shop/",
+          "preview": "/preview/editorial-design-book-shop/",
+          "screenshots": {
+            "desktop": "/previews/editorial-design-book-shop-desktop.webp",
+            "mobile": "/previews/editorial-design-book-shop-mobile.webp"
+          }
+        },
+        {
+          "id": "editorial-design-publishing-studio",
+          "brand": "OFFPRINT",
+          "kind": "studio",
+          "headline": "Stories deserve a shape.",
+          "url": "/examples/editorial-design-publishing-studio/",
+          "preview": "/preview/editorial-design-publishing-studio/",
+          "screenshots": {
+            "desktop": "/previews/editorial-design-publishing-studio-desktop.webp",
+            "mobile": "/previews/editorial-design-publishing-studio-mobile.webp"
+          }
+        }
+      ],
+      "components": [
+        {
+          "id": "editorial-design-button",
+          "styleId": "editorial-design",
+          "kind": "button",
+          "name": "Editorial design button",
+          "url": "/components/editorial-design-button/"
+        },
+        {
+          "id": "editorial-design-card",
+          "styleId": "editorial-design",
+          "kind": "card",
+          "name": "Editorial design card",
+          "url": "/components/editorial-design-card/"
+        },
+        {
+          "id": "editorial-design-navigation",
+          "styleId": "editorial-design",
+          "kind": "navigation",
+          "name": "Editorial design navigation",
+          "url": "/components/editorial-design-navigation/"
+        },
+        {
+          "id": "editorial-design-field",
+          "styleId": "editorial-design",
+          "kind": "field",
+          "name": "Editorial design field",
+          "url": "/components/editorial-design-field/"
+        },
+        {
+          "id": "editorial-design-dialog",
+          "styleId": "editorial-design",
+          "kind": "dialog",
+          "name": "Editorial design dialog",
+          "url": "/components/editorial-design-dialog/"
+        },
+        {
+          "id": "editorial-design-status",
+          "styleId": "editorial-design",
+          "kind": "status",
+          "name": "Editorial design status",
+          "url": "/components/editorial-design-status/"
+        }
+      ],
+      "guide": "/kits/styles/editorial-design.md",
+      "json": "/kits/styles/editorial-design.json"
+    },
+    {
+      "id": "cybercore",
+      "name": "Cybercore",
+      "category": "Digital",
+      "description": "Cybercore is a loose contemporary aesthetic built around technological imagery, machine-like graphics, and digital intensity. Chrome forms, sharp geometry, and interface fragments can give an experience the feeling of a speculative computer system.",
+      "examples": [
+        {
+          "id": "cybercore-systems-archive",
+          "brand": "SYS.01",
+          "kind": "archive",
+          "headline": "Find the signal in the system.",
+          "url": "/examples/cybercore-systems-archive/",
+          "preview": "/preview/cybercore-systems-archive/",
+          "screenshots": {
+            "desktop": "/previews/cybercore-systems-archive-desktop.webp",
+            "mobile": "/previews/cybercore-systems-archive-mobile.webp"
+          }
+        },
+        {
+          "id": "cybercore-build-planner",
+          "brand": "NODE",
+          "kind": "planner",
+          "headline": "Route your next experiment.",
+          "url": "/examples/cybercore-build-planner/",
+          "preview": "/preview/cybercore-build-planner/",
+          "screenshots": {
+            "desktop": "/previews/cybercore-build-planner-desktop.webp",
+            "mobile": "/previews/cybercore-build-planner-mobile.webp"
+          }
+        },
+        {
+          "id": "cybercore-creative-coding-meetup",
+          "brand": "KERNEL assembly",
+          "kind": "event",
+          "headline": "People. Machines. Possibilities.",
+          "url": "/examples/cybercore-creative-coding-meetup/",
+          "preview": "/preview/cybercore-creative-coding-meetup/",
+          "screenshots": {
+            "desktop": "/previews/cybercore-creative-coding-meetup-desktop.webp",
+            "mobile": "/previews/cybercore-creative-coding-meetup-mobile.webp"
+          }
+        }
+      ],
+      "components": [
+        {
+          "id": "cybercore-button",
+          "styleId": "cybercore",
+          "kind": "button",
+          "name": "Cybercore button",
+          "url": "/components/cybercore-button/"
+        },
+        {
+          "id": "cybercore-card",
+          "styleId": "cybercore",
+          "kind": "card",
+          "name": "Cybercore card",
+          "url": "/components/cybercore-card/"
+        },
+        {
+          "id": "cybercore-navigation",
+          "styleId": "cybercore",
+          "kind": "navigation",
+          "name": "Cybercore navigation",
+          "url": "/components/cybercore-navigation/"
+        },
+        {
+          "id": "cybercore-field",
+          "styleId": "cybercore",
+          "kind": "field",
+          "name": "Cybercore field",
+          "url": "/components/cybercore-field/"
+        },
+        {
+          "id": "cybercore-dialog",
+          "styleId": "cybercore",
+          "kind": "dialog",
+          "name": "Cybercore dialog",
+          "url": "/components/cybercore-dialog/"
+        },
+        {
+          "id": "cybercore-status",
+          "styleId": "cybercore",
+          "kind": "status",
+          "name": "Cybercore status",
+          "url": "/components/cybercore-status/"
+        }
+      ],
+      "guide": "/kits/styles/cybercore.md",
+      "json": "/kits/styles/cybercore.json"
+    },
+    {
+      "id": "scrapbook",
+      "name": "Scrapbook",
+      "category": "Expressive",
+      "description": "Scrapbook design borrows the visual language of collected photographs, paper scraps, handwritten notes, and tape. Overlaps and small irregularities make the composition feel personal while an underlying structure keeps it navigable.",
+      "examples": [
+        {
+          "id": "scrapbook-personal-journal",
+          "brand": "little things",
+          "kind": "journal",
+          "headline": "Life is a beautiful mess.",
+          "url": "/examples/scrapbook-personal-journal/",
+          "preview": "/preview/scrapbook-personal-journal/",
+          "screenshots": {
+            "desktop": "/previews/scrapbook-personal-journal-desktop.webp",
+            "mobile": "/previews/scrapbook-personal-journal-mobile.webp"
+          }
+        },
+        {
+          "id": "scrapbook-illustration-studio",
+          "brand": "paper trail",
+          "kind": "studio",
+          "headline": "A little imagination goes a long way.",
+          "url": "/examples/scrapbook-illustration-studio/",
+          "preview": "/preview/scrapbook-illustration-studio/",
+          "screenshots": {
+            "desktop": "/previews/scrapbook-illustration-studio-desktop.webp",
+            "mobile": "/previews/scrapbook-illustration-studio-mobile.webp"
+          }
+        },
+        {
+          "id": "scrapbook-stationery-shop",
+          "brand": "keepsake club",
+          "kind": "shop",
+          "headline": "For your next little story.",
+          "url": "/examples/scrapbook-stationery-shop/",
+          "preview": "/preview/scrapbook-stationery-shop/",
+          "screenshots": {
+            "desktop": "/previews/scrapbook-stationery-shop-desktop.webp",
+            "mobile": "/previews/scrapbook-stationery-shop-mobile.webp"
+          }
+        }
+      ],
+      "components": [
+        {
+          "id": "scrapbook-button",
+          "styleId": "scrapbook",
+          "kind": "button",
+          "name": "Scrapbook button",
+          "url": "/components/scrapbook-button/"
+        },
+        {
+          "id": "scrapbook-card",
+          "styleId": "scrapbook",
+          "kind": "card",
+          "name": "Scrapbook card",
+          "url": "/components/scrapbook-card/"
+        },
+        {
+          "id": "scrapbook-navigation",
+          "styleId": "scrapbook",
+          "kind": "navigation",
+          "name": "Scrapbook navigation",
+          "url": "/components/scrapbook-navigation/"
+        },
+        {
+          "id": "scrapbook-field",
+          "styleId": "scrapbook",
+          "kind": "field",
+          "name": "Scrapbook field",
+          "url": "/components/scrapbook-field/"
+        },
+        {
+          "id": "scrapbook-dialog",
+          "styleId": "scrapbook",
+          "kind": "dialog",
+          "name": "Scrapbook dialog",
+          "url": "/components/scrapbook-dialog/"
+        },
+        {
+          "id": "scrapbook-status",
+          "styleId": "scrapbook",
+          "kind": "status",
+          "name": "Scrapbook status",
+          "url": "/components/scrapbook-status/"
+        }
+      ],
+      "guide": "/kits/styles/scrapbook.md",
+      "json": "/kits/styles/scrapbook.json"
+    },
+    {
+      "id": "surrealism",
+      "name": "Surrealism",
+      "category": "Expressive",
+      "description": "Surrealism explores dreams, the unconscious, and unexpected connections between familiar things. In digital design, impossible scale and surprising juxtapositions can create a memorable visual world around a clear interface.",
+      "examples": [
+        {
+          "id": "surrealism-exhibition",
+          "brand": "OTHERWHERE",
+          "kind": "event",
+          "headline": "Reality is only a suggestion.",
+          "url": "/examples/surrealism-exhibition/",
+          "preview": "/preview/surrealism-exhibition/",
+          "screenshots": {
+            "desktop": "/previews/surrealism-exhibition-desktop.webp",
+            "mobile": "/previews/surrealism-exhibition-mobile.webp"
+          }
+        },
+        {
+          "id": "surrealism-object-shop",
+          "brand": "soft matter",
+          "kind": "shop",
+          "headline": "Objects from another ordinary.",
+          "url": "/examples/surrealism-object-shop/",
+          "preview": "/preview/surrealism-object-shop/",
+          "screenshots": {
+            "desktop": "/previews/surrealism-object-shop-desktop.webp",
+            "mobile": "/previews/surrealism-object-shop-mobile.webp"
+          }
+        },
+        {
+          "id": "surrealism-image-archive",
+          "brand": "dream index",
+          "kind": "archive",
+          "headline": "A catalogue of unlikely things.",
+          "url": "/examples/surrealism-image-archive/",
+          "preview": "/preview/surrealism-image-archive/",
+          "screenshots": {
+            "desktop": "/previews/surrealism-image-archive-desktop.webp",
+            "mobile": "/previews/surrealism-image-archive-mobile.webp"
+          }
+        }
+      ],
+      "components": [
+        {
+          "id": "surrealism-button",
+          "styleId": "surrealism",
+          "kind": "button",
+          "name": "Surrealism button",
+          "url": "/components/surrealism-button/"
+        },
+        {
+          "id": "surrealism-card",
+          "styleId": "surrealism",
+          "kind": "card",
+          "name": "Surrealism card",
+          "url": "/components/surrealism-card/"
+        },
+        {
+          "id": "surrealism-navigation",
+          "styleId": "surrealism",
+          "kind": "navigation",
+          "name": "Surrealism navigation",
+          "url": "/components/surrealism-navigation/"
+        },
+        {
+          "id": "surrealism-field",
+          "styleId": "surrealism",
+          "kind": "field",
+          "name": "Surrealism field",
+          "url": "/components/surrealism-field/"
+        },
+        {
+          "id": "surrealism-dialog",
+          "styleId": "surrealism",
+          "kind": "dialog",
+          "name": "Surrealism dialog",
+          "url": "/components/surrealism-dialog/"
+        },
+        {
+          "id": "surrealism-status",
+          "styleId": "surrealism",
+          "kind": "status",
+          "name": "Surrealism status",
+          "url": "/components/surrealism-status/"
+        }
+      ],
+      "guide": "/kits/styles/surrealism.md",
+      "json": "/kits/styles/surrealism.json"
+    },
+    {
+      "id": "y2k",
+      "name": "Y2K aesthetic",
+      "category": "Expressive",
+      "description": "Y2K design revisits the optimistic digital imagery associated with the turn of the millennium. Glossy surfaces, silver accents, bubble shapes, and saturated color evoke an early internet vision of the future.",
+      "examples": [
+        {
+          "id": "y2k-accessory-shop",
+          "brand": "gloss.exe",
+          "kind": "shop",
+          "headline": "Main character accessories.",
+          "url": "/examples/y2k-accessory-shop/",
+          "preview": "/preview/y2k-accessory-shop/",
+          "screenshots": {
+            "desktop": "/previews/y2k-accessory-shop-desktop.webp",
+            "mobile": "/previews/y2k-accessory-shop-mobile.webp"
+          }
+        },
+        {
+          "id": "y2k-pop-night",
+          "brand": "AFTERGLOW",
+          "kind": "event",
+          "headline": "Meet us after the last notification.",
+          "url": "/examples/y2k-pop-night/",
+          "preview": "/preview/y2k-pop-night/",
+          "screenshots": {
+            "desktop": "/previews/y2k-pop-night-desktop.webp",
+            "mobile": "/previews/y2k-pop-night-mobile.webp"
+          }
+        },
+        {
+          "id": "y2k-culture-zine",
+          "brand": "orbit club",
+          "kind": "journal",
+          "headline": "Logging on to something good.",
+          "url": "/examples/y2k-culture-zine/",
+          "preview": "/preview/y2k-culture-zine/",
+          "screenshots": {
+            "desktop": "/previews/y2k-culture-zine-desktop.webp",
+            "mobile": "/previews/y2k-culture-zine-mobile.webp"
+          }
+        }
+      ],
+      "components": [
+        {
+          "id": "y2k-button",
+          "styleId": "y2k",
+          "kind": "button",
+          "name": "Y2K aesthetic button",
+          "url": "/components/y2k-button/"
+        },
+        {
+          "id": "y2k-card",
+          "styleId": "y2k",
+          "kind": "card",
+          "name": "Y2K aesthetic card",
+          "url": "/components/y2k-card/"
+        },
+        {
+          "id": "y2k-navigation",
+          "styleId": "y2k",
+          "kind": "navigation",
+          "name": "Y2K aesthetic navigation",
+          "url": "/components/y2k-navigation/"
+        },
+        {
+          "id": "y2k-field",
+          "styleId": "y2k",
+          "kind": "field",
+          "name": "Y2K aesthetic field",
+          "url": "/components/y2k-field/"
+        },
+        {
+          "id": "y2k-dialog",
+          "styleId": "y2k",
+          "kind": "dialog",
+          "name": "Y2K aesthetic dialog",
+          "url": "/components/y2k-dialog/"
+        },
+        {
+          "id": "y2k-status",
+          "styleId": "y2k",
+          "kind": "status",
+          "name": "Y2K aesthetic status",
+          "url": "/components/y2k-status/"
+        }
+      ],
+      "guide": "/kits/styles/y2k.md",
+      "json": "/kits/styles/y2k.json"
+    },
+    {
+      "id": "pixel-art",
+      "name": "Pixel art",
+      "category": "Digital",
+      "description": "Pixel art builds images from deliberately placed pixels, often working within a limited palette and resolution. Crisp edges and repeated pixel units can extend from illustration into borders, icons, and interface details.",
+      "examples": [
+        {
+          "id": "pixel-art-game-festival",
+          "brand": "SIDEQUEST",
+          "kind": "event",
+          "headline": "Your next adventure starts here.",
+          "url": "/examples/pixel-art-game-festival/",
+          "preview": "/preview/pixel-art-game-festival/",
+          "screenshots": {
+            "desktop": "/previews/pixel-art-game-festival-desktop.webp",
+            "mobile": "/previews/pixel-art-game-festival-mobile.webp"
+          }
+        },
+        {
+          "id": "pixel-art-quest-planner",
+          "brand": "CHECKPOINT",
+          "kind": "planner",
+          "headline": "One good quest at a time.",
+          "url": "/examples/pixel-art-quest-planner/",
+          "preview": "/preview/pixel-art-quest-planner/",
+          "screenshots": {
+            "desktop": "/previews/pixel-art-quest-planner-desktop.webp",
+            "mobile": "/previews/pixel-art-quest-planner-mobile.webp"
+          }
+        },
+        {
+          "id": "pixel-art-game-merch-shop",
+          "brand": "8-bit supply",
+          "kind": "shop",
+          "headline": "Equip your everyday.",
+          "url": "/examples/pixel-art-game-merch-shop/",
+          "preview": "/preview/pixel-art-game-merch-shop/",
+          "screenshots": {
+            "desktop": "/previews/pixel-art-game-merch-shop-desktop.webp",
+            "mobile": "/previews/pixel-art-game-merch-shop-mobile.webp"
+          }
+        }
+      ],
+      "components": [
+        {
+          "id": "pixel-art-button",
+          "styleId": "pixel-art",
+          "kind": "button",
+          "name": "Pixel art button",
+          "url": "/components/pixel-art-button/"
+        },
+        {
+          "id": "pixel-art-card",
+          "styleId": "pixel-art",
+          "kind": "card",
+          "name": "Pixel art card",
+          "url": "/components/pixel-art-card/"
+        },
+        {
+          "id": "pixel-art-navigation",
+          "styleId": "pixel-art",
+          "kind": "navigation",
+          "name": "Pixel art navigation",
+          "url": "/components/pixel-art-navigation/"
+        },
+        {
+          "id": "pixel-art-field",
+          "styleId": "pixel-art",
+          "kind": "field",
+          "name": "Pixel art field",
+          "url": "/components/pixel-art-field/"
+        },
+        {
+          "id": "pixel-art-dialog",
+          "styleId": "pixel-art",
+          "kind": "dialog",
+          "name": "Pixel art dialog",
+          "url": "/components/pixel-art-dialog/"
+        },
+        {
+          "id": "pixel-art-status",
+          "styleId": "pixel-art",
+          "kind": "status",
+          "name": "Pixel art status",
+          "url": "/components/pixel-art-status/"
+        }
+      ],
+      "guide": "/kits/styles/pixel-art.md",
+      "json": "/kits/styles/pixel-art.json"
+    },
+    {
+      "id": "synthwave",
+      "name": "Synthwave",
+      "category": "Digital",
+      "description": "Synthwave visuals draw on imagined 1980s futures, electronic music, and cinematic neon landscapes. Horizon grids, glowing suns, and purple-pink gradients create a nostalgic, night-driving atmosphere.",
+      "examples": [
+        {
+          "id": "synthwave-music-night",
+          "brand": "NIGHTDRIVE",
+          "kind": "event",
+          "headline": "The night has another horizon.",
+          "url": "/examples/synthwave-music-night/",
+          "preview": "/preview/synthwave-music-night/",
+          "screenshots": {
+            "desktop": "/previews/synthwave-music-night-desktop.webp",
+            "mobile": "/previews/synthwave-music-night-mobile.webp"
+          }
+        },
+        {
+          "id": "synthwave-record-shop",
+          "brand": "tape deck",
+          "kind": "shop",
+          "headline": "Sounds for the long way home.",
+          "url": "/examples/synthwave-record-shop/",
+          "preview": "/preview/synthwave-record-shop/",
+          "screenshots": {
+            "desktop": "/previews/synthwave-record-shop-desktop.webp",
+            "mobile": "/previews/synthwave-record-shop-mobile.webp"
+          }
+        },
+        {
+          "id": "synthwave-music-journal",
+          "brand": "AFTER HOURS",
+          "kind": "journal",
+          "headline": "Listening beyond midnight.",
+          "url": "/examples/synthwave-music-journal/",
+          "preview": "/preview/synthwave-music-journal/",
+          "screenshots": {
+            "desktop": "/previews/synthwave-music-journal-desktop.webp",
+            "mobile": "/previews/synthwave-music-journal-mobile.webp"
+          }
+        }
+      ],
+      "components": [
+        {
+          "id": "synthwave-button",
+          "styleId": "synthwave",
+          "kind": "button",
+          "name": "Synthwave button",
+          "url": "/components/synthwave-button/"
+        },
+        {
+          "id": "synthwave-card",
+          "styleId": "synthwave",
+          "kind": "card",
+          "name": "Synthwave card",
+          "url": "/components/synthwave-card/"
+        },
+        {
+          "id": "synthwave-navigation",
+          "styleId": "synthwave",
+          "kind": "navigation",
+          "name": "Synthwave navigation",
+          "url": "/components/synthwave-navigation/"
+        },
+        {
+          "id": "synthwave-field",
+          "styleId": "synthwave",
+          "kind": "field",
+          "name": "Synthwave field",
+          "url": "/components/synthwave-field/"
+        },
+        {
+          "id": "synthwave-dialog",
+          "styleId": "synthwave",
+          "kind": "dialog",
+          "name": "Synthwave dialog",
+          "url": "/components/synthwave-dialog/"
+        },
+        {
+          "id": "synthwave-status",
+          "styleId": "synthwave",
+          "kind": "status",
+          "name": "Synthwave status",
+          "url": "/components/synthwave-status/"
+        }
+      ],
+      "guide": "/kits/styles/synthwave.md",
+      "json": "/kits/styles/synthwave.json"
+    },
+    {
+      "id": "neumorphism",
+      "name": "Neumorphism",
+      "category": "Digital",
+      "description": "Neumorphism uses paired light and dark shadows to make controls appear pressed into or raised from a shared surface. Its quiet, low-contrast material effect works best when explicit labels and visible boundaries support the interaction.",
+      "examples": [
+        {
+          "id": "neumorphism-listening-planner",
+          "brand": "resonant",
+          "kind": "planner",
+          "headline": "Make room for a softer rhythm.",
+          "url": "/examples/neumorphism-listening-planner/",
+          "preview": "/preview/neumorphism-listening-planner/",
+          "screenshots": {
+            "desktop": "/previews/neumorphism-listening-planner-desktop.webp",
+            "mobile": "/previews/neumorphism-listening-planner-mobile.webp"
+          }
+        },
+        {
+          "id": "neumorphism-audio-shop",
+          "brand": "soft switch",
+          "kind": "shop",
+          "headline": "Tools that feel good in use.",
+          "url": "/examples/neumorphism-audio-shop/",
+          "preview": "/preview/neumorphism-audio-shop/",
+          "screenshots": {
+            "desktop": "/previews/neumorphism-audio-shop-desktop.webp",
+            "mobile": "/previews/neumorphism-audio-shop-mobile.webp"
+          }
+        },
+        {
+          "id": "neumorphism-sound-studio",
+          "brand": "TONAL",
+          "kind": "studio",
+          "headline": "Give your idea a voice.",
+          "url": "/examples/neumorphism-sound-studio/",
+          "preview": "/preview/neumorphism-sound-studio/",
+          "screenshots": {
+            "desktop": "/previews/neumorphism-sound-studio-desktop.webp",
+            "mobile": "/previews/neumorphism-sound-studio-mobile.webp"
+          }
+        }
+      ],
+      "components": [
+        {
+          "id": "neumorphism-button",
+          "styleId": "neumorphism",
+          "kind": "button",
+          "name": "Neumorphism button",
+          "url": "/components/neumorphism-button/"
+        },
+        {
+          "id": "neumorphism-card",
+          "styleId": "neumorphism",
+          "kind": "card",
+          "name": "Neumorphism card",
+          "url": "/components/neumorphism-card/"
+        },
+        {
+          "id": "neumorphism-navigation",
+          "styleId": "neumorphism",
+          "kind": "navigation",
+          "name": "Neumorphism navigation",
+          "url": "/components/neumorphism-navigation/"
+        },
+        {
+          "id": "neumorphism-field",
+          "styleId": "neumorphism",
+          "kind": "field",
+          "name": "Neumorphism field",
+          "url": "/components/neumorphism-field/"
+        },
+        {
+          "id": "neumorphism-dialog",
+          "styleId": "neumorphism",
+          "kind": "dialog",
+          "name": "Neumorphism dialog",
+          "url": "/components/neumorphism-dialog/"
+        },
+        {
+          "id": "neumorphism-status",
+          "styleId": "neumorphism",
+          "kind": "status",
+          "name": "Neumorphism status",
+          "url": "/components/neumorphism-status/"
+        }
+      ],
+      "guide": "/kits/styles/neumorphism.md",
+      "json": "/kits/styles/neumorphism.json"
+    },
+    {
+      "id": "bento-grid",
+      "name": "Bento grid",
+      "category": "Structured",
+      "description": "Bento layouts arrange varied content into a modular family of rectangular tiles. Differences in size create hierarchy while shared spacing and alignment keep the collection coherent.",
+      "examples": [
+        {
+          "id": "bento-grid-daily-planner",
+          "brand": "orbit.",
+          "kind": "planner",
+          "headline": "Everything in its place.",
+          "url": "/examples/bento-grid-daily-planner/",
+          "preview": "/preview/bento-grid-daily-planner/",
+          "screenshots": {
+            "desktop": "/previews/bento-grid-daily-planner-desktop.webp",
+            "mobile": "/previews/bento-grid-daily-planner-mobile.webp"
+          }
+        },
+        {
+          "id": "bento-grid-object-shop",
+          "brand": "STACK goods",
+          "kind": "shop",
+          "headline": "Useful things, thoughtfully arranged.",
+          "url": "/examples/bento-grid-object-shop/",
+          "preview": "/preview/bento-grid-object-shop/",
+          "screenshots": {
+            "desktop": "/previews/bento-grid-object-shop-desktop.webp",
+            "mobile": "/previews/bento-grid-object-shop-mobile.webp"
+          }
+        },
+        {
+          "id": "bento-grid-digital-practice",
+          "brand": "ASSEMBLY",
+          "kind": "studio",
+          "headline": "Good ideas work together.",
+          "url": "/examples/bento-grid-digital-practice/",
+          "preview": "/preview/bento-grid-digital-practice/",
+          "screenshots": {
+            "desktop": "/previews/bento-grid-digital-practice-desktop.webp",
+            "mobile": "/previews/bento-grid-digital-practice-mobile.webp"
+          }
+        }
+      ],
+      "components": [
+        {
+          "id": "bento-grid-button",
+          "styleId": "bento-grid",
+          "kind": "button",
+          "name": "Bento grid button",
+          "url": "/components/bento-grid-button/"
+        },
+        {
+          "id": "bento-grid-card",
+          "styleId": "bento-grid",
+          "kind": "card",
+          "name": "Bento grid card",
+          "url": "/components/bento-grid-card/"
+        },
+        {
+          "id": "bento-grid-navigation",
+          "styleId": "bento-grid",
+          "kind": "navigation",
+          "name": "Bento grid navigation",
+          "url": "/components/bento-grid-navigation/"
+        },
+        {
+          "id": "bento-grid-field",
+          "styleId": "bento-grid",
+          "kind": "field",
+          "name": "Bento grid field",
+          "url": "/components/bento-grid-field/"
+        },
+        {
+          "id": "bento-grid-dialog",
+          "styleId": "bento-grid",
+          "kind": "dialog",
+          "name": "Bento grid dialog",
+          "url": "/components/bento-grid-dialog/"
+        },
+        {
+          "id": "bento-grid-status",
+          "styleId": "bento-grid",
+          "kind": "status",
+          "name": "Bento grid status",
+          "url": "/components/bento-grid-status/"
+        }
+      ],
+      "guide": "/kits/styles/bento-grid.md",
+      "json": "/kits/styles/bento-grid.json"
+    },
+    {
+      "id": "minimalism",
+      "name": "Minimalism",
+      "category": "Structured",
+      "description": "Minimalist interfaces reduce visual elements to what supports the content and task. Careful typography, spacing, and proportion carry the identity when decoration is kept restrained.",
+      "examples": [
+        {
+          "id": "minimalism-architecture-studio",
+          "brand": "still.",
+          "kind": "studio",
+          "headline": "Less, with more intention.",
+          "url": "/examples/minimalism-architecture-studio/",
+          "preview": "/preview/minimalism-architecture-studio/",
+          "screenshots": {
+            "desktop": "/previews/minimalism-architecture-studio-desktop.webp",
+            "mobile": "/previews/minimalism-architecture-studio-mobile.webp"
+          }
+        },
+        {
+          "id": "minimalism-everyday-shop",
+          "brand": "OBJECT",
+          "kind": "shop",
+          "headline": "A few things, chosen well.",
+          "url": "/examples/minimalism-everyday-shop/",
+          "preview": "/preview/minimalism-everyday-shop/",
+          "screenshots": {
+            "desktop": "/previews/minimalism-everyday-shop-desktop.webp",
+            "mobile": "/previews/minimalism-everyday-shop-mobile.webp"
+          }
+        },
+        {
+          "id": "minimalism-design-journal",
+          "brand": "LESS",
+          "kind": "journal",
+          "headline": "Room for a useful thought.",
+          "url": "/examples/minimalism-design-journal/",
+          "preview": "/preview/minimalism-design-journal/",
+          "screenshots": {
+            "desktop": "/previews/minimalism-design-journal-desktop.webp",
+            "mobile": "/previews/minimalism-design-journal-mobile.webp"
+          }
+        }
+      ],
+      "components": [
+        {
+          "id": "minimalism-button",
+          "styleId": "minimalism",
+          "kind": "button",
+          "name": "Minimalism button",
+          "url": "/components/minimalism-button/"
+        },
+        {
+          "id": "minimalism-card",
+          "styleId": "minimalism",
+          "kind": "card",
+          "name": "Minimalism card",
+          "url": "/components/minimalism-card/"
+        },
+        {
+          "id": "minimalism-navigation",
+          "styleId": "minimalism",
+          "kind": "navigation",
+          "name": "Minimalism navigation",
+          "url": "/components/minimalism-navigation/"
+        },
+        {
+          "id": "minimalism-field",
+          "styleId": "minimalism",
+          "kind": "field",
+          "name": "Minimalism field",
+          "url": "/components/minimalism-field/"
+        },
+        {
+          "id": "minimalism-dialog",
+          "styleId": "minimalism",
+          "kind": "dialog",
+          "name": "Minimalism dialog",
+          "url": "/components/minimalism-dialog/"
+        },
+        {
+          "id": "minimalism-status",
+          "styleId": "minimalism",
+          "kind": "status",
+          "name": "Minimalism status",
+          "url": "/components/minimalism-status/"
+        }
+      ],
+      "guide": "/kits/styles/minimalism.md",
+      "json": "/kits/styles/minimalism.json"
+    },
+    {
+      "id": "maximalism",
+      "name": "Maximalism",
+      "category": "Expressive",
+      "description": "Maximalist design embraces abundance through layered color, pattern, imagery, and typography. A repeated motif or strong compositional anchor turns that richness into a coherent visual personality.",
+      "examples": [
+        {
+          "id": "maximalism-creative-festival",
+          "brand": "MORE IS MORE®",
+          "kind": "event",
+          "headline": "More ideas. More possibilities.",
+          "url": "/examples/maximalism-creative-festival/",
+          "preview": "/preview/maximalism-creative-festival/",
+          "screenshots": {
+            "desktop": "/previews/maximalism-creative-festival-desktop.webp",
+            "mobile": "/previews/maximalism-creative-festival-mobile.webp"
+          }
+        },
+        {
+          "id": "maximalism-design-shop",
+          "brand": "ODD OBJECTS",
+          "kind": "shop",
+          "headline": "Ordinary has left the building.",
+          "url": "/examples/maximalism-design-shop/",
+          "preview": "/preview/maximalism-design-shop/",
+          "screenshots": {
+            "desktop": "/previews/maximalism-design-shop-desktop.webp",
+            "mobile": "/previews/maximalism-design-shop-mobile.webp"
+          }
+        },
+        {
+          "id": "maximalism-creative-agency",
+          "brand": "AMPLIFY",
+          "kind": "studio",
+          "headline": "An idea worth making bigger.",
+          "url": "/examples/maximalism-creative-agency/",
+          "preview": "/preview/maximalism-creative-agency/",
+          "screenshots": {
+            "desktop": "/previews/maximalism-creative-agency-desktop.webp",
+            "mobile": "/previews/maximalism-creative-agency-mobile.webp"
+          }
+        }
+      ],
+      "components": [
+        {
+          "id": "maximalism-button",
+          "styleId": "maximalism",
+          "kind": "button",
+          "name": "Maximalism button",
+          "url": "/components/maximalism-button/"
+        },
+        {
+          "id": "maximalism-card",
+          "styleId": "maximalism",
+          "kind": "card",
+          "name": "Maximalism card",
+          "url": "/components/maximalism-card/"
+        },
+        {
+          "id": "maximalism-navigation",
+          "styleId": "maximalism",
+          "kind": "navigation",
+          "name": "Maximalism navigation",
+          "url": "/components/maximalism-navigation/"
+        },
+        {
+          "id": "maximalism-field",
+          "styleId": "maximalism",
+          "kind": "field",
+          "name": "Maximalism field",
+          "url": "/components/maximalism-field/"
+        },
+        {
+          "id": "maximalism-dialog",
+          "styleId": "maximalism",
+          "kind": "dialog",
+          "name": "Maximalism dialog",
+          "url": "/components/maximalism-dialog/"
+        },
+        {
+          "id": "maximalism-status",
+          "styleId": "maximalism",
+          "kind": "status",
+          "name": "Maximalism status",
+          "url": "/components/maximalism-status/"
+        }
+      ],
+      "guide": "/kits/styles/maximalism.md",
+      "json": "/kits/styles/maximalism.json"
+    },
+    {
+      "id": "luxury-typography",
+      "name": "Luxury typography",
+      "category": "Classic",
+      "description": "Luxury-oriented typography often uses expressive serifs, careful spacing, and a restrained supporting system to suggest refinement. The effect comes from proportion, art direction, and consistency rather than any single font or color.",
+      "examples": [
+        {
+          "id": "luxury-typography-design-editions",
+          "brand": "MAISON ÉDITIONS",
+          "kind": "shop",
+          "headline": "A considered kind of extraordinary.",
+          "url": "/examples/luxury-typography-design-editions/",
+          "preview": "/preview/luxury-typography-design-editions/",
+          "screenshots": {
+            "desktop": "/previews/luxury-typography-design-editions-desktop.webp",
+            "mobile": "/previews/luxury-typography-design-editions-mobile.webp"
+          }
+        },
+        {
+          "id": "luxury-typography-brand-practice",
+          "brand": "SERIF atelier",
+          "kind": "studio",
+          "headline": "An identity, beautifully expressed.",
+          "url": "/examples/luxury-typography-brand-practice/",
+          "preview": "/preview/luxury-typography-brand-practice/",
+          "screenshots": {
+            "desktop": "/previews/luxury-typography-brand-practice-desktop.webp",
+            "mobile": "/previews/luxury-typography-brand-practice-mobile.webp"
+          }
+        },
+        {
+          "id": "luxury-typography-culture-review",
+          "brand": "ÉDITION",
+          "kind": "journal",
+          "headline": "The pleasure of paying attention.",
+          "url": "/examples/luxury-typography-culture-review/",
+          "preview": "/preview/luxury-typography-culture-review/",
+          "screenshots": {
+            "desktop": "/previews/luxury-typography-culture-review-desktop.webp",
+            "mobile": "/previews/luxury-typography-culture-review-mobile.webp"
+          }
+        }
+      ],
+      "components": [
+        {
+          "id": "luxury-typography-button",
+          "styleId": "luxury-typography",
+          "kind": "button",
+          "name": "Luxury typography button",
+          "url": "/components/luxury-typography-button/"
+        },
+        {
+          "id": "luxury-typography-card",
+          "styleId": "luxury-typography",
+          "kind": "card",
+          "name": "Luxury typography card",
+          "url": "/components/luxury-typography-card/"
+        },
+        {
+          "id": "luxury-typography-navigation",
+          "styleId": "luxury-typography",
+          "kind": "navigation",
+          "name": "Luxury typography navigation",
+          "url": "/components/luxury-typography-navigation/"
+        },
+        {
+          "id": "luxury-typography-field",
+          "styleId": "luxury-typography",
+          "kind": "field",
+          "name": "Luxury typography field",
+          "url": "/components/luxury-typography-field/"
+        },
+        {
+          "id": "luxury-typography-dialog",
+          "styleId": "luxury-typography",
+          "kind": "dialog",
+          "name": "Luxury typography dialog",
+          "url": "/components/luxury-typography-dialog/"
+        },
+        {
+          "id": "luxury-typography-status",
+          "styleId": "luxury-typography",
+          "kind": "status",
+          "name": "Luxury typography status",
+          "url": "/components/luxury-typography-status/"
+        }
+      ],
+      "guide": "/kits/styles/luxury-typography.md",
+      "json": "/kits/styles/luxury-typography.json"
+    },
+    {
+      "id": "conceptual-sketch",
+      "name": "Conceptual sketch",
+      "category": "Organic",
+      "description": "Conceptual sketch styling exposes the marks of thinking through hand-drawn lines, annotations, and rough diagrams. It can make an experience feel exploratory and human while finished navigation provides a stable frame.",
+      "examples": [
+        {
+          "id": "conceptual-sketch-creative-practice",
+          "brand": "rough ideas",
+          "kind": "studio",
+          "headline": "Start with a what if.",
+          "url": "/examples/conceptual-sketch-creative-practice/",
+          "preview": "/preview/conceptual-sketch-creative-practice/",
+          "screenshots": {
+            "desktop": "/previews/conceptual-sketch-creative-practice-desktop.webp",
+            "mobile": "/previews/conceptual-sketch-creative-practice-mobile.webp"
+          }
+        },
+        {
+          "id": "conceptual-sketch-project-notebook",
+          "brand": "FIELDNOTES",
+          "kind": "planner",
+          "headline": "Make a little room for an idea.",
+          "url": "/examples/conceptual-sketch-project-notebook/",
+          "preview": "/preview/conceptual-sketch-project-notebook/",
+          "screenshots": {
+            "desktop": "/previews/conceptual-sketch-project-notebook-desktop.webp",
+            "mobile": "/previews/conceptual-sketch-project-notebook-mobile.webp"
+          }
+        },
+        {
+          "id": "conceptual-sketch-process-journal",
+          "brand": "the draft room",
+          "kind": "journal",
+          "headline": "Thinking, still in progress.",
+          "url": "/examples/conceptual-sketch-process-journal/",
+          "preview": "/preview/conceptual-sketch-process-journal/",
+          "screenshots": {
+            "desktop": "/previews/conceptual-sketch-process-journal-desktop.webp",
+            "mobile": "/previews/conceptual-sketch-process-journal-mobile.webp"
+          }
+        }
+      ],
+      "components": [
+        {
+          "id": "conceptual-sketch-button",
+          "styleId": "conceptual-sketch",
+          "kind": "button",
+          "name": "Conceptual sketch button",
+          "url": "/components/conceptual-sketch-button/"
+        },
+        {
+          "id": "conceptual-sketch-card",
+          "styleId": "conceptual-sketch",
+          "kind": "card",
+          "name": "Conceptual sketch card",
+          "url": "/components/conceptual-sketch-card/"
+        },
+        {
+          "id": "conceptual-sketch-navigation",
+          "styleId": "conceptual-sketch",
+          "kind": "navigation",
+          "name": "Conceptual sketch navigation",
+          "url": "/components/conceptual-sketch-navigation/"
+        },
+        {
+          "id": "conceptual-sketch-field",
+          "styleId": "conceptual-sketch",
+          "kind": "field",
+          "name": "Conceptual sketch field",
+          "url": "/components/conceptual-sketch-field/"
+        },
+        {
+          "id": "conceptual-sketch-dialog",
+          "styleId": "conceptual-sketch",
+          "kind": "dialog",
+          "name": "Conceptual sketch dialog",
+          "url": "/components/conceptual-sketch-dialog/"
+        },
+        {
+          "id": "conceptual-sketch-status",
+          "styleId": "conceptual-sketch",
+          "kind": "status",
+          "name": "Conceptual sketch status",
+          "url": "/components/conceptual-sketch-status/"
+        }
+      ],
+      "guide": "/kits/styles/conceptual-sketch.md",
+      "json": "/kits/styles/conceptual-sketch.json"
+    },
+    {
+      "id": "ethereal",
+      "name": "Ethereal",
+      "category": "Organic",
+      "description": "Ethereal styling creates a sense of airiness through diffused light, delicate forms, and softly shifting color. The mood is dreamlike and spacious, with clear foreground elements keeping the experience usable.",
+      "examples": [
+        {
+          "id": "ethereal-wellness-practice",
+          "brand": "lumière",
+          "kind": "studio",
+          "headline": "A softer space to return to.",
+          "url": "/examples/ethereal-wellness-practice/",
+          "preview": "/preview/ethereal-wellness-practice/",
+          "screenshots": {
+            "desktop": "/previews/ethereal-wellness-practice-desktop.webp",
+            "mobile": "/previews/ethereal-wellness-practice-mobile.webp"
+          }
+        },
+        {
+          "id": "ethereal-reflection-planner",
+          "brand": "DRIFT",
+          "kind": "planner",
+          "headline": "A little pause, just for you.",
+          "url": "/examples/ethereal-reflection-planner/",
+          "preview": "/preview/ethereal-reflection-planner/",
+          "screenshots": {
+            "desktop": "/previews/ethereal-reflection-planner-desktop.webp",
+            "mobile": "/previews/ethereal-reflection-planner-mobile.webp"
+          }
+        },
+        {
+          "id": "ethereal-ritual-shop",
+          "brand": "halo objects",
+          "kind": "shop",
+          "headline": "Small rituals, a little lighter.",
+          "url": "/examples/ethereal-ritual-shop/",
+          "preview": "/preview/ethereal-ritual-shop/",
+          "screenshots": {
+            "desktop": "/previews/ethereal-ritual-shop-desktop.webp",
+            "mobile": "/previews/ethereal-ritual-shop-mobile.webp"
+          }
+        }
+      ],
+      "components": [
+        {
+          "id": "ethereal-button",
+          "styleId": "ethereal",
+          "kind": "button",
+          "name": "Ethereal button",
+          "url": "/components/ethereal-button/"
+        },
+        {
+          "id": "ethereal-card",
+          "styleId": "ethereal",
+          "kind": "card",
+          "name": "Ethereal card",
+          "url": "/components/ethereal-card/"
+        },
+        {
+          "id": "ethereal-navigation",
+          "styleId": "ethereal",
+          "kind": "navigation",
+          "name": "Ethereal navigation",
+          "url": "/components/ethereal-navigation/"
+        },
+        {
+          "id": "ethereal-field",
+          "styleId": "ethereal",
+          "kind": "field",
+          "name": "Ethereal field",
+          "url": "/components/ethereal-field/"
+        },
+        {
+          "id": "ethereal-dialog",
+          "styleId": "ethereal",
+          "kind": "dialog",
+          "name": "Ethereal dialog",
+          "url": "/components/ethereal-dialog/"
+        },
+        {
+          "id": "ethereal-status",
+          "styleId": "ethereal",
+          "kind": "status",
+          "name": "Ethereal status",
+          "url": "/components/ethereal-status/"
+        }
+      ],
+      "guide": "/kits/styles/ethereal.md",
+      "json": "/kits/styles/ethereal.json"
+    },
+    {
+      "id": "bohemian",
+      "name": "Bohemian",
+      "category": "Organic",
+      "description": "Contemporary bohemian styling combines warm colors, tactile materials, and an eclectic sense of collection. Handmade details and organic shapes can communicate informality without requiring a fixed visual formula.",
+      "examples": [
+        {
+          "id": "bohemian-crafted-shop",
+          "brand": "sol & luna",
+          "kind": "shop",
+          "headline": "Follow your wild.",
+          "url": "/examples/bohemian-crafted-shop/",
+          "preview": "/preview/bohemian-crafted-shop/",
+          "screenshots": {
+            "desktop": "/previews/bohemian-crafted-shop-desktop.webp",
+            "mobile": "/previews/bohemian-crafted-shop-mobile.webp"
+          }
+        },
+        {
+          "id": "bohemian-travel-journal",
+          "brand": "WANDER NOTES",
+          "kind": "journal",
+          "headline": "Take the long way around.",
+          "url": "/examples/bohemian-travel-journal/",
+          "preview": "/preview/bohemian-travel-journal/",
+          "screenshots": {
+            "desktop": "/previews/bohemian-travel-journal-desktop.webp",
+            "mobile": "/previews/bohemian-travel-journal-mobile.webp"
+          }
+        },
+        {
+          "id": "bohemian-creative-retreat",
+          "brand": "desert house",
+          "kind": "event",
+          "headline": "A few days to make something.",
+          "url": "/examples/bohemian-creative-retreat/",
+          "preview": "/preview/bohemian-creative-retreat/",
+          "screenshots": {
+            "desktop": "/previews/bohemian-creative-retreat-desktop.webp",
+            "mobile": "/previews/bohemian-creative-retreat-mobile.webp"
+          }
+        }
+      ],
+      "components": [
+        {
+          "id": "bohemian-button",
+          "styleId": "bohemian",
+          "kind": "button",
+          "name": "Bohemian button",
+          "url": "/components/bohemian-button/"
+        },
+        {
+          "id": "bohemian-card",
+          "styleId": "bohemian",
+          "kind": "card",
+          "name": "Bohemian card",
+          "url": "/components/bohemian-card/"
+        },
+        {
+          "id": "bohemian-navigation",
+          "styleId": "bohemian",
+          "kind": "navigation",
+          "name": "Bohemian navigation",
+          "url": "/components/bohemian-navigation/"
+        },
+        {
+          "id": "bohemian-field",
+          "styleId": "bohemian",
+          "kind": "field",
+          "name": "Bohemian field",
+          "url": "/components/bohemian-field/"
+        },
+        {
+          "id": "bohemian-dialog",
+          "styleId": "bohemian",
+          "kind": "dialog",
+          "name": "Bohemian dialog",
+          "url": "/components/bohemian-dialog/"
+        },
+        {
+          "id": "bohemian-status",
+          "styleId": "bohemian",
+          "kind": "status",
+          "name": "Bohemian status",
+          "url": "/components/bohemian-status/"
+        }
+      ],
+      "guide": "/kits/styles/bohemian.md",
+      "json": "/kits/styles/bohemian.json"
+    },
+    {
+      "id": "victorian",
+      "name": "Victorian",
+      "category": "Classic",
+      "description": "Victorian-era design encompassed many movements and revivals rather than one uniform style. A contemporary Victorian-inspired interface often draws on ornate borders, decorative lettering, engraved imagery, and richly framed compositions.",
+      "examples": [
+        {
+          "id": "victorian-literary-journal",
+          "brand": "THE CHRONICLE",
+          "kind": "journal",
+          "headline": "An uncommon account of ordinary things.",
+          "url": "/examples/victorian-literary-journal/",
+          "preview": "/preview/victorian-literary-journal/",
+          "screenshots": {
+            "desktop": "/previews/victorian-literary-journal-desktop.webp",
+            "mobile": "/previews/victorian-literary-journal-mobile.webp"
+          }
+        },
+        {
+          "id": "victorian-curiosity-shop",
+          "brand": "CABINET & CO.",
+          "kind": "shop",
+          "headline": "Objects with a story to tell.",
+          "url": "/examples/victorian-curiosity-shop/",
+          "preview": "/preview/victorian-curiosity-shop/",
+          "screenshots": {
+            "desktop": "/previews/victorian-curiosity-shop-desktop.webp",
+            "mobile": "/previews/victorian-curiosity-shop-mobile.webp"
+          }
+        },
+        {
+          "id": "victorian-literary-salon",
+          "brand": "THE SOCIETY",
+          "kind": "event",
+          "headline": "An evening of curious conversation.",
+          "url": "/examples/victorian-literary-salon/",
+          "preview": "/preview/victorian-literary-salon/",
+          "screenshots": {
+            "desktop": "/previews/victorian-literary-salon-desktop.webp",
+            "mobile": "/previews/victorian-literary-salon-mobile.webp"
+          }
+        }
+      ],
+      "components": [
+        {
+          "id": "victorian-button",
+          "styleId": "victorian",
+          "kind": "button",
+          "name": "Victorian button",
+          "url": "/components/victorian-button/"
+        },
+        {
+          "id": "victorian-card",
+          "styleId": "victorian",
+          "kind": "card",
+          "name": "Victorian card",
+          "url": "/components/victorian-card/"
+        },
+        {
+          "id": "victorian-navigation",
+          "styleId": "victorian",
+          "kind": "navigation",
+          "name": "Victorian navigation",
+          "url": "/components/victorian-navigation/"
+        },
+        {
+          "id": "victorian-field",
+          "styleId": "victorian",
+          "kind": "field",
+          "name": "Victorian field",
+          "url": "/components/victorian-field/"
+        },
+        {
+          "id": "victorian-dialog",
+          "styleId": "victorian",
+          "kind": "dialog",
+          "name": "Victorian dialog",
+          "url": "/components/victorian-dialog/"
+        },
+        {
+          "id": "victorian-status",
+          "styleId": "victorian",
+          "kind": "status",
+          "name": "Victorian status",
+          "url": "/components/victorian-status/"
+        }
+      ],
+      "guide": "/kits/styles/victorian.md",
+      "json": "/kits/styles/victorian.json"
+    },
+    {
+      "id": "cyberpunk",
+      "name": "Cyberpunk",
+      "category": "Digital",
+      "description": "Cyberpunk imagery places advanced technology within gritty, socially fractured futures. Digital interfaces inspired by it often combine dark urban surfaces, sharp neon accents, industrial labels, and signs of technological interference.",
+      "examples": [
+        {
+          "id": "cyberpunk-night-festival",
+          "brand": "NØ SIGNAL",
+          "kind": "event",
+          "headline": "Find your frequency.",
+          "url": "/examples/cyberpunk-night-festival/",
+          "preview": "/preview/cyberpunk-night-festival/",
+          "screenshots": {
+            "desktop": "/previews/cyberpunk-night-festival-desktop.webp",
+            "mobile": "/previews/cyberpunk-night-festival-mobile.webp"
+          }
+        },
+        {
+          "id": "cyberpunk-streetwear-shop",
+          "brand": "NIGHT MARKET",
+          "kind": "shop",
+          "headline": "Built for the city after dark.",
+          "url": "/examples/cyberpunk-streetwear-shop/",
+          "preview": "/preview/cyberpunk-streetwear-shop/",
+          "screenshots": {
+            "desktop": "/previews/cyberpunk-streetwear-shop-desktop.webp",
+            "mobile": "/previews/cyberpunk-streetwear-shop-mobile.webp"
+          }
+        },
+        {
+          "id": "cyberpunk-creative-console",
+          "brand": "SECTOR 7",
+          "kind": "planner",
+          "headline": "Keep the next move in sight.",
+          "url": "/examples/cyberpunk-creative-console/",
+          "preview": "/preview/cyberpunk-creative-console/",
+          "screenshots": {
+            "desktop": "/previews/cyberpunk-creative-console-desktop.webp",
+            "mobile": "/previews/cyberpunk-creative-console-mobile.webp"
+          }
+        }
+      ],
+      "components": [
+        {
+          "id": "cyberpunk-button",
+          "styleId": "cyberpunk",
+          "kind": "button",
+          "name": "Cyberpunk button",
+          "url": "/components/cyberpunk-button/"
+        },
+        {
+          "id": "cyberpunk-card",
+          "styleId": "cyberpunk",
+          "kind": "card",
+          "name": "Cyberpunk card",
+          "url": "/components/cyberpunk-card/"
+        },
+        {
+          "id": "cyberpunk-navigation",
+          "styleId": "cyberpunk",
+          "kind": "navigation",
+          "name": "Cyberpunk navigation",
+          "url": "/components/cyberpunk-navigation/"
+        },
+        {
+          "id": "cyberpunk-field",
+          "styleId": "cyberpunk",
+          "kind": "field",
+          "name": "Cyberpunk field",
+          "url": "/components/cyberpunk-field/"
+        },
+        {
+          "id": "cyberpunk-dialog",
+          "styleId": "cyberpunk",
+          "kind": "dialog",
+          "name": "Cyberpunk dialog",
+          "url": "/components/cyberpunk-dialog/"
+        },
+        {
+          "id": "cyberpunk-status",
+          "styleId": "cyberpunk",
+          "kind": "status",
+          "name": "Cyberpunk status",
+          "url": "/components/cyberpunk-status/"
+        }
+      ],
+      "guide": "/kits/styles/cyberpunk.md",
+      "json": "/kits/styles/cyberpunk.json"
+    }
+  ]
+}
