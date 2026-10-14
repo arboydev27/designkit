@@ -1,0 +1,293 @@
+{
+  "version": "2.0.0",
+  "contentDigest": "f2fce7355d694be5093b9369b4bd1d5feda599fd8a65665fa1c2a6bfb1e868e3",
+  "license": "MIT",
+  "fontsLicense": "OFL-1.1",
+  "source": "https://github.com/arboydev27/designkit",
+  "style": {
+    "id": "pixel-art",
+    "name": "Pixel art",
+    "category": "Digital",
+    "tagline": "Every square counts.",
+    "description": "Pixel art builds images from deliberately placed pixels, often working within a limited palette and resolution. Crisp edges and repeated pixel units can extend from illustration into borders, icons, and interface details.",
+    "traits": [
+      "Crisp pixels",
+      "Limited palettes",
+      "Grid-built icons",
+      "Stepped edges"
+    ],
+    "palette": [
+      {
+        "name": "Night",
+        "hex": "#282448"
+      },
+      {
+        "name": "Arcade purple",
+        "hex": "#8065C5"
+      },
+      {
+        "name": "Coral",
+        "hex": "#ED7B84"
+      },
+      {
+        "name": "Gold",
+        "hex": "#F3CB75"
+      },
+      {
+        "name": "Cloud",
+        "hex": "#F1EBDB"
+      }
+    ],
+    "fonts": {
+      "heading": "Press Start 2P",
+      "body": "Space Mono",
+      "rationale": "A pixel display font supplies the game-like voice while a larger monospaced body face supports longer instructions."
+    },
+    "useCases": [
+      "Indie games",
+      "Retro communities",
+      "Playful personal sites"
+    ],
+    "tips": [
+      "Scale artwork in whole-number steps.",
+      "Keep a consistent apparent pixel size.",
+      "Use pixel lettering sparingly and generously sized."
+    ],
+    "avoid": [
+      "Blurring or stretching pixel assets.",
+      "Tiny text in dense pixel fonts.",
+      "Mixing several incompatible pixel grids."
+    ],
+    "keywords": [
+      "retro",
+      "game",
+      "8-bit",
+      "arcade",
+      "pixels",
+      "sprite"
+    ]
+  },
+  "recipe": {
+    "colors": {
+      "canvas": "#1D233C",
+      "surface": "#30385A",
+      "accent": "#F4D476",
+      "ink": "#F8EFD7",
+      "line": "#8793C0"
+    },
+    "radius": 0,
+    "border": 3,
+    "shadow": "hard",
+    "texture": "grid",
+    "composition": "Work with block geometry, crisp edges, and a coarse rhythm; pair pixel display lettering with readable body text.",
+    "motion": "Use discrete state changes rather than flickering sprites; never communicate a state through animation alone.",
+    "signature": "Pixel-aligned forms and nostalgic game language with modern interaction clarity.",
+    "controls": {
+      "radius": [
+        0,
+        8
+      ],
+      "shadow": true,
+      "spacing": [
+        16,
+        40
+      ]
+    }
+  },
+  "examples": [
+    {
+      "id": "pixel-art-game-festival",
+      "styleId": "pixel-art",
+      "name": "SIDEQUEST · event",
+      "brand": "SIDEQUEST",
+      "kind": "event",
+      "headline": "Your next adventure starts here.",
+      "description": "An independent games afternoon with tiny worlds, big ideas, and room for a new player.",
+      "action": "Explore the programme",
+      "colors": {
+        "canvas": "#1D233C",
+        "surface": "#30385A",
+        "accent": "#F4D476",
+        "ink": "#F8EFD7",
+        "line": "#8793C0"
+      },
+      "fonts": {
+        "heading": "Press Start 2P",
+        "body": "Space Mono"
+      },
+      "items": [
+        {
+          "title": "Meet the makers",
+          "detail": "A conversation to begin the gathering.",
+          "label": "10:00"
+        },
+        {
+          "title": "Try a tiny world",
+          "detail": "Time to make, listen, and try something.",
+          "label": "13:00"
+        },
+        {
+          "title": "The final boss showcase",
+          "detail": "Bring the day's ideas together.",
+          "label": "16:00"
+        }
+      ],
+      "anatomy": [
+        {
+          "decision": "Composition",
+          "reason": "Chunky schedule blocks feel game-like, while ticket selection follows familiar controls."
+        },
+        {
+          "decision": "Material and geometry",
+          "reason": "Pixel-aligned forms and nostalgic game language with modern interaction clarity."
+        },
+        {
+          "decision": "Reading and interaction",
+          "reason": "Work with block geometry, crisp edges, and a coarse rhythm; pair pixel display lettering with readable body text. Use discrete state changes rather than flickering sprites; never communicate a state through animation alone."
+        }
+      ]
+    },
+    {
+      "id": "pixel-art-quest-planner",
+      "styleId": "pixel-art",
+      "name": "CHECKPOINT · planner",
+      "brand": "CHECKPOINT",
+      "kind": "planner",
+      "headline": "One good quest at a time.",
+      "description": "Break your project into small missions and keep track of what actually moved forward.",
+      "action": "Make a little progress",
+      "colors": {
+        "canvas": "#F3EBC9",
+        "surface": "#DFD89E",
+        "accent": "#A55666",
+        "ink": "#343149",
+        "line": "#343149"
+      },
+      "fonts": {
+        "heading": "Press Start 2P",
+        "body": "Space Mono"
+      },
+      "items": [
+        {
+          "title": "Explore the problem",
+          "detail": "Start small and give it your attention.",
+          "label": "Today"
+        },
+        {
+          "title": "Craft the first version",
+          "detail": "A little space for the next useful step.",
+          "label": "This week"
+        },
+        {
+          "title": "Save your progress",
+          "detail": "Leave a note about what worked.",
+          "label": "Reflection"
+        }
+      ],
+      "anatomy": [
+        {
+          "decision": "Composition",
+          "reason": "Pixel geometry frames ordinary tasks; a readable body face carries longer instructions."
+        },
+        {
+          "decision": "Material and geometry",
+          "reason": "Pixel-aligned forms and nostalgic game language with modern interaction clarity."
+        },
+        {
+          "decision": "Reading and interaction",
+          "reason": "Work with block geometry, crisp edges, and a coarse rhythm; pair pixel display lettering with readable body text. Use discrete state changes rather than flickering sprites; never communicate a state through animation alone."
+        }
+      ]
+    },
+    {
+      "id": "pixel-art-game-merch-shop",
+      "styleId": "pixel-art",
+      "name": "8-bit supply · shop",
+      "brand": "8-bit supply",
+      "kind": "shop",
+      "headline": "Equip your everyday.",
+      "description": "Small-run prints and objects inspired by worlds built one square at a time.",
+      "action": "Explore the collection",
+      "colors": {
+        "canvas": "#1D2A35",
+        "surface": "#2C4250",
+        "accent": "#98C7C0",
+        "ink": "#E7F4EC",
+        "line": "#89A6A9"
+      },
+      "fonts": {
+        "heading": "Press Start 2P",
+        "body": "Space Mono"
+      },
+      "items": [
+        {
+          "title": "Adventure map print",
+          "detail": "A small edition, made with care.",
+          "label": "$36"
+        },
+        {
+          "title": "Potion enamel pin",
+          "detail": "A useful companion for everyday rituals.",
+          "label": "$48"
+        },
+        {
+          "title": "Save point notebook",
+          "detail": "A little character for your own space.",
+          "label": "$24"
+        }
+      ],
+      "anatomy": [
+        {
+          "decision": "Composition",
+          "reason": "A crisp product grid prevents nostalgic display type from taking over every detail."
+        },
+        {
+          "decision": "Material and geometry",
+          "reason": "Pixel-aligned forms and nostalgic game language with modern interaction clarity."
+        },
+        {
+          "decision": "Reading and interaction",
+          "reason": "Work with block geometry, crisp edges, and a coarse rhythm; pair pixel display lettering with readable body text. Use discrete state changes rather than flickering sprites; never communicate a state through animation alone."
+        }
+      ]
+    }
+  ],
+  "components": [
+    {
+      "id": "pixel-art-button",
+      "styleId": "pixel-art",
+      "kind": "button",
+      "name": "Pixel art button"
+    },
+    {
+      "id": "pixel-art-card",
+      "styleId": "pixel-art",
+      "kind": "card",
+      "name": "Pixel art card"
+    },
+    {
+      "id": "pixel-art-navigation",
+      "styleId": "pixel-art",
+      "kind": "navigation",
+      "name": "Pixel art navigation"
+    },
+    {
+      "id": "pixel-art-field",
+      "styleId": "pixel-art",
+      "kind": "field",
+      "name": "Pixel art field"
+    },
+    {
+      "id": "pixel-art-dialog",
+      "styleId": "pixel-art",
+      "kind": "dialog",
+      "name": "Pixel art dialog"
+    },
+    {
+      "id": "pixel-art-status",
+      "styleId": "pixel-art",
+      "kind": "status",
+      "name": "Pixel art status"
+    }
+  ]
+}
