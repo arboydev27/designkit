@@ -1,0 +1,299 @@
+{
+  "version": "2.0.0",
+  "contentDigest": "f2fce7355d694be5093b9369b4bd1d5feda599fd8a65665fa1c2a6bfb1e868e3",
+  "license": "MIT",
+  "fontsLicense": "OFL-1.1",
+  "source": "https://github.com/arboydev27/designkit",
+  "style": {
+    "id": "wabi-sabi",
+    "name": "Wabi-sabi",
+    "category": "Organic",
+    "tagline": "Beauty in the imperfect.",
+    "description": "Rooted in Japanese aesthetics, wabi-sabi values impermanence, modesty, and the character of things shaped by time. A digital interpretation can use natural textures, quiet spacing, and gentle asymmetry to suggest that material sensitivity.",
+    "traits": [
+      "Natural textures",
+      "Quiet asymmetry",
+      "Earthy neutrals",
+      "Unhurried space"
+    ],
+    "palette": [
+      {
+        "name": "Rice paper",
+        "hex": "#F3EFE7"
+      },
+      {
+        "name": "Sand",
+        "hex": "#D9CDBA"
+      },
+      {
+        "name": "Clay",
+        "hex": "#B38D71"
+      },
+      {
+        "name": "Stone",
+        "hex": "#8E8A83"
+      },
+      {
+        "name": "Sumi",
+        "hex": "#34322D"
+      }
+    ],
+    "fonts": {
+      "heading": "Cormorant Garamond",
+      "body": "DM Sans",
+      "rationale": "A delicate serif brings an organic rhythm; a clear sans keeps the supporting interface readable."
+    },
+    "useCases": [
+      "Ceramics and craft",
+      "Thoughtful hospitality",
+      "Slow living journals"
+    ],
+    "tips": [
+      "Let a few tactile details carry the atmosphere.",
+      "Use asymmetry within a dependable reading order.",
+      "Give imagery room to breathe."
+    ],
+    "avoid": [
+      "Treating Japanese culture as a decorative shorthand.",
+      "Low-contrast text on textured backgrounds.",
+      "Adding artificial distress to every element."
+    ],
+    "keywords": [
+      "natural",
+      "calm",
+      "imperfect",
+      "craft",
+      "earthy",
+      "Japanese"
+    ],
+    "sources": [
+      {
+        "label": "Suggested type: Cormorant Garamond",
+        "url": "https://fonts.google.com/specimen/Cormorant+Garamond"
+      }
+    ]
+  },
+  "recipe": {
+    "colors": {
+      "canvas": "#F3EFE7",
+      "surface": "#E6DDCE",
+      "accent": "#B38D71",
+      "ink": "#34322D",
+      "line": "#8E8A83"
+    },
+    "radius": 2,
+    "border": 1,
+    "shadow": "none",
+    "texture": "paper",
+    "composition": "Leave generous negative space and offset one visual anchor within a dependable reading order.",
+    "motion": "Use brief fades for state changes; let stillness carry the atmosphere.",
+    "signature": "Tactile earth tones, modest serif type, and imperfect geometry with clear controls.",
+    "controls": {
+      "radius": [
+        0,
+        32
+      ],
+      "shadow": false,
+      "spacing": [
+        16,
+        40
+      ]
+    }
+  },
+  "examples": [
+    {
+      "id": "wabi-sabi-earthware",
+      "styleId": "wabi-sabi",
+      "name": "tsuchi · shop",
+      "brand": "tsuchi",
+      "kind": "shop",
+      "headline": "Beauty in the unfinished.",
+      "description": "Small-batch vessels, formed by hand and made for the rituals of everyday life.",
+      "action": "Explore the collection",
+      "colors": {
+        "canvas": "#F3EFE7",
+        "surface": "#E6DDCE",
+        "accent": "#B38D71",
+        "ink": "#34322D",
+        "line": "#8E8A83"
+      },
+      "fonts": {
+        "heading": "Cormorant Garamond",
+        "body": "DM Sans"
+      },
+      "items": [
+        {
+          "title": "The morning bowl",
+          "detail": "A small edition, made with care.",
+          "label": "$36"
+        },
+        {
+          "title": "An uneven cup",
+          "detail": "A useful companion for everyday rituals.",
+          "label": "$48"
+        },
+        {
+          "title": "A vessel for branches",
+          "detail": "A little character for your own space.",
+          "label": "$24"
+        }
+      ],
+      "anatomy": [
+        {
+          "decision": "Composition",
+          "reason": "The product is a quiet material object, so a modest catalog and generous space support it."
+        },
+        {
+          "decision": "Material and geometry",
+          "reason": "Tactile earth tones, modest serif type, and imperfect geometry with clear controls."
+        },
+        {
+          "decision": "Reading and interaction",
+          "reason": "Leave generous negative space and offset one visual anchor within a dependable reading order. Use brief fades for state changes; let stillness carry the atmosphere."
+        }
+      ]
+    },
+    {
+      "id": "wabi-sabi-rain-journal",
+      "styleId": "wabi-sabi",
+      "name": "After rain · journal",
+      "brand": "After rain",
+      "kind": "journal",
+      "headline": "Notes from a slower life.",
+      "description": "A journal of walking, making, and noticing the things that time leaves behind.",
+      "action": "Find a story",
+      "colors": {
+        "canvas": "#E8E3D8",
+        "surface": "#D9D4C7",
+        "accent": "#8C9277",
+        "ink": "#343832",
+        "line": "#7D8272"
+      },
+      "fonts": {
+        "heading": "Playfair Display",
+        "body": "DM Sans"
+      },
+      "items": [
+        {
+          "title": "A path through the rain",
+          "detail": "An observation worth spending time with.",
+          "label": "Essay"
+        },
+        {
+          "title": "The cup we keep repairing",
+          "detail": "A conversation with a different point of view.",
+          "label": "Conversation"
+        },
+        {
+          "title": "Learning to leave space",
+          "detail": "A small story with something to carry onward.",
+          "label": "Field notes"
+        }
+      ],
+      "anatomy": [
+        {
+          "decision": "Composition",
+          "reason": "A narrow reading column and restrained folio make room for reflective writing."
+        },
+        {
+          "decision": "Material and geometry",
+          "reason": "Tactile earth tones, modest serif type, and imperfect geometry with clear controls."
+        },
+        {
+          "decision": "Reading and interaction",
+          "reason": "Leave generous negative space and offset one visual anchor within a dependable reading order. Use brief fades for state changes; let stillness carry the atmosphere."
+        }
+      ]
+    },
+    {
+      "id": "wabi-sabi-architecture",
+      "styleId": "wabi-sabi",
+      "name": "ma atelier · studio",
+      "brand": "ma atelier",
+      "kind": "studio",
+      "headline": "Space to simply be.",
+      "description": "A small architecture practice working with light, existing materials, and the character of place.",
+      "action": "Explore our work",
+      "colors": {
+        "canvas": "#EDE6DC",
+        "surface": "#DCCCBD",
+        "accent": "#B18367",
+        "ink": "#3B312B",
+        "line": "#9A806E"
+      },
+      "fonts": {
+        "heading": "Cormorant Garamond",
+        "body": "DM Sans"
+      },
+      "items": [
+        {
+          "title": "Courtyard house",
+          "detail": "Identity, concept, and visual direction.",
+          "label": "Identity"
+        },
+        {
+          "title": "A room for reading",
+          "detail": "Research shaped into a useful experience.",
+          "label": "Digital"
+        },
+        {
+          "title": "The restored workshop",
+          "detail": "A considered system, made to grow.",
+          "label": "Objects"
+        }
+      ],
+      "anatomy": [
+        {
+          "decision": "Composition",
+          "reason": "Off-center project compositions suggest an organic balance without disturbing navigation."
+        },
+        {
+          "decision": "Material and geometry",
+          "reason": "Tactile earth tones, modest serif type, and imperfect geometry with clear controls."
+        },
+        {
+          "decision": "Reading and interaction",
+          "reason": "Leave generous negative space and offset one visual anchor within a dependable reading order. Use brief fades for state changes; let stillness carry the atmosphere."
+        }
+      ]
+    }
+  ],
+  "components": [
+    {
+      "id": "wabi-sabi-button",
+      "styleId": "wabi-sabi",
+      "kind": "button",
+      "name": "Wabi-sabi button"
+    },
+    {
+      "id": "wabi-sabi-card",
+      "styleId": "wabi-sabi",
+      "kind": "card",
+      "name": "Wabi-sabi card"
+    },
+    {
+      "id": "wabi-sabi-navigation",
+      "styleId": "wabi-sabi",
+      "kind": "navigation",
+      "name": "Wabi-sabi navigation"
+    },
+    {
+      "id": "wabi-sabi-field",
+      "styleId": "wabi-sabi",
+      "kind": "field",
+      "name": "Wabi-sabi field"
+    },
+    {
+      "id": "wabi-sabi-dialog",
+      "styleId": "wabi-sabi",
+      "kind": "dialog",
+      "name": "Wabi-sabi dialog"
+    },
+    {
+      "id": "wabi-sabi-status",
+      "styleId": "wabi-sabi",
+      "kind": "status",
+      "name": "Wabi-sabi status"
+    }
+  ]
+}
