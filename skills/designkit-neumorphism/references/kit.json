@@ -1,0 +1,293 @@
+{
+  "version": "2.0.0",
+  "contentDigest": "f2fce7355d694be5093b9369b4bd1d5feda599fd8a65665fa1c2a6bfb1e868e3",
+  "license": "MIT",
+  "fontsLicense": "OFL-1.1",
+  "source": "https://github.com/arboydev27/designkit",
+  "style": {
+    "id": "neumorphism",
+    "name": "Neumorphism",
+    "category": "Digital",
+    "tagline": "Sculpted from a single surface.",
+    "description": "Neumorphism uses paired light and dark shadows to make controls appear pressed into or raised from a shared surface. Its quiet, low-contrast material effect works best when explicit labels and visible boundaries support the interaction.",
+    "traits": [
+      "Paired shadows",
+      "Shared surface color",
+      "Inset controls",
+      "Soft relief"
+    ],
+    "palette": [
+      {
+        "name": "Surface",
+        "hex": "#E7E9EF"
+      },
+      {
+        "name": "Highlight",
+        "hex": "#FFFFFF"
+      },
+      {
+        "name": "Shadow",
+        "hex": "#BDC2CF"
+      },
+      {
+        "name": "Indigo",
+        "hex": "#636CCF"
+      },
+      {
+        "name": "Slate",
+        "hex": "#394256"
+      }
+    ],
+    "fonts": {
+      "heading": "Nunito",
+      "body": "Inter",
+      "rationale": "Rounded headings suit soft relief while an efficient body face makes labels and state changes clearer."
+    },
+    "useCases": [
+      "Audio control concepts",
+      "Focused utility interfaces",
+      "Small interactive widgets"
+    ],
+    "tips": [
+      "Add visible focus and selected states.",
+      "Use stronger text contrast than the surface effects.",
+      "Keep the relief effect for a few key controls."
+    ],
+    "avoid": [
+      "Using shadows as the only state indicator.",
+      "Low-contrast text and icons.",
+      "Applying soft relief to every data-heavy component."
+    ],
+    "keywords": [
+      "soft UI",
+      "relief",
+      "inset",
+      "shadows",
+      "tactile",
+      "monochrome"
+    ]
+  },
+  "recipe": {
+    "colors": {
+      "canvas": "#E4E8ED",
+      "surface": "#E4E8ED",
+      "accent": "#607796",
+      "ink": "#29394D",
+      "line": "#8293A8"
+    },
+    "radius": 24,
+    "border": 1,
+    "shadow": "inset",
+    "texture": "none",
+    "composition": "Use a narrow range of surfaces; distinguish controls with paired shadows and a visible focus boundary.",
+    "motion": "Pressed controls move to an inset surface; preserve an explicit selected label.",
+    "signature": "Soft extruded controls that share their background while retaining recognizable affordances.",
+    "controls": {
+      "radius": [
+        0,
+        48
+      ],
+      "shadow": true,
+      "spacing": [
+        16,
+        40
+      ]
+    }
+  },
+  "examples": [
+    {
+      "id": "neumorphism-listening-planner",
+      "styleId": "neumorphism",
+      "name": "resonant · planner",
+      "brand": "resonant",
+      "kind": "planner",
+      "headline": "Make room for a softer rhythm.",
+      "description": "A listening and reflection space for arranging a calmer part of your day.",
+      "action": "Make a little progress",
+      "colors": {
+        "canvas": "#E4E8ED",
+        "surface": "#E4E8ED",
+        "accent": "#607796",
+        "ink": "#29394D",
+        "line": "#8293A8"
+      },
+      "fonts": {
+        "heading": "Nunito",
+        "body": "Inter"
+      },
+      "items": [
+        {
+          "title": "Choose the morning playlist",
+          "detail": "Start small and give it your attention.",
+          "label": "Today"
+        },
+        {
+          "title": "Take a screen-free break",
+          "detail": "A little space for the next useful step.",
+          "label": "This week"
+        },
+        {
+          "title": "Write a closing thought",
+          "detail": "Leave a note about what worked.",
+          "label": "Reflection"
+        }
+      ],
+      "anatomy": [
+        {
+          "decision": "Composition",
+          "reason": "Paired shadows suggest physical controls while labels and focus borders show their meaning."
+        },
+        {
+          "decision": "Material and geometry",
+          "reason": "Soft extruded controls that share their background while retaining recognizable affordances."
+        },
+        {
+          "decision": "Reading and interaction",
+          "reason": "Use a narrow range of surfaces; distinguish controls with paired shadows and a visible focus boundary. Pressed controls move to an inset surface; preserve an explicit selected label."
+        }
+      ]
+    },
+    {
+      "id": "neumorphism-audio-shop",
+      "styleId": "neumorphism",
+      "name": "soft switch · shop",
+      "brand": "soft switch",
+      "kind": "shop",
+      "headline": "Tools that feel good in use.",
+      "description": "Considered audio accessories for the small rituals around listening, working, and unwinding.",
+      "action": "Explore the collection",
+      "colors": {
+        "canvas": "#E9E4DD",
+        "surface": "#E9E4DD",
+        "accent": "#8C6D52",
+        "ink": "#463629",
+        "line": "#A89680"
+      },
+      "fonts": {
+        "heading": "DM Sans",
+        "body": "Inter"
+      },
+      "items": [
+        {
+          "title": "The volume dial",
+          "detail": "A small edition, made with care.",
+          "label": "$36"
+        },
+        {
+          "title": "Desk listening stand",
+          "detail": "A useful companion for everyday rituals.",
+          "label": "$48"
+        },
+        {
+          "title": "The everyday cable",
+          "detail": "A little character for your own space.",
+          "label": "$24"
+        }
+      ],
+      "anatomy": [
+        {
+          "decision": "Composition",
+          "reason": "Raised product surfaces provide tactility without relying on shadow to communicate price or state."
+        },
+        {
+          "decision": "Material and geometry",
+          "reason": "Soft extruded controls that share their background while retaining recognizable affordances."
+        },
+        {
+          "decision": "Reading and interaction",
+          "reason": "Use a narrow range of surfaces; distinguish controls with paired shadows and a visible focus boundary. Pressed controls move to an inset surface; preserve an explicit selected label."
+        }
+      ]
+    },
+    {
+      "id": "neumorphism-sound-studio",
+      "styleId": "neumorphism",
+      "name": "TONAL · studio",
+      "brand": "TONAL",
+      "kind": "studio",
+      "headline": "Give your idea a voice.",
+      "description": "Sound identities, thoughtful interfaces, and small audio experiences built around how people listen.",
+      "action": "Explore our work",
+      "colors": {
+        "canvas": "#E3E7E5",
+        "surface": "#E3E7E5",
+        "accent": "#5F7C74",
+        "ink": "#2D413B",
+        "line": "#829C94"
+      },
+      "fonts": {
+        "heading": "Space Grotesk",
+        "body": "Inter"
+      },
+      "items": [
+        {
+          "title": "A sound for a museum",
+          "detail": "Identity, concept, and visual direction.",
+          "label": "Identity"
+        },
+        {
+          "title": "The daily listening tool",
+          "detail": "Research shaped into a useful experience.",
+          "label": "Digital"
+        },
+        {
+          "title": "An identity you can hear",
+          "detail": "A considered system, made to grow.",
+          "label": "Objects"
+        }
+      ],
+      "anatomy": [
+        {
+          "decision": "Composition",
+          "reason": "Soft project frames feel physical, with enough contrast to remain useful in flat screenshots."
+        },
+        {
+          "decision": "Material and geometry",
+          "reason": "Soft extruded controls that share their background while retaining recognizable affordances."
+        },
+        {
+          "decision": "Reading and interaction",
+          "reason": "Use a narrow range of surfaces; distinguish controls with paired shadows and a visible focus boundary. Pressed controls move to an inset surface; preserve an explicit selected label."
+        }
+      ]
+    }
+  ],
+  "components": [
+    {
+      "id": "neumorphism-button",
+      "styleId": "neumorphism",
+      "kind": "button",
+      "name": "Neumorphism button"
+    },
+    {
+      "id": "neumorphism-card",
+      "styleId": "neumorphism",
+      "kind": "card",
+      "name": "Neumorphism card"
+    },
+    {
+      "id": "neumorphism-navigation",
+      "styleId": "neumorphism",
+      "kind": "navigation",
+      "name": "Neumorphism navigation"
+    },
+    {
+      "id": "neumorphism-field",
+      "styleId": "neumorphism",
+      "kind": "field",
+      "name": "Neumorphism field"
+    },
+    {
+      "id": "neumorphism-dialog",
+      "styleId": "neumorphism",
+      "kind": "dialog",
+      "name": "Neumorphism dialog"
+    },
+    {
+      "id": "neumorphism-status",
+      "styleId": "neumorphism",
+      "kind": "status",
+      "name": "Neumorphism status"
+    }
+  ]
+}
