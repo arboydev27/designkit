@@ -1,9 +1,9 @@
 "use client";
-import { useState } from "react";
 import { examplesByStyle } from "../../data/examples";
 import { styles } from "../../data/styles";
-import { recipes } from "../../data/recipes";
 import { exampleKinds } from "../../data/kit-types";
+import { exampleFilters, matchesExample } from "../../lib/gallery-filters";
+import useUrlQuery from "./useUrlQuery";
 import ExampleThumbnail from "./ExampleThumbnail";
 
 const discoveryExamples = [0, 1, 2].flatMap((index) =>
@@ -11,18 +11,22 @@ const discoveryExamples = [0, 1, 2].flatMap((index) =>
 );
 
 export default function ExamplesGallery() {
-  const [query, setQuery] = useState("");
-  const [styleId, setStyleId] = useState("");
-  const [kind, setKind] = useState("");
-  const [limit, setLimit] = useState(12);
+  const { params, update, search } = useUrlQuery();
+  const { query, styleId, kind, limit } = exampleFilters(params);
   const shown = discoveryExamples.filter(
     (example) =>
       (!styleId || example.styleId === styleId) &&
       (!kind || example.kind === kind) &&
-      `${example.brand} ${example.headline} ${example.description} ${example.styleId} ${example.fonts.heading}`
-        .toLowerCase()
-        .includes(query.toLowerCase()),
+      matchesExample(example, query),
   );
+  const more = () => {
+    update({ count: limit + 12 });
+    requestAnimationFrame(() =>
+      document
+        .querySelectorAll<HTMLElement>(".example-teaser-link")
+        [limit]?.focus(),
+    );
+  };
   return (
     <>
       <div className="kit-page-intro">
@@ -38,10 +42,11 @@ export default function ExamplesGallery() {
           Find an example
           <input
             type="search"
+            name="q"
+            autoComplete="off"
             value={query}
             onChange={(event) => {
-              setQuery(event.target.value);
-              setLimit(12);
+              update({ q: event.target.value, count: null }, true);
             }}
             placeholder="A mood, font, style, or project…"
           />
@@ -51,8 +56,7 @@ export default function ExamplesGallery() {
           <select
             value={styleId}
             onChange={(event) => {
-              setStyleId(event.target.value);
-              setLimit(12);
+              update({ style: event.target.value, count: null });
             }}
           >
             <option value="">All 22 styles</option>
@@ -68,8 +72,7 @@ export default function ExamplesGallery() {
           <select
             value={kind}
             onChange={(event) => {
-              setKind(event.target.value);
-              setLimit(12);
+              update({ kind: event.target.value, count: null });
             }}
           >
             <option value="">Every project type</option>
@@ -80,14 +83,15 @@ export default function ExamplesGallery() {
         </label>
       </div>
       <p className="kit-results" role="status">
-        {shown.length} {shown.length === 1 ? "example" : "examples"}
+        {shown.length} {shown.length === 1 ? "example" : "examples"} · Showing{" "}
+        {Math.min(limit, shown.length)}
       </p>
       <div className="example-gallery">
         {shown.slice(0, limit).map((example) => (
           <ExampleThumbnail
             key={example.id}
             example={example}
-            recipe={recipes[example.styleId]}
+            returnTo={`/examples/${search}`}
           />
         ))}
       </div>
@@ -99,9 +103,7 @@ export default function ExamplesGallery() {
             className="primary-button"
             type="button"
             onClick={() => {
-              setQuery("");
-              setStyleId("");
-              setKind("");
+              update({ q: null, style: null, kind: null, count: null });
             }}
           >
             Explore every example
@@ -110,11 +112,7 @@ export default function ExamplesGallery() {
       ) : null}
       {shown.length > limit ? (
         <div className="kit-load-more">
-          <button
-            className="primary-button"
-            type="button"
-            onClick={() => setLimit((current) => current + 12)}
-          >
+          <button className="primary-button" type="button" onClick={more}>
             Show more examples
           </button>
           <span>

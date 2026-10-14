@@ -1,27 +1,25 @@
 "use client";
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import { styles } from "../../data/styles";
 import { kitsById, components } from "../../data/kits";
 import { componentStates } from "../../lib/component-states";
-import { componentKinds, type ComponentKind } from "../../data/kit-types";
+import { componentKinds } from "../../data/kit-types";
+import { componentFilters } from "../../lib/gallery-filters";
+import { withReturnPath } from "../../lib/navigation";
+import useUrlQuery from "./useUrlQuery";
 import ComponentSample from "./ComponentSample";
 
 export default function ComponentsGallery() {
-  const [styleId, setStyleId] = useState("");
-  const [kind, setKind] = useState<ComponentKind | "">("button");
-  const [state, setState] = useState<
-    "default" | "disabled" | "loading" | "error"
-  >("default");
-  const [limit, setLimit] = useState(12);
-  useEffect(() => {
-    const requested = new URLSearchParams(location.search).get("style");
-    if (requested && kitsById[requested]) {
-      setStyleId(requested);
-      setKind("");
-      setState("default");
-    }
-  }, []);
+  const { params, update, search } = useUrlQuery();
+  const { styleId, kind, state, limit } = componentFilters(params);
+  const more = () => {
+    update({ count: limit + 12 });
+    requestAnimationFrame(() =>
+      document
+        .querySelectorAll<HTMLElement>(".component-teaser-link")
+        [limit]?.focus(),
+    );
+  };
   const shown = components.filter(
     (component) =>
       (!styleId || component.styleId === styleId) &&
@@ -43,8 +41,11 @@ export default function ComponentsGallery() {
           <select
             value={styleId}
             onChange={(event) => {
-              setStyleId(event.target.value);
-              setLimit(12);
+              update({
+                style: event.target.value,
+                kind: kind || "all",
+                count: null,
+              });
             }}
           >
             <option value="">Compare all styles</option>
@@ -60,9 +61,11 @@ export default function ComponentsGallery() {
           <select
             value={kind}
             onChange={(event) => {
-              setKind(event.target.value as ComponentKind | "");
-              setState("default");
-              setLimit(12);
+              update({
+                kind: event.target.value || "all",
+                state: null,
+                count: null,
+              });
             }}
           >
             <option value="">Every pattern</option>
@@ -76,7 +79,12 @@ export default function ComponentsGallery() {
           <select
             value={state}
             disabled={componentStates(kind).length === 1}
-            onChange={(event) => setState(event.target.value as typeof state)}
+            onChange={(event) =>
+              update({
+                state:
+                  event.target.value === "default" ? null : event.target.value,
+              })
+            }
           >
             {componentStates(kind).map((option) => (
               <option key={option} value={option}>
@@ -90,7 +98,7 @@ export default function ComponentsGallery() {
       </div>
       <p className="kit-results" role="status">
         {shown.length} {shown.length === 1 ? "component" : "components"}
-        {kind ? ` · ${kind}` : ""}
+        {kind ? ` · ${kind}` : ""} · Showing {Math.min(limit, shown.length)}
       </p>
       <div className="component-gallery">
         {shown.slice(0, limit).map((component) => {
@@ -104,7 +112,13 @@ export default function ComponentsGallery() {
                 state={state}
               />
               <div>
-                <Link href={`/components/${component.id}`}>
+                <Link
+                  className="component-teaser-link"
+                  href={withReturnPath(
+                    `/components/${component.id}/`,
+                    `/components/${search}`,
+                  )}
+                >
                   <h2>
                     {kit.style.name} <span aria-hidden="true">↗</span>
                   </h2>
@@ -120,10 +134,7 @@ export default function ComponentsGallery() {
       </div>
       {shown.length > limit ? (
         <div className="kit-load-more">
-          <button
-            className="primary-button"
-            onClick={() => setLimit((current) => current + 12)}
-          >
+          <button className="primary-button" onClick={more}>
             Show more components
           </button>
           <span>

@@ -1,23 +1,30 @@
 import Link from "next/link";
-import type { DesignExample, StyleRecipe } from "../../data/kit-types";
-import ExampleCanvas from "./ExampleCanvas";
+import type { DesignExample } from "../../data/kit-types";
+import { withReturnPath } from "../../lib/navigation";
 
 export default function ExampleThumbnail({
   example,
-  recipe,
+  returnTo = "/examples/",
 }: {
   example: DesignExample;
-  recipe: StyleRecipe;
+  returnTo?: string;
 }) {
   return (
     <article className="example-teaser">
       <Link
-        href={`/examples/${example.id}`}
+        href={withReturnPath(`/examples/${example.id}/`, returnTo)}
         className="example-teaser-link"
         aria-label={`Explore ${example.brand}`}
       >
-        <div className="example-thumbnail" inert aria-hidden="true">
-          <ExampleCanvas example={example} recipe={recipe} />
+        <div className="example-thumbnail">
+          <img
+            src={`/previews/${example.id}-desktop.webp`}
+            alt=""
+            width={1280}
+            height={900}
+            loading="lazy"
+            decoding="async"
+          />
         </div>
         <div className="example-teaser-title">
           <h2>{example.brand}</h2>
