@@ -6,6 +6,7 @@ import { examples } from "../src/data/examples";
 import {
   kitVersion,
   siteUrl,
+  repositoryUrl,
   type StyleKit,
   type DesignExample,
   type KitComponent,
@@ -85,8 +86,10 @@ const digestHash = createHash("sha256")
   .update(fontSource)
   .update(typesSource)
   .update(stylesSource)
+  .update(license)
   .update(await read("src/lib/kit-guides.ts"))
-  .update(await read("scripts/generate-kits.mts"));
+  .update(await read("scripts/generate-kits.mts"))
+  .update(await read("scripts/lib/zip.mjs"));
 for (const face of compactFaces)
   digestHash.update(
     await fs.readFile(path.join(publicRoot, "fonts", face.file)),
@@ -110,7 +113,9 @@ const metadata = {
   contentDigest: digest,
   license: "MIT",
   fontsLicense: "OFL-1.1",
-  source: "https://github.com/arboydev27/designkit",
+  source: repositoryUrl,
+  repository: repositoryUrl,
+  homepage: siteUrl,
 };
 const catalog = {
   ...metadata,
@@ -130,13 +135,20 @@ const catalog = {
         desktop: `/previews/${example.id}-desktop.webp`,
         mobile: `/previews/${example.id}-mobile.webp`,
       },
+      guide: `/kits/examples/${example.id}.md`,
+      json: `/kits/examples/${example.id}.json`,
+      source: `/kits/examples/${example.id}.zip`,
+      tokens: `/kits/examples/${example.id}.tokens.json`,
     })),
     components: kit.components.map((component) => ({
       ...component,
       url: `/components/${component.id}/`,
+      registry: `/r/${component.id}.json`,
+      source: `/kits/components/${component.id}.zip`,
     })),
     guide: `/kits/styles/${kit.style.id}.md`,
     json: `/kits/styles/${kit.style.id}.json`,
+    skill: `/kits/skills/designkit-${kit.style.id}.zip`,
   })),
 };
 const commonTypes = stylesSource.slice(
@@ -216,6 +228,21 @@ function componentSource(component: KitComponent, kit: StyleKit) {
   }[component.kind];
   return `"use client";\nimport type { ComponentProps, CSSProperties } from 'react';\nimport { ${symbol} } from './KitControls';\nimport './kit.css';\nimport './${kit.style.id}-fonts.css';\nconst tokens = ${json(resolveTokens(kit.examples[0], kit.recipe).values)};\nexport default function ${name}(props: ComponentProps<typeof ${symbol}>) { return <div className="kit-component-surface kit-style-${kit.style.id}" style={tokens as CSSProperties}><${symbol} {...props} /></div>; }\n`;
 }
+function componentGuide(component: KitComponent, kit: StyleKit) {
+  const name = component.id
+    .split("-")
+    .map((part) => part[0].toUpperCase() + part.slice(1))
+    .join("");
+  const usage = {
+    button: `<${name} onClick={() => console.log("Continue")}>Continue</${name}>`,
+    card: `<${name} title="A considered object" label="Collection"><p>Your content.</p></${name}>`,
+    navigation: `<${name} brand="Your brand" links={[{ label: "Collection", href: "/collection" }]} />`,
+    field: `<${name} label="Email address" name="email" type="email" required />`,
+    dialog: `<${name} trigger="Read more" title="The details"><p>Your content.</p></${name}>`,
+    status: `<${name} state="success">Your changes are saved.</${name}>`,
+  }[component.kind];
+  return `# Use ${kit.style.name} ${component.kind}\n\nCopy every file in this folder into a React/TypeScript project, then import the component. Your bundler must support CSS imports. No DesignKit runtime or additional UI library is required.\n\n\`\`\`tsx\n"use client";\nimport ${name} from './${component.id}';\n\n${usage}\n\`\`\`\n\nThe component imports its scoped CSS and licensed, embedded font data. Keep FONT-LICENSES.md and LICENSE when redistributing the source. Shared KitControls.tsx and kit.css are identical across the library; keep one copy when using several patterns in the same folder. Style font files have distinct names.\n\nThe default style tokens are declared in ${component.id}.tsx. Adapt those values and the native control props to your project. The wrapper supplies the style's canvas, typography, and container sizing. Supply your own application behavior and meaningful content.\n\nLibrary version: ${kitVersion}\nSource repository: ${repositoryUrl}\nReference: ${siteUrl}/components/${component.id}/\n`;
+}
 const registryItems: {
   name: string;
   type: string;
@@ -275,6 +302,7 @@ for (const kit of kits) {
   }
   for (const component of kit.components) {
     const source = componentSource(component, kit);
+    const integration = componentGuide(component, kit);
     const fontLicenses = Object.entries(shared)
       .filter(([name]) => name.startsWith("licenses/"))
       .map(([name, content]) => `# ${name}\n\n${content}`)
@@ -324,6 +352,8 @@ for (const kit of kits) {
       title: component.name,
       description: `${kit.recipe.signature} Native ${component.kind} component with ${kit.style.name} tokens.`,
       dependencies: ["react"],
+      meta: metadata,
+      docs: integration,
       files: payloadFiles,
     };
     await write(`public/r/${component.id}.json`, json(item));
@@ -342,6 +372,7 @@ for (const kit of kits) {
         "kit.css": cssSource,
         [`${kit.style.id}-fonts.css`]: inline["fonts.css"],
         "FONT-LICENSES.md": fontLicenses,
+        "INTEGRATION.md": integration,
         LICENSE: license,
       }),
     );
@@ -353,6 +384,16 @@ for (const kit of kits) {
         recipe: kit.recipe,
         registry: `/r/${component.id}.json`,
         source: `/kits/components/${component.id}.tsx`,
+        archive: `/kits/components/${component.id}.zip`,
+        files: [
+          `${component.id}.tsx`,
+          "KitControls.tsx",
+          "kit.css",
+          `${kit.style.id}-fonts.css`,
+          "FONT-LICENSES.md",
+          "INTEGRATION.md",
+          "LICENSE",
+        ],
       }),
     );
     registryItems.push({
@@ -366,6 +407,7 @@ for (const kit of kits) {
   const skillRoot = `skills/${skillName}`;
   const entrypoint = `---\nname: ${skillName}\ndescription: ${JSON.stringify(`Apply or review ${kit.style.name} for a requested website or interface. Use when the user chooses ${kit.style.name} and needs a coherent visual direction, relevant examples, or reusable React patterns.`)}\nlicense: MIT\nmetadata:\n  version: ${JSON.stringify(kitVersion)}\n---\n\n# ${kit.style.name} with DesignKit\n\n${kit.recipe.signature}\n\nUse this direction to support the user's actual project, content, and chosen stack. It is not a requirement to reproduce a particular example or replace existing working interactions.\n\n## Apply the direction\n\n- Read [the style reference](references/style.md) for its composition, materials, useful decisions, and common mistakes.\n- Choose a relevant project context from the examples below. Read only its reference and inspect its implementation when it helps the task. When image viewing is available, inspect the linked desktop and phone screenshots for its hierarchy, composition, and materials. You can compose another context using the same principles.\n- When using the React assets, copy the chosen entry folder with assets/shared and preserve their relative structure. Adapt the example data to the user's content; replace local demo state with required project behavior.\n- For another stack, translate the tokens, hierarchy, material, and interaction decisions into that stack rather than introducing React.\n- Preserve suitable fonts, components, and conventions in an existing project. Make a change when it materially supports this direction, not simply because a kit contains an alternative.\n\n## Example contexts\n\n${kit.examples.map((example) => `- **${example.brand} (${example.kind})**: [reference](references/examples/${example.id}.md), [React entry](assets/${example.id}/ExampleApp.tsx), [desktop reference](assets/shared/previews/${example.id}-desktop.webp), [phone reference](assets/shared/previews/${example.id}-mobile.webp).`).join("\n")}\n\n## Evaluate the result\n\nCheck that ${kit.style.traits.map((trait) => trait.toLowerCase()).join(", ")} are expressed coherently. ${kit.recipe.composition} ${kit.recipe.motion}\n\nReview the actual rendered phone and desktop layouts, text contrast, focus order, native control affordances, relevant empty/error/loading states, and reduced-motion behavior. State what was checked and what remains unverified. Do not claim visual fidelity or accessibility from a successful build alone.\n\nKeep font licenses with redistributed assets. This skill supplies design guidance and local source; it does not authorize publishing, installations, or changes to unrelated project settings.\n`;
   await write(`${skillRoot}/SKILL.md`, entrypoint);
+  await write(`${skillRoot}/LICENSE`, license);
   await write(`${skillRoot}/references/style.md`, styleGuide(kit, "examples/"));
   await write(
     `${skillRoot}/references/kit.json`,
@@ -385,6 +427,7 @@ for (const kit of kits) {
   }
   const archive: Record<string, string | Buffer> = {
     "SKILL.md": entrypoint,
+    LICENSE: license,
     "references/style.md": styleGuide(kit, "examples/"),
     "references/kit.json": json({ ...metadata, ...kit }),
   };
@@ -404,6 +447,7 @@ for (const kit of kits) {
 }
 const discoverySkill = `---\nname: designkit\ndescription: Help choose a visual design direction for a website or interface using DesignKit's 22 original style references. Use for style discovery, comparing directions, or turning a project brief into a coherent design choice.\nlicense: MIT\nmetadata:\n  version: ${JSON.stringify(kitVersion)}\n---\n\n# Choose a direction with DesignKit\n\nRead [the catalog](references/catalog.json) for available styles and project contexts. Match the user's audience, content, density, and interaction needs to a few relevant options. Explain the tradeoffs using concrete layout, typography, and material decisions rather than a vague mood label.\n\nRespect an already-chosen style. Do not replace the user's project with a particular example, or treat a visual style as a mandatory page architecture.\n\nFor implementation, use the corresponding designkit-<style-id> skill when it is available, or retrieve that style's Markdown/JSON reference from ${siteUrl}/kits/styles/<style-id>.md. A style package includes three original React entrypoints, scoped CSS, tokens, and licensed fonts. Translate those principles if the project uses a different stack.\n\nFor a mixed direction, establish one primary system for layout and components. Treat secondary references as deliberate typography or material choices; do not randomly blend entire systems.\n\nReview the rendered result against the actual brief, including phone layout, focus order, readable contrast, and reduced motion. Report only verified checks.\n\nThis skill supplies design references. It does not authorize external publishing, installing dependencies, or changes to unrelated settings.\n`;
 await write("skills/designkit/SKILL.md", discoverySkill);
+await write("skills/designkit/LICENSE", license);
 await write("skills/designkit/references/catalog.json", json(catalog));
 await write(
   "public/kits/skills/designkit.zip",
