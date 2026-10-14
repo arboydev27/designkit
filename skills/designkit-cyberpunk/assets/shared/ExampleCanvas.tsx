@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useState, type CSSProperties } from "react";
+import { useId, useState, type CSSProperties, type MouseEvent } from "react";
 import type {
   DesignExample,
   PlaygroundSettings,
@@ -62,10 +62,19 @@ export default function ExampleCanvas({
     `${item.title} ${item.label}`.toLowerCase().includes(query.toLowerCase()),
   );
   const headline = normalized.headline;
-  const goToContent = () =>
-    document
-      .getElementById(sectionId)
-      ?.scrollIntoView({ behavior: "instant", block: "start" });
+  const focusSection = (id: string) => {
+    const target = document.getElementById(id);
+    target?.scrollIntoView({ behavior: "instant", block: "start" });
+    target?.focus({ preventScroll: true });
+  };
+  const navigateWithinExample = (
+    href: string,
+    event: MouseEvent<HTMLAnchorElement>,
+  ) => {
+    event.preventDefault();
+    focusSection(href.slice(1));
+  };
+  const goToContent = () => focusSection(sectionId);
   const contextLabel = {
     shop: "A considered collection",
     journal: "An independent journal",
@@ -90,6 +99,7 @@ export default function ExampleCanvas({
     >
       <KitNavigation
         brand={example.brand}
+        onNavigate={navigateWithinExample}
         links={[
           {
             label:
@@ -322,14 +332,17 @@ export default function ExampleCanvas({
           </>
         )}
       </section>
-      <section id={aboutId} className="kit-about">
+      <section id={aboutId} className="kit-about" tabIndex={-1}>
         <span className="kit-label">A little about us</span>
         <h3>{example.brand}, with a point of view.</h3>
         <p>{example.description}</p>
       </section>
       <footer className="kit-footer">
         <span className="kit-brand">{example.brand}</span>
-        <a href={`#${sectionId}`}>
+        <a
+          href={`#${sectionId}`}
+          onClick={(event) => navigateWithinExample(`#${sectionId}`, event)}
+        >
           Explore again <span aria-hidden="true">↗</span>
         </a>
       </footer>
