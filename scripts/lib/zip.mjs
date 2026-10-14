@@ -18,7 +18,12 @@ export function zipFiles(files) {
   for (const [path, value] of Object.entries(files).sort(([a], [b]) =>
     a.localeCompare(b),
   )) {
-    if (path.startsWith("/") || path.split("/").includes(".."))
+    if (
+      !path ||
+      /^[a-z]:/i.test(path) ||
+      /[\\\0]/.test(path) ||
+      path.split("/").some((part) => ["", ".", ".."].includes(part))
+    )
       throw new Error("Archive paths must stay relative to the kit.");
     const name = Buffer.from(path),
       content = Buffer.isBuffer(value) ? value : Buffer.from(value);
