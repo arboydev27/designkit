@@ -42,6 +42,7 @@
   font-family: var(--dk-heading), serif;
   font-synthesis: none;
   overflow-wrap: anywhere;
+  hyphens: auto;
 }
 .kit-canvas :is(button, a, input, select, textarea):focus-visible,
 .kit-component-surface :is(button, a, input, select, textarea):focus-visible {
@@ -353,6 +354,11 @@
   background: var(--dk-canvas);
 }
 .kit-dialog {
+  margin: auto;
+  max-height: calc(100dvh - 48px);
+  overflow: auto;
+  overscroll-behavior: contain;
+  overflow-wrap: anywhere;
   max-width: min(520px, calc(100vw - 40px));
   padding: 28px;
   color: var(--dk-ink);
@@ -365,7 +371,7 @@
 .kit-dialog::backdrop {
   background: rgb(0 0 0 / 0.45);
 }
-.kit-dialog > div {
+.kit-dialog-heading {
   display: flex;
   justify-content: space-between;
   gap: 20px;
