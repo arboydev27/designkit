@@ -43,7 +43,12 @@ export default function ComponentSample({
           >
             {state === "loading" ? "Saving…" : "Continue"}
           </KitButton>
-          {count ? (
+          {state === "error" ? (
+            <KitStatus state="error">
+              Your changes could not be saved. Try again.
+            </KitStatus>
+          ) : null}
+          {count && state === "default" ? (
             <KitStatus state="success">
               Pressed {count} {count === 1 ? "time" : "times"}.
             </KitStatus>
@@ -56,9 +61,10 @@ export default function ComponentSample({
           action={
             <KitButton
               onClick={() => setCount((current) => current + 1)}
-              disabled={state === "disabled"}
+              disabled={state === "disabled" || state === "loading"}
+              aria-busy={state === "loading"}
             >
-              Save this idea
+              {state === "loading" ? "Saving…" : "Save this idea"}
             </KitButton>
           }
         >
@@ -66,7 +72,12 @@ export default function ComponentSample({
             A reusable surface with a clear heading, supporting text, and one
             primary action.
           </p>
-          {count ? (
+          {state === "error" ? (
+            <KitStatus state="error">
+              This idea could not be saved. Try again.
+            </KitStatus>
+          ) : null}
+          {count && state === "default" ? (
             <KitStatus state="success">Saved for this preview.</KitStatus>
           ) : null}
         </KitCard>

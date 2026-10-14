@@ -3,12 +3,13 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { styles } from "../../data/styles";
 import { kitsById, components } from "../../data/kits";
-import { componentKinds } from "../../data/kit-types";
+import { componentStates } from "../../lib/component-states";
+import { componentKinds, type ComponentKind } from "../../data/kit-types";
 import ComponentSample from "./ComponentSample";
 
 export default function ComponentsGallery() {
   const [styleId, setStyleId] = useState("");
-  const [kind, setKind] = useState("button");
+  const [kind, setKind] = useState<ComponentKind | "">("button");
   const [state, setState] = useState<
     "default" | "disabled" | "loading" | "error"
   >("default");
@@ -18,6 +19,7 @@ export default function ComponentsGallery() {
     if (requested && kitsById[requested]) {
       setStyleId(requested);
       setKind("");
+      setState("default");
     }
   }, []);
   const shown = components.filter(
@@ -58,7 +60,8 @@ export default function ComponentsGallery() {
           <select
             value={kind}
             onChange={(event) => {
-              setKind(event.target.value);
+              setKind(event.target.value as ComponentKind | "");
+              setState("default");
               setLimit(12);
             }}
           >
@@ -72,12 +75,16 @@ export default function ComponentsGallery() {
           Preview state
           <select
             value={state}
+            disabled={componentStates(kind).length === 1}
             onChange={(event) => setState(event.target.value as typeof state)}
           >
-            <option value="default">Default</option>
-            <option value="disabled">Disabled / empty</option>
-            <option value="loading">Loading</option>
-            <option value="error">Error</option>
+            {componentStates(kind).map((option) => (
+              <option key={option} value={option}>
+                {option === "disabled" && kind === "status"
+                  ? "Empty"
+                  : option[0].toUpperCase() + option.slice(1)}
+              </option>
+            ))}
           </select>
         </label>
       </div>

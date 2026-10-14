@@ -164,7 +164,7 @@ export function KitDialog({
         </div>
         {children}
         <form method="dialog">
-          <KitButton>Done</KitButton>
+          <KitButton type="submit">Done</KitButton>
         </form>
       </dialog>
     </>

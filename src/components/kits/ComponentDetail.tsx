@@ -6,6 +6,8 @@ import { exportCss } from "../../lib/kit-tokens";
 import { downloadText } from "../../lib/download";
 import ComponentSample from "./ComponentSample";
 import BoardPicker from "./BoardPicker";
+import CommandBox from "./CommandBox";
+import { componentStates } from "../../lib/component-states";
 
 export default function ComponentDetail({
   component,
@@ -39,14 +41,18 @@ export default function ComponentDetail({
               Try a state
               <select
                 value={state}
+                disabled={componentStates(component.kind).length === 1}
                 onChange={(event) =>
                   setState(event.target.value as typeof state)
                 }
               >
-                <option value="default">Default</option>
-                <option value="disabled">Disabled / empty</option>
-                <option value="loading">Loading</option>
-                <option value="error">Error</option>
+                {componentStates(component.kind).map((option) => (
+                  <option key={option} value={option}>
+                    {option === "disabled" && component.kind === "status"
+                      ? "Empty"
+                      : option[0].toUpperCase() + option.slice(1)}
+                  </option>
+                ))}
               </select>
             </label>
           </div>
@@ -76,6 +82,26 @@ export default function ComponentDetail({
           </button>
         </aside>
       </div>
+      <section className="component-source-download">
+        <h2>Use this pattern.</h2>
+        <p>
+          Install the source in a configured shadcn project, or copy the
+          self-contained React kit.
+        </p>
+        <CommandBox
+          command="npx shadcn@latest add {url}"
+          originPath={`/r/${component.id}.json`}
+        />
+        <div className="kit-example-links">
+          <a href={`/kits/components/${component.id}.zip`} download>
+            Download source ZIP ↗
+          </a>
+          <a href={`/kits/components/${component.id}.tsx`}>
+            Read the component ↗
+          </a>
+          <a href={`/r/${component.id}.json`}>Registry JSON ↗</a>
+        </div>
+      </section>
       <BoardPicker item={{ kind: "component", id: component.id }} />
       <details className="example-source">
         <summary>Inspect the style tokens</summary>
