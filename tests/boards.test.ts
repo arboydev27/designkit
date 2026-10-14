@@ -5,6 +5,10 @@ import {
   exportBoard,
   projectBrief,
   validateBoard,
+  addBoardItem,
+  removeBoardItem,
+  restoreBoard,
+  type BoardItem,
   type ProjectBoard,
 } from "../src/lib/boards";
 import { kits } from "../src/data/kits";
@@ -110,5 +114,118 @@ test("saved palette customization survives export and import", () => {
   assert.equal(
     restored.items.find((item) => item.kind === "palette")!.settings!.accent,
     "#3155DF",
+  );
+});
+
+test("duplicate imported decisions keep the latest customization in the original position", () => {
+  const updated = {
+    ...board.items[0],
+    settings: { ...board.items[0].settings!, accent: "#227744" },
+  };
+  const checked = validateBoard({ ...board, items: [...board.items, updated] });
+  assert.equal(checked.items.length, board.items.length);
+  assert.equal(checked.items[0].settings!.accent, "#227744");
+  assert.equal(checked.items[1].kind, "component");
+});
+test("saving an existing decision replaces its customization without moving it", () => {
+  const updated = addBoardItem(board, {
+    ...board.items[0],
+    settings: { ...board.items[0].settings!, headline: "The updated decision" },
+  });
+  assert.equal(updated.items.length, board.items.length);
+  assert.equal(updated.items[0].settings!.headline, "The updated decision");
+  assert.equal(updated.primaryExampleId, board.primaryExampleId);
+  assert.equal(
+    board.items[0].settings!.headline,
+    "A desk with a little more personality.",
+  );
+});
+test("primary direction is assigned to the first example and only cleared when that example is removed", () => {
+  const empty = { ...board, items: [], primaryExampleId: "" };
+  const palette: BoardItem = { kind: "palette", id: example.id };
+  const withPalette = addBoardItem(empty, palette);
+  assert.equal(withPalette.primaryExampleId, "");
+  const withExample = addBoardItem(withPalette, board.items[0]);
+  assert.equal(withExample.primaryExampleId, example.id);
+  const withoutPalette = removeBoardItem(withExample, palette);
+  assert.equal(withoutPalette.primaryExampleId, example.id);
+  assert.equal(
+    removeBoardItem(withoutPalette, board.items[0]).primaryExampleId,
+    "",
+  );
+});
+test("a full board accepts an updated decision and rejects another selection without changing the board", () => {
+  const selections: BoardItem[] = kits.flatMap((entry) => [
+    ...entry.examples.map((item) => ({
+      kind: "example" as const,
+      id: item.id,
+    })),
+    ...entry.examples.map((item) => ({
+      kind: "palette" as const,
+      id: item.id,
+    })),
+    ...entry.components.map((item) => ({
+      kind: "component" as const,
+      id: item.id,
+    })),
+  ]);
+  const full = validateBoard({
+    ...board,
+    primaryExampleId: "",
+    items: selections.slice(0, 200),
+  });
+  assert.equal(addBoardItem(full, full.items[0]).items.length, 200);
+  assert.throws(() => addBoardItem(full, selections[200]), /at most 200/);
+  assert.equal(full.items.length, 200);
+});
+test("Undo restores the original board position and preserves a board already restored elsewhere", () => {
+  const first = { ...board, id: "first" };
+  const last = { ...board, id: "last" };
+  assert.deepEqual(
+    restoreBoard([first, last], board, 1).map((entry) => entry.id),
+    ["first", board.id, "last"],
+  );
+  const external = { ...board, name: "Renamed in another tab" };
+  assert.equal(restoreBoard([external], board, 0)[0].name, external.name);
+});
+test("malformed import JSON and blank IDs produce useful validation errors", () => {
+  assert.throws(() => importBoard("{broken"), /valid JSON/);
+  assert.throws(() => validateBoard({ ...board, id: "   " }), /an ID/);
+});
+
+test("project briefs preserve supplementary example choices and every saved palette color", () => {
+  const secondary = kit.examples[2];
+  const selections: BoardItem[] = [
+    ...board.items,
+    {
+      kind: "example",
+      id: secondary.id,
+      settings: {
+        ...defaultSettings(secondary, kit.recipe),
+        headline: "A supplementary customized headline",
+        accent: "#227744",
+        radius: 18,
+      },
+    },
+    {
+      kind: "palette",
+      id: example.id,
+      settings: { ...defaultSettings(example, kit.recipe), accent: "#3155DF" },
+    },
+  ];
+  const brief = projectBrief({ ...board, items: selections });
+  for (const expected of [
+    "Supplementary example choices",
+    "A supplementary customized headline",
+    "--dk-accent: #227744",
+    "--dk-radius: 18px",
+    "on-accent #",
+    "surface-muted #",
+    "line #",
+  ])
+    assert.ok(brief.includes(expected), expected);
+  assert.equal(
+    addBoardItem(board, selections[3]).primaryExampleId,
+    board.primaryExampleId,
   );
 });

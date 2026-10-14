@@ -28,14 +28,9 @@ export function validateBoard(value: unknown): ProjectBoard {
   if (!value || typeof value !== "object")
     throw new Error("A board must be a JSON object.");
   const board = value as Record<string, unknown>;
-  const id = text(board.id, 100),
-    name = text(board.name, 120);
-  if (
-    !id ||
-    !name.trim() ||
-    !Array.isArray(board.items) ||
-    board.items.length > 200
-  )
+  const id = text(board.id, 100).trim(),
+    name = text(board.name, 120).trim();
+  if (!id || !name || !Array.isArray(board.items) || board.items.length > 200)
     throw new Error(
       "This board needs a name, an ID, and at most 200 selections.",
     );
@@ -58,9 +53,7 @@ export function validateBoard(value: unknown): ProjectBoard {
       throw new Error(
         "This board references a resource that is not in the current DesignKit catalog.",
       );
-    if (items.some((saved) => saved.kind === kind && saved.id === itemId))
-      continue;
-    items.push({
+    const selection: BoardItem = {
       kind: kind as BoardItem["kind"],
       id: itemId,
       ...((kind === "example" || kind === "palette") &&
@@ -75,7 +68,12 @@ export function validateBoard(value: unknown): ProjectBoard {
             ),
           }
         : {}),
-    });
+    };
+    const duplicate = items.findIndex(
+      (saved) => saved.kind === kind && saved.id === itemId,
+    );
+    if (duplicate === -1) items.push(selection);
+    else items[duplicate] = selection;
   }
   const primaryExampleId = text(board.primaryExampleId, 150);
   if (
@@ -100,7 +98,12 @@ export function validateBoard(value: unknown): ProjectBoard {
 export function importBoard(content: string): ProjectBoard {
   if (content.length > 1_000_000)
     throw new Error("Choose a board smaller than 1 MB.");
-  const envelope: unknown = JSON.parse(content);
+  let envelope: unknown;
+  try {
+    envelope = JSON.parse(content);
+  } catch {
+    throw new Error("This file does not contain valid JSON.");
+  }
   if (
     !envelope ||
     typeof envelope !== "object" ||
@@ -108,6 +111,42 @@ export function importBoard(content: string): ProjectBoard {
   )
     throw new Error("This file is not a supported DesignKit board.");
   return validateBoard((envelope as { board?: unknown }).board);
+}
+export function addBoardItem(board: ProjectBoard, item: BoardItem) {
+  const index = board.items.findIndex(
+    (saved) => saved.kind === item.kind && saved.id === item.id,
+  );
+  const items = [...board.items];
+  if (index === -1) items.push(item);
+  else items[index] = item;
+  return validateBoard({
+    ...board,
+    items,
+    primaryExampleId:
+      board.primaryExampleId || (item.kind === "example" ? item.id : ""),
+  });
+}
+export function removeBoardItem(board: ProjectBoard, item: BoardItem) {
+  return {
+    ...board,
+    items: board.items.filter(
+      (saved) => !(saved.kind === item.kind && saved.id === item.id),
+    ),
+    primaryExampleId:
+      item.kind === "example" && board.primaryExampleId === item.id
+        ? ""
+        : board.primaryExampleId,
+  };
+}
+export function restoreBoard(
+  boards: ProjectBoard[],
+  board: ProjectBoard,
+  index: number,
+) {
+  if (boards.some((entry) => entry.id === board.id)) return boards;
+  const restored = [...boards];
+  restored.splice(Math.min(Math.max(index, 0), restored.length), 0, board);
+  return restored;
 }
 export function exportBoard(board: ProjectBoard) {
   return JSON.stringify(
@@ -148,9 +187,41 @@ export function projectBrief(board: ProjectBoard) {
         kitsById[source.styleId].recipe,
         item.settings,
       );
-      return `${reference} — canvas ${values["--dk-canvas"]}, surface ${values["--dk-surface"]}, accent ${values["--dk-accent"]}, ink ${values["--dk-ink"]}`;
+      const colors = [
+        "canvas",
+        "surface",
+        "accent",
+        "ink",
+        "surface-ink",
+        "on-accent",
+        "muted",
+        "surface-muted",
+        "line",
+      ];
+      return `${reference} — ${colors.map((name) => `${name} ${values[`--dk-${name}`]}`).join(", ")}`;
     }),
   );
+  const supplementary = checked.items
+    .filter(
+      (item) =>
+        item.kind === "example" &&
+        item.settings &&
+        item.id !== checked.primaryExampleId,
+    )
+    .map((item) => {
+      const source = examples.find((entry) => entry.id === item.id)!;
+      const { settings, values } = resolveTokens(
+        source,
+        kitsById[source.styleId].recipe,
+        item.settings,
+      );
+      return `### ${source.brand}\n\nSelected headline: ${settings.headline}\n\n\`\`\`css\n:root {\n${Object.entries(
+        values,
+      )
+        .map(([name, value]) => `  ${name}: ${value};`)
+        .join("\n")}\n}\n\`\`\``;
+    })
+    .join("\n\n");
   return (
     [
       `# ${checked.name}: project design direction`,
@@ -167,6 +238,9 @@ export function projectBrief(board: ProjectBoard) {
             .join("\n")}\n}\n\`\`\``
         : "",
       `## Saved references\n\n${resources || "No resources selected yet."}`,
+      supplementary
+        ? `## Supplementary example choices\n\n${supplementary}`
+        : "",
       kit
         ? `## Preserve the character\n\n${list(kit.style.tips)}\n\n## Be mindful of\n\n${list(kit.style.avoid)}\n\n## Motion\n\n${kit.recipe.motion}`
         : "",
